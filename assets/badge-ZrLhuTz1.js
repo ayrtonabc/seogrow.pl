@@ -1,0 +1,1 @@
+import{n as e}from"./container-B7O7r-IH.js";var{PropsProvider:t,withContext:n}=e({key:`badge`}),r=n(`span`);r.displayName=`Badge`;export{r as t};
