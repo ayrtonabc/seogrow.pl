@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seogrow.pl/sitemap.xml
+Host: seogrow.pl
