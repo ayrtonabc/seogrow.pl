@@ -1,12 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.seogrow.pl" }],
-      "destination": "https://seogrow.pl/:1",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
