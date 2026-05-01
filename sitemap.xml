@@ -153,6 +153,54 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/strona-dla-restauracji" />
   </url>
   <url>
+    <loc>https://seogrow.pl/sklep-online</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/sklep-online" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/sklep-online" />
+  </url>
+  <url>
+    <loc>https://seogrow.pl/akademia-kursow</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/akademia-kursow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/akademia-kursow" />
+  </url>
+  <url>
+    <loc>https://seogrow.pl/rezerwacje-i-terminy</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/rezerwacje-i-terminy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/rezerwacje-i-terminy" />
+  </url>
+  <url>
+    <loc>https://seogrow.pl/menu-cyfrowe</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/menu-cyfrowe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/menu-cyfrowe" />
+  </url>
+  <url>
+    <loc>https://seogrow.pl/ekspansja-globalna</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/ekspansja-globalna" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/ekspansja-globalna" />
+  </url>
+  <url>
+    <loc>https://seogrow.pl/wizytowka-prac</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/wizytowka-prac" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/wizytowka-prac" />
+  </url>
+  <url>
     <loc>https://seogrow.pl/blog/seo-lokalne-dla-malych-firm</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
