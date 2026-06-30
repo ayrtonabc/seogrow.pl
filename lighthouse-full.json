@@ -1,0 +1,61 @@
+{
+  "url": "http://localhost:4173/",
+  "loadTimeMs": 3254,
+  "timestamp": "2026-06-30T11:46:49.253Z",
+  "performance": {
+    "fcp": 100,
+    "lcp": 100,
+    "cls": 100,
+    "ttfb": 100,
+    "overall": 100,
+    "metrics": {
+      "fcpMs": 544,
+      "lcpMs": null,
+      "clsTotal": 0,
+      "ttfbMs": 9.5,
+      "domContentLoadedMs": 364,
+      "transferSize": 469443,
+      "resourceCount": 48
+    }
+  },
+  "seo": {
+    "score": 100,
+    "issues": [],
+    "title": "Strona z SEO dla małych firm | SEO Grow — gotowa w 5 dni",
+    "titleLen": 56,
+    "desc": "Profesjonalna strona z automatycznym SEO dla małych firm. Gotowa w 5 dni, edycja z telefonu, Twoi klienci znajdują Cię w Google bez płacenia za reklamy. Od 1 500 zł.",
+    "descLen": 165,
+    "h1s": 1,
+    "h2s": 8,
+    "canonical": "https://seogrow.pl/",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "hreflang": 2,
+    "ogTitle": "Strona z SEO dla małych firm | SEO Grow — gotowa w 5 dni",
+    "ogImage": "https://seogrow.pl/panel.webp",
+    "twitter": "summary_large_image",
+    "viewport": "width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0",
+    "lang": "pl",
+    "ldScripts": 2,
+    "imgsTotal": 18,
+    "imgsWithoutAlt": 0,
+    "internalLinks": 52,
+    "externalLinks": 0
+  },
+  "accessibility": {
+    "score": 100,
+    "issues": [],
+    "unlabeled": 0,
+    "unnamedButtons": 0,
+    "orderViolations": 0,
+    "skipLink": true
+  },
+  "bestPractices": {
+    "score": 100,
+    "issues": [],
+    "https": true,
+    "hasServiceWorkerApi": true,
+    "hasManifest": true,
+    "imgsNoSize": 0
+  },
+  "overall": 100
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://seogrow.pl/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ile naprawdę kosztuje strona u was?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Od 1 500 zł jednorazowo + 49 zł miesięcznie za pakiet Start. Dokładna cena zależy od wybranego pakietu (Standard lub Premium). W każdej opcji masz już stronę, CMS, hosting, SSL i wsparcie. Żadnych ukrytych opłat ani niespodzianek na fakturze."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy zobaczę efekt, zanim zapłacę?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zanim zaczniemy, rozmawiamy przez 15 minut. Pokażemy Ci konkretne realizacje z Twojej branży, żebyś dokładnie wiedział, jak będzie wyglądać Twoja strona. Mówimy wprost, co ma sens, a co nie. Zero ściemy i pustych obietnic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy trudno obsługiwać panel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zaprojektowaliśmy panel tak, aby był maksymalnie intuicyjny. Zmiana ceny, wstawienie zdjęcia czy nowej usługi zajmuje chwilę. Nie musisz znać się na technologii. W planie Standard i Premium dostajesz krótkie instrukcje wideo, a w dni robocze odpowiadamy na pytania i pomagamy, gdybyś utknął."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Co, jeśli nie znam się na komputerach?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nie musisz znać się na technice — tak jak nie musisz być hydraulikiem, żeby włączyć prysznic. Na start dostajesz gotową stronę, a my pokazujemy Ci krok po kroku, jak wprowadzać zmiany. W dni robocze odbieramy telefony i służymy pomocą."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy moja strona będzie widoczna w Google?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Strona startuje zoptymalizowana technicznie pod Google — schema, meta tagi, szybkość, mobilna. Ominiemy puste obietnice typu „gwarantujemy pierwsze miejsce” — w SEO tak to po prostu nie działa. Realne wyniki zależą od Twojej branży i konkurencji. W planie Premium dostajesz comiesięczny raport widoczności."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A jeśli mam już stronę u kogoś innego?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak, robimy migrację. Na razie ręcznie (jesteśmy w wersji beta), ale dbamy o to, żeby tożsamość wizualna była identyczna i żadna treść nie zginęła. W planie Premium migracja jest w cenie. W Standard możemy ją zrobić, jeśli Twoja obecna strona nie jest zbyt złożona — i przy okazji zaproponować ulepszenia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy mogę zrezygnować w każdej chwili?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak. Nie ma żadnej umowy na lata. Płacisz co miesiąc, jeśli chcesz zrezygnować — robisz to jednym mailem. Strona zostaje Twoja na zawsze — nawet po zakończeniu abonamentu możesz ją zabrać."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Co wy mi tak naprawdę sprzedajecie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Spokojną głowę. Dostajesz stronę, która działa, wygląda dobrze i jest widoczna w Google. System dba o wszystko pod spodem — aktualizacje, bezpieczeństwo, szybkość. Ty prowadzisz swój biznes i dodajesz treści, kiedy chcesz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy dostanę fakturę VAT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oczywiście. Otrzymujesz fakturę VAT na każdą płatność — za stronę i za każdy kolejny miesiąc. Faktury wysyłamy mailem automatycznie, więc łatwo je wrzucić do kosztów."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kto jest właścicielem domeny?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nie zarabiamy na domenach i nie trzymamy ich u siebie. Doradzamy, jaką wybrać, a Ty rejestrujesz ją samodzielnie — polecamy OVH.pl. Koszt to ok. 20 zł pierwszy rok i 50-70 zł każdy następny. Dzięki temu domena jest w 100% Twoja. Masz pełną niezależność — możesz odejść, kiedy chcesz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy dostanę firmowego e-maila?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak, ale nie od nas — i tak jest lepiej. Polecamy darmowy Zoho Mail (do 5 skrzynek za 0 zł). Pomagamy go skonfigurować w 15 minut. Poczta jest Twoja, nie nasza. Nie płacisz nam za pośrednictwo."
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+const fs = require('fs')
+const html = fs.readFileSync('dist/index.html', 'utf8')
+
+const altMatches = html.match(/alt="[^"]+"/g) || []
+console.log('Total alt attributes:', altMatches.length)
+const emptyAlts = altMatches.filter(a => a === 'alt=""' || a === 'alt=" "')
+console.log('Empty alt attributes:', emptyAlts.length, emptyAlts)
+const descMatch = html.match(/name="description" content="([^"]+)"/)
+console.log('Description:', descMatch ? descMatch[1] : 'NOT FOUND')
+console.log('Description chars:', descMatch ? descMatch[1].length : 0)
+const h2Count = (html.match(/<h2/g) || []).length
+console.log('H2 tags:', h2Count)
+const canonicalMatch = html.match(/rel="canonical" href="([^"]+)"/)
+console.log('Canonical:', canonicalMatch ? canonicalMatch[1] : 'NOT FOUND')
+const hreflangMatch = html.match(/rel="alternate" hreflang="pl" href="([^"]+)"/)
+console.log('Hreflang pl:', hreflangMatch ? hreflangMatch[1] : 'NOT FOUND')
+const jsonLd = html.match(/type="application\/ld\+json">/)
+console.log('JSON-LD:', jsonLd ? 'YES' : 'NO')
+const robotsMatch = html.match(/name="robots" content="([^"]+)"/)
+console.log('Robots:', robotsMatch ? robotsMatch[1] : 'NOT FOUND')

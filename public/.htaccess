@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.seogrow\.pl [NC]
+RewriteRule ^(.*)$ https://seogrow.pl/$1 [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://seogrow.pl/$1 [R=301,L]

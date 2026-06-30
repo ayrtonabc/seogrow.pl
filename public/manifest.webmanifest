@@ -1,0 +1,27 @@
+{
+  "name": "SEO Grow — Strona z SEO dla małych firm",
+  "short_name": "SEO Grow",
+  "description": "Profesjonalna strona internetowa z automatycznym SEO dla małych firm. Gotowa w 5 dni.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait-primary",
+  "lang": "pl-PL",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-320.webp",
+      "sizes": "320x85",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"]
+}
