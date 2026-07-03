@@ -92,7 +92,7 @@ const buildMinimalHtml = (routeDefinition, templateData) => {
     : null;
 
   return `<!doctype html>
-<html lang="pl" translate="no">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <title>${escapeHtml(routeDefinition.title)}</title>
@@ -119,6 +119,20 @@ const buildMinimalHtml = (routeDefinition, templateData) => {
   </head>
   <body>
     <div id="root"></div>
+    <!-- Chrome translator resilience: capture pre-hydration HTML so React can
+         restore it if Chrome's translator mutated nodes before hydration. -->
+    <script>
+      (function () {
+        try {
+          var root = document.getElementById('root');
+          if (root) {
+            window.__SSR_BACKUP__ = root.innerHTML;
+          }
+        } catch (e) {
+          /* no-op */
+        }
+      })();
+    </script>
     ${templateData.bodyScripts}
   </body>
 </html>
