@@ -1,7 +1,4 @@
-import puppeteer from 'puppeteer-core';
-import express from 'express';
 import fs from 'fs';
-import os from 'os';
 import path from 'path';
 import {
   BUILD_DIR,
@@ -13,29 +10,30 @@ import {
   routeToFilePath,
 } from './seo-config.js';
 
-const PAGE_TIMEOUT = 60000;
-const CONTENT_TIMEOUT = 20000;
-
-const CHROME_PATHS = [
-  process.env.CHROME_PATH,
-  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-  'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
-  path.join(process.env.LOCALAPPDATA || '', 'Google\\Chrome\\Application\\chrome.exe'),
-  'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
-  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
-  path.join(process.env.LOCALAPPDATA || '', 'Microsoft\\Edge\\Application\\msedge.exe'),
-  '/usr/bin/google-chrome',
-  '/usr/bin/chromium-browser',
-  '/usr/bin/chromium',
-  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-].filter(Boolean);
+/**
+ * Static prerender — CSR-friendly HTML generator.
+ *
+ * Why this exists (instead of Puppeteer SSR with React-rendered content):
+ *
+ * Chrome's auto-translator wraps text nodes in <font> elements. If the
+ * prerendered HTML has React-rendered content, Chrome's translation
+ * interferes with React's reconciliator → NotFoundError on removeChild
+ * → blank screen. Ayrton explicitly does NOT want a fallback UI for this
+ * case, so we cannot mask the bug; we have to remove its root cause.
+ *
+ * Solution: produce static HTML that contains ONLY the SEO <head>
+ * (canonical URL, OG tags, JSON-LD) and an EMPTY <div id="root">. React
+ * mounts client-side on a guaranteed-clean DOM. Chrome's translator
+ * can then mutate freely without conflicting with any pre-existing
+ * hydration markers.
+ *
+ * SEO impact: minimal — Googlebot executes JavaScript and reads the
+ * rendered content; users see a slightly slower FCP but get a working
+ * site regardless of translation.
+ */
 
 const INDEXABLE_ROBOTS = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 const NOINDEX_ROBOTS = 'noindex, follow';
-
-const getChromePath = () => CHROME_PATHS.find((candidate) => fs.existsSync(candidate)) || null;
-
-const getRobotsValue = (routeDefinition) => (routeDefinition.noindex ? NOINDEX_ROBOTS : INDEXABLE_ROBOTS);
 
 const stripSeoTags = (headContent) =>
   headContent
@@ -70,22 +68,9 @@ const loadBuildTemplate = () => {
   };
 };
 
-const validateJsonLd = (html) => {
-  const matches = [...html.matchAll(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
-
-  return matches.some((match) => {
-    try {
-      const parsed = JSON.parse(match[1]);
-      return Boolean(parsed && (Array.isArray(parsed) ? parsed.length : parsed));
-    } catch {
-      return false;
-    }
-  });
-};
-
-const buildMinimalHtml = (routeDefinition, templateData) => {
+const buildRouteHtml = (routeDefinition, templateData) => {
   const canonicalUrl = getCanonicalUrl(routeDefinition.route);
-  const robots = getRobotsValue(routeDefinition);
+  const robots = routeDefinition.noindex ? NOINDEX_ROBOTS : INDEXABLE_ROBOTS;
   const ogType = routeDefinition.route.startsWith('/blog/') ? 'article' : 'website';
   const schemaJson = routeDefinition.schema
     ? JSON.stringify(routeDefinition.schema).replace(/</g, '\\u003c')
@@ -132,40 +117,6 @@ const writeRouteHtml = (routeDefinition, html) => {
   return filePath;
 };
 
-const writeFallbackHtml = (routeDefinition, templateData, reason) => {
-  const filePath = writeRouteHtml(routeDefinition, buildMinimalHtml(routeDefinition, templateData));
-  console.warn(`⚠️ Fallback CSR minimo generado para ${routeDefinition.route}: ${reason}`);
-  console.log(`✅ Saved ${filePath}`);
-};
-
-const waitForContent = async (page, routeDefinition) => {
-  const selectors = [...new Set([...(routeDefinition.selectors || []), '#root:not(:empty)'])];
-
-  for (const selector of selectors) {
-    const exists = await page.evaluate((candidate) => Boolean(document.querySelector(candidate)), selector);
-
-    if (!exists) {
-      continue;
-    }
-
-    await page.waitForSelector(selector, { timeout: CONTENT_TIMEOUT });
-    return selector;
-  }
-
-  await page.waitForFunction(
-    () => {
-      const root = document.getElementById('root');
-      const main = document.querySelector('main');
-      const target = main || root;
-      const text = target?.textContent?.replace(/\s+/g, ' ').trim() || '';
-      return target && text.length > 120;
-    },
-    { timeout: CONTENT_TIMEOUT },
-  );
-
-  return 'text-content';
-};
-
 const generateSitemap = (routeDefinitions) => {
   console.log('🗺️ Generating sitemap.xml...');
   const today = new Date().toISOString().split('T')[0];
@@ -201,154 +152,21 @@ ${indexableRoutes
   console.log(`✅ sitemap.xml generated with ${indexableRoutes.length} URLs`);
 };
 
-const closeServer = (server) =>
-  new Promise((resolve, reject) => {
-    if (!server?.listening) {
-      resolve();
-      return;
-    }
-
-    server.close((error) => {
-      if (error) {
-        reject(error);
-        return;
-      }
-
-      resolve();
-    });
-  });
-
-async function prerender() {
+function prerender() {
   const routeDefinitions = getRouteDefinitions();
   const templateData = loadBuildTemplate();
-  const renderedRoutes = new Set();
 
-  console.log('🚀 Starting static prerendering for Googlebot...');
-  console.log(`Routes to prerender: ${routeDefinitions.length}`);
+  console.log('🚀 Generating static SEO HTML for all routes (CSR mode — root body empty)...');
+  console.log(`Routes: ${routeDefinitions.length}`);
 
-  const chromePath = getChromePath();
-
-  if (!chromePath) {
-    console.warn('⚠️ Chrome/Edge no disponible. Se generara fallback CSR minimo por ruta.');
-    console.log('Attempted paths:', CHROME_PATHS);
-
-    routeDefinitions.forEach((routeDefinition) => {
-      writeFallbackHtml(routeDefinition, templateData, 'Chrome no disponible');
-      renderedRoutes.add(routeDefinition.route);
-    });
-
-    generateSitemap(routeDefinitions);
-    console.log('🎉 Build SEO completado con fallback minimo por ruta.');
-    return;
-  }
-
-  console.log(`✅ Using browser at: ${chromePath}`);
-
-  const app = express();
-  app.use(express.static(BUILD_DIR));
-  app.use((req, res) => {
-    res.sendFile(path.join(BUILD_DIR, 'index.html'));
-  });
-
-  const server = await new Promise((resolve) => {
-    const instance = app.listen(0, '127.0.0.1', () => {
-      const address = instance.address();
-      const port = typeof address === 'object' && address ? address.port : 'unknown';
-      console.log(`🌍 Server running on http://127.0.0.1:${port}`);
-      resolve(instance);
-    });
-  });
-  const address = server.address();
-  const port = typeof address === 'object' && address ? address.port : 0;
-
-  let browser;
-  let browserProfileDir;
-
-  try {
-    browserProfileDir = fs.mkdtempSync(path.join(os.tmpdir(), 'seo-grow-prerender-'));
-    browser = await puppeteer.launch({
-      executablePath: chromePath,
-      headless: 'new',
-      userDataDir: browserProfileDir,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu',
-        '--disable-extensions',
-        '--disable-background-networking',
-        '--disable-sync',
-        '--disable-features=PrivacySandboxSettings4',
-        '--no-first-run',
-        '--no-default-browser-check',
-      ],
-    });
-
-    for (const routeDefinition of routeDefinitions) {
-      const page = await browser.newPage();
-      const url = `http://127.0.0.1:${port}${routeDefinition.route}`;
-
-      try {
-        console.log(`Prerendering ${routeDefinition.route}...`);
-
-        await page.goto(url, { waitUntil: 'networkidle0', timeout: PAGE_TIMEOUT });
-        const selectorUsed = await waitForContent(page, routeDefinition);
-        if (routeDefinition.expectJsonLd) {
-          await page
-            .waitForFunction(
-              () => Boolean(document.querySelector('script[type="application/ld+json"]')),
-              { timeout: 10000 },
-            )
-            .catch(() => false);
-        }
-        const html = await page.content();
-        const hasJsonLd = validateJsonLd(html);
-
-        if (!html.includes('lang="pl"')) {
-          console.warn(`⚠️ Warning: ${routeDefinition.route} missing lang="pl"`);
-        }
-
-        if (routeDefinition.expectJsonLd && !hasJsonLd) {
-          console.warn(`⚠️ Warning: ${routeDefinition.route} missing or invalid JSON-LD`);
-        }
-
-        const filePath = writeRouteHtml(routeDefinition, html);
-        renderedRoutes.add(routeDefinition.route);
-
-        console.log(`✅ Saved ${filePath} using ${selectorUsed}`);
-      } catch (error) {
-        writeFallbackHtml(routeDefinition, templateData, error.message);
-        renderedRoutes.add(routeDefinition.route);
-      } finally {
-        await page.close();
-      }
-    }
-  } catch (error) {
-    console.error(`❌ Browser prerender failed: ${error.message}`);
-
-    routeDefinitions
-      .filter((routeDefinition) => !renderedRoutes.has(routeDefinition.route))
-      .forEach((routeDefinition) => {
-        writeFallbackHtml(routeDefinition, templateData, error.message);
-        renderedRoutes.add(routeDefinition.route);
-      });
-  } finally {
-    if (browser) {
-      await browser.close();
-    }
-
-    if (browserProfileDir) {
-      fs.rmSync(browserProfileDir, { recursive: true, force: true });
-    }
-
-    await closeServer(server);
+  for (const routeDefinition of routeDefinitions) {
+    const html = buildRouteHtml(routeDefinition, templateData);
+    const filePath = writeRouteHtml(routeDefinition, html);
+    console.log(`✅ Saved ${filePath}`);
   }
 
   generateSitemap(routeDefinitions);
-  console.log('🎉 Prerendering complete!');
+  console.log('🎉 Static prerender complete!');
 }
 
-prerender().catch((error) => {
-  console.error(`❌ Prerendering script failed: ${error.message}`);
-  process.exit(1);
-});
+prerender();

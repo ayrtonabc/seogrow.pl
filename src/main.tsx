@@ -127,19 +127,22 @@ function doRemount(): void {
   const scrollY = window.scrollY
   const scrollX = window.scrollX
 
-  // Best-effort unmount. If it throws (DOM already mangled by Chrome)
-  // we proceed anyway — the next innerHTML = "" wipes everything.
-  if (currentRoot) {
-    try {
-      currentRoot.unmount()
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.warn("[chrome-translator] unmount threw:", err)
-    }
-  }
+  // CRITICAL: do NOT call currentRoot.unmount() here. With Chrome's
+  // translator having wrapped text nodes in <font>, React's reconciliator
+  // holds refs to text nodes whose parent is now the <font>, not the
+  // <p>. unmount() walks every node it knows about and calls removeChild
+  // on each — that throws NotFoundError because Chrome's wrappers
+  // changed the parent of those text nodes. With CSR + the root always
+  // being cleared before createRoot.render(), we don't need a graceful
+  // unmount: wiping the DOM and re-rendering on a clean container is
+  // safe (createRoot picks up the empty container and treats it as a
+  // fresh root mount). The old root's tree is garbage-collected by the
+  // browser once nothing references its DOM nodes anymore — small leak,
+  // acceptable for the translator-only path.
 
   // Wipe EVERY node Chrome's translator added — <font> wrappers, popup
-  // toolbar, classes, etc. The DOM is now guaranteed fresh.
+  // toolbar, all React-rendered DOM, everything. The DOM is now
+  // guaranteed fresh for re-mount.
   rootEl.innerHTML = ""
 
   try {
