@@ -11,12 +11,12 @@ type State = {
 
 /**
  * Catches render / hydration errors and shows a Polish fallback instead of
- * a blank screen. Typical trigger: Chrome's built-in translator mutates DOM
- * before React hydrates, causing a hydration mismatch that can blank parts
- * of the page. We try to mitigate this in `main.tsx` (hydrateRoot with a
- * backup + fallback to createRoot), but if anything still slips through,
- * ErrorBoundary is the last line of defense so the user always sees
- * something useful.
+ * a blank screen. Typical trigger: Chrome's auto-translator wraps text
+ * nodes in <font> elements post-hydration, causing React's reconciliator
+ * to hit NotFoundError on removeChild. We try to mitigate this in
+ * `main.tsx` (MutationObserver + remount), but if anything still slips
+ * through, ErrorBoundary is the last line of defense so the user always
+ * sees something useful.
  */
 export class ErrorBoundary extends Component<Props, State> {
   state: State = { hasError: false }

@@ -92,7 +92,7 @@ const buildMinimalHtml = (routeDefinition, templateData) => {
     : null;
 
   return `<!doctype html>
-<html lang="pl" translate="no">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <title>${escapeHtml(routeDefinition.title)}</title>
