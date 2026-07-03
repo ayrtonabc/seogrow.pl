@@ -3,7 +3,6 @@ import { createRoot, type Root } from "react-dom/client"
 import { Provider } from "@/components/ui/provider"
 import { LanguageProvider } from "./components/LanguageSwitcher"
 import { CurrencyProvider } from "./components/CurrencySwitcher"
-import { ErrorBoundary } from "./components/ErrorBoundary"
 import "./index.css"
 import App from "./App"
 
@@ -28,8 +27,7 @@ if ("serviceWorker" in navigator && import.meta.env.PROD) {
  * elements (no class, no style). React's reconciliator holds direct
  * references to those text-node DOM parents; once Chrome wraps them,
  * React tries to remove a child that is no longer a child of the
- * parent it knows about → NotFoundError on removeChild → ErrorBoundary
- * fires "Algo salió mal".
+ * parent it knows about → NotFoundError on removeChild → blank page.
  *
  * Strategy:
  * 1. Mount with createRoot on the (pre-rendered) HTML.
@@ -49,15 +47,13 @@ const rootEl = document.getElementById("root")!
 
 const tree = (
   <StrictMode>
-    <ErrorBoundary>
-      <Provider>
-        <LanguageProvider>
-          <CurrencyProvider>
-            <App />
-          </CurrencyProvider>
-        </LanguageProvider>
-      </Provider>
-    </ErrorBoundary>
+    <Provider>
+      <LanguageProvider>
+        <CurrencyProvider>
+          <App />
+        </CurrencyProvider>
+      </LanguageProvider>
+    </Provider>
   </StrictMode>
 )
 
