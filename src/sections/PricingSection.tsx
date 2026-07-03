@@ -20,6 +20,13 @@ const ArrowRightIcon = ({ size = 14 }: { size?: number }) => (
   </svg>
 )
 
+const LockIcon = ({ size = 12 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+    <rect x="4" y="11" width="16" height="10" rx="2" />
+    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+  </svg>
+)
+
 export const PricingSection = () => {
   return (
     <Box id="ceny" bg="#F8FAFC" py={{ base: "16", md: "22" }}>
@@ -196,6 +203,27 @@ export const PricingSection = () => {
                         </Text>
                       </Box>
                     </Grid>
+
+                    {/* Gwarancja ceny — cena abonamentu nie wzrośnie dla stałych klientów */}
+                    <Flex
+                      align="center"
+                      gap="1.5"
+                      mt="3"
+                      px="2.5"
+                      py="1.5"
+                      rounded="md"
+                      bg="#ECFDF5"
+                      border="1px solid #A7F3D0"
+                      role="note"
+                      aria-label="Gwarancja stałej ceny abonamentu"
+                    >
+                      <Box color="#059669" display="flex" flexShrink={0}>
+                        <LockIcon size={12} />
+                      </Box>
+                      <Text fontSize="11px" color="#047857" fontWeight="600" lineHeight="1.3">
+                        Cena abonamentu nigdy nie wzrośnie dla stałych klientów
+                      </Text>
+                    </Flex>
 
                     {/* Notas inline: qué incluye cada precio */}
                     <VStack gap="1" mt="3" align="stretch">

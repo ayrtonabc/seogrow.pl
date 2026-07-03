@@ -204,24 +204,25 @@ export const HeroSection = () => {
               pointerEvents="none"
             />
 
-            <Box
-              as="img"
-              src="/hero.webp"
+            <img
+              src="/hero-960.webp"
               srcSet="/hero-640.webp 640w, /hero-960.webp 960w"
               sizes="(max-width: 768px) 100vw, 50vw"
               alt="Podgląd strony klienta w panelu SEO Grow"
-              width="960"
-              height="720"
+              width={960}
+              height={720}
               decoding="async"
               loading="eager"
               fetchPriority="high"
-              w="full"
-              maxW={{ base: "100%", md: "90%", lg: "100%" }}
-              h="auto"
-              objectFit="contain"
-              position="relative"
-              zIndex="1"
-              filter="drop-shadow(0 24px 32px rgba(15, 23, 42, 0.12))"
+              style={{
+                width: "100%",
+                maxWidth: "100%",
+                height: "auto",
+                objectFit: "contain",
+                position: "relative",
+                zIndex: 1,
+                filter: "drop-shadow(0 24px 32px rgba(15, 23, 42, 0.12))",
+              }}
               className="hero-float"
             />
           </Box>

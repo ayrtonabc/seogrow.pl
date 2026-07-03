@@ -8,17 +8,17 @@ export const StronaDlaFreelanceraPage = () => (
     keywords="strona dla freelancera, portfolio freelancera, strona www dla freelancera, strona dla jednoosobowej firmy, strona dla programisty, strona dla grafika"
     h1="Strona dla freelancera:"
     h1Accent="portfolio, które przyciąga klientów"
-    h1Sub="Portfolio + blog + SEO + formularz — gotowe w 5 dni."
-    intro="Profesjonalna strona dla freelancera, która prezentuje Twoje realizacje, buduje wiarygodność i sprawia, że klienci sami Cię znajdują w Google. Bez wiedzy technicznej, bez agencji SEO."
-    heroImage="/panel.webp"
-    heroImageAlt="Panel CMS SEO Grow — strona dla freelancera"
+    h1Sub="Klienci sami Cię znajdują w Google — i widzą Twoje realizacje, zanim wyślą zapytanie."
+    intro="Klienci szukają freelancerów w Google, nie na Facebooku. W Polsce ponad 60% zleceń B2B zaczyna się od wyszukiwarki — bez strony z SEO lokalnym nie pojawiasz się w wynikach i przegrywasz z konkurencją, która już to ma. Twoja nowa strona pokaże portfolio, cennik i specjalizacje tak, żeby klient wybrał Ciebie, nie kogoś innego."
+    heroImage="/freelancer.webp"
+    heroImageAlt="Strona dla freelancera — freelancer z laptopem przy pracy"
     breadcrumb={[{ name: "Strony dla branż", href: "/#moduly" }, { name: "Strona dla freelancera", href: "/strona-dla-freelancera" }]}
     sections={[
       {
         heading: "Co powinna mieć strona freelancera, żeby zdobywać klientów",
         content: "Portfolio prezentujące najlepsze realizacje z opisem procesu i efektów. Blog tematyczny, który edukuje potencjalnych klientów i pozycjonuje Cię w Google jako eksperta. Formularz kontaktowy z pytaniami o zakres, termin i budżet — żebyś nie tracił czasu na leady, które nie pasują.",
-        image: "/panel.webp",
-        imageAlt: "Sekcje portfolio, bloga i formularza na stronie freelancera",
+        image: "/freelancerweb.webp",
+        imageAlt: "Strona freelancera — pełny widok portfolio, bloga i formularza kontaktowego",
         highlights: [
           "Portfolio z kategoriami i podglądem na pełnym ekranie",
           "Blog ekspercki, który pozycjonuje Twoje usługi",
@@ -36,6 +36,46 @@ export const StronaDlaFreelanceraPage = () => (
           "Bez aktualizacji — oszczędzasz czas",
           "Backup w cenie — Twoje realizacje są bezpieczne",
         ],
+imageAnimation: {
+          rounds: [
+            {
+              query: "grafik freelancer Warszawa",
+              yourSite: {
+                domain: "twoje-portfolio-freelancer.pl",
+                title: "Twoje Portfolio — Grafik Freelancer Warszawa",
+                description: "Profesjonalny grafik freelancer z Warszawy. Identyfikacja wizualna, branding, strony internetowe. 10 lat doświadczenia.",
+              },
+              competitors: [
+                { domain: "grafik-freelancer-waw.pl", title: "Grafik Freelancer Warszawa — Studio Graficzne", description: "Grafik freelancer w Warszawie. Logo, identyfikacja wizualna, projekty graficzne. Szybka realizacja." },
+                { domain: "design-studio-warszawa.pl", title: "Design Studio Warszawa — Grafik i Branding", description: "Studio projektowe z Warszawy. Grafika, branding, projektowanie stron. Portfolio znanych marek." },
+              ],
+            },
+            {
+              query: "programista freelancer Warszawa",
+              yourSite: {
+                domain: "twoje-portfolio-freelancer.pl",
+                title: "Twoje Portfolio — Programista Freelancer Warszawa",
+                description: "Programista freelancer z Warszawy. Aplikacje webowe, React, Node.js. 8 lat doświadczenia, 50+ projektów.",
+              },
+              competitors: [
+                { domain: "programista-freelancer-waw.pl", title: "Programista Freelancer Warszawa — Full Stack", description: "Full stack developer z Warszawy. React, Node, Python. Realizacja w 2-4 tygodnie." },
+                { domain: "dev-studio-warszawa.pl", title: "Dev Studio Warszawa — Aplikacje Webowe", description: "Studio developerskie z Warszawy. Aplikacje webowe, MVP, integracje API." },
+              ],
+            },
+            {
+              query: "freelancer Warszawa",
+              yourSite: {
+                domain: "twoje-portfolio-freelancer.pl",
+                title: "Twoje Portfolio — Freelancer Warszawa",
+                description: "Freelancer z Warszawy. Grafika, programowanie, consulting IT. Elastyczne terminy, profesjonalne realizacje.",
+              },
+              competitors: [
+                { domain: "freelancer-waw.pl", title: "Freelancer Warszawa — Usługi IT i Graficzne", description: "Freelancer z Warszawy. Strony internetowe, grafika, marketing. Pełny zakres usług." },
+                { domain: "uslugi-freelancer-warszawa.pl", title: "Usługi Freelancer Warszawa — Studio Nowak", description: "Studio freelancerskie. Projekty graficzne, web development, branding dla firm." },
+              ],
+            },
+          ],
+        },
       },
     ]}
     features={[
@@ -66,12 +106,8 @@ export const StronaDlaFreelanceraPage = () => (
       description: "Portfolio, blog, SEO — wszystko w jednym, gotowe w 5 dni.",
       primaryLabel: "Zamów stronę freelancera →",
     }}
-    internalLinks={[
-      { label: "Strona dla programisty", href: "/strona-dla-freelancera#blog" },
-      { label: "Strona dla grafika", href: "/wizytowka-prac" },
-      { label: "Strona dla fotografa", href: "/wizytowka-prac" },
-      { label: "Plan Standard z blogiem SEO", href: "/#ceny" },
-    ]}
+  showModules={true}
+  showPricing={true}
   />
 )
 
@@ -82,18 +118,18 @@ export const StronaDlaWarsztatuSamochodowegoPage = () => (
     description="Strona dla warsztatu samochodowego i mechanika z SEO lokalnym, opiniami Google, cennikiem usług i modułem rezerwacji online. Edytujesz z telefonu."
     keywords="strona dla warsztatu samochodowego, strona dla mechanika, strona dla warsztatu, strona dla serwisu samochodowego, strona dla mechanika samochodowego, wizytówka warsztatu"
     h1="Strona dla warsztatu samochodowego:"
-    h1Accent="SEO lokalne, opinie i rezerwacje online"
-    h1Sub="Klienci z Twojego miasta znajdują Cię w Google i rezerwują termin online."
-    intro="Strona dla warsztatu, która przyciąga kierowców z Twojej okolicy, buduje zaufanie opiniami Google i pozwala zarezerwować termin bez dzwonienia. Profesjonalnie, bez agencji."
-    heroImage="/hero-640.webp"
-    heroImageAlt="Strona dla warsztatu samochodowego — SEO lokalne i rezerwacje"
+    h1Accent="kierowcy trafiają do Ciebie z Google"
+    h1Sub="Kierowcy z Twojej okolicy rezerwują termin w 30 sekund — bez czekania na odbiór telefonu."
+    intro="Kierowcy w Twojej okolicy szukają warsztatu w Google: 'wymiana opon [dzielnica]', 'diagnostyka [miasto]', 'naprawa [okolica]'. Bez strony z cennikiem, opiniami i rezerwacją online, jadą do konkurencji obok, która już to ma. Twoja strona pokaże specjalizacje, ceny i opinie Google — kierowca rezerwuje termin sam, nawet gdy mechanik jest pod autem."
+    heroImage="/mecanico.webp"
+    heroImageAlt="Strona dla warsztatu samochodowego — mechanik w trakcie naprawy"
     breadcrumb={[{ name: "Strony dla branż", href: "/#moduly" }, { name: "Strona dla warsztatu", href: "/strona-dla-warsztatu-samochodowego" }]}
     sections={[
       {
         heading: "Co powinna mieć strona warsztatu, żeby zdobywać klientów",
         content: "SEO lokalne z Google Business Profile i schema AutoRepair. Lista usług z cenami (klient nie chce dzwonić, żeby zapytać o cenę wymiany opon). Opinie z Google zintegrowane ze strony. Moduł rezerwacji online — klient wybiera termin, warsztat dostaje powiadomienie.",
-        image: "/automat.webp",
-        imageAlt: "Schema AutoRepair i opinie Google na stronie warsztatu",
+        image: "/mecanicoweb.webp",
+        imageAlt: "Pełny widok strony warsztatu — cennik usług, opinie Google i moduł rezerwacji online",
         highlights: [
           "Schema AutoRepair — w wynikach Google z ceną i opiniami",
           "Cennik usług online — bez konieczności dzwonienia",
@@ -111,6 +147,46 @@ export const StronaDlaWarsztatuSamochodowegoPage = () => (
           "Klient szuka usługi — gotowy do zakupu",
           "Niższy koszt pozyskania klienta niż reklama",
         ],
+imageAnimation: {
+          rounds: [
+            {
+              query: "warsztat samochodowy Warszawa",
+              yourSite: {
+                domain: "auto-serwis-warszawa.pl",
+                title: "Auto Serwis Warszawa — Mechanik i Diagnostyka",
+                description: "Profesjonalny warsztat samochodowy w Warszawie. Mechanika, diagnostyka komputerowa, klimatyzacja. 15 lat doświadczenia.",
+              },
+              competitors: [
+                { domain: "mechanik-warszawa-waw.pl", title: "Mechanik Warszawa — Serwis Samochodowy", description: "Serwis samochodowy w Warszawie. Naprawy główne i bieżące, wymiana oleju, hamulce." },
+                { domain: "warsztat-samochodowy-waw.pl", title: "Warsztat Samochodowy Waw — Auto Naprawa", description: "Warsztat w Warszawie. Pełen zakres napraw, klimatyzacja, geometria zawieszenia." },
+              ],
+            },
+            {
+              query: "mechanik Warszawa",
+              yourSite: {
+                domain: "auto-serwis-warszawa.pl",
+                title: "Auto Serwis Warszawa — Mechanik z Doświadczeniem",
+                description: "Doświadczony mechanik w Warszawie. Naprawa silników, skrzyń biegów, zawieszenia. Gwarancja na usługi.",
+              },
+              competitors: [
+                { domain: "mechanik-waw.pl", title: "Mechanik Waw — Naprawa Samochodów", description: "Mechanik w Warszawie. Diagnostyka, naprawa bieżąca, wymiana części eksploatacyjnych." },
+                { domain: "autoservice-warszawa.pl", title: "Auto Service Warszawa — Mechanika i Elektryka", description: "Auto serwis w Warszawie. Mechanika ogólna, elektryka samochodowa, wymiana oleju." },
+              ],
+            },
+            {
+              query: "serwis samochodowy Warszawa",
+              yourSite: {
+                domain: "auto-serwis-warszawa.pl",
+                title: "Auto Serwis Warszawa — Serwis Mechaniczny",
+                description: "Serwis samochodowy w Warszawie. Kompleksowa obsługa: od przeglądu po naprawy generalne. Nowoczesny sprzęt.",
+              },
+              competitors: [
+                { domain: "serwis-aut-waw.pl", title: "Serwis Aut Waw — Wszystkie Marki", description: "Serwis samochodowy w Warszawie. Obsługa wszystkich marek, naprawa bieżąca i główna." },
+                { domain: "auto-serwis-centrum-waw.pl", title: "Auto Serwis Centrum — Warszawa", description: "Serwis samochodowy w centrum Warszawy. Szybka obsługa, konkurencyjne ceny, gwarancja." },
+              ],
+            },
+          ],
+        },
       },
     ]}
     features={[
@@ -141,12 +217,8 @@ export const StronaDlaWarsztatuSamochodowegoPage = () => (
       description: "SEO lokalne, schema AutoRepair, cennik i rezerwacje — gotowe w 5 dni.",
       primaryLabel: "Zamów stronę warsztatu →",
     }}
-    internalLinks={[
-      { label: "Strona dla mechanika", href: "/strona-dla-warsztatu-samochodowego" },
-      { label: "Strona dla firmy usługowej", href: "/#moduly" },
-      { label: "Plan Standard z SEO", href: "/#ceny" },
-      { label: "Jak wyjść w Google", href: "/jak-szybko-wyjsc-w-google" },
-    ]}
+  showModules={true}
+  showPricing={true}
   />
 )
 
@@ -157,24 +229,74 @@ export const StronaDlaKosmetyczkiPage = () => (
     description="Strona dla kosmetyczki i salonu kosmetycznego z SEO lokalnym, cennikiem zabiegów i modułem rezerwacji online. Klientki rezerwują 24/7, Ty dostajesz powiadomienia."
     keywords="strona dla kosmetyczki, strona dla salonu kosmetycznego, strona www salon kosmetyczny, strona dla kosmetyczki z rezerwacjami, wizytówka salonu kosmetycznego"
     h1="Strona dla kosmetyczki:"
-    h1Accent="cennik, rezerwacje i SEO lokalne"
-    h1Sub="Klientki z Twojej okolicy rezerwują zabieg online, nawet gdy śpisz."
-    intro="Strona dla salonu kosmetycznego, która działa jak Twoja najlepsza recepcjonistka: prezentuje cennik zabiegów, pozwala zarezerwować termin 24/7 i sprawia, że klientki z Twojej okolicy znajdują Cię w Google."
-    heroImage="/hero-640.webp"
-    heroImageAlt="Strona dla kosmetyczki — cennik zabiegów i rezerwacje"
+    h1Accent="klientki rezerwują zabieg bez dzwonienia"
+    h1Sub="Klientki rezerwują zabieg o 2 w nocy — i przychodzą rano."
+    intro="Klientki szukające 'manicure [dzielnica]' albo 'makijaż permanentny [miasto]' znajdują salony w Google, nie na Instagramie. Bez strony z schema BeautySalon i SEO lokalnym nie pojawiasz się w tych wynikach — i przegrywasz z salonem obok, który już to ma. Twoja strona pokaże cennik, galerię i pozwoli zarezerwować zabieg 24/7."
+    heroImage="/estetica.webp"
+    heroImageAlt="Strona dla kosmetyczki — wnętrze salonu kosmetycznego z miejscem do zabiegów"
     breadcrumb={[{ name: "Strony dla branż", href: "/#moduly" }, { name: "Strona dla kosmetyczki", href: "/strona-dla-kosmetyczki" }]}
     sections={[
       {
-        heading: "Co powinna mieć strona salonu kosmetycznego",
-        content: "Cennik zabiegów online (manicure, pedicure, makijaż, brwi, rzęsy) z opisem i czasem trwania. Galeria zdjęć 'przed i po' — buduje zaufanie do efektów. Moduł rezerwacji online 24/7. Schema BeautySalon — Google wyświetla Twoją firmę z opiniami i godzinami otwarcia.",
-        image: "/panel.webp",
-        imageAlt: "Cennik zabiegów i rezerwacje online na stronie kosmetyczki",
+        heading: "Co powinna mieć strona salonu kosmetycznego, żeby przyciągać klientki",
+        content: "SEO lokalne z Google Business Profile i schema BeautySalon. Cennik zabiegów online (manicure, pedicure, makijaż, brwi, rzęsy) z opisem i czasem trwania — klientka nie chce dzwonić, żeby zapytać o cenę. Opinie Google zintegrowane ze strony. Moduł rezerwacji online 24/7 — klientka wybiera zabieg i termin, salon dostaje powiadomienie.",
+        image: "/esteticaweb.webp",
+        imageAlt: "Pełny widok strony salonu kosmetycznego — cennik zabiegów, galeria przed/po i moduł rezerwacji 24/7",
         highlights: [
-          "Cennik online z czasem trwania zabiegu",
-          "Galeria przed/po budująca zaufanie",
-          "Rezerwacje online 24/7 — bez pośredników",
-          "Schema BeautySalon w wynikach Google",
+          "Klientki z Twojej dzielnicy znajdują salon w Google",
+          "Cena i czas zabiegu widoczne przed wizytą — bez dzwonienia",
+          "Opinie klientek z Google widać od razu na stronie",
+          "Rezerwacja online w 30 sekund, nawet w nocy",
         ],
+      },
+      {
+        heading: "Jak Twój salon kosmetyczny pojawia się w Google",
+        content: "Klientki szukające usług kosmetycznych wpisują w Google „salon kosmetyczny Warszawa\", „manicure Warszawa\" albo „makijaż permanentny Warszawa\". Dzięki schema BeautySalon, SEO lokalnemu i artykułom blogowym Twój salon wyprzedza konkurencję i pojawia się wysoko w wynikach wyszukiwania.",
+        highlights: [
+          "Schema BeautySalon",
+          "SEO lokalne",
+          "Wyprzedzasz konkurencję",
+          "Artykuły o pielęgnacji",
+        ],
+        imageAnimation: {
+          rounds: [
+            {
+              query: "salon kosmetyczny Warszawa",
+              yourSite: {
+                domain: "salon-kosmetyczny-warszawa.pl",
+                title: "Salon Kosmetyczny Warszawa — Zabiegi i Pielęgnacja",
+                description: "Profesjonalny salon kosmetyczny w Warszawie. Manicure, pedicure, makijaż, zabiegi na twarz. 12 lat doświadczenia.",
+              },
+              competitors: [
+                { domain: "kosmetyczka-warszawa-waw.pl", title: "Kosmetyczka Warszawa — Salon Urody", description: "Salon urody w Warszawie. Manicure, pedicure, stylizacja paznokci, zabiegi kosmetyczne." },
+                { domain: "beauty-salon-waw.pl", title: "Beauty Salon Waw — Kosmetyka i Pielęgnacja", description: "Beauty salon w Warszawie. Pełen zakres usług kosmetycznych, profesjonalna obsługa." },
+              ],
+            },
+            {
+              query: "manicure Warszawa",
+              yourSite: {
+                domain: "salon-kosmetyczny-warszawa.pl",
+                title: "Manicure Warszawa — Salon Kosmetyczny",
+                description: "Manicure w Warszawie — hybrydowy, klasyczny, żelowy. Profesjonalne stylistki, sterylne narzędzia.",
+              },
+              competitors: [
+                { domain: "manicure-waw.pl", title: "Manicure Waw — Paznokcie i Stylizacja", description: "Manicure w Warszawie. Hybrydowy, żelowy, francuski. Szybka realizacja, konkurencyjne ceny." },
+                { domain: "paznokcie-warszawa.pl", title: "Paznokcie Warszawa — Stylizacja i Pielęgnacja", description: "Salon paznokci w Warszawie. Manicure, pedicure, zdobienia, przedłużanie paznokci." },
+              ],
+            },
+            {
+              query: "makijaż permanentny Warszawa",
+              yourSite: {
+                domain: "salon-kosmetyczny-warszawa.pl",
+                title: "Makijaż Permanentny Warszawa — Brwi i Usta",
+                description: "Makijaż permanentny w Warszawie. Brwi, usta, eyeliner. Certyfikowane linergistki, sterylne warunki.",
+              },
+              competitors: [
+                { domain: "maki-permanentny-waw.pl", title: "Maki Permanentny Waw — Brwi i Usta", description: "Makijaż permanentny w Warszawie. Brwi metodą włoskową, pudrową, ombre. Korekty i odświeżenia." },
+                { domain: "linergistka-warszawa.pl", title: "Linergistka Warszawa — Makijaż Permanentny", description: "Linergistka w Warszawie. Makijaż permanentny brwi, ust, kreski. Doświadczenie 8 lat." },
+              ],
+            },
+          ],
+        },
       },
     ]}
     features={[
@@ -205,11 +327,8 @@ export const StronaDlaKosmetyczkiPage = () => (
       description: "Cennik, rezerwacje, SEO lokalne — gotowe w 5 dni.",
       primaryLabel: "Zamów stronę salonu →",
     }}
-    internalLinks={[
-      { label: "Strona dla fryzjera", href: "/strona-dla-fryzjera" },
-      { label: "Strona dla gabinetu kosmetycznego", href: "/strona-dla-kosmetyczki" },
-      { label: "Moduł rezerwacji", href: "/#moduly" },
-    ]}
+  showModules={true}
+  showPricing={true}
   />
 )
 
@@ -220,24 +339,74 @@ export const StronaDlaFryzjeraPage = () => (
     description="Strona dla salonu fryzjerskiego i fryzjera z SEO lokalnym, cennikiem usług i modułem rezerwacji. Klienci rezerwują termin online 24/7."
     keywords="strona dla fryzjera, strona dla salonu fryzjerskiego, strona www fryzjer, strona dla barbera, strona dla stylisty, wizytówka salonu fryzjerskiego"
     h1="Strona dla fryzjera:"
-    h1Accent="cennik, rezerwacje i SEO lokalne"
-    h1Sub="Twoi klienci rezerwują wizytę online, gdy Ty obsługujesz obecnych."
-    intro="Strona dla salonu fryzjerskiego, która prezentuje Twoje stylizacje, pokazuje cennik i pozwala zarezerwować termin bez dzwonienia. Klienci z Twojej okolicy znajdują Cię w Google i rezerwują w 30 sekund."
-    heroImage="/hero-640.webp"
-    heroImageAlt="Strona dla fryzjera — cennik i rezerwacje online"
+    h1Accent="klienci rezerwują wizytę bez dzwonienia"
+    h1Sub="Klienci rezerwują wizytę u wybranego stylisty — Ty skupiasz się na nożyczkach."
+    intro="Klienci szukają fryzjera w Google: 'fryzjer [dzielnica]', 'koloryzacja [miasto]', 'balayage [okolica]'. Salon, który nie ma strony z schema HairSalon, portfolio i opiniami Google, przegrywa z salonem obok, który już to ma. Twoja strona pokaże stylizacje, cennik i pozwoli zarezerwować wizytę u konkretnego fryzjera w 30 sekund."
+    heroImage="/peluquero.webp"
+    heroImageAlt="Strona dla fryzjera — fryzjer prezentuje portfolio stylizacji z cennikiem online"
     breadcrumb={[{ name: "Strony dla branż", href: "/#moduly" }, { name: "Strona dla fryzjera", href: "/strona-dla-fryzjera" }]}
     sections={[
       {
-        heading: "Co powinna mieć strona salonu fryzjerskiego",
-        content: "Portfolio stylizacji — zdjęcia Twoich najlepszych realizacji. Cennik usług z czasem trwania (strzyżenie męskie 30 min, koloryzacja 120 min itd.). Moduł rezerwacji online z wyborem fryzjera i usługi. Schema HairSalon w wynikach Google.",
-        image: "/panel.webp",
+        heading: "Co powinna mieć strona salonu fryzjerskiego, żeby przyciągać klientów",
+        content: "SEO lokalne z Google Business Profile i schema HairSalon. Portfolio stylizacji z cennikiem usług online (strzyżenie damskie i męskie, koloryzacja, modelowanie, broda) oraz czasem trwania — klient nie chce dzwonić, żeby zapytać o cenę. Opinie Google zintegrowane ze strony. Moduł rezerwacji z wyborem fryzjera i usługi — klient wybiera termin, salon dostaje powiadomienie.",
+        image: "/peluqueroweb.webp",
         imageAlt: "Portfolio fryzjera i cennik usług online",
         highlights: [
-          "Portfolio stylizacji (galeria przed/po)",
-          "Cennik z czasem trwania każdej usługi",
-          "Rezerwacje z wyborem fryzjera",
-          "Schema HairSalon w wynikach Google",
+          "Klienci z Twojej okolicy trafiają do salonu z Google",
+          "Cena i czas strzyżenia widoczne bez dzwonienia i pytań",
+          "Opinie klientów z Google widać od razu na stronie",
+          "Rezerwacja online 24h — klient wybiera fryzjera i termin",
         ],
+      },
+      {
+        heading: "Jak Twój salon fryzjerski pojawia się w Google",
+        content: "Klienci szukający fryzjera wpisują w Google „fryzjer Warszawa\", „salon fryzjerski Warszawa\" albo „barber Warszawa\". Dzięki schema HairSalon, SEO lokalnemu i artykułom blogowym Twój salon wyprzedza konkurencję i pojawia się wysoko w wynikach wyszukiwania.",
+        highlights: [
+          "Schema HairSalon",
+          "SEO lokalne",
+          "Wyprzedzasz konkurencję",
+          "Artykuły o stylizacji",
+        ],
+        imageAnimation: {
+          rounds: [
+            {
+              query: "fryzjer Warszawa",
+              yourSite: {
+                domain: "salon-fryzjerski-warszawa.pl",
+                title: "Salon Fryzjerski Warszawa — Strzyżenie i Koloryzacja",
+                description: "Profesjonalny salon fryzjerski w Warszawie. Strzyżenie damskie i męskie, koloryzacja, modelowanie. Doświadczeni styliści.",
+              },
+              competitors: [
+                { domain: "fryzjer-waw.pl", title: "Fryzjer Waw — Salon i Barber", description: "Salon fryzjerski w Warszawie. Strzyżenie damskie, męskie, koloryzacja, balayage. Przystępne ceny." },
+                { domain: "salon-fryzur-warszawa.pl", title: "Salon Fryzur Warszawa — Stylizacja", description: "Salon fryzur w Warszawie. Strzyżenie, koloryzacja, prostowanie, keratynowe zabiegi." },
+              ],
+            },
+            {
+              query: "salon fryzjerski Warszawa",
+              yourSite: {
+                domain: "salon-fryzjerski-warszawa.pl",
+                title: "Salon Fryzjerski Warszawa — Profesjonalne Usługi",
+                description: "Salon fryzjerski w Warszawie. Pełen zakres usług: strzyżenie, koloryzacja, modelowanie, regeneracja włosów.",
+              },
+              competitors: [
+                { domain: "salon-fryzjerski-waw.pl", title: "Salon Fryzjerski Waw — Strzyżenie i Kolor", description: "Salon fryzjerski w Warszawie. Strzyżenie damskie i męskie, farbowanie, pasemka, balayage." },
+                { domain: "fryzjer-damski-warszawa.pl", title: "Fryzjer Damski Warszawa — Stylizacja", description: "Fryzjer damski w Warszawie. Strzyżenie, koloryzacja, modelowanie, upięcia okolicznościowe." },
+              ],
+            },
+            {
+              query: "barber Warszawa",
+              yourSite: {
+                domain: "salon-fryzjerski-warszawa.pl",
+                title: "Barber Warszawa — Strzyżenie Męskie",
+                description: "Barber w Warszawie. Strzyżenie męskie, broda, golenie brzytwą. Klasyczny barber shop z nowoczesnym podejściem.",
+              },
+              competitors: [
+                { domain: "barber-waw.pl", title: "Barber Waw — Męskie Strzyżenie", description: "Barber shop w Warszawie. Strzyżenie męskie, broda, golenie. Atmosfera, klasyka, nowoczesność." },
+                { domain: "barber-shop-warszawa.pl", title: "Barber Shop Warszawa — Męski Salon", description: "Barber shop w Warszawie. Strzyżenie męskie, pielęgnacja brody, golenie klasyczne." },
+              ],
+            },
+          ],
+        },
       },
     ]}
     features={[
@@ -267,11 +436,8 @@ export const StronaDlaFryzjeraPage = () => (
       description: "Portfolio, cennik, rezerwacje — gotowe w 5 dni.",
       primaryLabel: "Zamów stronę salonu →",
     }}
-    internalLinks={[
-      { label: "Strona dla kosmetyczki", href: "/strona-dla-kosmetyczki" },
-      { label: "Strona dla barbera", href: "/strona-dla-fryzjera" },
-      { label: "Moduł rezerwacji", href: "/#moduly" },
-    ]}
+  showModules={true}
+  showPricing={true}
   />
 )
 
@@ -283,23 +449,73 @@ export const StronaDlaPsychologaPage = () => (
     keywords="strona dla psychologa, strona dla gabinetu psychologicznego, strona dla terapeuty, strona dla psychoterapeuty, wizytówka psychologa, strona www psycholog"
     h1="Strona dla psychologa:"
     h1Accent="SEO lokalne, blog edukacyjny i RODO"
-    h1Sub="Klienci znajdują Cię w Google, czytają Twoje artykuły i rezerwują konsultację."
-    intro="Strona dla gabinetu psychologicznego, która buduje Twoją wiarygodność jako eksperta, spełnia wymogi RODO i pomaga klientom zdecydować się na pierwszą wizytę. Bez wiedzy technicznej."
-    heroImage="/panel.webp"
-    heroImageAlt="Strona dla psychologa — SEO lokalne i RODO compliance"
+    h1Sub="Klienci czytają Twoje artykuły, ufają Twojemu podejściu i rezerwują pierwszą wizytę."
+    intro="Klienci szukający pomocy psychologicznej wpisują w Google 'psycholog [miasto]', 'terapeuta [dzielnica]', 'CBT [specjalizacja]'. Bez strony zgodnej z RODO i widocznej w wynikach wyszukiwania, trafiają do konkurencji, która spełnia oba warunki. Twoja strona zbuduje Twoją wiarygodność jako eksperta, pokaże podejście terapeutyczne i pozwoli zarezerwować pierwszą konsultację anonimowo."
+    heroImage="/psicologo.webp"
+    heroImageAlt="Strona dla psychologa — psycholog prowadzący konsultację w gabinecie"
     breadcrumb={[{ name: "Strony dla branż", href: "/#moduly" }, { name: "Strona dla psychologa", href: "/strona-dla-psychologa" }]}
     sections={[
       {
-        heading: "Co powinna mieć strona gabinetu psychologicznego",
-        content: "Opis Twojego podejścia terapeutycznego i specjalizacji (CBT, systemowa, psychodynamiczna itd.) — żeby klient wiedział, czy pasujesz do jego potrzeb. Blog edukacyjny z artykułami o lęku, depresji, relacjach — buduje zaufanie i pozycjonuje Cię w Google jako eksperta. Pełna zgodność z RODO (polityka prywatności, klauzula informacyjna, zgoda na kontakt).",
-        image: "/automat.webp",
-        imageAlt: "Strona psychologa z blogiem edukacyjnym i RODO compliance",
+        heading: "Co powinna mieć strona gabinetu psychologicznego, żeby pozyskiwać klientów",
+        content: "SEO lokalne z Google Business Profile i schema ProfessionalService. Opis podejścia terapeutycznego (CBT, systemowa, psychodynamiczna) i specjalizacji (lęk, depresja, relacje, ADHD) — klient widzi, czy pasujesz do jego potrzeb, bez konieczności dzwonienia. Blog edukacyjny SEO-friendly, który pozycjonuje Cię w Google jako eksperta. Moduł rezerwacji online z zachowaniem anonimowości — klient wybiera termin, Ty dostajesz powiadomienie. Pełna zgodność z RODO w cenie.",
+        image: "/psicologoweb.webp",
+        imageAlt: "Strona psychologa — opis specjalizacji, blog edukacyjny i moduł rezerwacji z RODO compliance",
         highlights: [
-          "Opis podejścia terapeutycznego i specjalizacji",
-          "Blog edukacyjny SEO-friendly",
-          "Pełna zgodność z RODO",
-          "Schema ProfessionalService w wynikach Google",
+          "Pacjenci z Twojego miasta trafiają do Ciebie z Google",
+          "Pacjent widzi Twój styl pracy przed pierwszą wizytą",
+          "Artykuły na blogu budują Twoją wiarygodność jako eksperta",
+          "Rezerwacja online z zachowaniem pełnej anonimowości",
         ],
+      },
+      {
+        heading: "Jak Twój gabinet psychologiczny pojawia się w Google",
+        content: "Klienci szukający pomocy psychologicznej wpisują w Google „psycholog Warszawa\", „psychoterapeuta Warszawa\" albo „terapia Warszawa\". Dzięki schema ProfessionalService, SEO lokalnemu i artykułom blogowym Twój gabinet wyprzedza konkurencję i pojawia się wysoko w wynikach wyszukiwania.",
+        highlights: [
+          "Schema ProfessionalService",
+          "SEO lokalne",
+          "Wyprzedzasz konkurencję",
+          "Artykuły edukacyjne",
+        ],
+        imageAnimation: {
+          rounds: [
+            {
+              query: "psycholog Warszawa",
+              yourSite: {
+                domain: "psycholog-warszawa.pl",
+                title: "Psycholog Warszawa — Terapia i Poradnictwo",
+                description: "Psycholog w Warszawie. Indywidualne konsultacje, terapia par, terapia rodzinna. 15 lat doświadczenia klinicznego.",
+              },
+              competitors: [
+                { domain: "psychoterapeuta-waw.pl", title: "Psychoterapeuta Waw — Gabinet Terapii", description: "Psychoterapeuta w Warszawie. CBT, terapia schematów, EMDR. Wizyty stacjonarne i online." },
+                { domain: "poradnia-psychologiczna-warszawa.pl", title: "Poradnia Psychologiczna Warszawa", description: "Poradnia psychologiczna w Warszawie. Diagnoza, terapia, konsultacje. Certyfikowani specjaliści." },
+              ],
+            },
+            {
+              query: "psychoterapeuta Warszawa",
+              yourSite: {
+                domain: "psycholog-warszawa.pl",
+                title: "Psychoterapeuta Warszawa — CBT i Terapia Schematów",
+                description: "Psychoterapeuta w Warszawie. Specjalizacja: lęk, depresja, PTSD, zaburzenia osobowości. Podejście CBT i schemat.",
+              },
+              competitors: [
+                { domain: "terapia-warszawa.pl", title: "Terapia Warszawa — Psychoterapeuta CBT", description: "Psychoterapeuta CBT w Warszawie. Terapia indywidualna, par, młodzieży. Podejście dowodowe." },
+                { domain: "psycholog-online-warszawa.pl", title: "Psycholog Online Warszawa", description: "Psycholog online w Warszawie. Konsultacje wideo, terapia online, e-wizyty. Dyskrecja i wygoda." },
+              ],
+            },
+            {
+              query: "terapia Warszawa",
+              yourSite: {
+                domain: "psycholog-warszawa.pl",
+                title: "Terapia Warszawa — Indywidualna i Par",
+                description: "Terapia w Warszawie. Indywidualna, par, rodzinna. Pomoc w kryzysach, lęku, depresji, problemach relacyjnych.",
+              },
+              competitors: [
+                { domain: "terapia-par-warszawa.pl", title: "Terapia Par Warszawa — Gabinet Terapii", description: "Terapia par w Warszawie. Kryzysy w związku, komunikacja, zdrada, rozwód. Certyfikowany terapeuta par." },
+                { domain: "terapia-indywidualna-waw.pl", title: "Terapia Indywidualna Waw — Pomoc Psychologiczna", description: "Terapia indywidualna w Warszawie. Lęk, depresja, trauma, zaburzenia nastroju. Podejście integracyjne." },
+              ],
+            },
+          ],
+        },
       },
     ]}
     features={[
@@ -329,11 +545,8 @@ export const StronaDlaPsychologaPage = () => (
       description: "SEO, RODO, blog edukacyjny — gotowe w 5 dni.",
       primaryLabel: "Zamów stronę gabinetu →",
     }}
-    internalLinks={[
-      { label: "Strona dla terapeuty", href: "/strona-dla-psychologa" },
-      { label: "Strona dla fizjoterapeuty", href: "/strona-dla-fizjoterapeuty" },
-      { label: "RODO w stronach www", href: "/polityka-prywatnosci" },
-    ]}
+  showModules={true}
+  showPricing={true}
   />
 )
 
@@ -344,24 +557,74 @@ export const StronaDlaFizjoterapeutyPage = () => (
     description="Strona dla fizjoterapeuty i gabinetu rehabilitacji z SEO lokalnym, cennikiem zabiegów i rezerwacjami online. Pacjenci rezerwują wizytę bez dzwonienia."
     keywords="strona dla fizjoterapeuty, strona dla gabinetu rehabilitacji, strona dla fizjoterapii, wizytówka fizjoterapeuty, strona www fizjoterapeuta, strona dla rehabilitanta"
     h1="Strona dla fizjoterapeuty:"
-    h1Accent="SEO lokalne, cennik zabiegów i rezerwacje"
-    h1Sub="Pacjenci z Twojej okolicy rezerwują wizytę online, nawet w nocy."
-    intro="Strona dla gabinetu fizjoterapii, która prezentuje Twoje specjalizacje, cennik zabiegów i pozwala zarezerwować wizytę 24/7. SEO lokalne sprawia, że pacjenci z bólem kręgosłupa trafiają do Ciebie, nie do konkurencji."
-    heroImage="/panel.webp"
-    heroImageAlt="Strona dla fizjoterapeuty — cennik zabiegów i rezerwacje"
+    h1Accent="pacjenci trafiają do Ciebie bez kolejki"
+    h1Sub="Pacjenci z bólem kręgosłupa trafiają do Ciebie z Google — nie do gabinetu obok."
+    intro="Pacjenci z bólem kręgosłupa szukają fizjoterapeuty w Google — teraz, w nocy, w weekend. Bez strony z schema MedicalBusiness i rezerwacją online, trafiają do gabinetu obok, który to ma. Twoja strona pokaże specjalizacje, cennik zabiegów i pozwoli umówić wizytę 24/7 — pacjent wchodzi z ulgi, nie po bezużytecznej próbie dodzwonienia się."
+    heroImage="/fisioterapeuta.webp"
+    heroImageAlt="Strona dla fizjoterapeuty — fizjoterapeuta prowadzący terapię manualną w gabinecie"
     breadcrumb={[{ name: "Strony dla branż", href: "/#moduly" }, { name: "Strona dla fizjoterapeuty", href: "/strona-dla-fizjoterapeuty" }]}
     sections={[
       {
-        heading: "Co powinna mieć strona gabinetu fizjoterapii",
-        content: "Lista Twoich specjalizacji (terapia manualna, rehabilitacja sportowa, bóle kręgosłupa, masaż leczniczy itd.) — pacjent szuka rozwiązania swojego problemu. Cennik zabiegów online. Moduł rezerwacji z wyborem usługi. Schema MedicalBusiness w wynikach Google.",
-        image: "/automat.webp",
+        heading: "Co powinna mieć strona gabinetu fizjoterapii, żeby przyciągać pacjentów",
+        content: "SEO lokalne z Google Business Profile i schema MedicalBusiness. Lista specjalizacji (terapia manualna, rehabilitacja sportowa, bóle kręgosłupa) i cennik zabiegów online — pacjent nie chce dzwonić, żeby zapytać o cenę wizyty. Opinie Google zintegrowane ze strony. Moduł rezerwacji z wyborem usługi — pacjent wybiera termin, gabinet dostaje powiadomienie.",
+        image: "/fisioterapeutaweb.webp",
         imageAlt: "Specjalizacje fizjoterapeuty i cennik na stronie gabinetu",
         highlights: [
-          "Lista specjalizacji (terapia manualna, kręgosłup, sport)",
-          "Cennik zabiegów online",
-          "Rezerwacje 24/7 z wyborem usługi",
-          "Schema MedicalBusiness w wynikach Google",
+          "Pacjenci z bólem kręgosłupa trafiają do Ciebie z Google",
+          "Twoje specjalizacje i ceny widoczne bez dzwonienia",
+          "Opinie pacjentów z Google widać od razu na stronie",
+          "Rezerwacja wizyty online 24/7, nawet w nocy",
         ],
+      },
+      {
+        heading: "Jak Twój gabinet fizjoterapii pojawia się w Google",
+        content: "Pacjenci szukający fizjoterapeuty wpisują w Google „fizjoterapeuta Warszawa\", „rehabilitacja Warszawa\" albo „terapia manualna Warszawa\". Dzięki schema MedicalBusiness, SEO lokalnemu i artykułom blogowym Twój gabinet wyprzedza konkurencję i pojawia się wysoko w wynikach wyszukiwania.",
+        highlights: [
+          "Schema MedicalBusiness",
+          "SEO lokalne",
+          "Wyprzedzasz konkurencję",
+          "Artykuły o zdrowiu",
+        ],
+        imageAnimation: {
+          rounds: [
+            {
+              query: "fizjoterapeuta Warszawa",
+              yourSite: {
+                domain: "fizjoterapeuta-warszawa.pl",
+                title: "Fizjoterapeuta Warszawa — Rehabilitacja i Terapia",
+                description: "Fizjoterapeuta w Warszawie. Rehabilitacja pourazowa, bóle kręgosłupa, terapia manualna. 12 lat doświadczenia.",
+              },
+              competitors: [
+                { domain: "fizjo-waw.pl", title: "Fizjo Waw — Gabinet Fizjoterapii", description: "Gabinet fizjoterapii w Warszawie. Bóle pleców, urazy sportowe, rehabilitacja. Certyfikowani fizjoterapeuci." },
+                { domain: "rehabilitacja-warszawa.pl", title: "Rehabilitacja Warszawa — Fizjoterapia", description: "Rehabilitacja w Warszawie. Stany pourazowe, pooperacyjne, przewlekłe bóle. Nowoczesne metody." },
+              ],
+            },
+            {
+              query: "rehabilitacja Warszawa",
+              yourSite: {
+                domain: "fizjoterapeuta-warszawa.pl",
+                title: "Rehabilitacja Warszawa — Specjalistyczna",
+                description: "Rehabilitacja w Warszawie. Pooperacyjna, pourazowa, neurologiczna, ortopedyczna. Indywidualne podejście.",
+              },
+              competitors: [
+                { domain: "reh-waw.pl", title: "Reh Waw — Centrum Rehabilitacji", description: "Centrum rehabilitacji w Warszawie. Kinezyterapia, fizykoterapia, hydroterapia. Kompleksowa opieka." },
+                { domain: "centrum-rehabilitacji-warszawa.pl", title: "Centrum Rehabilitacji Warszawa", description: "Centrum rehabilitacji w Warszawie. Specjaliści rehabilitacji, fizjoterapeuci, terapeuci zajęciowi." },
+              ],
+            },
+            {
+              query: "terapia manualna Warszawa",
+              yourSite: {
+                domain: "fizjoterapeuta-warszawa.pl",
+                title: "Terapia Manualna Warszawa — Specjalista",
+                description: "Terapia manualna w Warszawie. Leczenie bólów kręgosłupa, stawów, mięśni. Certyfikowany terapeuta manualny.",
+              },
+              competitors: [
+                { domain: "terapia-manualna-waw.pl", title: "Terapia Manualna Waw — Kręgosłup", description: "Terapia manualna w Warszawie. Bóle kręgosłupa, dyskopatia, rwa kulszowa. Skuteczne metody." },
+                { domain: "osteopata-warszawa.pl", title: "Osteopata Warszawa — Terapia Manualna", description: "Osteopata w Warszawie. Terapia manualna, osteopatia, diagnoza funkcjonalna. Holistyczne podejście." },
+              ],
+            },
+          ],
+        },
       },
     ]}
     features={[
@@ -391,10 +654,7 @@ export const StronaDlaFizjoterapeutyPage = () => (
       description: "SEO lokalne, schema MedicalBusiness, cennik i rezerwacje — gotowe w 5 dni.",
       primaryLabel: "Zamów stronę gabinetu →",
     }}
-    internalLinks={[
-      { label: "Strona dla psychologa", href: "/strona-dla-psychologa" },
-      { label: "Strona dla kliniki", href: "/strona-dla-kliniki" },
-      { label: "Moduł rezerwacji", href: "/#moduly" },
-    ]}
+  showModules={true}
+  showPricing={true}
   />
 )

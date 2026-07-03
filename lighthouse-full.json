@@ -1,7 +1,7 @@
 {
   "url": "http://localhost:4173/",
-  "loadTimeMs": 3254,
-  "timestamp": "2026-06-30T11:46:49.253Z",
+  "loadTimeMs": 3510,
+  "timestamp": "2026-06-30T13:02:09.930Z",
   "performance": {
     "fcp": 100,
     "lcp": 100,
@@ -9,13 +9,13 @@
     "ttfb": 100,
     "overall": 100,
     "metrics": {
-      "fcpMs": 544,
+      "fcpMs": 744,
       "lcpMs": null,
       "clsTotal": 0,
-      "ttfbMs": 9.5,
-      "domContentLoadedMs": 364,
-      "transferSize": 469443,
-      "resourceCount": 48
+      "ttfbMs": 10.100000143051147,
+      "domContentLoadedMs": 441.2999999523163,
+      "transferSize": 430103,
+      "resourceCount": 47
     }
   },
   "seo": {

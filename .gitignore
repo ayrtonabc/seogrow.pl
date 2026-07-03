@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Test/temp data — never commit
+public/mailsdemierda/
+tmp_copy.webp
+analitycs.webp
+indexnow.webp
+search.webp
+public/logo.webp

@@ -1,8 +1,52 @@
 import { Box, Container, Heading, Text, VStack, HStack, Flex, Grid, SimpleGrid, Badge } from "@chakra-ui/react"
+import type { ReactNode } from "react"
+import { useMemo } from "react"
 import { Link } from "react-router-dom"
 import { SEO, SITE_URL } from "./SEO"
 import { Header } from "./Header"
 import { Footer } from "./Footer"
+import { GoogleSearchAnimation } from "./GoogleSearchAnimation"
+import type { QueryRound } from "./GoogleSearchAnimation"
+import { KancelariaWebsiteAnimation } from "./KancelariaWebsiteAnimation"
+import { ModulesGrid } from "./ModulesGrid"
+import { PricingSection } from "../sections/PricingSection"
+
+// Colores oficiales del logo de Google (mismo orden que el home principal)
+const GOOGLE_LOGO_COLORS = ["#4285F4", "#EA4335", "#FBBC05", "#4285F4", "#34A853", "#EA4335"]
+
+/**
+ * Renderiza un texto reemplazando la palabra "Google" por el logo coloreado.
+ * Mantiene el fontWeight 700 del home principal — sin agresividad, sin mayúsculas extra.
+ * Idempotente: si el texto no contiene "Google", devuelve el texto plano.
+ */
+const renderTextWithGoogle = (text: string | undefined): ReactNode => {
+  if (!text) return null
+  if (!text.includes("Google")) return text
+
+  const parts = text.split(/(Google)/g)
+  return parts.map((part, i) => {
+    if (part === "Google") {
+      return (
+        <Box
+          as="span"
+          key={`g-${i}`}
+          display="inline-block"
+          whiteSpace="nowrap"
+          fontWeight="700"
+          lineHeight="1"
+          verticalAlign="baseline"
+        >
+          {GOOGLE_LOGO_COLORS.map((color, idx) => (
+            <Box as="span" key={idx} color={color}>
+              {"Google"[idx]}
+            </Box>
+          ))}
+        </Box>
+      )
+    }
+    return <span key={`t-${i}`}>{part}</span>
+  })
+}
 
 type FAQItem = {
   q: string
@@ -34,6 +78,13 @@ type ContentSection = {
   imageAlt?: string
   imagePosition?: "left" | "right"
   highlights?: string[]
+  /** Si está presente, se renderiza la animación de Google Search EN LUGAR de la image */
+  imageAnimation?: {
+    rounds: QueryRound[]
+    rotationInterval?: number
+  }
+  /** Si true, se renderiza la animación de web kancelaria (scroll lento) EN LUGAR de image/imageAnimation */
+  websiteAnimation?: boolean
 }
 
 type InternalLink = {
@@ -61,6 +112,10 @@ type SEOLandingPageProps = {
   cta?: CTASection
   internalLinks?: InternalLink[]
   schema?: Record<string, unknown>[]
+  /** Si true, renderiza la sección de Módulos */
+  showModules?: boolean
+  /** Si true, renderiza la sección de Precios */
+  showPricing?: boolean
 }
 
 const CheckIcon = () => (
@@ -101,8 +156,10 @@ export const SEOLandingPage = ({
   cta,
   internalLinks = [],
   schema = [],
+  showModules = false,
+  showPricing = false,
 }: SEOLandingPageProps) => {
-  const faqSchema = faq.length > 0 ? [{
+  const faqSchema = useMemo(() => faq.length > 0 ? [{
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faq.map((item) => ({
@@ -110,9 +167,9 @@ export const SEOLandingPage = ({
       name: item.q,
       acceptedAnswer: { "@type": "Answer", text: item.a },
     })),
-  }] : []
+  }] : [], [faq])
 
-  const pageSchema = [
+  const pageSchema = useMemo(() => [
     ...schema,
     ...(faqSchema.length > 0 ? faqSchema : []),
     {
@@ -128,7 +185,7 @@ export const SEOLandingPage = ({
         })),
       ],
     },
-  ]
+  ], [schema, faqSchema, breadcrumb])
 
   return (
     <Box bg="#FAFBFC" minH="100vh">
@@ -164,22 +221,26 @@ export const SEOLandingPage = ({
                 )}
                 <Heading
                   as="h1"
-                  fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
-                  fontWeight="900"
+                  fontSize={{ base: "28px", sm: "32px", md: "38px", lg: "42px" }}
+                  fontWeight="700"
                   color="#0F172A"
-                  letterSpacing="-0.03em"
-                  lineHeight="1.1"
+                  letterSpacing="-0.01em"
+                  lineHeight="1.3"
                 >
-                  {h1}
-                  {h1Accent && <Box as="span" display="block" color="#4F46E5" mt={{ base: "1", md: "2" }}>{h1Accent}</Box>}
-                  {h1Sub && (
-                    <Box as="span" display="block" fontSize={{ base: "xl", sm: "2xl", md: "3xl" }} fontWeight="600" color="#475569" mt="2" lineHeight="1.3">
-                      {h1Sub}
+                  {renderTextWithGoogle(h1)}
+                  {h1Accent && (
+                    <Box as="span" display="block" color="#64748B" mt={{ base: "1", md: "2" }} fontWeight="500">
+                      {renderTextWithGoogle(h1Accent)}
                     </Box>
                   )}
                 </Heading>
+                {h1Sub && (
+                  <Text fontSize={{ base: "md", md: "lg" }} color="#475569" lineHeight="1.6" mt="4" maxW="56ch" fontWeight="400">
+                    {renderTextWithGoogle(h1Sub)}
+                  </Text>
+                )}
                 {intro && (
-                  <Text fontSize={{ base: "md", md: "lg" }} color="#475569" lineHeight="1.7" maxW={heroImage ? "xl" : "2xl"}>
+                  <Text fontSize={{ base: "md", md: "lg" }} color="#475569" lineHeight="1.6" maxW={heroImage ? "56ch" : "2xl"}>
                     {intro}
                   </Text>
                 )}
@@ -269,8 +330,8 @@ export const SEOLandingPage = ({
           <Box key={i} py={{ base: "12", md: "20" }} bg={i % 2 === 0 ? "white" : "#FAFBFC"}>
             <Container maxW="7xl">
               <Grid
-                templateColumns={{ base: "1fr", lg: section.image ? "1fr 1fr" : "1fr" }}
-                gap={{ base: "8", lg: section.image ? "16" : "0" }}
+                templateColumns={{ base: "1fr", lg: section.image || section.imageAnimation || section.websiteAnimation ? "1fr 1fr" : "1fr" }}
+                gap={{ base: "8", lg: section.image || section.imageAnimation || section.websiteAnimation ? "16" : "0" }}
                 alignItems="center"
                 direction={section.imagePosition === "left" ? { base: "column", lg: "row-reverse" } : { base: "column", lg: "row" }}
               >
@@ -300,7 +361,18 @@ export const SEOLandingPage = ({
                   )}
                 </VStack>
 
-                {section.image && (
+                {section.websiteAnimation ? (
+                  <Box w="full">
+                    <KancelariaWebsiteAnimation />
+                  </Box>
+                ) : section.imageAnimation ? (
+                  <Box w="full">
+                    <GoogleSearchAnimation
+                      rounds={section.imageAnimation.rounds}
+                      rotationInterval={section.imageAnimation.rotationInterval}
+                    />
+                  </Box>
+                ) : section.image ? (
                   <Box>
                     <Box
                       as="img"
@@ -315,11 +387,14 @@ export const SEOLandingPage = ({
                       boxShadow="0 8px 30px rgba(15,23,42,0.1)"
                     />
                   </Box>
-                )}
+                ) : null}
               </Grid>
             </Container>
           </Box>
         ))}
+
+        {showModules && <ModulesGrid />}
+        {showPricing && <PricingSection />}
 
         {features.length > 0 && (
           <Box py={{ base: "12", md: "20" }} bg="white">

@@ -1,0 +1,98 @@
+# SEO Grow
+
+> Profesjonalne strony internetowe dla małych firm w Polsce. Strony z automatycznym SEO, edycja z telefonu, wsparcie po polsku, bez umowy na lata. Strona gotowa w 5 dni roboczych.
+
+## Informacje o firmie
+
+- [O SEO Grow](https://seogrow.pl/): Kim jesteśmy, co robimy, jak pracujemy.
+- [Kontakt](https://seogrow.pl/kontakt): Numer telefonu, email, godziny pracy.
+- [Wsparcie techniczne](https://seogrow.pl/wsparcie): Pomoc po polsku dla klientów.
+
+## Plany i cennik
+
+- [Plan Start — 1 500 zł + 49 zł/mies.](https://seogrow.pl/#ceny): Strona wizytówka z 5 podstronami, blog SEO, formularz kontaktowy. Dla rzemieślników, freelancerów i małych firm.
+- [Plan Standard — 2 200 zł + 69 zł/mies.](https://seogrow.pl/#ceny): Do 15 podstron, zaawansowany blog SEO, raporty widoczności. Najczęściej wybierany.
+- [Plan Premium — 4 500 zł + 99 zł/mies.](https://seogrow.pl/#ceny): Do 30 podstron, sklep internetowy, analityka, dedykowane wsparcie.
+
+Cena abonamentu nigdy nie wzrośnie dla stałych klientów. Brak umowy na lata — płacisz co miesiąc, rezygnujesz jednym mailem.
+
+## Strony dla konkretnych miast
+
+- [Strona internetowa Warszawa](https://seogrow.pl/strona-internetowa-warszawa): Dla firm z Warszawy i okolic.
+- [Strona internetowa Kraków](https://seogrow.pl/strona-internetowa-krakow): Dla firm z Krakowa i Małopolski.
+- [Strona internetowa Łódź](https://seogrow.pl/strona-internetowa-lodz): Dla firm z Łodzi i okolic.
+- [Strona internetowa Wrocław](https://seogrow.pl/strona-internetowa-wroclaw): Dla firm z Wrocławia i Dolnego Śląska.
+
+## Strony dla konkretnych branż
+
+- [Strona dla prawnika](https://seogrow.pl/strona-dla-prawnika): SEO lokalne, schema LegalService, blog prawniczy.
+- [Strona dla kliniki medycznej](https://seogrow.pl/strona-dla-kliniki): SEO lokalne, schema Healthcare, rezerwacje online.
+- [Strona dla gabinetu stomatologicznego](https://seogrow.pl/strona-dla-gabinetu-stomatologicznego): SEO lokalne, schema DentalClinic, rezerwacje.
+- [Strona dla restauracji](https://seogrow.pl/strona-dla-restauracji): Menu QR, schema Restaurant, rezerwacje online.
+- [Strona dla freelancera](https://seogrow.pl/strona-dla-freelancera): Dla jednoosobowych działalności i usług.
+- [Strona dla warsztatu samochodowego](https://seogrow.pl/strona-dla-warsztatu-samochodowego): SEO lokalne dla mechaników.
+- [Strona dla kosmetyczki](https://seogrow.pl/strona-dla-kosmetyczki): Dla salonów kosmetycznych i gabinetów.
+- [Strona dla fryzjera](https://seogrow.pl/strona-dla-fryzjera): Dla salonów fryzjerskich.
+- [Strona dla psychologa](https://seogrow.pl/strona-dla-psychologa): Dla gabinetów psychologicznych.
+- [Strona dla fizjoterapeuty](https://seogrow.pl/strona-dla-fizjoterapeuty): Dla gabinetów fizjoterapii.
+- [Strona dla fotografa](https://seogrow.pl/strona-dla-fotografa): Portfolio, galeria, formularz rezerwacji sesji.
+- [Strona dla hotelu](https://seogrow.pl/strona-dla-hotelu): Rezerwacje online bez prowizji Booking.com.
+- [Strona dla architekta](https://seogrow.pl/strona-dla-architekta): Portfolio projektów, SEO lokalne.
+- [Strona dla agencji nieruchomości](https://seogrow.pl/strona-dla-agencji-nieruchomosci): Oferty, SEO lokalne, bez prowizji Otodom.
+- [Strona dla kancelarii prawnej](https://seogrow.pl/strona-dla-kancelarii-prawnej): Schema LegalService, RODO, blog prawniczy.
+- [Strona dla mechanika](https://seogrow.pl/strona-dla-mechanika): Schema AutoRepair, cennik, opinie Google.
+- [Strona dla trenera personalnego](https://seogrow.pl/strona-dla-trenera-personalnego): Oferta usług, SEO lokalne.
+- [Strona dla projektanta wnętrz](https://seogrow.pl/strona-dla-projektanta-wnetrz): Portfolio realizacji, SEO lokalne.
+- [Strona dla dentysty](https://seogrow.pl/strona-dla-dentysty): Schema DentalClinic, rezerwacje, galeria przed/po.
+- [Strona dla weterynarza](https://seogrow.pl/strona-dla-weterynarza): Schema VeterinaryCare, rezerwacje, cennik.
+
+## Usługi dodatkowe
+
+- [Pozycjonowanie stron dla firm](https://seogrow.pl/pozycjonowanie-stron-dla-firm): Comiesięczne SEO dla małych firm.
+- [Tania strona internetowa dla firmy](https://seogrow.pl/tania-strona-internetowa-dla-firmy): Strona od 1500 zł bez utraty jakości.
+- [Obsługa strony internetowej](https://seogrow.pl/obsluga-strony-internetowej): Aktualizacje treści, poprawki, wsparcie.
+
+## Moduły w ramach platformy
+
+- [Sklep Online](https://seogrow.pl/sklep-online): Sklep internetowy z automatycznym SEO, płatnościami Stripe, PayU, Tpay. Bez prowizji od sprzedaży.
+- [Akademia kursów online](https://seogrow.pl/akademia-kursow): Sprzedaż kursów wideo, certyfikaty PDF, egzaminy.
+- [Rezerwacje i terminy](https://seogrow.pl/rezerwacje-i-terminy): System rezerwacji online z synchronizacją kalendarza.
+- [Menu cyfrowe (QR)](https://seogrow.pl/menu-cyfrowe): Menu QR dla restauracji, łatwa aktualizacja z telefonu.
+- [Ekspansja globalna](https://seogrow.pl/ekspansja-globalna): Strona wielojęzyczna PL + EN/DE/ES/UK.
+- [Wizytówka pracownika](https://seogrow.pl/wizytowka-prac): Indywidualna strona dla specjalisty.
+
+## Porównania i alternatywy
+
+- [SEO Grow vs WordPress](https://seogrow.pl/wordpress-vs-seogrow): Dlaczego dedykowany CMS wygrywa z WordPressem dla małych firm.
+- [SEO Grow vs Wix](https://seogrow.pl/wix-vs-seogrow): Wix ma ograniczenia — sprawdź, kiedy ma sens, a kiedy nie.
+- [Alternatywa dla WordPressa](https://seogrow.pl/alternativa-wordpress-seo): Bez wtyczek, bez aktualizacji, bez stresu.
+- [Porównanie z WordPress (ES)](https://seogrow.pl/comparacion-con-wordpress): Wersja hiszpańska.
+
+## Materiały edukacyjne
+
+- [Jak założyć stronę internetową](https://seogrow.pl/blog/jak-zalozyc-strone-internetowa): 9 kroków od zera do działającej strony z SEO.
+- [Ile kosztuje strona internetowa w 2026](https://seogrow.pl/blog/ile-kosztuje-strona-internetowa-2026): Konkretne ceny, porównania z agencjami.
+- [SEO lokalne dla małych firm](https://seogrow.pl/blog/seo-lokalne-dla-malych-firm): 7 rzeczy, które poprawią widoczność.
+- [Jak pisać artykuły SEO, które generują leady](https://seogrow.pl/blog/jak-pisac-artykuly-seo-ktore-generuja-leady): Struktura, intencja, CTA.
+- [Blog firmowy jako kanał sprzedaży](https://seogrow.pl/blog/blog-firmowy-jako-kanal-sprzedazy): Jak planować blog, żeby zarabiał.
+- [Dlaczego moja strona nie pojawia się w Google](https://seogrow.pl/dlaczego-moja-strona-nie-pojawia-sie-w-google): Najczęstsze przyczyny.
+- [Jak szybko wyjść w Google](https://seogrow.pl/jak-szybko-wyjsc-w-google): Plan na pierwsze 90 dni.
+- [Najczęstsze błędy SEO](https://seogrow.pl/najczestsze-bledy-seo): Czego unikać w pozycjonowaniu.
+
+## Informacje prawne
+
+- [Polityka prywatności](https://seogrow.pl/polityka-prywatnosci): RODO, dane osobowe.
+- [Polityka cookies](https://seogrow.pl/polityka-cookies): Zgody i ustawienia cookies.
+- [Przetwarzanie danych](https://seogrow.pl/przetwarzanie-danych): Klauzula informacyjna RODO.
+
+## Kontakt
+
+- Telefon: +48 517 105 423 (poniedziałek–piątek 9:00–17:00)
+- Email: kontakt@seogrow.pl
+- Adres: ul. Czarnieckiego 13/12, 14-100 Ostróda, Polska
+- NIP: 7412176947
+
+## Optional
+
+- [Sitemap XML](https://seogrow.pl/sitemap.xml): Mapa strony dla wyszukiwarek.
+- [Robots.txt](https://seogrow.pl/robots.txt): Plik robots dla crawlerów.

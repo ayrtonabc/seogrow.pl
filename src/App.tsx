@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react"
 import { Box } from "@chakra-ui/react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { unstable_HistoryRouter as HistoryRouter, Routes, Route } from "react-router-dom"
+import { createBrowserHistory } from "history"
 import { Header } from "./components/Header"
 import { CookieBanner } from "./components/CookieBanner"
 import { DeferredRender } from "./components/DeferredRender"
@@ -130,6 +131,60 @@ const StronaDlaFizjoterapeutyPage = lazy(() =>
   import("./pages/VerticalPagesTier1").then((m) => ({ default: m.StronaDlaFizjoterapeutyPage })),
 )
 
+const StronaInternetowaWarszawaPage = lazy(() =>
+  import("./pages/CityPages").then((m) => ({ default: m.StronaInternetowaWarszawaPage })),
+)
+const StronaInternetowaKrakowPage = lazy(() =>
+  import("./pages/CityPages").then((m) => ({ default: m.StronaInternetowaKrakowPage })),
+)
+const StronaInternetowaLodzPage = lazy(() =>
+  import("./pages/CityPages").then((m) => ({ default: m.StronaInternetowaLodzPage })),
+)
+const StronaInternetowaWroclawPage = lazy(() =>
+  import("./pages/CityPages").then((m) => ({ default: m.StronaInternetowaWroclawPage })),
+)
+
+const PozycjonowanieStronDlaFirmPage = lazy(() =>
+  import("./pages/ServicePages").then((m) => ({ default: m.PozycjonowanieStronDlaFirmPage })),
+)
+const TaniaStronaInternetowaDlaFirmyPage = lazy(() =>
+  import("./pages/ServicePages").then((m) => ({ default: m.TaniaStronaInternetowaDlaFirmyPage })),
+)
+const ObslugaStronyInternetowejPage = lazy(() =>
+  import("./pages/ServicePages").then((m) => ({ default: m.ObslugaStronyInternetowejPage })),
+)
+
+const StronaDlaFotografaPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaFotografaPage })),
+)
+const StronaDlaHoteluPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaHoteluPage })),
+)
+const StronaDlaArchitektaPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaArchitektaPage })),
+)
+const StronaDlaAgencjiNieruchomosciPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaAgencjiNieruchomosciPage })),
+)
+const StronaDlaKancelariiPrawnejPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaKancelariiPrawnejPage })),
+)
+const StronaDlaMechanikaPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaMechanikaPage })),
+)
+const StronaDlaTreneraPersonalnegoPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaTreneraPersonalnegoPage })),
+)
+const StronaDlaProjektantaWnetrzPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaProjektantaWnetrzPage })),
+)
+const StronaDlaDentystyPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaDentystyPage })),
+)
+const StronaDlaWeterynarzaPage = lazy(() =>
+  import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaWeterynarzaPage })),
+)
+
 const Footer = lazy(() =>
   import("./components/Footer").then((module) => ({ default: module.Footer })),
 )
@@ -214,9 +269,16 @@ function LandingPage() {
   )
 }
 
+// v7 ships the full data router (loaders, fetchers, hydration, scroll restoration)
+// by default with <BrowserRouter>, which evaluates ~90KB of code on init even for
+// plain declarative routes. `unstable_HistoryRouter` reuses the lighter v6-style
+// history API and skips the data router machinery — same <Routes>/<Route>/<Link>
+// ergonomics, much less JS to parse on mobile.
+const history = createBrowserHistory()
+
 function App() {
   return (
-    <BrowserRouter>
+    <HistoryRouter history={history}>
       <ScrollToTop />
       <CookieBanner />
       <DeferredRender>
@@ -256,6 +318,23 @@ function App() {
           <Route path="/strona-dla-fryzjera" element={<StronaDlaFryzjeraPage />} />
           <Route path="/strona-dla-psychologa" element={<StronaDlaPsychologaPage />} />
           <Route path="/strona-dla-fizjoterapeuty" element={<StronaDlaFizjoterapeutyPage />} />
+          <Route path="/strona-internetowa-warszawa" element={<StronaInternetowaWarszawaPage />} />
+          <Route path="/strona-internetowa-krakow" element={<StronaInternetowaKrakowPage />} />
+          <Route path="/strona-internetowa-lodz" element={<StronaInternetowaLodzPage />} />
+          <Route path="/strona-internetowa-wroclaw" element={<StronaInternetowaWroclawPage />} />
+          <Route path="/pozycjonowanie-stron-dla-firm" element={<PozycjonowanieStronDlaFirmPage />} />
+          <Route path="/tania-strona-internetowa-dla-firmy" element={<TaniaStronaInternetowaDlaFirmyPage />} />
+          <Route path="/obsluga-strony-internetowej" element={<ObslugaStronyInternetowejPage />} />
+          <Route path="/strona-dla-fotografa" element={<StronaDlaFotografaPage />} />
+          <Route path="/strona-dla-hotelu" element={<StronaDlaHoteluPage />} />
+          <Route path="/strona-dla-architekta" element={<StronaDlaArchitektaPage />} />
+          <Route path="/strona-dla-agencji-nieruchomosci" element={<StronaDlaAgencjiNieruchomosciPage />} />
+          <Route path="/strona-dla-kancelarii-prawnej" element={<StronaDlaKancelariiPrawnejPage />} />
+          <Route path="/strona-dla-mechanika" element={<StronaDlaMechanikaPage />} />
+          <Route path="/strona-dla-trenera-personalnego" element={<StronaDlaTreneraPersonalnegoPage />} />
+          <Route path="/strona-dla-projektanta-wnetrz" element={<StronaDlaProjektantaWnetrzPage />} />
+          <Route path="/strona-dla-dentysty" element={<StronaDlaDentystyPage />} />
+          <Route path="/strona-dla-weterynarza" element={<StronaDlaWeterynarzaPage />} />
           <Route path="/sklep-online" element={<SklepOnlinePage />} />
           <Route path="/akademia-kursow" element={<AkademiaKursowPage />} />
           <Route path="/rezerwacje-i-terminy" element={<RezerwacjeTerminyPage />} />
@@ -265,7 +344,7 @@ function App() {
           <Route path="/wizytowka-prac" element={<WizytowkaPracPage />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HistoryRouter>
   )
 }
 

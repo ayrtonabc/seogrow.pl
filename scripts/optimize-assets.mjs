@@ -60,9 +60,8 @@ const TARGETS = [
   "panel-1280.webp",
   "hero-960.webp",
   "hero-640.webp",
-  "logo.webp",
-  "copy-960.webp",
-  "copy-480.webp",
+  "logo-320.webp",
+  "logo-160.webp",
 ]
 
 async function main() {

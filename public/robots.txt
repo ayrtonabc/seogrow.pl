@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://seogrow.pl/sitemap.xml
+
+# LLM-friendly content discovery
+# llms.txt follows the spec from https://llmstxt.org/ — describes the site
+# for AI assistants, ChatGPT, Claude, Gemini and other LLM-based tools.

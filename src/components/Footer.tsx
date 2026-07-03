@@ -45,8 +45,17 @@ export const Footer = () => {
         <Grid templateColumns={{ base: "1fr", md: "1.4fr 2fr" }} gap={{ base: "12", md: "16" }} mb="14">
           {/* Brand column */}
           <VStack align="start" gap="5">
-            <Box as={RouterLink} to="/" textDecoration="none" display="block" _hover={{ opacity: 0.85 }} transition="opacity 0.18s">
-              <Box as="img" src="/logo.webp" alt="Logo SEO Grow" h="32px" w="auto" filter="brightness(0) invert(1)" />
+            <Box as={RouterLink} to="/" textDecoration="none" display="inline-block" _hover={{ opacity: 0.85 }} transition="opacity 0.18s">
+              <img
+                src="/logo-320.webp"
+                srcSet="/logo-160.webp 160w, /logo-320.webp 320w"
+                sizes="128px"
+                alt="Logo SEO Grow"
+                width={320}
+                height={85}
+                decoding="async"
+                style={{ height: "32px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }}
+              />
             </Box>
 
             <Text fontSize="13px" color="#94A3B8" lineHeight="1.6" maxW="xs">
@@ -107,8 +116,56 @@ export const Footer = () => {
           </Grid>
         </Grid>
 
+        {/* Tpay logos — centered, above copyright */}
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          pt="8"
+          borderTop="1px solid rgba(255, 255, 255, 0.08)"
+        >
+          {/* Desktop / tablet banner */}
+          <Box
+            as="a"
+            href="https://tpay.com/jak-to-dziala"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Obsługujemy płatności internetowe przez system płatności online Tpay"
+            display={{ base: "none", md: "block" }}
+            lineHeight="0"
+            w="full"
+          >
+            <img
+              src="https://tpay.com/img/banners/tpay-full-color-1000x51.svg"
+              alt="Logo Tpay — obsługujemy płatności online"
+              title="Logo Tpay"
+              style={{ border: 0, display: "block", width: "100%", height: "auto", maxWidth: "100%" }}
+              loading="lazy"
+            />
+          </Box>
+          {/* Mobile banner */}
+          <Box
+            as="a"
+            href="https://tpay.com/jak-to-dziala"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Obsługujemy płatności internetowe przez system płatności online Tpay"
+            display={{ base: "block", md: "none" }}
+            lineHeight="0"
+            w="full"
+          >
+            <img
+              src="https://tpay.com/img/banners/tpay-full-300x69.svg"
+              alt="Logo Tpay — obsługujemy płatności online"
+              title="Logo Tpay"
+              style={{ border: 0, display: "block", width: "100%", height: "auto", maxWidth: "100%" }}
+              loading="lazy"
+            />
+          </Box>
+        </Box>
+
         {/* Bottom bar */}
-        <Box pt="8" borderTop="1px solid rgba(255, 255, 255, 0.08)">
+        <Box pt="6">
           <Flex
             direction={{ base: "column-reverse", md: "row" }}
             justify="space-between"

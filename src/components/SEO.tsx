@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 
 const SITE_NAME = "SEO Grow"
 const SITE_URL = "https://seogrow.pl"
@@ -65,6 +65,10 @@ export const SEO = ({
   noindex = false,
   schema,
 }: SEOProps) => {
+  // Track último JSON-LD escrito para evitar remover/re-crear el <script>
+  // cuando el schema no cambió (cada remove+append peleaba con el traductor de Chrome).
+  const lastSchemaJson = useRef<string>("")
+
   useEffect(() => {
     const canonicalUrl = toAbsoluteUrl(path)
     const imageUrl = toAbsoluteUrl(image)
@@ -72,8 +76,7 @@ export const SEO = ({
       ? "noindex, follow"
       : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 
-    document.title = title
-    document.documentElement.lang = "pl"
+    if (document.title !== title) document.title = title
 
     upsertMeta('meta[name="description"]', { name: "description", content: description })
     upsertMeta('meta[name="robots"]', { name: "robots", content: robotsValue })
@@ -121,11 +124,6 @@ export const SEO = ({
 
     upsertLink('link[rel="canonical"]', { rel: "canonical", href: canonicalUrl })
 
-    const existingScript = document.getElementById("seo-json-ld")
-    if (existingScript) {
-      existingScript.remove()
-    }
-
     // Auto-generate BreadcrumbList based on path
     const hasBreadcrumb = Array.isArray(schema) 
       ? schema.some((s: any) => s["@type"] === "BreadcrumbList")
@@ -158,11 +156,24 @@ export const SEO = ({
     }
 
     if (finalSchema.length > 0) {
-      const script = document.createElement("script")
-      script.id = "seo-json-ld"
-      script.type = "application/ld+json"
-      script.text = JSON.stringify(finalSchema)
-      document.head.appendChild(script)
+      const nextJson = JSON.stringify(finalSchema)
+      // Solo remover/recrear el <script> si el contenido cambió.
+      // Cada remove+append peleaba con el traductor de Chrome (que modifica
+      // <script> y otros tags) y causaba pantalla en blanco.
+      if (nextJson !== lastSchemaJson.current) {
+        lastSchemaJson.current = nextJson
+        const existingScript = document.getElementById("seo-json-ld")
+        if (existingScript) {
+          existingScript.remove()
+        }
+        const script = document.createElement("script")
+        script.id = "seo-json-ld"
+        script.type = "application/ld+json"
+        // translate="no" evita que Chrome modifique el JSON-LD
+        script.setAttribute("translate", "no")
+        script.text = nextJson
+        document.head.appendChild(script)
+      }
     }
   }, [description, image, keywords, noindex, path, schema, title, type])
 

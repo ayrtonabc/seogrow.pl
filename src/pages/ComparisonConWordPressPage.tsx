@@ -39,6 +39,7 @@ const docs = [
   { name: "Meta description", url: "https://developers.google.com/search/docs/appearance/snippet", desc: "Wytyczne opisu strony" },
   { name: "Rich results", url: "https://developers.google.com/search/results/snippet", desc: "Rozszerzone wyniki wyszukiwania" },
   { name: "Core Web Vitals", url: "https://web.dev/vitals/", desc: "Wskaźniki wydajności strony" },
+  { name: "llm.txt", url: "https://llmstxt.org/", desc: "Standardowy plik dla modeli AI — opis firmy w formacie czytelnym dla LLM" },
 ]
 
 const CheckIcon = () => (

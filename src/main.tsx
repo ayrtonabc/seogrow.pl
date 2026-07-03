@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client"
 import { Provider } from "@/components/ui/provider"
 import { LanguageProvider } from "./components/LanguageSwitcher"
 import { CurrencyProvider } from "./components/CurrencySwitcher"
+import { ErrorBoundary } from "./components/ErrorBoundary"
 import "./index.css"
 import App from "./App"
 
@@ -20,14 +21,22 @@ if ("serviceWorker" in navigator && import.meta.env.PROD) {
   })
 }
 
-createRoot(document.getElementById("root")!).render(
+const rootEl = document.getElementById("root")!
+// Belt-and-suspenders: even if <html translate="no"> is stripped by a build
+// step, the React root itself is protected from Chrome's auto-translator
+// and other DOM-mutating extensions.
+rootEl.setAttribute("translate", "no")
+
+createRoot(rootEl).render(
   <StrictMode>
-    <Provider>
-      <LanguageProvider>
-        <CurrencyProvider>
-          <App />
-        </CurrencyProvider>
-      </LanguageProvider>
-    </Provider>
+    <ErrorBoundary>
+      <Provider>
+        <LanguageProvider>
+          <CurrencyProvider>
+            <App />
+          </CurrencyProvider>
+        </LanguageProvider>
+      </Provider>
+    </ErrorBoundary>
   </StrictMode>,
 )
