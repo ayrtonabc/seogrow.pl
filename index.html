@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
@@ -106,24 +106,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Chrome translator resilience: backup the SSR HTML BEFORE React hydrates.
-         This script MUST run after the parser has built the <div id="root">
-         (i.e. at end of <body>) but BEFORE the React module starts executing.
-         If Chrome's auto-translator mutates DOM nodes in between, main.tsx
-         detects the mismatch via __SSR_BACKUP__ and falls back to a clean
-         client-side re-render. Page stays translated AND functional. -->
-    <script>
-      (function () {
-        try {
-          var root = document.getElementById('root');
-          if (root) {
-            window.__SSR_BACKUP__ = root.innerHTML;
-          }
-        } catch (e) {
-          /* no-op: backup unavailable, fall back to plain createRoot */
-        }
-      })();
-    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
