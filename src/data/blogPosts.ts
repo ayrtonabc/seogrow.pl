@@ -11,6 +11,13 @@ export type BlogPost = {
   imageHeight: number
   tags: string[]
   content: string[]
+  /** Optional CTA override for the blog sidebar — targets a specific SeoGrow service */
+  sidebarCta?: {
+    title: string
+    description: string
+    buttonLabel: string
+    href: string
+  }
 }
 
 export const blogPosts: BlogPost[] = [
@@ -26,6 +33,12 @@ export const blogPosts: BlogPost[] = [
     imageWidth: 960,
     imageHeight: 720,
     tags: ["SEO lokalne", "Google", "Mała firma"],
+    sidebarCta: {
+      title: "Nie chcesz robić SEO lokalnego sam?",
+      description: "Zajmiemy się Twoim Google Business Profile, schema LocalBusiness i widocznością w Google Maps. Od 49 zł mies., bez umowy.",
+      buttonLabel: "Zamów SEO lokalne",
+      href: "/seo-lokalne-dla-firm",
+    },
     content: [
       "SEO lokalne nie polega wyłącznie na posiadaniu estetycznej strony. Google musi rozumieć, gdzie działasz, jakie usługi oferujesz i dlaczego to właśnie Twoja firma powinna pojawiać się przed konkurencją.",
       "Zacznij od uporządkowania tytułów, opisów i nagłówków z uwzględnieniem miasta lub obszaru działania. Zadbaj też o spójne dane kontaktowe na stronie, w katalogach i w profilu firmy w Google.",

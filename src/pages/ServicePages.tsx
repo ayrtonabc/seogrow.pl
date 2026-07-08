@@ -491,12 +491,169 @@ export const ObslugaStronyInternetowejPage = () => (
       description: "15 minut rozmowy, bez zobowiązań. Powiemy Ci, jaki plan ma sens dla Twojej firmy.",
       primaryLabel: "Zadzwoń: 517 105 423",
     }}
-    internalLinks={[
+internalLinks={[
       { label: "Plan Standard (z obsługą)", href: "/#ceny" },
       { label: "Plan Premium (bez limitu)", href: "/#ceny" },
       { label: "Strona dla freelancera", href: "/strona-dla-freelancera" },
       { label: "Strona dla warsztatu", href: "/strona-dla-warsztatu-samochodowego" },
-      { label: "Blog firmowy jako kanał sprzedaży", href: "/blog/blog-firmowy-jako-kanal-sprzedazy" },
+      { label: "Blog firmowy jako kanał sprzedazy", href: "/blog/blog-firmowy-jako-kanal-sprzedazy" },
+    ]}
+    showModules={true}
+    showPricing={true}
+  />
+)
+
+// ────────────────────────────────────────────────────────────────────────────
+// SEO LOKALNE DLA MAŁYCH FIRM
+// ────────────────────────────────────────────────────────────────────────────
+
+export const SeoLokalneDlaFirmPage = () => (
+  <SEOLandingPage
+    path="/seo-lokalne-dla-firm"
+    title="SEO lokalne dla małych firm | Twoja firma w Google od 49 zł/mies. | SEO Grow"
+    description="SEO lokalne dla małych firm — Twoi klienci z okolicy znajdują Cię w Google. Bez agencji, od 49 zł miesięcznie. Comiesięczne raporty, wsparcie po polsku, bez umowy."
+    keywords="seo lokalne dla małych firm, seo dla małych firm, lokalne seo, pozycjonowanie lokalne, seo dla firmy, seo mała firma, lokalne pozycjonowanie, agencja seo lokalne"
+    h1="SEO lokalne dla małych firm"
+    h1Accent="klienci z Twojego miasta znajdują Cię w Google"
+    h1Sub="Bez agencji. Bez umowy. Bez żargonu. Co miesiąc widzisz, ile zapytań i telefonów przyszło z Google."
+    intro="Twoja firma oferuje usługi w konkretnym mieście lub regionie — hydraulik w Olsztynie, dentysta w Gdańsku, warsztat w Ełku. SEO lokalne sprawia, że gdy ktoś w Twojej okolicy szuka tego, co oferujesz, znajduje Ciebie, a nie konkurencję z innego województwa. Dbamy o to spokojnie, krok po kroku, z comiesięcznym raportem, który rozumiesz."
+    heroImage="/hero-960.webp"
+    heroImageAlt="SEO lokalne dla małych firm — panel SEO Grow z raportem widoczności w Google Maps"
+    breadcrumb={[{ name: "SEO", href: "/cms-seo" }, { name: "SEO lokalne dla małych firm", href: "/seo-lokalne-dla-firm" }]}
+    schema={serviceSchema(
+      "seo-lokalne-dla-firm",
+      "SEO lokalne dla małych firm",
+      "Pozycjonowanie lokalne w Google dla małych firm",
+      "Comiesięczne SEO lokalne dla małych firm w Polsce. Google Business Profile, schema LocalBusiness, optymalizacja treści i techniki, raporty widoczności bez żargonu.",
+    )}
+    sections={[
+      {
+        heading: "Co to właściwie jest SEO lokalne i dlaczego Twoja firma go potrzebuje",
+        content: "SEO lokalne to wszystko, co robimy, żeby Twoja firma pojawiała się wysoko w Google, gdy ktoś w Twojej okolicy wpisuje hasło związane z Twoją usługą — na przykład \"hydraulik Olsztyn\", \"dentysta Gdańsk Wrzeszcz\" czy \"warsztat samochodowy Ełk\". Klient, który szuka lokalnie, jest zwykle gotowy do kontaktu — chce dzwonić, pisać, przyjść. SEO lokalne sprawia, że to do Ciebie trafia, a nie do konkurencji oddalonej o 50 kilometrów.",
+        image: "/automat.webp",
+        imageAlt: "Jak działa SEO lokalne — proste wyjaśnienie dla właściciela firmy",
+        highlights: [
+          "Klient szuka lokalnie — jest gotowy do kontaktu",
+          "Wyprzedzasz konkurencję w Google Maps i wyszukiwarce",
+          "Widoczność 24/7, bez płacenia za kliknięcia",
+          "Budujesz markę firmy w swojej okolicy na lata",
+        ],
+      },
+      {
+        heading: "Co robimy co miesiąc dla Twojej firmy",
+        content: "Co miesiąc dbamy o widoczność Twojej firmy w Google. Aktualizujemy Twój profil Google Business Profile, pilnujemy spójności danych w katalogach, dodajemy lokalne treści na Twoją stronę, dbamy o schema LocalBusiness i optymalizujemy to, co działa. Wszystko spokojnie, bez pośpiechu. Pierwsze efekty widać zwykle po 2-4 miesiącach — tak po prostu działa SEO. Ale gdy ruszy, masz stały dopływ klientów bez płacenia za każde kliknięcie.",
+        image: "/hero-640.webp",
+        imageAlt: "Comiesięczny raport SEO lokalnego — widok panelu SEO Grow",
+        imagePosition: "left",
+        highlights: [
+          "Optymalizacja Google Business Profile",
+          "Spójne dane firmy w katalogach (NAP)",
+          "Schema LocalBusiness na stronie",
+          "Lokalne treści odpowiadające na pytania klientów z Twojego regionu",
+          "Comiesięczny raport widoczności w przystępnej formie",
+          "Rekomendacje, co poprawić w kolejnym miesiącu",
+        ],
+      },
+      {
+        heading: "Dlaczego nie agencja, tylko SEO Grow",
+        content: "Agencje SEO w Polsce biorą zwykle 1000–5000 zł miesięcznie i raportują w języku, którego nie rozumiesz. U nas dostajesz to samo — comiesięczną pracę nad widocznością lokalną — w planie Premium za 99 zł miesięcznie, z raportem, który rozumiesz, i z ludźmi, do których możesz zadzwonić w zwykłych godzinach pracy.",
+        image: "/seogrow.webp",
+        imageAlt: "SEO Grow vs agencja SEO — przewaga dla małych firm",
+        imagePosition: "left",
+        highlights: [
+          "Od 49 zł miesięcznie zamiast 1000–5000 zł w agencji",
+          "Raport widoczności w przystępnej formie",
+          "Możesz zadzwonić i zapytać o cokolwiek",
+          "Bez umowy — rezygnujesz jednym mailem",
+          "Wsparcie po polsku, w dni robocze",
+        ],
+      },
+      {
+        heading: "Dlaczego SEO lokalne działa lepiej niż reklamy dla małej firmy",
+        content: "Reklamy Google Ads dają ruch od razu, ale płacisz za każde kliknięcie — i gdy przestaniesz płacić, ruch znika. SEO lokalne działa odwrotnie: efekt narasta z miesiąca na miesiąc i zostaje z Tobą na lata. Dla firmy, która obsługuje klientów z jednego miasta lub powiatu, SEO lokalne zwykle daje lepszy zwrot z inwestycji niż ciągłe płacenie za reklamy.",
+        highlights: [
+          "Efekt narasta z czasem — inwestycja, nie wydatek",
+          "Nie płacisz za każde kliknięcie",
+          "Twoja strona jest w Google non-stop, 24/7",
+          "Budujesz zaufanie klientów z okolicy organicznie",
+          "Tańsze niż Google Ads w dłuższej perspektywie",
+        ],
+        imageAnimation: {
+          rounds: [
+            {
+              query: 'hydraulik Olsztyn',
+              yourSite: {
+                domain: 'twoja-firma.pl',
+                title: 'Hydraulik Olsztyn — Twoja Firma | Usługi 24/7',
+                description: 'Hydraulik w Olsztynie. Naprawy 24/7, gwarancja, faktura VAT. Dojazd w 30 minut. Sprawdź opinie.',
+              },
+              competitors: [
+                { domain: 'hydraulik-olsztyn-24.pl', title: 'Hydraulik Olsztyn 24h — Szybki Dojazd', description: 'Profesjonalny hydraulik w Olsztynie. Naprawy awaryjne, usługi sanitarne, dojazd 30 minut.' },
+                { domain: 'ranking-hydraulikow.pl', title: 'Ranking hydraulików Olsztyn 2024', description: 'Porównanie najlepszych hydraulików w Olsztynie. Opinie klientów, cennik usług.' },
+              ],
+            },
+            {
+              query: 'dentysta Gdańsk',
+              yourSite: {
+                domain: 'twoja-klinika.pl',
+                title: 'Dentysta Gdańsk — Twoja Klinika | Rezerwacje online',
+                description: 'Dentysta w Gdańsku. Stomatologia zachowawcza, implanty, wybielanie. Rezerwacja wizyty online, opinie Google 4.9.',
+              },
+              competitors: [
+                { domain: 'klinika-dental-gdansk.pl', title: 'Klinika Dental Gdańsk — Implanty i Protetyka', description: 'Klinika stomatologiczna w Gdańsku. Implanty, protetyka, ortodoncja. Nowoczesne wyposażenie.' },
+                { domain: 'gabinety-dentystyczne-gdansk.pl', title: 'Gabinety Dentystyczne Gdańsk — Ranking', description: 'Lista gabinetów dentystycznych w Gdańsku z opiniami pacjentów.' },
+              ],
+            },
+            {
+              query: 'warsztat samochodowy Ełk',
+              yourSite: {
+                domain: 'twoj-warsztat.pl',
+                title: 'Warsztat Samochodowy Ełk — Mechanik 24h',
+                description: 'Warsztat samochodowy w Ełku. Naprawy mechaniczne, diagnostyka, wymiana opon. Doświadczeni mechanicy.',
+              },
+              competitors: [
+                { domain: 'mechanik-elk.pl', title: 'Mechanik Ełk — Naprawy 24/7', description: 'Profesjonalny mechanik w Ełku. Naprawy awaryjne, holowanie, części zamienne.' },
+                { domain: 'autoservice-elk.pl', title: 'Auto Service Ełk — Mechanika pojazdowa', description: 'Serwis samochodowy w Ełku. Przeglądy, naprawy, klimatyzacja samochodowa.' },
+              ],
+            },
+          ],
+        },
+      },
+    ]}
+    features={[
+      { title: "Google Business Profile", description: "Optymalizujemy Twój profil w Google Maps — zdjęcia, godziny, kategorie, opis. Klienci z okolicy trafiają do Ciebie prosto z mapy." },
+      { title: "Schema LocalBusiness", description: "Dodajemy do Twojej strony znaczniki schema, żeby Google wiedział, gdzie działasz, co oferujesz i jak się z Tobą skontaktować." },
+      { title: "Spójne dane w katalogach", description: "Pilnujemy, żeby nazwa firmy, adres i telefon były identyczne w Google, ZnanyLekarz, Panorama Firm i 30+ innych katalogach." },
+      { title: "Lokalne treści na stronie", description: "Piszemy treści odpowiadające na pytania klientów z Twojego regionu — \"ile kosztuje hydraulik w Olsztynie\", \"dentysta dla dzieci Gdańsk Wrzeszcz\"." },
+      { title: "Comiesięczny raport", description: "Dostajesz raport widoczności w przystępnej formie — bez żargonu, z konkretnymi liczbami: ile wyświetleń, kliknięć, telefonów." },
+      { title: "Wsparcie po polsku", description: "W dni robocze odbieramy telefon. Możesz zapytać o cokolwiek. Bez tajemnic, bez żargonu." },
+    ]}
+    trust={[
+      { number: "od 49 zł", label: "miesięcznie (plan Standard)" },
+      { number: "2-4 mies.", label: "do pierwszych efektów" },
+      { number: "0 zł", label: "za prowizje agencji" },
+      { number: "30+", label: "katalogów firm zarządzanych" },
+    ]}
+    faq={[
+      { q: "Ile kosztuje SEO lokalne dla małej firmy?", a: "W planie Standard (69 zł miesięcznie) masz SEO lokalne w cenie — w tym aktualizację Google Business Profile, schema LocalBusiness i comiesięczny raport. W planie Premium (99 zł) dochodzi analiza konkurencji i priorytetowa realizacja. Agencje SEO w Polsce biorą zwykle 1000-5000 zł miesięcznie za to samo." },
+      { q: "Kiedy zobaczę pierwsze efekty SEO lokalnego?", a: "Realnie — po 2-4 miesiącach. SEO nie działa jak reklama, gdzie efekty są od razu. To inwestycja, która narasta z czasem. Po pół roku masz zwykle stały dopływ klientów z Google Maps i wyszukiwarki — bez płacenia za każde kliknięcie." },
+      { q: "Czy SEO lokalne zastąpi reklamy Google Ads?", a: "Dla większości małych firm — tak, w dłuższej perspektywie. SEO daje trwalsze efekty i jest tańsze w skali roku. Jeśli potrzebujesz klientów już jutro, reklamy mają sens na start. Jeśli myślisz o roku do przodu, SEO lokalne się opłaca bardziej." },
+      { q: "Co to jest Google Business Profile i dlaczego jest ważny?", a: "To profil Twojej firmy w Google Maps — wyświetla się, gdy ktoś szuka \"hydraulik Olsztyn\" albo \"dentysta blisko mnie\". Optymalizujemy go, żeby Twoja firma była wyżej niż konkurencja — i miała więcej kliknięć, telefonów i wizyt w lokalu." },
+      { q: "Czy muszę coś podpisywać?", a: "Nie. Nie ma żadnej umowy na lata. Płacisz co miesiąc. Jeśli chcesz zrezygnować — wystarczy jeden mail. Twoja strona zostaje Twoja na zawsze, niezależnie od abonamentu." },
+      { q: "Czy SEO lokalne działa dla każdej branży?", a: "Tak, ale najlepiej dla firm, które obsługują klientów z konkretnego regionu — hydraulicy, dentyści, kancelarie prawne, salony kosmetyczne, warsztaty, hotele, restauracje, kliniki. Jeśli Twoi klienci szukają Cię w Google z nazwy miasta — SEO lokalne jest dla Ciebie." },
+    ]}
+    cta={{
+      title: "Porozmawiajmy o SEO lokalnym dla Twojej firmy",
+      description: "15 minut rozmowy, bez zobowiązań. Powiemy Ci szczerze, czy SEO lokalne ma sens dla Twojej firmy i co konkretnie możemy zrobić.",
+      primaryLabel: "Zadzwoń: 517 105 423",
+    }}
+    internalLinks={[
+      { label: "Pozycjonowanie stron dla firm", href: "/pozycjonowanie-stron-dla-firm" },
+      { label: "Strona dla dentysty", href: "/strona-dla-dentysty" },
+      { label: "Strona dla warsztatu samochodowego", href: "/strona-dla-warsztatu-samochodowego" },
+      { label: "Strona dla kancelarii prawnej", href: "/strona-dla-kancelarii-prawnej" },
+      { label: "Strona dla kliniki medycznej", href: "/strona-dla-kliniki" },
+      { label: "Blog: SEO lokalne dla małych firm", href: "/blog/seo-lokalne-dla-malych-firm" },
     ]}
     showModules={true}
     showPricing={true}

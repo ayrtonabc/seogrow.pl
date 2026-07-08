@@ -433,6 +433,18 @@ const CONTENT_ROUTES = [
     lastmod: '2026-07-01',
   },
   {
+    route: '/seo-lokalne-dla-firm',
+    title: 'SEO lokalne dla małych firm | Twoja firma w Google od 49 zł/mies. | SEO Grow',
+    description: 'SEO lokalne dla małych firm — Twoi klienci z okolicy znajdują Cię w Google. Bez agencji, od 49 zł miesięcznie. Comiesięczne raporty, wsparcie po polsku, bez umowy.',
+    selectors: ['main', 'h1', '#root:not(:empty)'],
+    includeInSitemap: true,
+    noindex: false,
+    expectJsonLd: true,
+    changefreq: 'monthly',
+    priority: '0.9',
+    lastmod: '2026-07-01',
+  },
+  {
     route: '/tania-strona-internetowa-dla-firmy',
     title: 'Tania strona internetowa dla firmy | Od 49 zł/mies. | SEO Grow',
     description: 'Tania strona internetowa dla małej firmy bez utraty jakości. Od 1500 zł jednorazowo + 49 zł miesięcznie. Bez umowy, ze wsparciem po polsku.',
@@ -790,6 +802,7 @@ function generateBreadcrumbItemListElement(route) {
     'pozycjonowanie-stron-dla-firm': 'Pozycjonowanie stron',
     'tania-strona-internetowa-dla-firmy': 'Tania strona dla firmy',
     'obsluga-strony-internetowej': 'Obsługa strony',
+    'seo-lokalne-dla-firm': 'SEO lokalne dla firm',
   };
 
   parts.forEach((part, index) => {

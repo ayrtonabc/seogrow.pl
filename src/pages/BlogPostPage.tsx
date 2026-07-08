@@ -393,20 +393,20 @@ export const BlogPostPage = () => {
               </Box>
 
               <Box bgGradient="linear(to-br, #4F46E5, #4338CA)" rounded="xl" p="6" color="white" boxShadow="md">
-                <Text fontWeight="700" fontSize="lg" mb="2">Potrzebujesz nowej strony?</Text>
+                <Text fontWeight="700" fontSize="lg" mb="2">{post.sidebarCta?.title ?? "Potrzebujesz nowej strony?"}</Text>
                 <Text fontSize="sm" opacity="0.9" mb="5" lineHeight="1.6">
-                  Zbudujemy stronę, która nie tylko dobrze wygląda, ale przede wszystkim sprzedaje.
+                  {post.sidebarCta?.description ?? "Zbudujemy stronę, która nie tylko dobrze wygląda, ale przede wszystkim sprzedaje."}
                 </Text>
-                <Button 
-                  as={Link} 
-                  to="/#jak-to-dziala" 
-                  w="full" 
-                  bg="white" 
-                  color="#4F46E5" 
+                <Button
+                  as={Link}
+                  to={post.sidebarCta?.href ?? "/#jak-to-dziala"}
+                  w="full"
+                  bg="white"
+                  color="#4F46E5"
                   _hover={{ bg: "#F8FAFC" }}
                   size="sm"
                 >
-                  Sprawdź ofertę
+                  {post.sidebarCta?.buttonLabel ?? "Sprawdź ofertę"}
                 </Button>
               </Box>
             </VStack>
