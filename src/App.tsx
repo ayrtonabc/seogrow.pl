@@ -156,6 +156,9 @@ const ObslugaStronyInternetowejPage = lazy(() =>
 const SeoLokalneDlaFirmPage = lazy(() =>
   import("./pages/ServicePages").then((m) => ({ default: m.SeoLokalneDlaFirmPage })),
 )
+const CennikPage = lazy(() =>
+  import("./pages/CennikPage").then((m) => ({ default: m.CennikPage })),
+)
 
 const StronaDlaFotografaPage = lazy(() =>
   import("./pages/VerticalPagesTier2").then((m) => ({ default: m.StronaDlaFotografaPage })),
@@ -329,6 +332,7 @@ function App() {
           <Route path="/tania-strona-internetowa-dla-firmy" element={<TaniaStronaInternetowaDlaFirmyPage />} />
           <Route path="/obsluga-strony-internetowej" element={<ObslugaStronyInternetowejPage />} />
           <Route path="/seo-lokalne-dla-firm" element={<SeoLokalneDlaFirmPage />} />
+          <Route path="/cennik" element={<CennikPage />} />
           <Route path="/strona-dla-fotografa" element={<StronaDlaFotografaPage />} />
           <Route path="/strona-dla-hotelu" element={<StronaDlaHoteluPage />} />
           <Route path="/strona-dla-architekta" element={<StronaDlaArchitektaPage />} />

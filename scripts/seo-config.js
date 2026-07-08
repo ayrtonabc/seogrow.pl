@@ -445,6 +445,18 @@ const CONTENT_ROUTES = [
     lastmod: '2026-07-01',
   },
   {
+    route: '/cennik',
+    title: 'Cennik stron internetowych dla firm | od 1500 zł | SEO Grow',
+    description: 'Cennik stron internetowych dla małych firm w Polsce. Trzy plany: Start od 1500 zł, Standard od 2200 zł, Premium od 4500 zł. Bez umowy, wsparcie po polsku.',
+    selectors: ['main', 'h1', '#root:not(:empty)'],
+    includeInSitemap: true,
+    noindex: false,
+    expectJsonLd: true,
+    changefreq: 'monthly',
+    priority: '0.9',
+    lastmod: '2026-07-09',
+  },
+  {
     route: '/tania-strona-internetowa-dla-firmy',
     title: 'Tania strona internetowa dla firmy | Od 49 zł/mies. | SEO Grow',
     description: 'Tania strona internetowa dla małej firmy bez utraty jakości. Od 1500 zł jednorazowo + 49 zł miesięcznie. Bez umowy, ze wsparciem po polsku.',

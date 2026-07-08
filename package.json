@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build-faq-schema.mjs && node scripts/inject-faq-schema.mjs && node scripts/trim-jsonld.mjs && node scripts/compress-video.mjs && vite build && node scripts/prerender.js",
+    "build": "node scripts/build-faq-schema.mjs && node scripts/inject-faq-schema.mjs && node scripts/trim-jsonld.mjs && node scripts/compress-video.mjs && vite build && node scripts/prerender.js && node scripts/build-image-sitemap.mjs",
     "build:no-prerender": "node scripts/build-faq-schema.mjs && node scripts/inject-faq-schema.mjs && node scripts/trim-jsonld.mjs && node scripts/compress-video.mjs && vite build",
     "compress:assets": "node scripts/optimize-assets.mjs",
     "compress:video": "node scripts/compress-video.mjs",

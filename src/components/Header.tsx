@@ -45,7 +45,7 @@ export const Header = () => {
                 src="/logo-320.webp"
                 srcSet="/logo-160.webp 160w, /logo-320.webp 320w"
                 sizes="158px"
-                alt="Logo SEO Grow"
+                alt="SEO Grow — strony internetowe z systemem CMS dla małych firm"
                 width="320"
                 height="85"
                 decoding="async"

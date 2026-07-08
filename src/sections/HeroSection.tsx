@@ -208,7 +208,7 @@ export const HeroSection = () => {
               src="/hero-960.webp"
               srcSet="/hero-640.webp 640w, /hero-960.webp 960w"
               sizes="(max-width: 768px) 100vw, 50vw"
-              alt="Podgląd strony klienta w panelu SEO Grow"
+              alt="Panel SEO Grow — strona klienta widoczna w Google, edycja z telefonu"
               width={960}
               height={720}
               decoding="async"
