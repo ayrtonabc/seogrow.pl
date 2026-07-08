@@ -79,8 +79,8 @@ export const HeroSection = () => {
               lineHeight="1.3"
               color="#0F172A"
             >
-              Bądź widoczny w <GoogleLogo />{" "}
-              <Box as="span" color="#64748B">bez agencji SEO</Box>
+              Twoja strona widoczna w <GoogleLogo />{" "}
+              <Box as="span" color="#64748B">— bez agencji SEO</Box>
             </Heading>
 
             <Text

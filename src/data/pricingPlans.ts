@@ -75,7 +75,7 @@ export const pricingPlans: PricingPlan[] = [
     name: "Start",
     title: "Dla jednoosobowej firmy",
     description:
-      "Dla rzemieślników, freelancerów i małych firm usługowych, którzy chcą mieć profesjonalną stronę z blogiem.",
+      "Twoja strona internetowa z systemem do zmiany treści i podstawowym SEO. Idealna dla rzemieślników, freelancerów i małych firm usługowych.",
     sitePrice: 1500,
     monthlyPrice: 49,
     siteIncludes: "Twoja strona wygenerowana pod Twoją firmę + podstawowe SEO",
@@ -96,7 +96,7 @@ export const pricingPlans: PricingPlan[] = [
     name: "Standard",
     title: "Dla rozwijającej się firmy",
     description:
-      "Dla firm, które chcą regularnie pojawiać się w Google i mieć więcej miejsca na rozbudowane treści.",
+      "Strona internetowa z systemem do rezerwacji, newsletterów i obsługi klientów. Dla firm, które chcą regularnie pojawiać się w Google i rozwijać się online.",
     sitePrice: 2200,
     monthlyPrice: 69,
     siteIncludes: "Twoja strona wygenerowana pod Twoją firmę + pełne SEO techniczne",
@@ -117,7 +117,7 @@ export const pricingPlans: PricingPlan[] = [
     name: "Premium",
     title: "Dla firmy z dużymi wymaganiami",
     description:
-      "Dla firm, które potrzebują dużo miejsca na treści, zaawansowanej analityki i wsparcia na wyciągnięcie ręki.",
+      "Strona z systemem dla firm z rozbudowaną ofertą, wieloma usługami lub sklepem. Zaawansowana analityka, priorytetowe wsparcie, wszystkie integracje.",
     sitePrice: 4500,
     monthlyPrice: 99,
     siteIncludes: "Twoja strona wygenerowana pod Twoją firmę + pełne SEO + wszystkie integracje",

@@ -13,9 +13,9 @@ export const SITE_URL = 'https://seogrow.pl';
 
 const HOME_ROUTE = {
   route: '/',
-  title: 'SEO Grow | Strona firmowa z prostym CMS i SEO technicznym',
+  title: 'Twoja strona widoczna w Google | Bez agencji SEO, gotowa w 5 dni | SEO Grow',
   description:
-    'SEO Grow to strona firmowa z prostym CMS, blogiem, hostingiem, SSL i automatyczną optymalizacją techniczną SEO dla małych firm.',
+    'Twoja strona internetowa widoczna w Google bez agencji SEO. Gotowa w 5 dni, edycja z telefonu, klienci znajdują Cię sami bez płacenia za reklamy. Od 1 500 zł.',
   selectors: ['#main-content', 'main'],
   includeInSitemap: true,
   noindex: false,
@@ -729,8 +729,97 @@ export const extractBlogPostsMeta = () => {
   return posts;
 };
 
+/**
+ * Generate BreadcrumbList itemListElement for a given route path.
+ * Handles special routes (/, /blog, /zamowienie, etc.) and deep paths.
+ */
+function generateBreadcrumbItemListElement(route) {
+  const parts = route.split('/').filter(Boolean);
+  const elements = [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: SITE_URL },
+  ];
+
+  // Breadcrumb name overrides for common prefixes
+  const breadcrumbNames = {
+    'blog': 'Blog',
+    'zamowienie': 'Zamów',
+    'wsparcie': 'Wsparcie',
+    'polityka-prywatnosci': 'Polityka prywatności',
+    'polityka-cookies': 'Polityka cookies',
+    'przetwarzanie-danych': 'Przetwarzanie danych',
+    'cms-seo': 'CMS SEO',
+    'cms-seo-pequenas-empresas': 'CMS SEO dla małych firm',
+    'cms-con-seo-automatico': 'CMS z SEO automatycznym',
+    'crear-pagina-web-seo': 'Tworzenie strony z SEO',
+    'alternativa-wordpress-seo': 'Alternatywa dla WordPress',
+    'wordpress-vs-seogrow': 'WordPress vs SEO Grow',
+    'wix-vs-seogrow': 'Wix vs SEO Grow',
+    'dlaczego-moja-strona-nie-pojawia-sie-w-google': 'Dlaczego strona nie pojawia się w Google',
+    'jak-szybko-wyjsc-w-google': 'Jak szybko wyjść w Google',
+    'najczestsze-bledy-seo': 'Najczęstsze błędy SEO',
+    'sklep-online': 'Sklep Online',
+    'akademia-kursow': 'Akademia Kursów',
+    'rezerwacje-i-terminy': 'Rezerwacje i Terminy',
+    'menu-cyfrowe': 'Menu Cyfrowe',
+    'ekspansja-globalna': 'Ekspansja Globalna',
+    'wizytowka-prac': 'Wizytówka Prac',
+    'strona-dla-prawnika': 'Strona dla prawnika',
+    'strona-dla-kliniki': 'Strona dla kliniki',
+    'strona-dla-gabinetu-stomatologicznego': 'Strona dla dentysty',
+    'strona-dla-restauracji': 'Strona dla restauracji',
+    'strona-dla-freelancera': 'Strona dla freelancera',
+    'strona-dla-warsztatu-samochodowego': 'Strona dla warsztatu',
+    'strona-dla-kosmetyczki': 'Strona dla kosmetyczki',
+    'strona-dla-fryzjera': 'Strona dla fryzjera',
+    'strona-dla-psychologa': 'Strona dla psychologa',
+    'strona-dla-fizjoterapeuty': 'Strona dla fizjoterapeuty',
+    'strona-dla-fotografa': 'Strona dla fotografa',
+    'strona-dla-hotelu': 'Strona dla hotelu',
+    'strona-dla-architekta': 'Strona dla architekta',
+    'strona-dla-agencji-nieruchomosci': 'Strona dla agencji nieruchomości',
+    'strona-dla-kancelarii-prawnej': 'Strona dla kancelarii prawnej',
+    'strona-dla-mechanika': 'Strona dla mechanika',
+    'strona-dla-trenera-personalnego': 'Strona dla trenera personalnego',
+    'strona-dla-projektanta-wnetrz': 'Strona dla projektanta wnętrz',
+    'strona-dla-dentysty': 'Strona dla dentysty',
+    'strona-dla-weterynarza': 'Strona dla weterynarza',
+    'strona-internetowa-warszawa': 'Strona Warszawa',
+    'strona-internetowa-krakow': 'Strona Kraków',
+    'strona-internetowa-lodz': 'Strona Łódź',
+    'strona-internetowa-wroclaw': 'Strona Wrocław',
+    'pozycjonowanie-stron-dla-firm': 'Pozycjonowanie stron',
+    'tania-strona-internetowa-dla-firmy': 'Tania strona dla firmy',
+    'obsluga-strony-internetowej': 'Obsługa strony',
+  };
+
+  parts.forEach((part, index) => {
+    const url = `${SITE_URL}/${parts.slice(0, index + 1).join('/')}`;
+    const name = breadcrumbNames[part] || part.charAt(0).toUpperCase() + part.slice(1).replace(/-/g, ' ');
+    elements.push({
+      '@type': 'ListItem',
+      position: index + 2,
+      name,
+      item: url,
+    });
+  });
+
+  return elements;
+}
+
 export const getRouteDefinitions = () => {
   const blogPosts = extractBlogPostsMeta();
+
+  // Add BreadcrumbList to all CONTENT_ROUTES for prerender
+  const contentRoutesWithSchema = CONTENT_ROUTES.map((route) => ({
+    ...route,
+    schema: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: generateBreadcrumbItemListElement(route.route),
+      },
+    ],
+  }));
 
   return [
     HOME_ROUTE,
@@ -740,8 +829,9 @@ export const getRouteDefinitions = () => {
     PRIVACY_POLICY_ROUTE,
     COOKIES_POLICY_ROUTE,
     DATA_PROCESSING_ROUTE,
-    ...CONTENT_ROUTES,
+    ...contentRoutesWithSchema,
     ...blogPosts.map((post) => ({
+      route: `/blog/${post.slug}`,
       route: `/blog/${post.slug}`,
       title: `${post.title} | SEO Grow`,
       description: post.description,

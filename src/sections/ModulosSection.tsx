@@ -40,18 +40,18 @@ const modules: Module[] = [
     link: "/sklep-online",
   },
   {
-    title: "AKADEMIA KURSÓW",
+    title: "KURSY ONLINE",
     shortFor: "Dla firm, które uczą",
     description: "Twórz i sprzedawaj kursy online. Zarządzaj studentami, śledź postępy, wydawaj certyfikaty.",
     benefits: ["Ochrona wideo przed pobraniem", "Automatyczne egzaminy", "Certyfikaty PDF", "Miesięczne subskrypcje"],
     link: "/akademia-kursow",
   },
   {
-    title: "REZERWACJE I TERMINY",
+    title: "KALENDARZ ONLINE",
     shortFor: "Dla usług i gabinetów",
     description:
-      "Klienci sami umawiają wizyty. Synchronizacja z Google Calendar. Automatyczne przypomnienia.",
-    benefits: ["Inteligentny kalendarz", "Automatyczne przypomnienia", "Płatność za wizytę", "Aktualna dostępność online"],
+      "Klienci sami wybierają termin wizyty przez internet. Ty dostajesz powiadomienie, a system wysyła przypomnienie.",
+    benefits: ["Kalendarz z wolnymi terminami", "Automatyczne przypomnienia SMS i mail", "Płatność za wizytę", "Dostępność online 24/7"],
     link: "/rezerwacje-i-terminy",
   },
   {
@@ -63,11 +63,11 @@ const modules: Module[] = [
     link: "/menu-cyfrowe",
   },
   {
-    title: "EKSPANSJA GLOBALNA",
+    title: "STRONA W WIELU JĘZYKACH",
     shortFor: "Dla firm, które sprzedają za granicę",
     description:
-      "Twoja strona w wielu językach. Automatyczne tłumaczenie z weryfikacją przez człowieka.",
-    benefits: ["5 języków w cenie", "Domeny dla każdego kraju", "Ceny lokalne", "Automatyczne tłumaczenie"],
+      "Twoja strona po polsku, angielsku, niemiecku czy ukraińsku. Bez dodatkowej pracy — system tłumaczy i utrzymuje każdą wersję.",
+    benefits: ["5 języków w cenie", "Osobna domena dla każdego kraju", "Ceny w lokalnej walucie", "Tłumaczenie sprawdzane przez człowieka"],
     link: "/ekspansja-globalna",
   },
   {
@@ -87,19 +87,19 @@ const modules: Module[] = [
     link: "/#moduly",
   },
   {
-    title: "CRM",
+    title: "PANEL KLIENTÓW",
     shortFor: "Dla firm, które pracują z leadami",
     description:
-      "Lejek sprzedażowy w formie kanban. Przeciągaj leady między etapami. Wszystkie kontakty i notatki w jednym miejscu.",
-    benefits: ["Lejek sprzedażowy", "Kanban z przeciąganiem", "Aktywności i notatki", "Integracja z formularzami"],
+      "Widzisz w jednym miejscu, kto pisał, kto dzwonił i kto jest blisko decyzji. Przeciągasz klienta między etapami — od zapytania do umowy.",
+    benefits: ["Lista klientów i rozmów", "Przeciąganie między etapami", "Notatki i aktywności", "Automatyczne dane z formularzy"],
     link: "/#moduly",
   },
   {
-    title: "KONSTRUKTOR FORMULARZY",
+    title: "FORMULARZE KONTAKTOWE",
     shortFor: "Dla firm, które zbierają dane od klientów",
     description:
-      "Zaawansowane formularze, które dopasowują się do odpowiedzi klienta. Przesyłanie plików i automatyczna integracja z CRM.",
-    benefits: ["Pytania zależne od odpowiedzi", "Przesyłanie plików", "Integracja z CRM", "Integracja z Email Marketing"],
+      "Proste ankiety, wyceny i zapytania — klient wypełnia, Ty dostajesz gotową odpowiedź na maila. Bez telefonów, bez czekania.",
+    benefits: ["Pytania dopasowane do klienta", "Wysyłanie zdjęć i plików", "Dane trafiają do panelu klientów", "Powiadomienia na maila"],
     link: "/#moduly",
   },
 ]

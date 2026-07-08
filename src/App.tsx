@@ -215,11 +215,11 @@ function LandingPage() {
   return (
     <Box bg="white" minH="100vh">
       <SEO
-        title="Strona z SEO dla małych firm | SEO Grow — gotowa w 5 dni"
-        description="Profesjonalna strona z automatycznym SEO dla małych firm. Gotowa w 5 dni, edycja z telefonu, Twoi klienci znajdują Cię w Google bez płacenia za reklamy. Od 1 500 zł."
+        title="Twoja strona widoczna w Google | Bez agencji SEO, gotowa w 5 dni | SEO Grow"
+        description="Twoja strona internetowa widoczna w Google bez agencji SEO. Gotowa w 5 dni, edycja z telefonu, klienci znajdują Cię sami bez płacenia za reklamy. Od 1 500 zł."
         path="/"
         image="/panel.webp"
-        keywords="strona internetowa dla firmy, strona z SEO, CMS dla małych firm, pozycjonowanie stron, blog firmowy SEO, strona wizytówka, strona dla rzemieślnika, strona dla freelancera, SEO dla małych firm"
+        keywords="strona internetowa dla firmy, strona widoczna w google, strona bez agencji seo, strona dla rzemieślnika, strona dla freelancera, strona dla gabinetu, tania strona www"
         schema={homeSchema}
       />
       {/* Skip to Content Link for Accessibility */}
