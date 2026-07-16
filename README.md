@@ -2,6 +2,8 @@
 
 Landing de `SEO Grow` construida con `React + TypeScript + Vite`, preparada para prerender por ruta, validacion SEO automatizada y pruebas de CI/CD en entorno limpio.
 
+> **Última actualización:** 2026-07-16 — rediseño completo del home con foco en el cliente (no en el CMS).
+
 ## Scripts
 
 ```bash
