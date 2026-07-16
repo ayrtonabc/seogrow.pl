@@ -74,12 +74,10 @@ const CurrencyContext = createContext<CurrencyContextValue>({
 })
 
 export const CurrencyProvider = ({ children }: { children: React.ReactNode }) => {
+  // Siempre arranca en PLN (moneda local de la web — target Polonia).
+  // Ignoramos localStorage para que la primera visita y las siguientes
+  // siempre muestren PLN por defecto, igual que el idioma (pl).
   const [currency, setCurrencyState] = useState<Currency>(DEFAULT_CURRENCY)
-
-  useEffect(() => {
-    const stored = getStoredCurrency()
-    if (stored) setCurrencyState(stored)
-  }, [])
 
   const setCurrency = useCallback((next: Currency) => {
     setCurrencyState(next)

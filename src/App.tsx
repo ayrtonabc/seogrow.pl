@@ -8,13 +8,19 @@ import { DeferredRender } from "./components/DeferredRender"
 import { SEO, SITE_URL } from "./components/SEO"
 import { TranslationBanner } from "./components/LanguageSwitcher"
 import { HeroSection } from "./sections/HeroSection"
+import { WhatYouGetSection } from "./sections/WhatYouGetSection"
 import { TrustLogosSection } from "./sections/TrustLogosSection"
 import { StatsSection } from "./sections/StatsSection"
+import { ClientResultsSection } from "./sections/ClientResultsSection"
 import { ProblemSection } from "./sections/ProblemSection"
+import { CustomDesignSection } from "./sections/CustomDesignSection"
 import { TargetAudienceSection } from "./sections/TargetAudienceSection"
 import { ScrollToTop } from "./components/ScrollToTop"
 import { PrefetchLinks } from "./components/PrefetchLinks"
 import { faqs } from "./data/faqs"
+import { GrowWithYouSection } from "./sections/GrowWithYouSection"
+import { FinalCTASection } from "./sections/FinalCTASection"
+import { MissionBandSection } from "./sections/MissionBandSection"
 
 const SupportPage = lazy(() =>
   import("./pages/SupportPage").then((module) => ({ default: module.SupportPage })),
@@ -221,11 +227,11 @@ function LandingPage() {
   return (
     <Box bg="white" minH="100vh">
       <SEO
-        title="Twoja strona widoczna w Google | Bez agencji SEO, gotowa w 5 dni | SEO Grow"
-        description="Twoja strona internetowa widoczna w Google bez agencji SEO. Gotowa w 5 dni, edycja z telefonu, klienci znajdują Cię sami bez płacenia za reklamy. Od 1 500 zł."
+        title="Strona, która przyciąga klientów i rośnie z Twoją firmą | SEO Grow"
+        description="Projektujemy stronę, która przyciąga klientów, działa bez przerwy i rośnie razem z Twoją firmą. Ty nie zajmujesz się techniką. My bierzemy to na siebie. Od 1 500 zł."
         path="/"
         image="/panel.webp"
-        keywords="strona internetowa dla firmy, strona widoczna w google, strona bez agencji seo, strona dla rzemieślnika, strona dla freelancera, strona dla gabinetu, tania strona www"
+        keywords="strona internetowa dla firmy, strona widoczna w google, strona dla rzemieślnika, strona dla freelancera, strona dla gabinetu, strona zaprojektowana na miarę"
         schema={homeSchema}
       />
       {/* Skip to Content Link for Accessibility */}
@@ -251,18 +257,24 @@ function LandingPage() {
       <Header />
       <Box as="main" id="main-content" tabIndex={-1} outline="none">
         <HeroSection />
+        <WhatYouGetSection />
         <TrustLogosSection />
         <StatsSection />
+        <ClientResultsSection />
         <ProblemSection />
+        <CustomDesignSection />
         <TargetAudienceSection />
         <DeferredRender fallback={<Box minH={{ base: "320px", md: "480px" }} bg="white" />}>
           <Suspense fallback={<Box minH={{ base: "320px", md: "480px" }} bg="white" />}>
             <SolutionSection />
             <ModulosSection />
+            <PricingSection />
+            <GrowWithYouSection />
             <SEOSection />
             <ComparisonInlineSection />
-            <PricingSection />
             <FAQSection />
+            <FinalCTASection />
+            <MissionBandSection />
           </Suspense>
         </DeferredRender>
       </Box>

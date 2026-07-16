@@ -51,15 +51,15 @@ export const PricingSection = () => {
               color="#0F172A"
               lineHeight="1.08"
             >
-              Wybierz pakiet dla swojej firmy
+              Co płacisz i co dostajesz
             </Heading>
             <VStack gap="2" maxW="2xl">
               <Text color="#475569" fontSize="15px" lineHeight="1.55">
-                Płacisz jednorazowo za stronę — zostaje Twoja na zawsze.
+                <Box as="span" fontWeight="700" color="#0F172A">Płacisz dwa razy:</Box>{" "}
+                raz za zaprojektowanie strony, raz za to, że dbamy o nią co miesiąc.
               </Text>
               <Text color="#475569" fontSize="15px" lineHeight="1.55">
-                Co miesiąc płacisz tylko za CMS, hosting i wsparcie. Bez umowy,
-                możesz zrezygnować w każdej chwili.
+                Żadnych ukrytych kosztów. Żadnych niespodzianek. Wiesz, za co płacisz, i wiesz, co dostajesz.
               </Text>
             </VStack>
           </VStack>
@@ -149,7 +149,7 @@ export const PricingSection = () => {
                           letterSpacing="0.1em"
                           mb="1.5"
                         >
-                          Strona
+                          Projekt strony
                         </Text>
                         <Text
                           fontSize="22px"
@@ -162,7 +162,7 @@ export const PricingSection = () => {
                           {plan.sitePrice}
                         </Text>
                         <Text fontSize="10px" color="#64748B" fontWeight="500">
-                          jednorazowo
+                          płatne raz
                         </Text>
                       </Box>
 
@@ -182,7 +182,7 @@ export const PricingSection = () => {
                           letterSpacing="0.1em"
                           mb="1.5"
                         >
-                          Abonament
+                          Opieka miesięczna
                         </Text>
                         <Flex align="baseline" gap="0.5" mb="1">
                           <Text
@@ -199,7 +199,7 @@ export const PricingSection = () => {
                           </Text>
                         </Flex>
                         <Text fontSize="10px" color="#64748B" fontWeight="500">
-                          bez umowy
+                          bez umowy długoterminowej
                         </Text>
                       </Box>
                     </Grid>
@@ -339,6 +339,35 @@ export const PricingSection = () => {
               )
             })}
           </Grid>
+
+          {/* Línea "no empiezas de cero" — refuerza anti-miedo */}
+          <Box
+            bg="linear-gradient(135deg, #EEF2FF 0%, #F5F3FF 100%)"
+            border="1px solid #C7D2FE"
+            p={{ base: "5", md: "6" }}
+            rounded="xl"
+            textAlign="center"
+            maxW="3xl"
+            w="full"
+          >
+            <Text
+              fontSize={{ base: "15px", md: "17px" }}
+              color="#0F172A"
+              fontWeight="700"
+              lineHeight="1.4"
+            >
+              🔁 Nie zaczynasz od nowa co 2 lata.
+            </Text>
+            <Text
+              fontSize="14px"
+              color="#475569"
+              lineHeight="1.5"
+              mt="1.5"
+            >
+              Dodajesz sklep, rezerwacje, blog czy kursy, kiedy ich potrzebujesz —
+              <Box as="span" fontWeight="600" color="#0F172A"> bez zmiany platformy, bez nowego projektu.</Box>
+            </Text>
+          </Box>
 
           {/* Bottom CTA — minimalista */}
           <Flex

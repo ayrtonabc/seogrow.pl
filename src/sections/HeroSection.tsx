@@ -6,7 +6,6 @@ import {
   Text,
   VStack,
   HStack,
-  SimpleGrid,
 } from "@chakra-ui/react"
 import { useState } from "react"
 
@@ -71,62 +70,64 @@ export const HeroSection = () => {
             maxW={{ base: "full", lg: "600px" }}
             textAlign="left"
           >
+            {/* H1 — frase principal, una sola idea */}
             <Heading
               as="h1"
-              fontSize={{ base: "28px", sm: "32px", md: "38px", lg: "42px" }}
-              fontWeight="700"
-              letterSpacing="-0.01em"
-              lineHeight="1.3"
+              fontSize={{ base: "32px", sm: "36px", md: "44px", lg: "50px" }}
+              fontWeight="800"
+              letterSpacing="-0.025em"
+              lineHeight="1.1"
               color="#0F172A"
             >
-              Twoja strona widoczna w <GoogleLogo />{" "}
-              <Box as="span" color="#64748B">— bez agencji SEO</Box>
+              Spokój.{" "}
+              <Box as="span" color="#4F46E5">
+                Twoja strona zdobywa klientów
+              </Box>
+              , Ty zajmujesz się firmą.
             </Heading>
 
+            {/* Subtítulo — una sola línea de apoyo */}
             <Text
               fontSize={{ base: "md", md: "lg" }}
               color="#475569"
-              lineHeight="1.6"
-              maxW="56ch"
+              lineHeight="1.55"
+              maxW="52ch"
               fontWeight="400"
             >
-              Profesjonalna strona internetowa dla Twojej firmy tworzona od podstaw przez nasz zespół.
-              Zarządzasz nią wygodnie z telefonu, a klienci trafiają na Twoją stronę w Google bez płacenia za reklamy.
-              Wszystko bez agencji SEO, bez programisty i bez wiedzy technicznej.
+              Projektujemy stronę, dbamy o technikę i rozwijamy ją razem z Twoim biznesem.{" "}
+              <Box as="span" fontWeight="600" color="#0F172A">
+                Kiedy ktoś szuka Twojej usługi w Google, chcemy żeby znalazł właśnie Ciebie.
+              </Box>
             </Text>
 
-            <SimpleGrid columns={{ base: 1, sm: 3 }} gap={{ base: "2", sm: "3" }} w="full" pt="1">
+            {/* 3 features — chips compactos */}
+            <HStack gap={{ base: "2", md: "3" }} wrap="wrap" pt="1">
               {[
-                { title: "Gotowa już w 5 dni", desc: "" },
-                { title: "Edycja z telefonu", desc: "" },
-                { title: "Widoczność w Google", desc: "" },
+                { title: "Więcej klientów" },
+                { title: "Zawsze działa" },
+                { title: "Projekt na miarę" },
               ].map((item) => (
                 <HStack
                   key={item.title}
-                  align="start"
-                  gap="2.5"
-                  p="3"
+                  align="center"
+                  gap="2"
+                  px="3"
+                  py="1.5"
                   bg="white"
-                  rounded="xl"
+                  rounded="full"
                   border="1px solid #E2E8F0"
                 >
-                  <Box color="#4F46E5" mt="0.5" flexShrink={0}>
-                    <CheckIcon />
+                  <Box color="#4F46E5" display="flex">
+                    <CheckIcon size={14} />
                   </Box>
-                  <Box>
-                    <Text fontSize="sm" color="#0F172A" lineHeight="1.3" fontWeight="700">
-                      {item.title}
-                    </Text>
-                    {item.desc && (
-                      <Text fontSize="xs" color="#64748B" lineHeight="1.4" mt="0.5">
-                        {item.desc}
-                      </Text>
-                    )}
-                  </Box>
+                  <Text fontSize="sm" color="#0F172A" fontWeight="600">
+                    {item.title}
+                  </Text>
                 </HStack>
               ))}
-            </SimpleGrid>
+            </HStack>
 
+            {/* CTAs */}
             <HStack gap="3" wrap="wrap" pt="3">
               <Box
                 as="a"
@@ -150,7 +151,7 @@ export const HeroSection = () => {
                 }}
                 transition="all 0.2s"
               >
-                Zobacz cenę i demo
+                Chcę swoją stronę
                 <ArrowRightIcon />
               </Box>
 
@@ -179,6 +180,11 @@ export const HeroSection = () => {
                 Zadzwoń: 517 105 423
               </Box>
             </HStack>
+
+            {/* Reaseguro bajo CTA — una sola línea, discreto */}
+            <Text fontSize="xs" color="#94A3B8" pt="1" maxW="52ch">
+              Bez umów długoterminowych. Bez nauki technologii. Bez żonglowania agencjami.
+            </Text>
           </VStack>
 
           <Box
