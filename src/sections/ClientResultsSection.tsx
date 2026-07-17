@@ -14,12 +14,12 @@ type CaseStudy = {
 const cases: CaseStudy[] = [
   {
     name: "Asmed",
-    industry: "Gabinety medyczne",
+    industry: "Aparaty słuchowe · Ostróda",
     logo: "/clientes/asmed.webp",
     url: "https://asmed.example",
-    situation: "Nowa strona dla istniejącej kliniki. Poprzednia witryna ładowała się 6+ sekund i nie pojawiała się w Google na lokalne zapytania.",
-    whatWeDid: "Zaprojektowaliśmy stronę od zera z myślą o pacjentach szukających specjalisty w mieście. Konfiguracja schema, meta tagów i Search Console.",
-    result: "Strona ładuje się poniżej 1.5s. Indeksacja w Google w 9 dni. Pierwsze zapytania lokalne zaczęły pojawiać się po 4 tygodniach.",
+    situation: "Sklep z aparatami słuchowymi w Ostródzie potrzebował strony, która buduje zaufanie starszych klientów i ich rodzin, oraz pojawia się w Google, kiedy ktoś szuka aparatu słuchowego w regionie warmińsko-mazurskim.",
+    whatWeDid: "Zaprojektowaliśmy stronę od zera z myślą o dwóch grupach odbiorców: osobach starszych (czytelność, duże przyciski, prosty kontakt telefoniczny) i ich rodzinach (które szukają w imieniu rodziców). Konfiguracja schema LocalBusiness, meta tagów i Google Search Console.",
+    result: "Strona ładuje się poniżej 1.5s. Indeksacja w Google w 9 dni. Pierwsze zapytania lokalne typu 'aparat słuchowy Ostróda' zaczęły pojawiać się po 4 tygodniach.",
     resultNote: "Wyniki w trakcie pomiaru — pełny raport po 90 dniach",
   },
   {
