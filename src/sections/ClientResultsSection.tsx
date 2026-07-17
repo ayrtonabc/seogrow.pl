@@ -29,8 +29,8 @@ const cases: CaseStudy[] = [
     url: "https://wiktorskiubezpieczenia.pl",
     situation: "Doradca ubezpieczeniowy MDRT Junior z Olsztyna. Klient docelowy: rodziny i przedsiębiorcy z Warmii i Mazur. Potrzebował strony, która pozwoli pozyskiwać klientów z całego regionu, a nie tylko z Olsztyna.",
     whatWeDid: "Stworzyliśmy strukturę strony dopasowaną do dwóch grup odbiorców (klient indywidualny vs firma), osobne podstrony SEO dla 8 miast regionu (Ostróda, Elbląg, Iława, Ełk, Mrągowo, Giżycko, Szczytno), schema InsuranceAgency + LocalBusiness + Person oraz formularz kontaktowy z wyborem typu klienta.",
-    result: "Strona działa i pozyskuje klientów z całego regionu Warmii i Mazur. Formularz konsultacji działa od pierwszego dnia, zapytania spływają z miast, w których klient wcześniej nie był obecny. Współpracujemy dalej w oparciu o wyniki.",
-    resultNote: "Nasz partner od początku · wiktorskiubezpieczenia.pl",
+    result: "Strona świeżo zaindeksowana. Oczekujemy pierwszych zapytań z regionu Warmii i Mazur w najbliższych tygodniach. Współpracujemy dalej — będziemy optymalizować w oparciu o dane z Search Console, gdy się pojawią.",
+    resultNote: "Nasz partner od początku · wiktorskiubezpieczenia.pl · wyniki w trakcie pomiaru",
   },
   {
     name: "Inteligentne Folie",
