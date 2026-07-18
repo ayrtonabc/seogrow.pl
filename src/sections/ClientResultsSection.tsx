@@ -20,7 +20,7 @@ const cases: CaseStudy[] = [
     situation: "Sklep z aparatami słuchowymi w Ostródzie potrzebował strony, która buduje zaufanie starszych klientów i ich rodzin, oraz pojawia się w Google, kiedy ktoś szuka aparatu słuchowego w regionie warmińsko-mazurskim.",
     whatWeDid: "Zaprojektowaliśmy stronę od zera z myślą o dwóch grupach odbiorców: osobach starszych (czytelność, duże przyciski, prosty kontakt telefoniczny) i ich rodzinach (które szukają w imieniu rodziców). Konfiguracja schema LocalBusiness, meta tagów i Google Search Console.",
     result: "Strona ładuje się poniżej 1.5s. Indeksacja w Google w 9 dni. Pierwsze zapytania lokalne typu 'aparat słuchowy Ostróda' zaczęły pojawiać się po 4 tygodniach.",
-    resultNote: "Wyniki w trakcie pomiaru — pełny raport po 90 dniach",
+    resultNote: "Klient założyciel · wyniki w trakcie pomiaru",
   },
   {
     name: "Artur Wiktorski",
@@ -30,7 +30,7 @@ const cases: CaseStudy[] = [
     situation: "Doradca ubezpieczeniowy MDRT Junior z Olsztyna. Klient docelowy: rodziny i przedsiębiorcy z Warmii i Mazur. Potrzebował strony, która pozwoli pozyskiwać klientów z całego regionu, a nie tylko z Olsztyna.",
     whatWeDid: "Stworzyliśmy strukturę strony dopasowaną do dwóch grup odbiorców (klient indywidualny vs firma), osobne podstrony SEO dla 8 miast regionu (Ostróda, Elbląg, Iława, Ełk, Mrągowo, Giżycko, Szczytno), schema InsuranceAgency + LocalBusiness + Person oraz formularz kontaktowy z wyborem typu klienta.",
     result: "Strona świeżo zaindeksowana. Oczekujemy pierwszych zapytań z regionu Warmii i Mazur w najbliższych tygodniach. Współpracujemy dalej — będziemy optymalizować w oparciu o dane z Search Console, gdy się pojawią.",
-    resultNote: "Nasz partner od początku · wiktorskiubezpieczenia.pl · wyniki w trakcie pomiaru",
+    resultNote: "Klient założyciel · wiktorskiubezpieczenia.pl · wyniki w trakcie pomiaru",
   },
   {
     name: "Inteligentne Folie",
@@ -40,7 +40,7 @@ const cases: CaseStudy[] = [
     situation: "Sklep internetowy sprzedający folię inteligentną w całej Polsce. Produkt mało znany, wymagał wyjaśnienia zastosowań przed specyfikacją. Konkurencja mocno osadzona w Google.",
     whatWeDid: "Przeprowadziliśmy analizę konkurencji pod kątem SEO. Przebudowaliśmy strukturę strony tak, żeby zaczynała od zastosowań (co można zrobić z folią), a nie od specyfikacji. Wydzieliliśmy sekcję B2B i B2C. Zoptymalizowaliśmy treści pod główne zapytania produktowe.",
     result: "Po 2 tygodniach od publikacji klient zaczął otrzymywać telefony i zapytania ofertowe z całej Polski. Wyszukujemy się lepiej niż konkurencja w kluczowych zapytaniach. Współpracujemy dalej — optymalizujemy na bieżąco w oparciu o dane z Search Console.",
-    resultNote: "Nasz partner od początku · dane w trakcie pomiaru",
+    resultNote: "Klient założyciel · dane w trakcie pomiaru",
   },
 ]
 
