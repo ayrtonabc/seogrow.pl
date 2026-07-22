@@ -30,3 +30,6 @@ analitycs.webp
 indexnow.webp
 search.webp
 public/logo.webp
+
+# Old publish artifact — never commit
+.dist-publish/

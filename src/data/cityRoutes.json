@@ -1,0 +1,701 @@
+{
+  "totalCities": 99,
+  "routeBlock": "          <Route path=\"/ilawa\" element={<StronaInternetowaIlawaPage />} />\n          <Route path=\"/elk\" element={<StronaInternetowaElkPage />} />\n          <Route path=\"/kwidzyn\" element={<StronaInternetowaKwidzynPage />} />\n          <Route path=\"/starogard-gdanski\" element={<StronaInternetowaStarogardGdanskiPage />} />\n          <Route path=\"/wrzesnia\" element={<StronaInternetowaWrzesniaPage />} />\n          <Route path=\"/lebork\" element={<StronaInternetowaLeborkPage />} />\n          <Route path=\"/debica\" element={<StronaInternetowaDebicaPage />} />\n          <Route path=\"/belchatow\" element={<StronaInternetowaBelchatowPage />} />\n          <Route path=\"/olawa\" element={<StronaInternetowaOlawaPage />} />\n          <Route path=\"/mielec\" element={<StronaInternetowaMielecPage />} />\n          <Route path=\"/klodzko\" element={<StronaInternetowaKlodzkoPage />} />\n          <Route path=\"/kołobrzeg\" element={<StronaInternetowaKołobrzegPage />} />\n          <Route path=\"/szczecinek\" element={<StronaInternetowaSzczecinekPage />} />\n          <Route path=\"/sandomierz\" element={<StronaInternetowaSandomierzPage />} />\n          <Route path=\"/tarnobrzeg\" element={<StronaInternetowaTarnobrzegPage />} />\n          <Route path=\"/krosno\" element={<StronaInternetowaKrosnoPage />} />\n          <Route path=\"/sanok\" element={<StronaInternetowaSanokPage />} />\n          <Route path=\"/rzeszow\" element={<StronaInternetowaRzeszowPage />} />\n          <Route path=\"/jelenia-gora\" element={<StronaInternetowaJeleniaGoraPage />} />\n          <Route path=\"/bogatynia\" element={<StronaInternetowaBogatyniaPage />} />\n          <Route path=\"/lubin\" element={<StronaInternetowaLubinPage />} />\n          <Route path=\"/legnica\" element={<StronaInternetowaLegnicaPage />} />\n          <Route path=\"/gniezno\" element={<StronaInternetowaGnieznoPage />} />\n          <Route path=\"/konin\" element={<StronaInternetowaKoninPage />} />\n          <Route path=\"/piła\" element={<StronaInternetowaPiłaPage />} />\n          <Route path=\"/chojnice\" element={<StronaInternetowaChojnicePage />} />\n          <Route path=\"/malbork\" element={<StronaInternetowaMalborkPage />} />\n          <Route path=\"/swiecie\" element={<StronaInternetowaSwieciePage />} />\n          <Route path=\"/grudziadz\" element={<StronaInternetowaGrudziadzPage />} />\n          <Route path=\"/inowroclaw\" element={<StronaInternetowaInowroclawPage />} />\n          <Route path=\"/ostroleka\" element={<StronaInternetowaOstrolekaPage />} />\n          <Route path=\"/siedlce\" element={<StronaInternetowaSiedlcePage />} />\n          <Route path=\"/radom\" element={<StronaInternetowaRadomPage />} />\n          <Route path=\"/plock\" element={<StronaInternetowaPlockPage />} />\n          <Route path=\"/lomza\" element={<StronaInternetowaLomzaPage />} />\n          <Route path=\"/suwalki\" element={<StronaInternetowaSuwalkiPage />} />\n          <Route path=\"/bartoszyce\" element={<StronaInternetowaBartoszycePage />} />\n          <Route path=\"/lidzbark-warminski\" element={<StronaInternetowaLidzbarkWarminskiPage />} />\n          <Route path=\"/goldap\" element={<StronaInternetowaGoldapPage />} />\n          <Route path=\"/olecko\" element={<StronaInternetowaOleckoPage />} />\n          <Route path=\"/pisz\" element={<StronaInternetowaPiszPage />} />\n          <Route path=\"/mragowo\" element={<StronaInternetowaMragowoPage />} />\n          <Route path=\"/ketrzyn\" element={<StronaInternetowaKetrzynPage />} />\n          <Route path=\"/gizycko\" element={<StronaInternetowaGizyckoPage />} />\n          <Route path=\"/wegorzewo\" element={<StronaInternetowaWegorzewoPage />} />\n          <Route path=\"/szczytno\" element={<StronaInternetowaSzczytnoPage />} />\n          <Route path=\"/nowe-miasto-lubawskie\" element={<StronaInternetowaNoweMiastoLubawskiePage />} />\n          <Route path=\"/dzialdowo\" element={<StronaInternetowaDzialdowoPage />} />\n          <Route path=\"/nidzica\" element={<StronaInternetowaNidzicaPage />} />\n          <Route path=\"/morag\" element={<StronaInternetowaMoragPage />} />\n          <Route path=\"/braniewo\" element={<StronaInternetowaBraniewoPage />} />\n          <Route path=\"/lubawa\" element={<StronaInternetowaLubawaPage />} />\n          <Route path=\"/chodziez\" element={<StronaInternetowaChodziezPage />} />\n          <Route path=\"/walcz\" element={<StronaInternetowaWalczPage />} />\n          <Route path=\"/trzcianka\" element={<StronaInternetowaTrzciankaPage />} />\n          <Route path=\"/czarnkow\" element={<StronaInternetowaCzarnkowPage />} />\n          <Route path=\"/gostynin\" element={<StronaInternetowaGostyninPage />} />\n          <Route path=\"/sierpc\" element={<StronaInternetowaSierpcPage />} />\n          <Route path=\"/mlawa\" element={<StronaInternetowaMlawaPage />} />\n          <Route path=\"/ciechanow\" element={<StronaInternetowaCiechanowPage />} />\n          <Route path=\"/pultusk\" element={<StronaInternetowaPultuskPage />} />\n          <Route path=\"/makow-mazowiecki\" element={<StronaInternetowaMakowMazowieckiPage />} />\n          <Route path=\"/przasnysz\" element={<StronaInternetowaPrzasnyszPage />} />\n          <Route path=\"/zambrow\" element={<StronaInternetowaZambrowPage />} />\n          <Route path=\"/kolno\" element={<StronaInternetowaKolnoPage />} />\n          <Route path=\"/wysokie-mazowieckie\" element={<StronaInternetowaWysokieMazowieckiePage />} />\n          <Route path=\"/lukow\" element={<StronaInternetowaLukowPage />} />\n          <Route path=\"/radzyn-podlaski\" element={<StronaInternetowaRadzynPodlaskiPage />} />\n          <Route path=\"/biala-podlaska\" element={<StronaInternetowaBialaPodlaskaPage />} />\n          <Route path=\"/chelno\" element={<StronaInternetowaChelnoPage />} />\n          <Route path=\"/brodnica\" element={<StronaInternetowaBrodnicaPage />} />\n          <Route path=\"/rypin\" element={<StronaInternetowaRypinPage />} />\n          <Route path=\"/wabrzezno\" element={<StronaInternetowaWabrzeznoPage />} />\n          <Route path=\"/aleksandrow-lodzki\" element={<StronaInternetowaAleksandrowLodzkiPage />} />\n          <Route path=\"/opoczno\" element={<StronaInternetowaOpocznoPage />} />\n          <Route path=\"/tomaszow-mazowiecki\" element={<StronaInternetowaTomaszowMazowieckiPage />} />\n          <Route path=\"/lowicz\" element={<StronaInternetowaLowiczPage />} />\n          <Route path=\"/skierniewice\" element={<StronaInternetowaSkierniewicePage />} />\n          <Route path=\"/pinczow\" element={<StronaInternetowaPinczowPage />} />\n          <Route path=\"/augustow\" element={<StronaInternetowaAugustowPage />} />\n          <Route path=\"/augustow-powiat\" element={<StronaInternetowaAugustowPowiatPage />} />\n          <Route path=\"/bielsk-podlaski\" element={<StronaInternetowaBielskPodlaskiPage />} />\n          <Route path=\"/hajnowka\" element={<StronaInternetowaHajnowkaPage />} />\n          <Route path=\"/siemiatycze\" element={<StronaInternetowaSiemiatyczePage />} />\n          <Route path=\"/hrubieszow\" element={<StronaInternetowaHrubieszowPage />} />\n          <Route path=\"/tomaszow-lubelski\" element={<StronaInternetowaTomaszowLubelskiPage />} />\n          <Route path=\"/zamosc\" element={<StronaInternetowaZamoscPage />} />\n          <Route path=\"/bilgoraj\" element={<StronaInternetowaBilgorajPage />} />\n          <Route path=\"/janow-lubelski\" element={<StronaInternetowaJanowLubelskiPage />} />\n          <Route path=\"/krasnik\" element={<StronaInternetowaKrasnikPage />} />\n          <Route path=\"/krasnystaw\" element={<StronaInternetowaKrasnystawPage />} />\n          <Route path=\"/lubartow\" element={<StronaInternetowaLubartowPage />} />\n          <Route path=\"/leczna\" element={<StronaInternetowaLecznaPage />} />\n          <Route path=\"/krasnystaw-powiat\" element={<StronaInternetowaKrasnystawPowiatPage />} />\n          <Route path=\"/kutno\" element={<StronaInternetowaKutnoPage />} />\n          <Route path=\"/lask\" element={<StronaInternetowaLaskPage />} />\n          <Route path=\"/lancut\" element={<StronaInternetowaLancutPage />} />\n          <Route path=\"/nowy-targ\" element={<StronaInternetowaNowyTargPage />} />\n          <Route path=\"/wadowice\" element={<StronaInternetowaWadowicePage />} />",
+  "importBlock": "  StronaInternetowaIlawaPage,\n  StronaInternetowaElkPage,\n  StronaInternetowaKwidzynPage,\n  StronaInternetowaStarogardGdanskiPage,\n  StronaInternetowaWrzesniaPage,\n  StronaInternetowaLeborkPage,\n  StronaInternetowaDebicaPage,\n  StronaInternetowaBelchatowPage,\n  StronaInternetowaOlawaPage,\n  StronaInternetowaMielecPage,\n  StronaInternetowaKlodzkoPage,\n  StronaInternetowaKołobrzegPage,\n  StronaInternetowaSzczecinekPage,\n  StronaInternetowaSandomierzPage,\n  StronaInternetowaTarnobrzegPage,\n  StronaInternetowaKrosnoPage,\n  StronaInternetowaSanokPage,\n  StronaInternetowaRzeszowPage,\n  StronaInternetowaJeleniaGoraPage,\n  StronaInternetowaBogatyniaPage,\n  StronaInternetowaLubinPage,\n  StronaInternetowaLegnicaPage,\n  StronaInternetowaGnieznoPage,\n  StronaInternetowaKoninPage,\n  StronaInternetowaPiłaPage,\n  StronaInternetowaChojnicePage,\n  StronaInternetowaMalborkPage,\n  StronaInternetowaSwieciePage,\n  StronaInternetowaGrudziadzPage,\n  StronaInternetowaInowroclawPage,\n  StronaInternetowaOstrolekaPage,\n  StronaInternetowaSiedlcePage,\n  StronaInternetowaRadomPage,\n  StronaInternetowaPlockPage,\n  StronaInternetowaLomzaPage,\n  StronaInternetowaSuwalkiPage,\n  StronaInternetowaBartoszycePage,\n  StronaInternetowaLidzbarkWarminskiPage,\n  StronaInternetowaGoldapPage,\n  StronaInternetowaOleckoPage,\n  StronaInternetowaPiszPage,\n  StronaInternetowaMragowoPage,\n  StronaInternetowaKetrzynPage,\n  StronaInternetowaGizyckoPage,\n  StronaInternetowaWegorzewoPage,\n  StronaInternetowaSzczytnoPage,\n  StronaInternetowaNoweMiastoLubawskiePage,\n  StronaInternetowaDzialdowoPage,\n  StronaInternetowaNidzicaPage,\n  StronaInternetowaMoragPage,\n  StronaInternetowaBraniewoPage,\n  StronaInternetowaLubawaPage,\n  StronaInternetowaChodziezPage,\n  StronaInternetowaWalczPage,\n  StronaInternetowaTrzciankaPage,\n  StronaInternetowaCzarnkowPage,\n  StronaInternetowaGostyninPage,\n  StronaInternetowaSierpcPage,\n  StronaInternetowaMlawaPage,\n  StronaInternetowaCiechanowPage,\n  StronaInternetowaPultuskPage,\n  StronaInternetowaMakowMazowieckiPage,\n  StronaInternetowaPrzasnyszPage,\n  StronaInternetowaZambrowPage,\n  StronaInternetowaKolnoPage,\n  StronaInternetowaWysokieMazowieckiePage,\n  StronaInternetowaLukowPage,\n  StronaInternetowaRadzynPodlaskiPage,\n  StronaInternetowaBialaPodlaskaPage,\n  StronaInternetowaChelnoPage,\n  StronaInternetowaBrodnicaPage,\n  StronaInternetowaRypinPage,\n  StronaInternetowaWabrzeznoPage,\n  StronaInternetowaAleksandrowLodzkiPage,\n  StronaInternetowaOpocznoPage,\n  StronaInternetowaTomaszowMazowieckiPage,\n  StronaInternetowaLowiczPage,\n  StronaInternetowaSkierniewicePage,\n  StronaInternetowaPinczowPage,\n  StronaInternetowaAugustowPage,\n  StronaInternetowaAugustowPowiatPage,\n  StronaInternetowaBielskPodlaskiPage,\n  StronaInternetowaHajnowkaPage,\n  StronaInternetowaSiemiatyczePage,\n  StronaInternetowaHrubieszowPage,\n  StronaInternetowaTomaszowLubelskiPage,\n  StronaInternetowaZamoscPage,\n  StronaInternetowaBilgorajPage,\n  StronaInternetowaJanowLubelskiPage,\n  StronaInternetowaKrasnikPage,\n  StronaInternetowaKrasnystawPage,\n  StronaInternetowaLubartowPage,\n  StronaInternetowaLecznaPage,\n  StronaInternetowaKrasnystawPowiatPage,\n  StronaInternetowaKutnoPage,\n  StronaInternetowaLaskPage,\n  StronaInternetowaLancutPage,\n  StronaInternetowaNowyTargPage,\n  StronaInternetowaWadowicePage,\n",
+  "seoEntries": "  {\n    route: '/ilawa',\n    title: `Strona internetowa Iława | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Iława i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/elk',\n    title: `Strona internetowa Ełk | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Ełk i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/kwidzyn',\n    title: `Strona internetowa Kwidzyn | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Kwidzyn i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/starogard-gdanski',\n    title: `Strona internetowa Starogard Gdański | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Starogard Gdański i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/wrzesnia',\n    title: `Strona internetowa Września | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Września i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lebork',\n    title: `Strona internetowa Lębork | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Lębork i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/debica',\n    title: `Strona internetowa Dębica | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Dębica i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/belchatow',\n    title: `Strona internetowa Bełchatów | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Bełchatów i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/olawa',\n    title: `Strona internetowa Oława | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Oława i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/mielec',\n    title: `Strona internetowa Mielec | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Mielec i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/klodzko',\n    title: `Strona internetowa Kłodzko | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Kłodzko i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/kołobrzeg',\n    title: `Strona internetowa Kołobrzeg | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Kołobrzeg i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/szczecinek',\n    title: `Strona internetowa Szczecinek | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Szczecinek i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/sandomierz',\n    title: `Strona internetowa Sandomierz | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Sandomierz i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/tarnobrzeg',\n    title: `Strona internetowa Tarnobrzeg | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Tarnobrzeg i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/krosno',\n    title: `Strona internetowa Krosno | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Krosno i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/sanok',\n    title: `Strona internetowa Sanok | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Sanok i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/rzeszow',\n    title: `Strona internetowa Rzeszów | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Rzeszów i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/jelenia-gora',\n    title: `Strona internetowa Jelenia Góra | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Jelenia Góra i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/bogatynia',\n    title: `Strona internetowa Bogatynia | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Bogatynia i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lubin',\n    title: `Strona internetowa Lubin | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Lubin i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/legnica',\n    title: `Strona internetowa Legnica | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Legnica i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/gniezno',\n    title: `Strona internetowa Gniezno | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Gniezno i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/konin',\n    title: `Strona internetowa Konin | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Konin i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/piła',\n    title: `Strona internetowa Piła | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Piła i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/chojnice',\n    title: `Strona internetowa Chojnice | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Chojnice i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/malbork',\n    title: `Strona internetowa Malbork | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Malbork i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/swiecie',\n    title: `Strona internetowa Świecie | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Świecie i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/grudziadz',\n    title: `Strona internetowa Grudziądz | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Grudziądz i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/inowroclaw',\n    title: `Strona internetowa Inowrocław | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Inowrocław i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/ostroleka',\n    title: `Strona internetowa Ostrołęka | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Ostrołęka i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/siedlce',\n    title: `Strona internetowa Siedlce | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Siedlce i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/radom',\n    title: `Strona internetowa Radom | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Radom i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/plock',\n    title: `Strona internetowa Płock | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Płock i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lomza',\n    title: `Strona internetowa Łomża | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Łomża i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/suwalki',\n    title: `Strona internetowa Suwałki | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Suwałki i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.8',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/bartoszyce',\n    title: `Strona internetowa Bartoszyce | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Bartoszyce i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lidzbark-warminski',\n    title: `Strona internetowa Lidzbark Warmiński | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Lidzbark Warmiński i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/goldap',\n    title: `Strona internetowa Gołdap | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Gołdap i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/olecko',\n    title: `Strona internetowa Olecko | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Olecko i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/pisz',\n    title: `Strona internetowa Pisz | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Pisz i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/mragowo',\n    title: `Strona internetowa Mrągowo | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Mrągowo i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/ketrzyn',\n    title: `Strona internetowa Kętrzyn | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Kętrzyn i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/gizycko',\n    title: `Strona internetowa Giżycko | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Giżycko i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/wegorzewo',\n    title: `Strona internetowa Węgorzewo | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Węgorzewo i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/szczytno',\n    title: `Strona internetowa Szczytno | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Szczytno i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/nowe-miasto-lubawskie',\n    title: `Strona internetowa Nowe Miasto Lubawskie | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Nowe Miasto Lubawskie i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/dzialdowo',\n    title: `Strona internetowa Działdowo | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Działdowo i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/nidzica',\n    title: `Strona internetowa Nidzica | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Nidzica i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/morag',\n    title: `Strona internetowa Morąg | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Morąg i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/braniewo',\n    title: `Strona internetowa Braniewo | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Braniewo i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lubawa',\n    title: `Strona internetowa Lubawa | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Lubawa i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/chodziez',\n    title: `Strona internetowa Chodzież | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Chodzież i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/walcz',\n    title: `Strona internetowa Wałcz | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Wałcz i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/trzcianka',\n    title: `Strona internetowa Trzcianka | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Trzcianka i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/czarnkow',\n    title: `Strona internetowa Czarnków | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Czarnków i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/gostynin',\n    title: `Strona internetowa Gostynin | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Gostynin i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/sierpc',\n    title: `Strona internetowa Sierpc | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Sierpc i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/mlawa',\n    title: `Strona internetowa Mława | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Mława i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/ciechanow',\n    title: `Strona internetowa Ciechanów | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Ciechanów i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/pultusk',\n    title: `Strona internetowa Pułtusk | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Pułtusk i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/makow-mazowiecki',\n    title: `Strona internetowa Maków Mazowiecki | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Maków Mazowiecki i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/przasnysz',\n    title: `Strona internetowa Przasnysz | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Przasnysz i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/zambrow',\n    title: `Strona internetowa Zambrów | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Zambrów i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/kolno',\n    title: `Strona internetowa Kolno | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Kolno i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/wysokie-mazowieckie',\n    title: `Strona internetowa Wysokie Mazowieckie | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Wysokie Mazowieckie i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lukow',\n    title: `Strona internetowa Łuków | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Łuków i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/radzyn-podlaski',\n    title: `Strona internetowa Radzyń Podlaski | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Radzyń Podlaski i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/biala-podlaska',\n    title: `Strona internetowa Biała Podlaska | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Biała Podlaska i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/chelno',\n    title: `Strona internetowa Chełmno | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Chełmno i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/brodnica',\n    title: `Strona internetowa Brodnica | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Brodnica i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/rypin',\n    title: `Strona internetowa Rypin | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Rypin i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/wabrzezno',\n    title: `Strona internetowa Wąbrzeźno | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Wąbrzeźno i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/aleksandrow-lodzki',\n    title: `Strona internetowa Aleksandrów Łódzki | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Aleksandrów Łódzki i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/opoczno',\n    title: `Strona internetowa Opoczno | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Opoczno i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/tomaszow-mazowiecki',\n    title: `Strona internetowa Tomaszów Mazowiecki | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Tomaszów Mazowiecki i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lowicz',\n    title: `Strona internetowa Łowicz | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Łowicz i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/skierniewice',\n    title: `Strona internetowa Skierniewice | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Skierniewice i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/pinczow',\n    title: `Strona internetowa Pińczów | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Pińczów i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.7',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/augustow',\n    title: `Strona internetowa Augustów | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Augustów i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/augustow-powiat',\n    title: `Strona internetowa Augustów (powiat) | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Augustów (powiat) i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/bielsk-podlaski',\n    title: `Strona internetowa Bielsk Podlaski | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Bielsk Podlaski i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/hajnowka',\n    title: `Strona internetowa Hajnówka | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Hajnówka i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/siemiatycze',\n    title: `Strona internetowa Siemiatycze | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Siemiatycze i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/hrubieszow',\n    title: `Strona internetowa Hrubieszów | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Hrubieszów i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/tomaszow-lubelski',\n    title: `Strona internetowa Tomaszów Lubelski | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Tomaszów Lubelski i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/zamosc',\n    title: `Strona internetowa Zamość | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Zamość i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/bilgoraj',\n    title: `Strona internetowa Biłgoraj | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Biłgoraj i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/janow-lubelski',\n    title: `Strona internetowa Janów Lubelski | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Janów Lubelski i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/krasnik',\n    title: `Strona internetowa Kraśnik | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Kraśnik i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/krasnystaw',\n    title: `Strona internetowa Krasnystaw | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Krasnystaw i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lubartow',\n    title: `Strona internetowa Lubartów | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Lubartów i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/leczna',\n    title: `Strona internetowa Łęczna | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Łęczna i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/krasnystaw-powiat',\n    title: `Strona internetowa Krasnystaw (powiat) | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Krasnystaw (powiat) i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/kutno',\n    title: `Strona internetowa Kutno | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Kutno i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lask',\n    title: `Strona internetowa Łask | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Łask i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/lancut',\n    title: `Strona internetowa Łańcut | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Łańcut i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/nowy-targ',\n    title: `Strona internetowa Nowy Targ | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Nowy Targ i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },\n  {\n    route: '/wadowice',\n    title: `Strona internetowa Wadowice | Od 1500 zł, gotowa w 5 dni | SEO Grow`,\n    description: `Profesjonalna strona internetowa dla firm z Wadowice i okolic. Gotowa w 5 dni, edycja z telefonu, widoczność w Google. Od 1500 zł jednorazowo, bez umowy.`,\n    selectors: ['main', 'h1', '#root:not(:empty)'],\n    includeInSitemap: true,\n    noindex: false,\n    expectJsonLd: true,\n    changefreq: 'monthly',\n    priority: '0.6',\n    lastmod: '2026-07-21',\n  },",
+  "cityRoutes": [
+    {
+      "slug": "ilawa",
+      "component": "StronaInternetowaIlawaPage",
+      "title": "Iława",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "A"
+    },
+    {
+      "slug": "elk",
+      "component": "StronaInternetowaElkPage",
+      "title": "Ełk",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "A"
+    },
+    {
+      "slug": "kwidzyn",
+      "component": "StronaInternetowaKwidzynPage",
+      "title": "Kwidzyn",
+      "voivodeship": "Pomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "starogard-gdanski",
+      "component": "StronaInternetowaStarogardGdanskiPage",
+      "title": "Starogard Gdański",
+      "voivodeship": "Pomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "wrzesnia",
+      "component": "StronaInternetowaWrzesniaPage",
+      "title": "Września",
+      "voivodeship": "Wielkopolskie",
+      "tier": "A"
+    },
+    {
+      "slug": "lebork",
+      "component": "StronaInternetowaLeborkPage",
+      "title": "Lębork",
+      "voivodeship": "Pomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "debica",
+      "component": "StronaInternetowaDebicaPage",
+      "title": "Dębica",
+      "voivodeship": "Podkarpackie",
+      "tier": "A"
+    },
+    {
+      "slug": "belchatow",
+      "component": "StronaInternetowaBelchatowPage",
+      "title": "Bełchatów",
+      "voivodeship": "Łódzkie",
+      "tier": "A"
+    },
+    {
+      "slug": "olawa",
+      "component": "StronaInternetowaOlawaPage",
+      "title": "Oława",
+      "voivodeship": "Dolnośląskie",
+      "tier": "A"
+    },
+    {
+      "slug": "mielec",
+      "component": "StronaInternetowaMielecPage",
+      "title": "Mielec",
+      "voivodeship": "Podkarpackie",
+      "tier": "A"
+    },
+    {
+      "slug": "klodzko",
+      "component": "StronaInternetowaKlodzkoPage",
+      "title": "Kłodzko",
+      "voivodeship": "Dolnośląskie",
+      "tier": "A"
+    },
+    {
+      "slug": "kołobrzeg",
+      "component": "StronaInternetowaKołobrzegPage",
+      "title": "Kołobrzeg",
+      "voivodeship": "Zachodniopomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "szczecinek",
+      "component": "StronaInternetowaSzczecinekPage",
+      "title": "Szczecinek",
+      "voivodeship": "Zachodniopomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "sandomierz",
+      "component": "StronaInternetowaSandomierzPage",
+      "title": "Sandomierz",
+      "voivodeship": "Świętokrzyskie",
+      "tier": "A"
+    },
+    {
+      "slug": "tarnobrzeg",
+      "component": "StronaInternetowaTarnobrzegPage",
+      "title": "Tarnobrzeg",
+      "voivodeship": "Podkarpackie",
+      "tier": "A"
+    },
+    {
+      "slug": "krosno",
+      "component": "StronaInternetowaKrosnoPage",
+      "title": "Krosno",
+      "voivodeship": "Podkarpackie",
+      "tier": "A"
+    },
+    {
+      "slug": "sanok",
+      "component": "StronaInternetowaSanokPage",
+      "title": "Sanok",
+      "voivodeship": "Podkarpackie",
+      "tier": "A"
+    },
+    {
+      "slug": "rzeszow",
+      "component": "StronaInternetowaRzeszowPage",
+      "title": "Rzeszów",
+      "voivodeship": "Podkarpackie",
+      "tier": "A"
+    },
+    {
+      "slug": "jelenia-gora",
+      "component": "StronaInternetowaJeleniaGoraPage",
+      "title": "Jelenia Góra",
+      "voivodeship": "Dolnośląskie",
+      "tier": "A"
+    },
+    {
+      "slug": "bogatynia",
+      "component": "StronaInternetowaBogatyniaPage",
+      "title": "Bogatynia",
+      "voivodeship": "Dolnośląskie",
+      "tier": "A"
+    },
+    {
+      "slug": "lubin",
+      "component": "StronaInternetowaLubinPage",
+      "title": "Lubin",
+      "voivodeship": "Dolnośląskie",
+      "tier": "A"
+    },
+    {
+      "slug": "legnica",
+      "component": "StronaInternetowaLegnicaPage",
+      "title": "Legnica",
+      "voivodeship": "Dolnośląskie",
+      "tier": "A"
+    },
+    {
+      "slug": "gniezno",
+      "component": "StronaInternetowaGnieznoPage",
+      "title": "Gniezno",
+      "voivodeship": "Wielkopolskie",
+      "tier": "A"
+    },
+    {
+      "slug": "konin",
+      "component": "StronaInternetowaKoninPage",
+      "title": "Konin",
+      "voivodeship": "Wielkopolskie",
+      "tier": "A"
+    },
+    {
+      "slug": "piła",
+      "component": "StronaInternetowaPiłaPage",
+      "title": "Piła",
+      "voivodeship": "Wielkopolskie",
+      "tier": "A"
+    },
+    {
+      "slug": "chojnice",
+      "component": "StronaInternetowaChojnicePage",
+      "title": "Chojnice",
+      "voivodeship": "Pomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "malbork",
+      "component": "StronaInternetowaMalborkPage",
+      "title": "Malbork",
+      "voivodeship": "Pomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "swiecie",
+      "component": "StronaInternetowaSwieciePage",
+      "title": "Świecie",
+      "voivodeship": "Kujawsko-Pomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "grudziadz",
+      "component": "StronaInternetowaGrudziadzPage",
+      "title": "Grudziądz",
+      "voivodeship": "Kujawsko-Pomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "inowroclaw",
+      "component": "StronaInternetowaInowroclawPage",
+      "title": "Inowrocław",
+      "voivodeship": "Kujawsko-Pomorskie",
+      "tier": "A"
+    },
+    {
+      "slug": "ostroleka",
+      "component": "StronaInternetowaOstrolekaPage",
+      "title": "Ostrołęka",
+      "voivodeship": "Mazowieckie",
+      "tier": "A"
+    },
+    {
+      "slug": "siedlce",
+      "component": "StronaInternetowaSiedlcePage",
+      "title": "Siedlce",
+      "voivodeship": "Mazowieckie",
+      "tier": "A"
+    },
+    {
+      "slug": "radom",
+      "component": "StronaInternetowaRadomPage",
+      "title": "Radom",
+      "voivodeship": "Mazowieckie",
+      "tier": "A"
+    },
+    {
+      "slug": "plock",
+      "component": "StronaInternetowaPlockPage",
+      "title": "Płock",
+      "voivodeship": "Mazowieckie",
+      "tier": "A"
+    },
+    {
+      "slug": "lomza",
+      "component": "StronaInternetowaLomzaPage",
+      "title": "Łomża",
+      "voivodeship": "Podlaskie",
+      "tier": "A"
+    },
+    {
+      "slug": "suwalki",
+      "component": "StronaInternetowaSuwalkiPage",
+      "title": "Suwałki",
+      "voivodeship": "Podlaskie",
+      "tier": "A"
+    },
+    {
+      "slug": "bartoszyce",
+      "component": "StronaInternetowaBartoszycePage",
+      "title": "Bartoszyce",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "lidzbark-warminski",
+      "component": "StronaInternetowaLidzbarkWarminskiPage",
+      "title": "Lidzbark Warmiński",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "goldap",
+      "component": "StronaInternetowaGoldapPage",
+      "title": "Gołdap",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "olecko",
+      "component": "StronaInternetowaOleckoPage",
+      "title": "Olecko",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "pisz",
+      "component": "StronaInternetowaPiszPage",
+      "title": "Pisz",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "mragowo",
+      "component": "StronaInternetowaMragowoPage",
+      "title": "Mrągowo",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "ketrzyn",
+      "component": "StronaInternetowaKetrzynPage",
+      "title": "Kętrzyn",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "gizycko",
+      "component": "StronaInternetowaGizyckoPage",
+      "title": "Giżycko",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "wegorzewo",
+      "component": "StronaInternetowaWegorzewoPage",
+      "title": "Węgorzewo",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "szczytno",
+      "component": "StronaInternetowaSzczytnoPage",
+      "title": "Szczytno",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "nowe-miasto-lubawskie",
+      "component": "StronaInternetowaNoweMiastoLubawskiePage",
+      "title": "Nowe Miasto Lubawskie",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "dzialdowo",
+      "component": "StronaInternetowaDzialdowoPage",
+      "title": "Działdowo",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "nidzica",
+      "component": "StronaInternetowaNidzicaPage",
+      "title": "Nidzica",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "morag",
+      "component": "StronaInternetowaMoragPage",
+      "title": "Morąg",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "braniewo",
+      "component": "StronaInternetowaBraniewoPage",
+      "title": "Braniewo",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "lubawa",
+      "component": "StronaInternetowaLubawaPage",
+      "title": "Lubawa",
+      "voivodeship": "Warmińsko-Mazurskie",
+      "tier": "B"
+    },
+    {
+      "slug": "chodziez",
+      "component": "StronaInternetowaChodziezPage",
+      "title": "Chodzież",
+      "voivodeship": "Wielkopolskie",
+      "tier": "B"
+    },
+    {
+      "slug": "walcz",
+      "component": "StronaInternetowaWalczPage",
+      "title": "Wałcz",
+      "voivodeship": "Zachodniopomorskie",
+      "tier": "B"
+    },
+    {
+      "slug": "trzcianka",
+      "component": "StronaInternetowaTrzciankaPage",
+      "title": "Trzcianka",
+      "voivodeship": "Wielkopolskie",
+      "tier": "B"
+    },
+    {
+      "slug": "czarnkow",
+      "component": "StronaInternetowaCzarnkowPage",
+      "title": "Czarnków",
+      "voivodeship": "Wielkopolskie",
+      "tier": "B"
+    },
+    {
+      "slug": "gostynin",
+      "component": "StronaInternetowaGostyninPage",
+      "title": "Gostynin",
+      "voivodeship": "Mazowieckie",
+      "tier": "B"
+    },
+    {
+      "slug": "sierpc",
+      "component": "StronaInternetowaSierpcPage",
+      "title": "Sierpc",
+      "voivodeship": "Mazowieckie",
+      "tier": "B"
+    },
+    {
+      "slug": "mlawa",
+      "component": "StronaInternetowaMlawaPage",
+      "title": "Mława",
+      "voivodeship": "Mazowieckie",
+      "tier": "B"
+    },
+    {
+      "slug": "ciechanow",
+      "component": "StronaInternetowaCiechanowPage",
+      "title": "Ciechanów",
+      "voivodeship": "Mazowieckie",
+      "tier": "B"
+    },
+    {
+      "slug": "pultusk",
+      "component": "StronaInternetowaPultuskPage",
+      "title": "Pułtusk",
+      "voivodeship": "Mazowieckie",
+      "tier": "B"
+    },
+    {
+      "slug": "makow-mazowiecki",
+      "component": "StronaInternetowaMakowMazowieckiPage",
+      "title": "Maków Mazowiecki",
+      "voivodeship": "Mazowieckie",
+      "tier": "B"
+    },
+    {
+      "slug": "przasnysz",
+      "component": "StronaInternetowaPrzasnyszPage",
+      "title": "Przasnysz",
+      "voivodeship": "Mazowieckie",
+      "tier": "B"
+    },
+    {
+      "slug": "zambrow",
+      "component": "StronaInternetowaZambrowPage",
+      "title": "Zambrów",
+      "voivodeship": "Podlaskie",
+      "tier": "B"
+    },
+    {
+      "slug": "kolno",
+      "component": "StronaInternetowaKolnoPage",
+      "title": "Kolno",
+      "voivodeship": "Podlaskie",
+      "tier": "B"
+    },
+    {
+      "slug": "wysokie-mazowieckie",
+      "component": "StronaInternetowaWysokieMazowieckiePage",
+      "title": "Wysokie Mazowieckie",
+      "voivodeship": "Podlaskie",
+      "tier": "B"
+    },
+    {
+      "slug": "lukow",
+      "component": "StronaInternetowaLukowPage",
+      "title": "Łuków",
+      "voivodeship": "Lubelskie",
+      "tier": "B"
+    },
+    {
+      "slug": "radzyn-podlaski",
+      "component": "StronaInternetowaRadzynPodlaskiPage",
+      "title": "Radzyń Podlaski",
+      "voivodeship": "Lubelskie",
+      "tier": "B"
+    },
+    {
+      "slug": "biala-podlaska",
+      "component": "StronaInternetowaBialaPodlaskaPage",
+      "title": "Biała Podlaska",
+      "voivodeship": "Lubelskie",
+      "tier": "B"
+    },
+    {
+      "slug": "chelno",
+      "component": "StronaInternetowaChelnoPage",
+      "title": "Chełmno",
+      "voivodeship": "Kujawsko-Pomorskie",
+      "tier": "B"
+    },
+    {
+      "slug": "brodnica",
+      "component": "StronaInternetowaBrodnicaPage",
+      "title": "Brodnica",
+      "voivodeship": "Kujawsko-Pomorskie",
+      "tier": "B"
+    },
+    {
+      "slug": "rypin",
+      "component": "StronaInternetowaRypinPage",
+      "title": "Rypin",
+      "voivodeship": "Kujawsko-Pomorskie",
+      "tier": "B"
+    },
+    {
+      "slug": "wabrzezno",
+      "component": "StronaInternetowaWabrzeznoPage",
+      "title": "Wąbrzeźno",
+      "voivodeship": "Kujawsko-Pomorskie",
+      "tier": "B"
+    },
+    {
+      "slug": "aleksandrow-lodzki",
+      "component": "StronaInternetowaAleksandrowLodzkiPage",
+      "title": "Aleksandrów Łódzki",
+      "voivodeship": "Łódzkie",
+      "tier": "B"
+    },
+    {
+      "slug": "opoczno",
+      "component": "StronaInternetowaOpocznoPage",
+      "title": "Opoczno",
+      "voivodeship": "Łódzkie",
+      "tier": "B"
+    },
+    {
+      "slug": "tomaszow-mazowiecki",
+      "component": "StronaInternetowaTomaszowMazowieckiPage",
+      "title": "Tomaszów Mazowiecki",
+      "voivodeship": "Łódzkie",
+      "tier": "B"
+    },
+    {
+      "slug": "lowicz",
+      "component": "StronaInternetowaLowiczPage",
+      "title": "Łowicz",
+      "voivodeship": "Łódzkie",
+      "tier": "B"
+    },
+    {
+      "slug": "skierniewice",
+      "component": "StronaInternetowaSkierniewicePage",
+      "title": "Skierniewice",
+      "voivodeship": "Łódzkie",
+      "tier": "B"
+    },
+    {
+      "slug": "pinczow",
+      "component": "StronaInternetowaPinczowPage",
+      "title": "Pińczów",
+      "voivodeship": "Świętokrzyskie",
+      "tier": "B"
+    },
+    {
+      "slug": "augustow",
+      "component": "StronaInternetowaAugustowPage",
+      "title": "Augustów",
+      "voivodeship": "Podlaskie",
+      "tier": "C"
+    },
+    {
+      "slug": "augustow-powiat",
+      "component": "StronaInternetowaAugustowPowiatPage",
+      "title": "Augustów (powiat)",
+      "voivodeship": "Podlaskie",
+      "tier": "C"
+    },
+    {
+      "slug": "bielsk-podlaski",
+      "component": "StronaInternetowaBielskPodlaskiPage",
+      "title": "Bielsk Podlaski",
+      "voivodeship": "Podlaskie",
+      "tier": "C"
+    },
+    {
+      "slug": "hajnowka",
+      "component": "StronaInternetowaHajnowkaPage",
+      "title": "Hajnówka",
+      "voivodeship": "Podlaskie",
+      "tier": "C"
+    },
+    {
+      "slug": "siemiatycze",
+      "component": "StronaInternetowaSiemiatyczePage",
+      "title": "Siemiatycze",
+      "voivodeship": "Podlaskie",
+      "tier": "C"
+    },
+    {
+      "slug": "hrubieszow",
+      "component": "StronaInternetowaHrubieszowPage",
+      "title": "Hrubieszów",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "tomaszow-lubelski",
+      "component": "StronaInternetowaTomaszowLubelskiPage",
+      "title": "Tomaszów Lubelski",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "zamosc",
+      "component": "StronaInternetowaZamoscPage",
+      "title": "Zamość",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "bilgoraj",
+      "component": "StronaInternetowaBilgorajPage",
+      "title": "Biłgoraj",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "janow-lubelski",
+      "component": "StronaInternetowaJanowLubelskiPage",
+      "title": "Janów Lubelski",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "krasnik",
+      "component": "StronaInternetowaKrasnikPage",
+      "title": "Kraśnik",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "krasnystaw",
+      "component": "StronaInternetowaKrasnystawPage",
+      "title": "Krasnystaw",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "lubartow",
+      "component": "StronaInternetowaLubartowPage",
+      "title": "Lubartów",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "leczna",
+      "component": "StronaInternetowaLecznaPage",
+      "title": "Łęczna",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "krasnystaw-powiat",
+      "component": "StronaInternetowaKrasnystawPowiatPage",
+      "title": "Krasnystaw (powiat)",
+      "voivodeship": "Lubelskie",
+      "tier": "C"
+    },
+    {
+      "slug": "kutno",
+      "component": "StronaInternetowaKutnoPage",
+      "title": "Kutno",
+      "voivodeship": "Łódzkie",
+      "tier": "C"
+    },
+    {
+      "slug": "lask",
+      "component": "StronaInternetowaLaskPage",
+      "title": "Łask",
+      "voivodeship": "Łódzkie",
+      "tier": "C"
+    },
+    {
+      "slug": "lancut",
+      "component": "StronaInternetowaLancutPage",
+      "title": "Łańcut",
+      "voivodeship": "Podkarpackie",
+      "tier": "C"
+    },
+    {
+      "slug": "nowy-targ",
+      "component": "StronaInternetowaNowyTargPage",
+      "title": "Nowy Targ",
+      "voivodeship": "Małopolskie",
+      "tier": "C"
+    },
+    {
+      "slug": "wadowice",
+      "component": "StronaInternetowaWadowicePage",
+      "title": "Wadowice",
+      "voivodeship": "Małopolskie",
+      "tier": "C"
+    }
+  ]
+}

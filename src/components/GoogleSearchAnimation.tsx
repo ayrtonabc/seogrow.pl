@@ -1,25 +1,7 @@
 // src/components/GoogleSearchAnimation.tsx
-// Animación de Google Search que muestra al cliente cómo aparecería su empresa
-// en Google cuando alguien busca su servicio.
-//
-// ARQUITECTURA — ALTURA FIJA:
-//   El contenedor tiene min-height constante (acoge la sección más alta = results).
-//   Search UI está absolute-positioned centrado, results en el flow, dots absolute abajo.
-//   Ambas secciones (search + results) ocupan el MISMO espacio y se intercambian
-//   con opacity + translateY. El contenedor NUNCA crece ni se encoge.
-//
-// ARRANQUE DIFERIDO:
-//   La animación NO arranca hasta que el contenedor entra al viewport (25% visible).
-//   Usa IntersectionObserver. Una vez que arranca, sigue corriendo aunque el
-//   usuario scrolee arriba/abajo. Si el componente ya está visible al montar
-//   (página corta), arranca inmediatamente sin esperar al observer.
-//
-// FLUJO POR RONDA:
-//   1. PHASE_SEARCH  →  Logo + barra con typewriter visibles. Results invisibles.
-//   2. Transición  →  Search UI se desliza arriba y se desvanece.
-//                      Results se deslizan desde abajo y aparecen.
-//   3. PHASE_RESULTS →  Solo results visibles. Tu sitio resaltado en amarillo.
-//   4. Rotación     →  Cambia a la siguiente query. Vuelve a phase SEARCH.
+// Animación de Google Search que muestra al cliente cómo aparecería su
+// empresa en Google cuando alguien busca su servicio.
+// Re-creado el 22/07/2026.
 
 import { useEffect, useRef, useState } from "react"
 import { Box, HStack, Text, VStack } from "@chakra-ui/react"
@@ -90,8 +72,8 @@ const MagnifyingGlassIcon = () => (
 
 const LockIcon = ({ size = 12 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <rect x="4" y="11" width="16" height="10" rx="2" />
-    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+    <rect x="3" y="11" width="18" height="10" rx="2" />
+    <path d="M7 11V7a4 4 0 0 1 8 0v4" />
   </svg>
 )
 
@@ -128,8 +110,6 @@ export const GoogleSearchAnimation = ({
   const competitors = currentRound.competitors
 
   // ─── IntersectionObserver ───
-  // La animación NO arranca hasta que el contenedor entra al viewport.
-  // Una vez que arranca, sigue corriendo aunque el usuario scrole hacia arriba.
   useEffect(() => {
     if (isPlaying) return
     if (typeof window === "undefined" || typeof IntersectionObserver === "undefined") return
@@ -137,8 +117,6 @@ export const GoogleSearchAnimation = ({
     const node = containerRef.current
     if (!node) return
 
-    // Si el componente ya está en pantalla al montar (página corta, sin scroll),
-    // arrancar inmediatamente sin esperar al observer.
     const rect = node.getBoundingClientRect()
     const inViewOnMount = rect.top < window.innerHeight && rect.bottom > 0
     if (inViewOnMount) {
@@ -163,7 +141,7 @@ export const GoogleSearchAnimation = ({
     return () => observer.disconnect()
   }, [isPlaying])
 
-  // Rotación automática entre rondas — solo cuando está playing
+  // Rotación automática entre rondas
   useEffect(() => {
     if (!isPlaying) return
     if (rounds.length <= 1) return
@@ -174,7 +152,7 @@ export const GoogleSearchAnimation = ({
     return () => clearInterval(id)
   }, [rounds.length, rotationInterval, isPlaying])
 
-  // Reset + typewriter cuando cambia la query — solo cuando está playing
+  // Reset + typewriter cuando cambia la query
   useEffect(() => {
     if (!isPlaying) return
 
@@ -235,11 +213,7 @@ export const GoogleSearchAnimation = ({
         </HStack>
       </Box>
 
-      {/* 
-        Contenido principal — ALTURA FIJA.
-        min-height = altura de la sección results (la más grande).
-        Todo lo de adentro se posiciona dentro de este espacio fijo.
-      */}
+      {/* Contenido principal — ALTURA FIJA */}
       <Box
         position="relative"
         minH={{ base: "380px", md: "400px" }}
@@ -248,7 +222,7 @@ export const GoogleSearchAnimation = ({
         pt={{ base: "5", md: "7" }}
         pb={{ base: "9", md: "10" }}
       >
-        {/* ===== RESULTS — en el flow, visibles en fase RESULTS ===== */}
+        {/* ===== RESULTS ===== */}
         <Box
           opacity={isSearch ? 0 : 1}
           transform={isSearch ? "translateY(15px)" : "translateY(0)"}
@@ -345,7 +319,6 @@ export const GoogleSearchAnimation = ({
             </Box>
           </VStack>
 
-          {/* Bottom hint — subtle */}
           <Text
             fontSize="2xs"
             color="#94A3B8"
@@ -357,9 +330,7 @@ export const GoogleSearchAnimation = ({
           </Text>
         </Box>
 
-        {/* ===== SEARCH UI — absolute, centrado vertical y horizontalmente ===== */}
-        {/* Wrapper: absolute que llena el área, flex para centrar.
-            Inner: maneja opacity + slide (el transform se compone con el centrado). */}
+        {/* ===== SEARCH UI ===== */}
         <Box
           position="absolute"
           top="0"
@@ -379,14 +350,12 @@ export const GoogleSearchAnimation = ({
             transition={`opacity 350ms ease-out, transform 500ms ${EASE}`}
           >
             <VStack gap={{ base: "4", md: "5" }} align="stretch">
-              {/* Logo */}
               <Box textAlign="center">
                 <Box display="inline-block">
                   <GoogleLogo />
                 </Box>
               </Box>
 
-              {/* Search bar */}
               <Box
                 bg="white"
                 rounded="full"
@@ -432,7 +401,6 @@ export const GoogleSearchAnimation = ({
                 </HStack>
               </Box>
 
-              {/* "Buscando..." — sutil, debajo del buscador */}
               <Box textAlign="center" pt={{ base: "2", md: "4" }}>
                 <HStack justify="center" gap="1.5" mb="2">
                   {[0, 1, 2].map((i) => (
@@ -457,7 +425,7 @@ export const GoogleSearchAnimation = ({
           </Box>
         </Box>
 
-        {/* ===== DOTS — absolute, siempre visibles en la parte inferior ===== */}
+        {/* ===== DOTS ===== */}
         {rounds.length > 1 && (
           <Box
             position="absolute"

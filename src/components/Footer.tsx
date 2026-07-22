@@ -21,8 +21,34 @@ const resources = [
 
 const company = [
   { label: "O nas", href: "/o-nas" },
-  { label: "Kontakt", href: "/kontakt" },
-  { label: "Regulamin", href: "/regulamin" },
+  { label: "Press kit", href: "/press" },
+  { label: "Blog", href: "/blog" },
+]
+
+// Top 5 ciudades Tier A para el footer (las más buscadas)
+const topCities = [
+  { label: "Iława", href: "/ilawa" },
+  { label: "Ełk", href: "/elk" },
+  { label: "Kwidzyn", href: "/kwidzyn" },
+  { label: "Starogard Gdański", href: "/starogard-gdanski" },
+  { label: "Dębica", href: "/debica" },
+]
+
+// 13 voivodatos
+const voivodeships = [
+  { label: "Dolnośląskie", href: "/dolnoslaskie" },
+  { label: "Kujawsko-Pomorskie", href: "/kujawsko-pomorskie" },
+  { label: "Lubelskie", href: "/lubelskie" },
+  { label: "Łódzkie", href: "/lodzkie" },
+  { label: "Małopolskie", href: "/malopolskie" },
+  { label: "Mazowieckie", href: "/mazowieckie" },
+  { label: "Podkarpackie", href: "/podkarpackie" },
+  { label: "Podlaskie", href: "/podlaskie" },
+  { label: "Pomorskie", href: "/pomorskie" },
+  { label: "Świętokrzyskie", href: "/swietokrzyskie" },
+  { label: "Warmińsko-Mazurskie", href: "/warminsko-mazurskie" },
+  { label: "Wielkopolskie", href: "/wielkopolskie" },
+  { label: "Zachodniopomorskie", href: "/zachodniopomorskie" },
 ]
 
 export const Footer = () => {
@@ -42,7 +68,7 @@ export const Footer = () => {
       />
 
       <Container maxW="6xl" position="relative" zIndex="1">
-        <Grid templateColumns={{ base: "1fr", md: "1.4fr 2fr" }} gap={{ base: "12", md: "16" }} mb="14">
+        <Grid templateColumns={{ base: "1fr", md: "1.2fr 3fr" }} gap={{ base: "12", md: "16" }} mb="14">
           {/* Brand column */}
           <VStack align="start" gap="5">
             <Box as={RouterLink} to="/" textDecoration="none" display="inline-block" _hover={{ opacity: 0.85 }} transition="opacity 0.18s">
@@ -59,7 +85,7 @@ export const Footer = () => {
             </Box>
 
             <Text fontSize="13px" color="#94A3B8" lineHeight="1.6" maxW="xs">
-              Profesjonalne strony internetowe dla małych firm. Tworzone w 5 dni, z automatycznym SEO i wsparciem po polsku.
+              Strony internetowe dla małych firm. Od 1 500 zł, gotowe w 5 dni, z CMS-em, którym zarządzasz sam z telefonu. Wsparcie po polsku.
             </Text>
 
             <Text fontSize="12px" color="#64748B">
@@ -68,7 +94,7 @@ export const Footer = () => {
           </VStack>
 
           {/* Link columns */}
-          <Grid templateColumns={{ base: "1fr 1fr", md: "repeat(3, 1fr)" }} gap={{ base: "8", md: "8" }}>
+          <Grid templateColumns={{ base: "1fr 1fr", md: "repeat(4, 1fr)" }} gap={{ base: "8", md: "8" }}>
             <Box>
               <Text fontSize="11px" fontWeight="700" color="#64748B" textTransform="uppercase" letterSpacing="0.12em" mb="4">
                 Rozwiązania
@@ -113,8 +139,50 @@ export const Footer = () => {
                 ))}
               </VStack>
             </Box>
+
+            <Box>
+              <Text fontSize="11px" fontWeight="700" color="#64748B" textTransform="uppercase" letterSpacing="0.12em" mb="4">
+                Zasięg
+              </Text>
+              <VStack align="start" gap="2.5">
+                {topCities.map((link) => (
+                  <Box key={link.href} as={RouterLink} to={link.href} textDecoration="none">
+                    <Text fontSize="14px" color="#CBD5E1" _hover={{ color: "white" }} transition="color 0.18s">
+                      {link.label}
+                    </Text>
+                  </Box>
+                ))}
+                <Box as={RouterLink} to="/cennik" textDecoration="none" mt="1">
+                  <Text fontSize="13px" color="#818CF8" fontWeight="600" _hover={{ color: "#A5B4FC" }} transition="color 0.18s">
+                    Zobacz cennik →
+                  </Text>
+                </Box>
+              </VStack>
+            </Box>
           </Grid>
         </Grid>
+
+        {/* ── 13 voivodatos (zasięg completo) ───────────────────────── */}
+        <Box
+          borderTop="1px solid"
+          borderColor="rgba(148, 163, 184, 0.12)"
+          pt="8"
+          pb="6"
+          mb="8"
+        >
+          <Text fontSize="11px" fontWeight="700" color="#64748B" textTransform="uppercase" letterSpacing="0.12em" mb="4" textAlign="center">
+            Obsługujemy firmy w całej Polsce · Ta sama cena, ta sama jakość
+          </Text>
+          <Flex justify="center" wrap="wrap" gap={{ base: "3", md: "5" }}>
+            {voivodeships.map((v) => (
+              <Box key={v.href} as={RouterLink} to={v.href} textDecoration="none">
+                <Text fontSize="13px" color="#94A3B8" _hover={{ color: "white" }} transition="color 0.18s">
+                  {v.label}
+                </Text>
+              </Box>
+            ))}
+          </Flex>
+        </Box>
 
         {/* Tpay logos — centered, above copyright */}
         <Box

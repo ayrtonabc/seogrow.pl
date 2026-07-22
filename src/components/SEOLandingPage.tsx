@@ -8,6 +8,8 @@ import { Footer } from "./Footer"
 import { GoogleSearchAnimation } from "./GoogleSearchAnimation"
 import type { QueryRound } from "./GoogleSearchAnimation"
 import { KancelariaWebsiteAnimation } from "./KancelariaWebsiteAnimation"
+import { SectorCarousel } from "./SectorCarousel"
+import { ValueBundleIllustration } from "./ValueBundleIllustration"
 import { ModulesGrid } from "./ModulesGrid"
 import { PricingSection } from "../sections/PricingSection"
 
@@ -85,6 +87,23 @@ type ContentSection = {
   }
   /** Si true, se renderiza la animación de web kancelaria (scroll lento) EN LUGAR de image/imageAnimation */
   websiteAnimation?: boolean
+  /**
+   * Si está presente, se renderiza como una línea de tiempo visual con los
+   * pasos conectados por una línea. Tiene prioridad sobre image/imageAnimation
+   * y reemplaza el render de content+highlights.
+   */
+  processSteps?: {
+    step: string
+    title: string
+    description: string
+  }[]
+  /**
+   * Si true, se renderiza la ilustración SVG del bundle de valor (6 items
+   * + centro "Wszystko w cenie") en lugar de image/imageAnimation.
+   * Usado en la sección "Co dostajesz w cenie" para mostrar visualmente
+   * todo lo que está incluido en el paquete.
+   */
+  valueBundle?: boolean
 }
 
 type InternalLink = {
@@ -102,8 +121,18 @@ type SEOLandingPageProps = {
   h1Accent?: string
   h1Sub?: string
   intro?: string
-  heroImage?: string
+  /** Texto pequeño que aparece encima del H1 (ej. "Obszar: Dolnośląskie") */
+  eyebrow?: string
+  heroImage?: string | null
   heroImageAlt?: string
+  /** Si es true, renderiza SectorCarousel en lugar de heroImage. */
+  heroCarousel?: boolean
+  /**
+   * Si está presente, se renderiza en lugar de `sections` después del hero.
+   * Útil para páginas (como hubs de voivodato) que necesitan un layout
+   * custom visual con cards en vez de bullets genéricos.
+   */
+  customContent?: ReactNode
   breadcrumb?: { name: string; href: string }[]
   sections?: ContentSection[]
   features?: FeatureItem[]
@@ -148,6 +177,9 @@ export const SEOLandingPage = ({
   intro,
   heroImage,
   heroImageAlt,
+  heroCarousel = false,
+  customContent,
+  eyebrow,
   breadcrumb,
   sections = [],
   features = [],
@@ -209,43 +241,64 @@ export const SEOLandingPage = ({
           </Box>
         )}
 
-        <Box pt={{ base: "12", md: "20" }} pb={{ base: "12", md: "16" }} bgGradient="linear(to-b, #EEF2FF, #FAFBFC)" position="relative" overflow="hidden">
-          <Box position="absolute" top="-5%" right="-5%" w="500px" h="500px" bg="#C7D2FE" filter="blur(100px)" rounded="full" opacity="0.4" zIndex="0" />
-          <Container maxW="7xl" position="relative" zIndex="1">
-            <Grid templateColumns={{ base: "1fr", lg: heroImage ? "1fr 1fr" : "1fr" }} gap={{ base: "10", lg: "16" }} alignItems="center">
-              <VStack align="start" gap="5">
-                {breadcrumb && breadcrumb[0] && (
-                  <Badge bg="#EEF2FF" color="#4338CA" px="3" py="1.5" rounded="full" fontSize="xs" fontWeight="700" textTransform="uppercase" letterSpacing="0.05em">
-                    {breadcrumb[0].name}
-                  </Badge>
-                )}
-                <Heading
-                  as="h1"
-                  fontSize={{ base: "28px", sm: "32px", md: "38px", lg: "42px" }}
+        <Box pt={{ base: "14", md: "24" }} pb={{ base: "14", md: "20" }} bgGradient="linear(to-b, #EEF2FF, #FAFBFC)" position="relative" overflow="hidden">
+          <Box position="absolute" top="-10%" left="50%" transform="translateX(-50%)" w="800px" h="500px" bg="#C7D2FE" filter="blur(120px)" rounded="full" opacity="0.5" zIndex="0" />
+          <Box position="absolute" bottom="-20%" right="-5%" w="400px" h="400px" bg="#A5B4FC" filter="blur(100px)" rounded="full" opacity="0.3" zIndex="0" />
+          <Container maxW="5xl" position="relative" zIndex="1">
+            <VStack align="center" gap={{ base: "5", md: "6" }} textAlign="center" maxW="3xl" mx="auto">
+              {breadcrumb && breadcrumb[0] && (
+                <Badge bg="#EEF2FF" color="#4338CA" px="3" py="1.5" rounded="full" fontSize="xs" fontWeight="700" textTransform="uppercase" letterSpacing="0.05em">
+                  {breadcrumb[0].name}
+                </Badge>
+              )}
+              {eyebrow && (
+                <Text
+                  fontSize="xs"
                   fontWeight="700"
-                  color="#0F172A"
-                  letterSpacing="-0.01em"
-                  lineHeight="1.3"
+                  color="#4F46E5"
+                  textTransform="uppercase"
+                  letterSpacing="0.12em"
                 >
-                  {renderTextWithGoogle(h1)}
-                  {h1Accent && (
-                    <Box as="span" display="block" color="#64748B" mt={{ base: "1", md: "2" }} fontWeight="500">
-                      {renderTextWithGoogle(h1Accent)}
-                    </Box>
-                  )}
+                  {eyebrow}
+                </Text>
+              )}
+              <Heading
+                as="h1"
+                fontSize={{ base: "34px", sm: "40px", md: "52px", lg: "60px" }}
+                fontWeight="800"
+                color="#0F172A"
+                letterSpacing="-0.03em"
+                lineHeight="1.05"
+                maxW="900px"
+              >
+                {renderTextWithGoogle(h1)}
+              </Heading>
+              {h1Accent && (
+                <Heading
+                  as="h2"
+                  fontSize={{ base: "20px", sm: "22px", md: "26px", lg: "30px" }}
+                  fontWeight="600"
+                  color="#4F46E5"
+                  letterSpacing="-0.015em"
+                  lineHeight="1.3"
+                  mt="-1"
+                  maxW="780px"
+                >
+                  {renderTextWithGoogle(h1Accent)}
                 </Heading>
-                {h1Sub && (
-                  <Text fontSize={{ base: "md", md: "lg" }} color="#475569" lineHeight="1.6" mt="4" maxW="56ch" fontWeight="400">
-                    {renderTextWithGoogle(h1Sub)}
-                  </Text>
-                )}
-                {intro && (
-                  <Text fontSize={{ base: "md", md: "lg" }} color="#475569" lineHeight="1.6" maxW={heroImage ? "56ch" : "2xl"}>
-                    {intro}
-                  </Text>
-                )}
+              )}
+              {h1Sub && (
+                <Text fontSize={{ base: "md", md: "lg" }} color="#475569" lineHeight="1.65" mt="2" maxW="640px" fontWeight="400">
+                  {renderTextWithGoogle(h1Sub)}
+                </Text>
+              )}
+              {intro && (
+                <Text fontSize="sm" color="#64748B" lineHeight="1.6" maxW="640px" fontWeight="400" mt="1">
+                  {intro}
+                </Text>
+              )}
                 {cta && (
-                  <Flex gap="3" flexWrap="wrap" pt="2">
+                  <Flex gap="3" flexWrap="wrap" pt="3" justify="center">
                     <Box
                       as={Link}
                       to="/zamowienie?plan=express"
@@ -273,7 +326,7 @@ export const SEOLandingPage = ({
                         bg="white"
                         color="#0F172A"
                         px="7"
-                        py="3"
+                      py="3"
                         rounded="full"
                         fontWeight="600"
                         fontSize="md"
@@ -287,27 +340,29 @@ export const SEOLandingPage = ({
                     )}
                   </Flex>
                 )}
-              </VStack>
 
-              {heroImage && (
-                <Box position="relative">
-                  <Box
-                    as="img"
-                    src={heroImage}
-                    alt={heroImageAlt ?? ""}
-                    w="full"
-                    maxW={{ base: "100%", lg: "520px" }}
-                    h="auto"
-                    objectFit="contain"
-                    decoding="async"
-                    loading="eager"
-                    fetchPriority="high"
-                    rounded="2xl"
-                    boxShadow="0 20px 60px rgba(15,23,42,0.15)"
-                  />
-                </Box>
-              )}
-            </Grid>
+                {heroCarousel ? (
+                  <Box w="full" pt={{ base: "6", md: "10" }}>
+                    <SectorCarousel autoplay />
+                  </Box>
+                ) : heroImage ? (
+                  <Box position="relative" w="full" pt={{ base: "6", md: "10" }} maxW="640px">
+                    <Box
+                      as="img"
+                      src={heroImage}
+                      alt={heroImageAlt ?? ""}
+                      w="full"
+                      h="auto"
+                      objectFit="contain"
+                      decoding="async"
+                      loading="eager"
+                      fetchPriority="high"
+                      rounded="2xl"
+                      boxShadow="0 20px 60px rgba(15,23,42,0.15)"
+                    />
+                  </Box>
+                ) : null}
+            </VStack>
           </Container>
         </Box>
 
@@ -326,69 +381,157 @@ export const SEOLandingPage = ({
           </Box>
         )}
 
-        {sections.map((section, i) => (
+        {customContent ?? sections.map((section, i) => (
           <Box key={i} py={{ base: "12", md: "20" }} bg={i % 2 === 0 ? "white" : "#FAFBFC"}>
             <Container maxW="7xl">
-              <Grid
-                templateColumns={{ base: "1fr", lg: section.image || section.imageAnimation || section.websiteAnimation ? "1fr 1fr" : "1fr" }}
-                gap={{ base: "8", lg: section.image || section.imageAnimation || section.websiteAnimation ? "16" : "0" }}
-                alignItems="center"
-                direction={section.imagePosition === "left" ? { base: "column", lg: "row-reverse" } : { base: "column", lg: "row" }}
-              >
-                <VStack align="start" gap="4">
-                  <Heading
-                    as="h2"
-                    fontSize={{ base: "xl", md: "2xl" }}
-                    fontWeight="800"
-                    color="#0F172A"
-                    letterSpacing="-0.02em"
-                    lineHeight="1.3"
-                  >
-                    {section.heading}
-                  </Heading>
-                  <Text fontSize="md" color="#475569" lineHeight="1.7">
-                    {section.content}
-                  </Text>
-                  {section.highlights && section.highlights.length > 0 && (
-                    <VStack align="start" gap="2" pt="1">
-                      {section.highlights.map((hl, j) => (
-                        <HStack key={j} gap="2" align="start">
-                          <Box flexShrink={0} mt="0.5"><CheckCircleIcon /></Box>
-                          <Text fontSize="sm" color="#334155" lineHeight="1.6">{hl}</Text>
-                        </HStack>
-                      ))}
-                    </VStack>
-                  )}
-                </VStack>
+              {section.processSteps && section.processSteps.length > 0 ? (
+                // ── Process timeline: heading + 4 pasos conectados por línea ──
+                <VStack gap={{ base: "8", md: "10" }} align="stretch">
+                  <VStack gap="3" align="center" textAlign="center" maxW="2xl" mx="auto">
+                    <Text fontSize="xs" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em">
+                      Krok po kroku
+                    </Text>
+                    <Heading
+                      as="h2"
+                      fontSize={{ base: "xl", md: "2xl" }}
+                      fontWeight="800"
+                      color="#0F172A"
+                      letterSpacing="-0.02em"
+                      lineHeight="1.3"
+                    >
+                      {section.heading}
+                    </Heading>
+                    <Text fontSize="md" color="#475569" lineHeight="1.7" maxW="lg">
+                      {section.content}
+                    </Text>
+                  </VStack>
 
-                {section.websiteAnimation ? (
-                  <Box w="full">
-                    <KancelariaWebsiteAnimation />
-                  </Box>
-                ) : section.imageAnimation ? (
-                  <Box w="full">
-                    <GoogleSearchAnimation
-                      rounds={section.imageAnimation.rounds}
-                      rotationInterval={section.imageAnimation.rotationInterval}
-                    />
-                  </Box>
-                ) : section.image ? (
-                  <Box>
+                  {/* ── TIMELINE — desktop: horizontal con línea, mobile: vertical ── */}
+                  <Box position="relative" w="full" pt={{ base: "2", md: "8" }} pb={{ base: "2", md: "4" }}>
+                    {/* Línea horizontal — solo desktop */}
                     <Box
-                      as="img"
-                      src={section.image}
-                      alt={section.imageAlt ?? ""}
-                      w="full"
-                      h="auto"
-                      objectFit="contain"
-                      decoding="async"
-                      loading="lazy"
-                      rounded="2xl"
-                      boxShadow="0 8px 30px rgba(15,23,42,0.1)"
+                      display={{ base: "none", md: "block" }}
+                      position="absolute"
+                      top="44px"
+                      left={{ md: "calc(12.5% + 12px)" }}
+                      right={{ md: "calc(12.5% + 12px)" }}
+                      h="2px"
+                      bgGradient="linear(to-r, #C7D2FE, #4F46E5, #C7D2FE)"
+                      zIndex="0"
                     />
+                    {/* Línea vertical — solo mobile */}
+                    <Box
+                      display={{ base: "block", md: "none" }}
+                      position="absolute"
+                      top="20px"
+                      bottom="20px"
+                      left="20px"
+                      w="2px"
+                      bgGradient="linear(to-b, #C7D2FE, #4F46E5, #C7D2FE)"
+                      zIndex="0"
+                    />
+
+                    <SimpleGrid columns={{ base: 1, md: 4 }} gap={{ base: "8", md: "6" }} position="relative" zIndex="1">
+                      {section.processSteps.map((step, k) => (
+                        <VStack key={k} align={{ base: "flex-start", md: "center" }} gap="3" pl={{ base: "12", md: "0" }}>
+                          {/* Círculo numerado */}
+                          <Flex
+                            w="11"
+                            h="11"
+                            rounded="full"
+                            bg="white"
+                            border="2px solid"
+                            borderColor="#4F46E5"
+                            color="#4F46E5"
+                            align="center"
+                            justify="center"
+                            fontWeight="800"
+                            fontSize="md"
+                            flexShrink={0}
+                            position="relative"
+                            boxShadow="0 4px 12px rgba(79, 70, 229, 0.15)"
+                          >
+                            {step.step}
+                          </Flex>
+                          <VStack align={{ base: "flex-start", md: "center" }} gap="1.5" textAlign={{ base: "left", md: "center" }}>
+                            <Text fontSize="sm" fontWeight="700" color="#0F172A" lineHeight="1.3">
+                              {step.title}
+                            </Text>
+                            <Text fontSize="xs" color="#475569" lineHeight="1.5" maxW="220px">
+                              {step.description}
+                            </Text>
+                          </VStack>
+                        </VStack>
+                      ))}
+                    </SimpleGrid>
                   </Box>
-                ) : null}
-              </Grid>
+                </VStack>
+              ) : (
+                <Grid
+                  templateColumns={{ base: "1fr", lg: section.image || section.imageAnimation || section.websiteAnimation || section.valueBundle ? "1fr 1fr" : "1fr" }}
+                  gap={{ base: "8", lg: section.image || section.imageAnimation || section.websiteAnimation || section.valueBundle ? "16" : "0" }}
+                  alignItems="center"
+                  direction={section.imagePosition === "left" ? { base: "column", lg: "row-reverse" } : { base: "column", lg: "row" }}
+                >
+                  <VStack align="start" gap="4">
+                    <Heading
+                      as="h2"
+                      fontSize={{ base: "xl", md: "2xl" }}
+                      fontWeight="800"
+                      color="#0F172A"
+                      letterSpacing="-0.02em"
+                      lineHeight="1.3"
+                    >
+                      {section.heading}
+                    </Heading>
+                    <Text fontSize="md" color="#475569" lineHeight="1.7">
+                      {section.content}
+                    </Text>
+                    {section.highlights && section.highlights.length > 0 && (
+                      <VStack align="start" gap="2" pt="1">
+                        {section.highlights.map((hl, j) => (
+                          <HStack key={j} gap="2" align="start">
+                            <Box flexShrink={0} mt="0.5"><CheckCircleIcon /></Box>
+                            <Text fontSize="sm" color="#334155" lineHeight="1.6">{hl}</Text>
+                          </HStack>
+                        ))}
+                      </VStack>
+                    )}
+                  </VStack>
+
+                  {section.websiteAnimation ? (
+                    <Box w="full">
+                      <KancelariaWebsiteAnimation />
+                    </Box>
+                  ) : section.imageAnimation ? (
+                    <Box w="full">
+                      <GoogleSearchAnimation
+                        rounds={section.imageAnimation.rounds}
+                        rotationInterval={section.imageAnimation.rotationInterval}
+                      />
+                    </Box>
+                  ) : section.valueBundle ? (
+                    <Box w="full">
+                      <ValueBundleIllustration />
+                    </Box>
+                  ) : section.image ? (
+                    <Box>
+                      <Box
+                        as="img"
+                        src={section.image}
+                        alt={section.imageAlt ?? ""}
+                        w="full"
+                        h="auto"
+                        objectFit="contain"
+                        decoding="async"
+                        loading="lazy"
+                        rounded="2xl"
+                        boxShadow="0 8px 30px rgba(15,23,42,0.1)"
+                      />
+                    </Box>
+                  ) : null}
+                </Grid>
+              )}
             </Container>
           </Box>
         ))}

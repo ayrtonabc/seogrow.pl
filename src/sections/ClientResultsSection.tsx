@@ -16,7 +16,6 @@ const cases: CaseStudy[] = [
     name: "Asmed",
     industry: "Aparaty słuchowe · Ostróda",
     logo: "/clientes/asmed.webp",
-    url: "https://asmed.example",
     situation: "Sklep z aparatami słuchowymi w Ostródzie potrzebował strony, która buduje zaufanie starszych klientów i ich rodzin, oraz pojawia się w Google, kiedy ktoś szuka aparatu słuchowego w regionie warmińsko-mazurskim.",
     whatWeDid: "Zaprojektowaliśmy stronę od zera z myślą o dwóch grupach odbiorców: osobach starszych (czytelność, duże przyciski, prosty kontakt telefoniczny) i ich rodzinach (które szukają w imieniu rodziców). Konfiguracja schema LocalBusiness, meta tagów i Google Search Console.",
     result: "Strona ładuje się poniżej 1.5s. Indeksacja w Google w 9 dni. Pierwsze zapytania lokalne typu 'aparat słuchowy Ostróda' zaczęły pojawiać się po 4 tygodniach.",
@@ -34,10 +33,9 @@ const cases: CaseStudy[] = [
   },
   {
     name: "Inteligentne Folie",
-    industry: "Sklep z folią inteligentną",
+    industry: "Producent i instalator · ścianki szklane + folie inteligentne · Poznań",
     logo: "/clientes/inteligentnefolie.webp",
-    url: "https://inteligentnefolie.example",
-    situation: "Sklep internetowy sprzedający folię inteligentną w całej Polsce. Produkt mało znany, wymagał wyjaśnienia zastosowań przed specyfikacją. Konkurencja mocno osadzona w Google.",
+    situation: "Producent i instalator rozwiązań ze szkła i folii inteligentnych w całej Polsce. Produkt mało znany w segmencie B2C, konkurencja mocno osadzona w Google. Konieczność wyjaśnienia zastosowań przed specyfikacją.",
     whatWeDid: "Przeprowadziliśmy analizę konkurencji pod kątem SEO. Przebudowaliśmy strukturę strony tak, żeby zaczynała od zastosowań (co można zrobić z folią), a nie od specyfikacji. Wydzieliliśmy sekcję B2B i B2C. Zoptymalizowaliśmy treści pod główne zapytania produktowe.",
     result: "Po 2 tygodniach od publikacji klient zaczął otrzymywać telefony i zapytania ofertowe z całej Polski. Wyszukujemy się lepiej niż konkurencja w kluczowych zapytaniach. Współpracujemy dalej — optymalizujemy na bieżąco w oparciu o dane z Search Console.",
     resultNote: "Klient założyciel · dane w trakcie pomiaru",
@@ -83,6 +81,7 @@ export const ClientResultsSection = () => {
                 border="1px solid #E2E8F0"
                 rounded="2xl"
                 overflow="hidden"
+                position="relative"
                 display="flex"
                 flexDirection="column"
                 _hover={{

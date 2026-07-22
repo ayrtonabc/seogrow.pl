@@ -82,9 +82,13 @@ const buildRouteHtml = (routeDefinition, templateData) => {
     <meta charset="UTF-8" />
     <title>${escapeHtml(routeDefinition.title)}</title>
     <meta name="description" content="${escapeHtml(routeDefinition.description)}" />
+    <meta name="keywords" content="${escapeHtml(routeDefinition.keywords || 'strona internetowa, SEO, CMS, mała firma, projekt strony, pozycjonowanie')}" />
     <meta name="robots" content="${robots}" />
     <meta name="googlebot" content="${robots}" />
     <meta name="author" content="SEO Grow" />
+    <meta name="theme-color" content="#4F46E5" />
+    <meta name="format-detection" content="telephone=yes" />
+    <link rel="canonical" href="${canonicalUrl}" />
     <link rel="canonical" href="${canonicalUrl}" />
     <link rel="alternate" hreflang="pl" href="${canonicalUrl}" />
     <link rel="alternate" hreflang="x-default" href="${canonicalUrl}" />
@@ -94,11 +98,15 @@ const buildRouteHtml = (routeDefinition, templateData) => {
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:site_name" content="SEO Grow" />
     <meta property="og:locale" content="pl_PL" />
-    <meta property="og:image" content="${SITE_URL}/panel.webp" />
+    <meta property="og:image" content="${SITE_URL}/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SEO Grow — Strona internetowa dla firmy, gotowa w 5 dni" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(routeDefinition.title)}" />
     <meta name="twitter:description" content="${escapeHtml(routeDefinition.description)}" />
-    <meta name="twitter:image" content="${SITE_URL}/panel.webp" />
+    <meta name="twitter:image" content="${SITE_URL}/og-image.webp" />
+    <meta name="twitter:image:alt" content="SEO Grow — Strona internetowa dla firmy, gotowa w 5 dni" />
     ${schemaJson ? `<script type="application/ld+json">${schemaJson}</script>` : ''}
     ${templateData.commonHeadTags}
   </head>

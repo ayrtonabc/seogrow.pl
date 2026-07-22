@@ -1,316 +1,225 @@
 import {
   Box,
   Container,
-  Flex,
   Heading,
   Text,
   VStack,
   HStack,
 } from "@chakra-ui/react"
-import { useState } from "react"
 
-const ArrowRightIcon = ({ size = 16 }: { size?: number }) => (
+const ArrowRightIcon = ({ size = 16 }: { size?: 16 | 18 | 20 }) => (
   <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
     <path d="M5 12h14M13 5l7 7-7 7" />
   </svg>
 )
 
-const PhoneIcon = ({ size = 16 }: { size?: number }) => (
+const PhoneIcon = ({ size = 18 }: { size?: number }) => (
   <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
   </svg>
 )
 
-const CheckIcon = ({ size = 18 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+const CheckIcon = ({ size = 14 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" focusable="false">
     <path d="M20 6 9 17l-5-5" />
   </svg>
 )
 
-const CloseIcon = ({ size = 14 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" focusable="false">
-    <path d="M6 6l12 12M18 6L6 18" />
-  </svg>
-)
-
-const GoogleLogo = () => (
-  <Box as="span" fontWeight="700" lineHeight="1" whiteSpace="nowrap">
-    <Box as="span" color="#4285F4">G</Box>
-    <Box as="span" color="#EA4335">o</Box>
-    <Box as="span" color="#FBBC05">o</Box>
-    <Box as="span" color="#4285F4">g</Box>
-    <Box as="span" color="#34A853">l</Box>
-    <Box as="span" color="#EA4335">e</Box>
-  </Box>
-)
-
 export const HeroSection = () => {
-  const [openModal, setOpenModal] = useState(false)
-
   return (
     <Box
       as="section"
-      bg="linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%)"
-      pt={{ base: "28", md: "32", lg: "36" }}
-      pb={{ base: "14", md: "20" }}
+      pt={{ base: "20", md: "24", lg: "28" }}
+      pb={{ base: "16", md: "20" }}
+      bgGradient="linear(to-b, #EEF2FF, #FAFBFC)"
       position="relative"
       overflow="hidden"
       aria-label="Sekcja powitalna"
     >
-      <Container maxW="7xl" position="relative" zIndex="1">
-        <Flex
-          direction={{ base: "column", lg: "row" }}
-          align="center"
-          justify="space-between"
-          gap={{ base: "10", lg: "14" }}
-        >
-          <VStack
-            align="flex-start"
-            gap={{ base: "5", md: "6" }}
-            maxW={{ base: "full", lg: "600px" }}
-            textAlign="left"
-          >
-            {/* H1 — frase principal, una sola idea */}
-            <Heading
-              as="h1"
-              fontSize={{ base: "32px", sm: "36px", md: "44px", lg: "50px" }}
-              fontWeight="800"
-              letterSpacing="-0.025em"
-              lineHeight="1.1"
-              color="#0F172A"
-            >
-              Spokój.{" "}
-              <Box as="span" color="#4F46E5">
-                Twoja strona zdobywa klientów
-              </Box>
-              , Ty zajmujesz się firmą.
-            </Heading>
+      {/* ─── Halos decorativos (mismo patrón que las ciudades) ─── */}
+      <Box
+        position="absolute"
+        top="-10%"
+        left="50%"
+        transform="translateX(-50%)"
+        w="800px"
+        h="500px"
+        bg="#C7D2FE"
+        filter="blur(120px)"
+        rounded="full"
+        opacity="0.5"
+        zIndex="0"
+        pointerEvents="none"
+      />
+      <Box
+        position="absolute"
+        bottom="-20%"
+        right="-5%"
+        w="400px"
+        h="400px"
+        bg="#A5B4FC"
+        filter="blur(100px)"
+        rounded="full"
+        opacity="0.3"
+        zIndex="0"
+        pointerEvents="none"
+      />
 
-            {/* Subtítulo — una sola línea de apoyo */}
-            <Text
-              fontSize={{ base: "md", md: "lg" }}
-              color="#475569"
-              lineHeight="1.55"
-              maxW="52ch"
-              fontWeight="400"
-            >
-              Projektujemy stronę, dbamy o technikę i rozwijamy ją razem z Twoim biznesem.{" "}
-              <Box as="span" fontWeight="600" color="#0F172A">
-                Kiedy ktoś szuka Twojej usługi w Google, chcemy żeby znalazł właśnie Ciebie.
-              </Box>
-            </Text>
-
-            {/* 3 features — chips compactos */}
-            <HStack gap={{ base: "2", md: "3" }} wrap="wrap" pt="1">
-              {[
-                { title: "Więcej klientów" },
-                { title: "Zawsze działa" },
-                { title: "Projekt na miarę" },
-              ].map((item) => (
-                <HStack
-                  key={item.title}
-                  align="center"
-                  gap="2"
-                  px="3"
-                  py="1.5"
-                  bg="white"
-                  rounded="full"
-                  border="1px solid #E2E8F0"
-                >
-                  <Box color="#4F46E5" display="flex">
-                    <CheckIcon size={14} />
-                  </Box>
-                  <Text fontSize="sm" color="#0F172A" fontWeight="600">
-                    {item.title}
-                  </Text>
-                </HStack>
-              ))}
-            </HStack>
-
-            {/* CTAs */}
-            <HStack gap="3" wrap="wrap" pt="3">
-              <Box
-                as="a"
-                href="#ceny"
-                bg="linear-gradient(135deg, #4F46E5 0%, #2563EB 100%)"
-                color="white"
-                px="7"
-                py="3.5"
-                rounded="xl"
-                fontWeight="700"
-                fontSize="md"
-                display="flex"
-                alignItems="center"
-                gap="2"
-                textDecoration="none"
-                boxShadow="0 4px 14px rgba(79, 70, 229, 0.35)"
-                _hover={{
-                  bg: "linear-gradient(135deg, #4338CA 0%, #1D4ED8 100%)",
-                  transform: "translateY(-1px)",
-                  boxShadow: "0 8px 20px rgba(79, 70, 229, 0.45)",
-                }}
-                transition="all 0.2s"
-              >
-                Chcę swoją stronę
-                <ArrowRightIcon />
-              </Box>
-
-              <Box
-                as="a"
-                href="tel:+48517105423"
-                bg="white"
-                color="#0F172A"
-                px="6"
-                py="3.5"
-                rounded="xl"
-                fontWeight="600"
-                fontSize="md"
-                display="flex"
-                alignItems="center"
-                gap="2"
-                border="1.5px solid #E2E8F0"
-                textDecoration="none"
-                _hover={{
-                  borderColor: "#CBD5E1",
-                  bg: "#F8FAFC",
-                }}
-                transition="all 0.2s"
-              >
-                <PhoneIcon />
-                Zadzwoń: 517 105 423
-              </Box>
-            </HStack>
-
-            {/* Reaseguro bajo CTA — una sola línea, discreto */}
-            <Text fontSize="xs" color="#94A3B8" pt="1" maxW="52ch">
-              Bez umów długoterminowych. Bez nauki technologii. Bez żonglowania agencjami.
-            </Text>
-          </VStack>
-
-          <Box
-            position="relative"
-            w={{ base: "full", lg: "50%" }}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            pt={{ base: "6", lg: "0" }}
-          >
-            <Box
-              position="absolute"
-              bottom={{ base: "-20px", md: "-30px" }}
-              left="50%"
-              transform="translateX(-50%)"
-              w={{ base: "60%", md: "70%" }}
-              h={{ base: "20px", md: "28px" }}
-              bg="rgba(79, 70, 229, 0.22)"
-              rounded="full"
-              filter="blur(28px)"
-              zIndex="0"
-              className="hero-float-shadow"
-              pointerEvents="none"
-            />
-
-            <img
-              src="/hero-960.webp"
-              srcSet="/hero-640.webp 640w, /hero-960.webp 960w"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              alt="Panel SEO Grow — strona klienta widoczna w Google, edycja z telefonu"
-              width={960}
-              height={720}
-              decoding="async"
-              loading="eager"
-              fetchPriority="high"
-              style={{
-                width: "100%",
-                maxWidth: "100%",
-                height: "auto",
-                objectFit: "contain",
-                position: "relative",
-                zIndex: 1,
-                filter: "drop-shadow(0 24px 32px rgba(15, 23, 42, 0.12))",
-              }}
-              className="hero-float"
-            />
-          </Box>
-        </Flex>
-      </Container>
-
-      {openModal && (
-        <Box
-          position="fixed"
-          inset="0"
-          zIndex="1400"
-          bg="rgba(15, 23, 42, 0.55)"
-          backdropFilter="blur(4px)"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          px="4"
-          onClick={() => setOpenModal(false)}
-        >
-          <Box
+      <Container maxW="5xl" position="relative" zIndex="1">
+        <VStack align="center" gap={{ base: "5", md: "6" }} textAlign="center" maxW="3xl" mx="auto">
+          {/* ─── Eyebrow: trust badge ─── */}
+          <HStack
+            gap="2"
             bg="white"
-            w="full"
-            maxW="md"
-            rounded="2xl"
-            boxShadow="0 25px 50px rgba(15, 23, 42, 0.25)"
-            position="relative"
-            p={{ base: "6", md: "7" }}
-            onClick={(event) => event.stopPropagation()}
+            px="4"
+            py="2"
+            rounded="full"
+            border="1px solid #E2E8F0"
+            boxShadow="0 2px 8px rgba(15, 23, 42, 0.04)"
           >
+            <Box color="#059669" display="flex">
+              <CheckIcon size={14} />
+            </Box>
+            <Text fontSize="sm" color="#475569" fontWeight="600">
+              5+ lat doświadczenia · 30+ realizacji · 97 miast
+            </Text>
+          </HStack>
+
+          {/* ─── H1: idea principal ─── */}
+          <Heading
+            as="h1"
+            fontSize={{ base: "34px", sm: "40px", md: "52px", lg: "60px" }}
+            fontWeight="800"
+            color="#0F172A"
+            letterSpacing="-0.03em"
+            lineHeight="1.05"
+            maxW="900px"
+          >
+            Strona, która{" "}
+            <Box as="span" color="#4F46E5">
+              przyciąga klientów
+            </Box>{" "}
+            i rośnie razem z Twoją firmą
+          </Heading>
+
+          {/* ─── H1Accent: promesa clave ─── */}
+          <Heading
+            as="h2"
+            fontSize={{ base: "20px", sm: "22px", md: "26px", lg: "30px" }}
+            fontWeight="600"
+            color="#4F46E5"
+            letterSpacing="-0.015em"
+            lineHeight="1.3"
+            mt="-1"
+            maxW="780px"
+          >
+            Gotowa w 5 dni, od 1 500 zł, bez stresu
+          </Heading>
+
+          {/* ─── Subtítulo: contexto ─── */}
+          <Text
+            fontSize={{ base: "md", md: "lg" }}
+            color="#475569"
+            lineHeight="1.65"
+            mt="2"
+            maxW="640px"
+            fontWeight="400"
+          >
+            Profesjonalna strona internetowa dla Twojej firmy. CMS-em, którym
+            zarządzasz sam z telefonu.{" "}
+            <Box as="span" fontWeight="600" color="#0F172A">
+              Bez umowy, bez prowizji, bez żonglowania agencjami.
+            </Box>
+          </Text>
+
+          {/* ─── 4 features: chips compactos ─── */}
+          <HStack gap={{ base: "2", md: "3" }} wrap="wrap" pt="3" justify="center">
+            {[
+              { title: "Gotowa w 5 dni" },
+              { title: "Od 1 500 zł" },
+              { title: "Edycja z telefonu" },
+              { title: "Bez umowy" },
+            ].map((item) => (
+              <HStack
+                key={item.title}
+                align="center"
+                gap="2"
+                px="3"
+                py="1.5"
+                bg="white"
+                rounded="full"
+                border="1px solid #E2E8F0"
+                boxShadow="0 1px 3px rgba(15, 23, 42, 0.04)"
+              >
+                <Box color="#4F46E5" display="flex">
+                  <CheckIcon size={14} />
+                </Box>
+                <Text fontSize="sm" color="#0F172A" fontWeight="600">
+                  {item.title}
+                </Text>
+              </HStack>
+            ))}
+          </HStack>
+
+          {/* ─── CTAs ─── */}
+          <HStack gap="3" wrap="wrap" pt="4" justify="center">
             <Box
-              as="button"
-              type="button"
-              position="absolute"
-              top="4"
-              right="4"
-              w="10"
-              h="10"
+              as="a"
+              href="#ceny"
+              bg="#4F46E5"
+              color="white"
+              px="7"
+              py="3"
+              rounded="full"
+              fontWeight="700"
+              fontSize="md"
               display="flex"
               alignItems="center"
-              justifyContent="center"
-              rounded="full"
-              bg="#F8FAFC"
-              color="#0F172A"
-              onClick={() => setOpenModal(false)}
-              aria-label="Zamknij okno"
+              gap="2"
+              textDecoration="none"
+              _hover={{ bg: "#4338CA", transform: "translateY(-1px)", boxShadow: "lg" }}
+              transition="all 0.2s"
             >
-              <CloseIcon />
+              Chcę swoją stronę
+              <ArrowRightIcon />
             </Box>
 
-            <VStack gap="4" w="full" align="start">
-              <Heading as="h3" fontSize="xl" fontWeight="700" color="#0F172A">
-                Umów bezpłatną rozmowę
-              </Heading>
-              <Text fontSize="sm" color="#64748B" lineHeight="1.6">
-                15 minut. Powiemy Ci szczerze, czy nasze rozwiązanie pasuje do Twojej firmy.
-                Bez zobowiązań.
-              </Text>
-              <Box
-                as="a"
-                href="tel:+48517105423"
-                bg="linear-gradient(135deg, #4F46E5 0%, #2563EB 100%)"
-                color="white"
-                w="full"
-                py="3"
-                rounded="lg"
-                fontWeight="700"
-                fontSize="md"
-                textAlign="center"
-                textDecoration="none"
-                _hover={{ bg: "linear-gradient(135deg, #4338CA 0%, #1D4ED8 100%)" }}
-              >
-                Zadzwoń: 517 105 423
-              </Box>
-              <Text fontSize="xs" color="#94A3B8" textAlign="center" w="full">
-                Oddzwaniamy w ciągu 1 godziny w dni robocze
-              </Text>
-<HStack gap="4" pt="2" wrap="wrap" color="#475569" fontSize="sm">
-            </HStack>
-          </VStack>
-          </Box>
-        </Box>
-      )}
+            <Box
+              as="a"
+              href="tel:+48517105423"
+              bg="white"
+              color="#0F172A"
+              px="6"
+              py="3"
+              rounded="full"
+              fontWeight="600"
+              fontSize="md"
+              display="flex"
+              alignItems="center"
+              gap="2"
+              border="1px solid #E2E8F0"
+              textDecoration="none"
+              _hover={{ borderColor: "#4F46E5", color: "#4F46E5" }}
+              transition="all 0.2s"
+            >
+              <PhoneIcon />
+              Zadzwoń: 517 105 423
+            </Box>
+          </HStack>
+
+          {/* ─── Trust line (discreto) ─── */}
+          <Text
+            fontSize="xs"
+            color="#94A3B8"
+            pt="2"
+            maxW="52ch"
+            textAlign="center"
+          >
+            15 minut rozmowy, żebyśmy poznali Twoją firmę. Bez ankiet, bez
+            czekania na wyceny od trzech agencji.
+          </Text>
+        </VStack>
+      </Container>
     </Box>
   )
 }

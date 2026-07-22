@@ -11,6 +11,8 @@ import { HeroSection } from "./sections/HeroSection"
 import { WhatYouGetSection } from "./sections/WhatYouGetSection"
 import { TrustLogosSection } from "./sections/TrustLogosSection"
 import { StatsSection } from "./sections/StatsSection"
+import { CoverageSection } from "./sections/CoverageSection"
+import { PressSection } from "./sections/PressSection"
 import { ClientResultsSection } from "./sections/ClientResultsSection"
 import { ProblemSection } from "./sections/ProblemSection"
 import { CustomDesignSection } from "./sections/CustomDesignSection"
@@ -18,9 +20,24 @@ import { TargetAudienceSection } from "./sections/TargetAudienceSection"
 import { ScrollToTop } from "./components/ScrollToTop"
 import { PrefetchLinks } from "./components/PrefetchLinks"
 import { faqs } from "./data/faqs"
+import { cityRoutePaths } from "./data/cityRouteImports"
+import {
+  WarminskoMazurskieHubPage,
+  PomorskieHubPage,
+  WielkopolskieHubPage,
+  PodkarpackieHubPage,
+  LodzkieHubPage,
+  DolnoslaskieHubPage,
+  ZachodniopomorskieHubPage,
+  SwietokrzyskieHubPage,
+  KujawskoPomorskieHubPage,
+  MazowieckieHubPage,
+  PodlaskieHubPage,
+  LubelskieHubPage,
+  MalopolskieHubPage,
+} from "./pages/VoivodeshipHubs"
 import { GrowWithYouSection } from "./sections/GrowWithYouSection"
 import { FinalCTASection } from "./sections/FinalCTASection"
-import { MissionBandSection } from "./sections/MissionBandSection"
 
 const SupportPage = lazy(() =>
   import("./pages/SupportPage").then((module) => ({ default: module.SupportPage })),
@@ -200,6 +217,12 @@ const StronaDlaWeterynarzaPage = lazy(() =>
 const Footer = lazy(() =>
   import("./components/Footer").then((module) => ({ default: module.Footer })),
 )
+const AboutPage = lazy(() =>
+  import("./pages/AboutPage").then((module) => ({ default: module.AboutPage })),
+)
+const PressKitPage = lazy(() =>
+  import("./pages/PressKitPage").then((module) => ({ default: module.PressKitPage })),
+)
 const ModulosSection = lazy(() =>
   import("./sections/ModulosSection").then((module) => ({ default: module.ModulosSection })),
 )
@@ -227,11 +250,11 @@ function LandingPage() {
   return (
     <Box bg="white" minH="100vh">
       <SEO
-        title="Strona, która przyciąga klientów i rośnie z Twoją firmą | SEO Grow"
-        description="Projektujemy stronę, która przyciąga klientów, działa bez przerwy i rośnie razem z Twoją firmą. Ty nie zajmujesz się techniką. My bierzemy to na siebie. Od 1 500 zł."
+        title="Strona internetowa dla firmy — od 1 500 zł, gotowa w 5 dni | SEO Grow"
+        description="Profesjonalna strona dla Twojej firmy. Od 1 500 zł, gotowa w 5 dni, z CMS-em, którym zarządzasz sam z telefonu. Wsparcie po polsku, bez umowy, bez prowizji."
         path="/"
         image="/panel.webp"
-        keywords="strona internetowa dla firmy, strona widoczna w google, strona dla rzemieślnika, strona dla freelancera, strona dla gabinetu, strona zaprojektowana na miarę"
+        keywords="strona internetowa dla firmy, strona www, strona dla firmy, strona widoczna w google, strona dla rzemieślnika, strona dla freelancera, strona dla gabinetu, cms dla firmy"
         schema={homeSchema}
       />
       {/* Skip to Content Link for Accessibility */}
@@ -260,6 +283,8 @@ function LandingPage() {
         <WhatYouGetSection />
         <TrustLogosSection />
         <StatsSection />
+        <CoverageSection />
+        <PressSection />
         <ClientResultsSection />
         <ProblemSection />
         <CustomDesignSection />
@@ -274,7 +299,6 @@ function LandingPage() {
             <ComparisonInlineSection />
             <FAQSection />
             <FinalCTASection />
-            <MissionBandSection />
           </Suspense>
         </DeferredRender>
       </Box>
@@ -340,11 +364,29 @@ function App() {
           <Route path="/strona-internetowa-krakow" element={<StronaInternetowaKrakowPage />} />
           <Route path="/strona-internetowa-lodz" element={<StronaInternetowaLodzPage />} />
           <Route path="/strona-internetowa-wroclaw" element={<StronaInternetowaWroclawPage />} />
+          {cityRoutePaths.map(({ path, component: C }) => (
+            <Route key={path} path={path} element={<C />} />
+          ))}
+          <Route path="/warminsko-mazurskie" element={<WarminskoMazurskieHubPage />} />
+          <Route path="/pomorskie" element={<PomorskieHubPage />} />
+          <Route path="/wielkopolskie" element={<WielkopolskieHubPage />} />
+          <Route path="/podkarpackie" element={<PodkarpackieHubPage />} />
+          <Route path="/lodzkie" element={<LodzkieHubPage />} />
+          <Route path="/dolnoslaskie" element={<DolnoslaskieHubPage />} />
+          <Route path="/zachodniopomorskie" element={<ZachodniopomorskieHubPage />} />
+          <Route path="/swietokrzyskie" element={<SwietokrzyskieHubPage />} />
+          <Route path="/kujawsko-pomorskie" element={<KujawskoPomorskieHubPage />} />
+          <Route path="/mazowieckie" element={<MazowieckieHubPage />} />
+          <Route path="/podlaskie" element={<PodlaskieHubPage />} />
+          <Route path="/lubelskie" element={<LubelskieHubPage />} />
+          <Route path="/malopolskie" element={<MalopolskieHubPage />} />
           <Route path="/pozycjonowanie-stron-dla-firm" element={<PozycjonowanieStronDlaFirmPage />} />
           <Route path="/tania-strona-internetowa-dla-firmy" element={<TaniaStronaInternetowaDlaFirmyPage />} />
           <Route path="/obsluga-strony-internetowej" element={<ObslugaStronyInternetowejPage />} />
           <Route path="/seo-lokalne-dla-firm" element={<SeoLokalneDlaFirmPage />} />
           <Route path="/cennik" element={<CennikPage />} />
+          <Route path="/o-nas" element={<AboutPage />} />
+          <Route path="/press" element={<PressKitPage />} />
           <Route path="/strona-dla-fotografa" element={<StronaDlaFotografaPage />} />
           <Route path="/strona-dla-hotelu" element={<StronaDlaHoteluPage />} />
           <Route path="/strona-dla-architekta" element={<StronaDlaArchitektaPage />} />
