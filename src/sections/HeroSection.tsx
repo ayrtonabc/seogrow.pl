@@ -68,23 +68,6 @@ export const HeroSection = () => {
       <Container maxW="5xl" position="relative" zIndex="1">
         <VStack align="center" gap={{ base: "5", md: "6" }} textAlign="center" maxW="3xl" mx="auto">
           {/* ─── Eyebrow: trust badge ─── */}
-          <HStack
-            gap="2"
-            bg="white"
-            px="4"
-            py="2"
-            rounded="full"
-            border="1px solid #E2E8F0"
-            boxShadow="0 2px 8px rgba(15, 23, 42, 0.04)"
-          >
-            <Box color="#059669" display="flex">
-              <CheckIcon size={14} />
-            </Box>
-            <Text fontSize="sm" color="#475569" fontWeight="600">
-              5+ lat doświadczenia · 30+ realizacji · 97 miast
-            </Text>
-          </HStack>
-
           {/* ─── H1: idea principal ─── */}
           <Heading
             as="h1"

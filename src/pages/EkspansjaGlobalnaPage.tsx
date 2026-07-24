@@ -9,7 +9,7 @@ export const EkspansjaGlobalnaPage = () => (
     h1="Ekspansja globalna"
     h1Accent="Strona w wielu jezykach i walutach"
     h1Sub="Automatyczne tlumaczenie z weryfikacja przez czlowieka."
-    heroImage="/panel.webp"
+    heroImage="/moduly/multiidioma.webp"
     heroImageAlt="Ekspansja SEO Grow — wiele jezykow i walut"
     breadcrumb={[{ name: "Moduly", href: "/#moduly" }, { name: "Ekspansja Globalna", href: "/ekspansja-globalna" }]}
     sections={[
