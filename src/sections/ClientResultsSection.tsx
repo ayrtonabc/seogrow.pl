@@ -1,4 +1,5 @@
 import { Box, Container, Flex, Heading, Text, VStack, HStack, SimpleGrid, Badge } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
 
 type CaseStudy = {
   name: string
@@ -59,11 +60,8 @@ export const ClientResultsSection = () => {
             </Text>
             <Heading
               as="h2"
-              fontSize={{ base: "30px", md: "42px" }}
-              fontWeight="800"
-              letterSpacing="-0.035em"
-              color="#0F172A"
-              lineHeight="1.12"
+              {...SECTION_TITLE_PROPS}
+              color={SECTION_TITLE_COLOR_DARK}
             >
               Nie obiecujemy.{" "}
               <Box as="span" color="#4F46E5">Pokazujemy.</Box>

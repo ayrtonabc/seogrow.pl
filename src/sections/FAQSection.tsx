@@ -1,4 +1,5 @@
 import { Box, Container, Heading, Text, VStack, HStack, Stack } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
 import { useState } from "react"
 import { faqs } from "../data/faqs"
 
@@ -55,11 +56,8 @@ export const FAQSection = () => {
             </Text>
             <Heading
               as="h2"
-              fontSize={{ base: "36px", md: "52px" }}
-              fontWeight="800"
-              letterSpacing="-0.04em"
-              color="#0F172A"
-              lineHeight="1.05"
+              {...SECTION_TITLE_PROPS}
+              color={SECTION_TITLE_COLOR_DARK}
             >
               Pytania i odpowiedzi
             </Heading>

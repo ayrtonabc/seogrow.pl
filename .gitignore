@@ -33,3 +33,13 @@ public/logo.webp
 
 # Old publish artifact — never commit
 .dist-publish/
+
+# Local audit scripts (never commit)
+_audit-*.cjs
+_audit-*.mjs
+
+# Impeccable design lint local config
+.impeccable/
+
+# Pocketbase artifacts (audit screenshots — never commit)
+pocketbase/.artifacts/

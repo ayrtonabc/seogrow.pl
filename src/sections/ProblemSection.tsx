@@ -1,123 +1,281 @@
-import { Box, Container, Flex, Grid, Heading, Text, VStack } from "@chakra-ui/react"
-import { FaTachometerAlt, FaSearchLocation, FaMoneyBillWave, FaClock } from "react-icons/fa"
+// src/sections/ProblemSection.tsx
+// "Brzmi znajomo?" — los 4 problemas típicos que crean las agencias
+// tradicionales, enmarcados como "esto es lo que hacen otros" y con un
+// cierre explícito de que con SEO Grow ninguno de estos problemas existe.
+// Mismo patrón visual 3×2 que WhatYouGetSection (cards de texto + 2 SVG
+// decorativos), con paleta roja/coral para reforzar el tono de "problema".
+// El cierre contrasta con la solución SEO Grow.
 
-const problems = [
+import { Box, Container, Heading, Text, VStack, SimpleGrid } from "@chakra-ui/react"
+import { DotLottieReact } from "@lottiefiles/dotlottie-react"
+import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
+
+type Problem = {
+  title: string
+  desc: string
+}
+
+const PROBLEMS: Problem[] = [
   {
-    icon: FaMoneyBillWave,
     title: "Każda zmiana to koszt i czekanie",
     desc: "Chcesz zmienić cenę albo dodać zdjęcie — agencja liczy godziny, a Ty czekasz tygodniami na efekt.",
   },
   {
-    icon: FaSearchLocation,
     title: "Nie ma Cię tam, gdzie szukają klienci",
     desc: "Ktoś wpisuje Twoją usługę w Google. Znajduje konkurencję. Ciebie — nie.",
   },
   {
-    icon: FaTachometerAlt,
     title: "Strona kosztuje — i nic nie zarabia",
     desc: "Płacisz za hosting, aktualizacje, certyfikaty, poprawki — a mimo to nowi klienci nie przychodzą.",
   },
   {
-    icon: FaClock,
     title: "Jesteś zależny od jednej osoby",
     desc: "Twój programista trzyma hasła, pliki i dostęp do strony. Bez niego nie ruszysz.",
   },
 ]
 
+// ─── SVGs reemplazados por animaciones Lottie (mismo gradiente) ─────────
+
+const ImageCosts = () => (
+  <Box
+    w="full"
+    h="full"
+    position="relative"
+    overflow="hidden"
+    rounded="3xl"
+    style={{
+      background: "linear-gradient(135deg, #FCA5A5 0%, #DC2626 100%)",
+    }}
+  >
+    {/* Capa 1: gradiente explícito */}
+    <Box
+      position="absolute"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      style={{
+        background: "linear-gradient(135deg, #FCA5A5 0%, #DC2626 100%)",
+        zIndex: 0,
+      }}
+    />
+    {/* Capa 2: animación Lottie transparente */}
+    <DotLottieReact
+      src="/no access.lottie"
+      autoplay
+      loop
+      speed={0.5}
+      backgroundColor="transparent"
+      style={{
+        position: "absolute",
+        top: "10%",
+        left: "10%",
+        width: "80%",
+        height: "80%",
+        zIndex: 1,
+        display: "block",
+      }}
+    />
+  </Box>
+)
+
+const ImageDependence = () => (
+  <Box
+    w="full"
+    h="full"
+    position="relative"
+    overflow="hidden"
+    rounded="3xl"
+    style={{
+      background: "linear-gradient(135deg, #9CA3AF 0%, #374151 100%)",
+    }}
+  >
+    {/* Capa 1: gradiente explícito */}
+    <Box
+      position="absolute"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      style={{
+        background: "linear-gradient(135deg, #9CA3AF 0%, #374151 100%)",
+        zIndex: 0,
+      }}
+    />
+    {/* Capa 2: animación Lottie transparente */}
+    <DotLottieReact
+      src="/Sign for error _ Flat style.lottie"
+      autoplay
+      loop
+      speed={0.5}
+      backgroundColor="transparent"
+      style={{
+        position: "absolute",
+        top: "10%",
+        left: "10%",
+        width: "80%",
+        height: "80%",
+        zIndex: 1,
+        display: "block",
+      }}
+    />
+  </Box>
+)
+
+// ─── Card de problema (con indicador visual sutil) ────────────────────────
+
+const ProblemCard = ({ title, desc }: Problem) => (
+  <Box
+    bg="white"
+    rounded="3xl"
+    p={{ base: "7", md: "9" }}
+    h="full"
+    display="flex"
+    flexDirection="column"
+    justifyContent="center"
+    position="relative"
+    borderTop="3px solid #EF4444"
+  >
+    <Text
+      fontSize="xs"
+      fontWeight="800"
+      color="#EF4444"
+      letterSpacing="0.18em"
+      textTransform="uppercase"
+      mb="3"
+    >
+      ✕ U innych
+    </Text>
+    <Heading
+      as="h3"
+      fontSize={{ base: "22px", md: "28px" }}
+      fontWeight="800"
+      color="#0F172A"
+      letterSpacing="-0.02em"
+      lineHeight="1.2"
+      mb="3"
+    >
+      {title}
+    </Heading>
+    <Text fontSize="md" color="#475569" lineHeight="1.65">
+      {desc}
+    </Text>
+  </Box>
+)
+
+// ─── Card de imagen ───────────────────────────────────────────────────────
+
+const ImageCard = ({ children }: { children: React.ReactNode }) => (
+  <Box
+    h={{ base: "260px", md: "100%" }}
+    minH={{ base: "260px", md: "320px" }}
+    transition="transform 0.3s ease"
+    _hover={{ transform: "scale(1.02)" }}
+  >
+    {children}
+  </Box>
+)
+
 export const ProblemSection = () => {
   return (
-    <Box bg="#F8FAFC" py={{ base: "20", md: "28" }}>
-      <Container maxW="7xl">
+    <Box bg="#F5F3FF" py={{ base: "16", md: "24" }} position="relative" overflow="hidden">
+      <Container maxW="6xl" position="relative" zIndex="1">
         <VStack gap={{ base: "10", md: "14" }}>
-          <VStack gap="6" textAlign="center" maxW="3xl" mx="auto">
+          {/* ─── HEADER ─── */}
+          <VStack gap="4" textAlign="center" maxW="3xl" mx="auto">
             <Text
-              fontSize="12px"
+              fontSize="13px"
               fontWeight="700"
-              color="#EF4444"
-              letterSpacing="0.12em"
+              color="#DC2626"
+              letterSpacing="0.18em"
               textTransform="uppercase"
             >
-              Brzmi znajomo?
+              To robią inne agencje
             </Text>
             <Heading
               as="h2"
-              fontSize={{ base: "32px", md: "46px" }}
-              fontWeight="800"
-              letterSpacing="-0.04em"
-              color="#0F172A"
-              lineHeight="1.12"
+              {...SECTION_TITLE_PROPS}
+              color={SECTION_TITLE_COLOR_DARK}
             >
               Strona, która miała pomagać,{" "}
-              <Box as="span" color="#EF4444">tylko przeszkadza.</Box>
-              <br />
-              <Box as="span">Da się to zmienić.</Box>
+              <Box as="span" color="#DC2626">tylko przeszkadza.</Box>
+              <Box as="span" display="block" mt="1">Da się to zmienić.</Box>
             </Heading>
-            <Text color="#475569" fontSize="md" lineHeight="1.6" maxW="2xl" mx="auto">
-              Większość firm w Polsce płaci za stronę, która nie przyprowadza klientów,
-              kosztuje coraz więcej i wymaga ciągłej uwagi. To nie musi być Twoja historia.
+            <Text
+              fontSize={{ base: "md", md: "lg" }}
+              color="#475569"
+              lineHeight="1.65"
+              maxW="2xl"
+            >
+              Brzmi znajomo? Większość firm w Polsce płaci za stronę, która nie przyprowadza klientów, kosztuje coraz więcej i wymaga ciągłej uwagi.{" "}
+              <Box as="span" fontWeight="700" color="#0F172A">
+                To nie musi być Twoja historia — bo z nami tych problemów po prostu nie ma.
+              </Box>
             </Text>
           </VStack>
 
-          <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap="5" w="full">
-            {problems.map((problem, i) => (
-              <Box
-                key={i}
-                p={{ base: "6", md: "7" }}
-                bg="white"
-                rounded="2xl"
-                border="1px solid #E2E8F0"
-                _hover={{ borderColor: "#FECACA", boxShadow: "0 8px 20px -8px rgba(239, 68, 68, 0.15)" }}
-                transition="all 0.25s"
-              >
-                <Flex gap="4" align="start">
-                  <Box
-                    p="3"
-                    bg="#FEE2E2"
-                    rounded="xl"
-                    color="#EF4444"
-                    fontSize="lg"
-                    flexShrink={0}
-                  >
-                    <problem.icon />
-                  </Box>
-                  <VStack align="start" gap="2">
-                    <Text fontWeight="700" fontSize="lg" color="#0F172A">
-                      {problem.title}
-                    </Text>
-                    <Text fontSize="sm" color="#475569" lineHeight="1.55">
-                      {problem.desc}
-                    </Text>
-                  </VStack>
-                </Flex>
-              </Box>
-            ))}
-          </Grid>
-
-          <Box
-            bg="white"
-            p={{ base: "6", md: "8" }}
-            rounded="2xl"
-            border="1px solid #E2E8F0"
-            textAlign="center"
-            maxW="3xl"
+          {/* ─── GRID 3×2 con cards de problema + imágenes SVG ─── */}
+          <SimpleGrid
+            columns={{ base: 1, md: 3 }}
+            gap={{ base: "6", md: "8" }}
             w="full"
+            alignItems="stretch"
           >
-            <Text
-              fontSize={{ base: "lg", md: "xl" }}
-              color="#0F172A"
-              fontWeight="800"
-              mb="3"
-              lineHeight="1.3"
-            >
-              Twoja strona przestaje być kosztem.
-              <br />
-              <Box as="span" color="#4F46E5">Zaczyna pracować dla Twojej firmy.</Box>
-            </Text>
-            <Text fontSize="md" color="#475569" lineHeight="1.6">
-              Płacisz raz za projekt, potem jedną stałą kwotę miesięcznie — i tyle.
-              Hosting, aktualizacje, bezpieczeństwo, wsparcie, rozwój: wszystko jest w tej kwocie.
-              <Box as="span" fontWeight="700" color="#0F172A"> My pilnujemy. Ty robisz swoje.</Box>
-            </Text>
+            {/* Fila 1 */}
+            <ProblemCard {...PROBLEMS[0]} />
+            <ImageCard>
+              <ImageCosts />
+            </ImageCard>
+            <ProblemCard {...PROBLEMS[1]} />
+
+            {/* Fila 2 */}
+            <ImageCard>
+              <ImageDependence />
+            </ImageCard>
+            <ProblemCard {...PROBLEMS[2]} />
+            <ProblemCard {...PROBLEMS[3]} />
+          </SimpleGrid>
+
+          {/* ─── CIERRE: contraste "otros" vs "SEO Grow" ─── */}
+          <Box
+            mt="4"
+            bg="white"
+            rounded="3xl"
+            p={{ base: "8", md: "12" }}
+            w="full"
+            textAlign="center"
+            border="1px solid #E2E8F0"
+            boxShadow="0 12px 30px -10px rgba(79, 70, 229, 0.15)"
+          >
+            <VStack gap="5">
+              <Text
+                fontSize={{ base: "22px", md: "32px" }}
+                fontWeight="800"
+                color="#0F172A"
+                lineHeight="1.25"
+                letterSpacing="-0.025em"
+                maxW="2xl"
+              >
+                Z nami{" "}
+                <Box as="span" color="#DC2626">żaden z tych problemów</Box>{" "}
+                nie istnieje.
+                <Box as="span" display="block" mt="1" color="#4F46E5">
+                  Bo tak właśnie pracujemy.
+                </Box>
+              </Text>
+              <Text
+                fontSize={{ base: "md", md: "lg" }}
+                color="#475569"
+                lineHeight="1.6"
+                maxW="2xl"
+              >
+                Płacisz raz za projekt, potem jedną stałą kwotę miesięcznie — i tyle.
+                Hosting, aktualizacje, bezpieczeństwo, wsparcie, rozwój: wszystko jest w tej kwocie.{" "}
+                <Box as="span" fontWeight="700" color="#0F172A">
+                  My pilnujemy. Ty robisz swoje.
+                </Box>
+              </Text>
+            </VStack>
           </Box>
         </VStack>
       </Container>

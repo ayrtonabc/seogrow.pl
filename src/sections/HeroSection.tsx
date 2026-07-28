@@ -29,14 +29,18 @@ export const HeroSection = () => {
   return (
     <Box
       as="section"
-      pt={{ base: "20", md: "24", lg: "28" }}
-      pb={{ base: "16", md: "20" }}
+      minH={{ base: "auto", md: "100vh" }}
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      pt={{ base: "32", md: "32", lg: "32" }}
+      pb={{ base: "20", md: "24" }}
       bgGradient="linear(to-b, #EEF2FF, #FAFBFC)"
       position="relative"
       overflow="hidden"
       aria-label="Sekcja powitalna"
     >
-      {/* ─── Halos decorativos (mismo patrón que las ciudades) ─── */}
+      {/* Halos decorativos */}
       <Box
         position="absolute"
         top="-10%"
@@ -66,26 +70,29 @@ export const HeroSection = () => {
       />
 
       <Container maxW="5xl" position="relative" zIndex="1">
-        <VStack align="center" gap={{ base: "5", md: "6" }} textAlign="center" maxW="3xl" mx="auto">
-          {/* ─── Eyebrow: trust badge ─── */}
-          {/* ─── H1: idea principal ─── */}
+        <VStack align="center" gap={{ base: "5", md: "7" }} textAlign="center" maxW="3xl" mx="auto">
+          {/* H1 — versión original, en 2 líneas balanceadas */}
           <Heading
             as="h1"
-            fontSize={{ base: "34px", sm: "40px", md: "52px", lg: "60px" }}
+            fontSize={{ base: "30px", sm: "36px", md: "42px", lg: "48px" }}
             fontWeight="800"
             color="#0F172A"
-            letterSpacing="-0.03em"
-            lineHeight="1.05"
-            maxW="900px"
+            letterSpacing="-0.025em"
+            lineHeight="1.15"
+            maxW="820px"
           >
-            Strona, która{" "}
-            <Box as="span" color="#4F46E5">
-              przyciąga klientów
-            </Box>{" "}
-            i rośnie razem z Twoją firmą
+            <Box as="span" display="block">
+              Strona, która{" "}
+              <Box as="span" color="#4F46E5">
+                przyciąga klientów
+              </Box>
+            </Box>
+            <Box as="span" display="block" mt="1">
+              i rośnie razem z Twoją firmą
+            </Box>
           </Heading>
 
-          {/* ─── H1Accent: promesa clave ─── */}
+          {/* H1Accent — promesa clave */}
           <Heading
             as="h2"
             fontSize={{ base: "20px", sm: "22px", md: "26px", lg: "30px" }}
@@ -99,7 +106,7 @@ export const HeroSection = () => {
             Gotowa w 5 dni, od 1 500 zł, bez stresu
           </Heading>
 
-          {/* ─── Subtítulo: contexto ─── */}
+          {/* Subtítulo */}
           <Text
             fontSize={{ base: "md", md: "lg" }}
             color="#475569"
@@ -115,7 +122,7 @@ export const HeroSection = () => {
             </Box>
           </Text>
 
-          {/* ─── 4 features: chips compactos ─── */}
+          {/* 4 chips */}
           <HStack gap={{ base: "2", md: "3" }} wrap="wrap" pt="3" justify="center">
             {[
               { title: "Gotowa w 5 dni" },
@@ -144,8 +151,8 @@ export const HeroSection = () => {
             ))}
           </HStack>
 
-          {/* ─── CTAs ─── */}
-          <HStack gap="3" wrap="wrap" pt="4" justify="center">
+          {/* CTAs principales */}
+          <HStack gap="3" wrap="wrap" pt="2" justify="center">
             <Box
               as="a"
               href="#ceny"
@@ -189,18 +196,6 @@ export const HeroSection = () => {
               Zadzwoń: 517 105 423
             </Box>
           </HStack>
-
-          {/* ─── Trust line (discreto) ─── */}
-          <Text
-            fontSize="xs"
-            color="#94A3B8"
-            pt="2"
-            maxW="52ch"
-            textAlign="center"
-          >
-            15 minut rozmowy, żebyśmy poznali Twoją firmę. Bez ankiet, bez
-            czekania na wyceny od trzech agencji.
-          </Text>
         </VStack>
       </Container>
     </Box>

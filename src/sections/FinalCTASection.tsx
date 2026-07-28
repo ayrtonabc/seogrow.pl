@@ -1,4 +1,5 @@
 import { Box, Container, Flex, Heading, Text, VStack, HStack } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS } from "../lib/typography"
 
 const ArrowRightIcon = ({ size = 16 }: { size?: number }) => (
   <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
@@ -56,11 +57,8 @@ export const FinalCTASection = () => {
 
           <Heading
             as="h2"
-            fontSize={{ base: "26px", md: "40px", lg: "48px" }}
-            fontWeight="800"
-            letterSpacing="-0.035em"
+            {...SECTION_TITLE_PROPS}
             color="white"
-            lineHeight="1.18"
             maxW="4xl"
           >
             Projektujemy stronę, która{" "}

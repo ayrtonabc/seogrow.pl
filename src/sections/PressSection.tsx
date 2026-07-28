@@ -8,6 +8,7 @@
 // sección aparece automáticamente.
 
 import { Box, Container, Heading, Text, HStack, VStack, SimpleGrid, Badge } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
 import { pressMentions } from "../data/pressMentions"
 
 const ArrowUpRightIcon = ({ size = 14 }: { size?: number }) => (
@@ -42,11 +43,8 @@ export const PressSection = () => {
             </Text>
             <Heading
               as="h2"
-              fontSize={{ base: "2xl", md: "3xl" }}
-              fontWeight="800"
-              color="#0F172A"
-              letterSpacing="-0.025em"
-              lineHeight="1.15"
+              {...SECTION_TITLE_PROPS}
+              color={SECTION_TITLE_COLOR_DARK}
             >
               Pisali o nas
             </Heading>

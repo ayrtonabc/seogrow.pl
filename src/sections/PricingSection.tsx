@@ -1,4 +1,5 @@
 import { Box, Container, Grid, Heading, Text, VStack, Flex } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
 import { Link } from "react-router-dom"
 import { pricingPlans } from "../data/pricingPlans"
 
@@ -45,11 +46,8 @@ export const PricingSection = () => {
             </Text>
             <Heading
               as="h2"
-              fontSize={{ base: "32px", md: "44px" }}
-              fontWeight="800"
-              letterSpacing="-0.035em"
-              color="#0F172A"
-              lineHeight="1.08"
+              {...SECTION_TITLE_PROPS}
+              color={SECTION_TITLE_COLOR_DARK}
             >
               Co płacisz i co dostajesz
             </Heading>

@@ -73,14 +73,6 @@ img {
   max-width: 100%;
 }
 
-/* Gradient text utility */
-.gradient-text {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* Glassmorphism effect */
 .glass {
   background: var(--glass-bg);

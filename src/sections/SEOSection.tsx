@@ -1,4 +1,5 @@
 import { Box, Container, Heading, Text, VStack, Flex, Grid } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
 import { FaPhoneAlt, FaMousePointer, FaChartLine, FaBolt, FaMobileAlt } from "react-icons/fa"
 
 const benefits = [
@@ -56,11 +57,8 @@ export const SEOSection = () => {
             </Text>
             <Heading
               as="h2"
-              fontSize={{ base: "32px", md: "44px" }}
-              fontWeight="800"
-              letterSpacing="-0.035em"
-              color="#0F172A"
-              lineHeight="1.1"
+              {...SECTION_TITLE_PROPS}
+              color={SECTION_TITLE_COLOR_DARK}
             >
               Twoja strona jest gotowa na to, żeby{" "}
               <Box as="span" color="#4F46E5">Google ją rozumiał</Box>{" "}

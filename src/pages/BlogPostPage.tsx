@@ -257,19 +257,30 @@ export const BlogPostPage = () => {
               </Box>
 
               <Box className="article-content" color="#334155" fontSize={{ base: "lg", md: "xl" }} lineHeight="1.9">
-                <Box 
-                  bg="#F8FAFC" 
-                  p="8" 
-                  rounded="2xl" 
-                  mb="10" 
-                  borderLeft="4px solid" 
-                  borderColor="#4F46E5"
+                <Box
+                  bg="#EEF2FF"
+                  p="8"
+                  rounded="2xl"
+                  mb="10"
+                  position="relative"
                   boxShadow="sm"
                 >
-                  <Text fontWeight="800" color="#0F172A" mb="3" fontSize="lg" textTransform="uppercase" letterSpacing="wider">
+                  <Text
+                    position="absolute"
+                    top="3"
+                    right="4"
+                    fontSize="5xl"
+                    fontWeight="800"
+                    color="#C7D2FE"
+                    lineHeight="1"
+                    aria-hidden="true"
+                  >
+                    &ldquo;
+                  </Text>
+                  <Text fontWeight="800" color="#0F172A" mb="3" fontSize="sm" textTransform="uppercase" letterSpacing="0.14em" color="#4F46E5">
                     W skrócie
                   </Text>
-                  <Text color="#475569" fontSize="md" lineHeight="1.7" fontWeight="500">
+                  <Text color="#334155" fontSize="md" lineHeight="1.7" fontWeight="500">
                     {post.excerpt}
                   </Text>
                 </Box>

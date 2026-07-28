@@ -173,7 +173,19 @@ export const PressKitPage = () => {
               </Text>
               <VStack gap="3" align="stretch">
                 {pressQuotes.map((q, i) => (
-                  <Box key={i} p="4" bg="white" border="1px solid #E2E8F0" rounded="md" borderLeft="4px solid" borderColor="#4F46E5">
+                  <Box key={i} p="4" bg="#EEF2FF" border="1px solid #E0E7FF" rounded="md" position="relative">
+                    <Text
+                      position="absolute"
+                      top="2"
+                      right="3"
+                      fontSize="3xl"
+                      fontWeight="800"
+                      color="#C7D2FE"
+                      lineHeight="1"
+                      aria-hidden="true"
+                    >
+                      &ldquo;
+                    </Text>
                     <Text fontSize="sm" color="#334155" lineHeight="1.6" fontStyle="italic">
                       {q}
                     </Text>

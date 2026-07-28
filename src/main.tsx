@@ -58,6 +58,21 @@ const tree = (
 )
 
 function mountClean(): Root {
+  // CRITICAL: unmount the previous root BEFORE wiping the DOM.
+  // Without this, React's reconciliator still holds references to the
+  // old children, and the innerHTML wipe throws NotFoundError when
+  // React later tries to remove those stale children.
+  if (currentRoot) {
+    try {
+      currentRoot.unmount()
+    } catch {
+      // Chrome may have wrapped text nodes — React's unmount walks
+      // the tree and calls removeChild; if a parent has been swapped
+      // out, the throw is harmless because we're about to wipe the DOM.
+    }
+    currentRoot = null
+  }
+
   // Wipe any leftovers (including Chrome's wrappers from a previous
   // session if we got here via a remount). React always mounts on a
   // clean DOM — that's the strategy's core guarantee.
@@ -67,8 +82,9 @@ function mountClean(): Root {
   return root
 }
 
-let currentRoot: Root | null = mountClean()
+let currentRoot: Root | null = null
 let remountScheduled = false
+currentRoot = mountClean()
 
 // --- detection helpers ----------------------------------------------------
 

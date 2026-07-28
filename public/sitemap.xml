@@ -41,6 +41,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/przetwarzanie-danych" />
   </url>
   <url>
+    <loc>https://seogrow.pl/regulamin</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/regulamin" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/regulamin" />
+  </url>
+  <url>
     <loc>https://seogrow.pl/cms-seo</loc>
     <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -1015,14 +1023,6 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/malopolskie" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/malopolskie" />
-  </url>
-  <url>
-    <loc>https://seogrow.pl/o-nas</loc>
-    <lastmod>2026-07-22</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/o-nas" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/o-nas" />
   </url>
   <url>
     <loc>https://seogrow.pl/press</loc>

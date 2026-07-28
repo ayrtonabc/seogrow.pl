@@ -1,4 +1,5 @@
 import { Box, Container, Heading, Text, SimpleGrid, HStack, VStack } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS } from "../lib/typography"
 
 type IncludedItem = {
   title: string
@@ -69,11 +70,8 @@ export const StatsSection = () => {
             </Text>
             <Heading
               as="h2"
-              fontSize={{ base: "36px", md: "52px" }}
-              fontWeight="800"
+              {...SECTION_TITLE_PROPS}
               color="white"
-              letterSpacing="-0.04em"
-              lineHeight="1.05"
             >
               Wszystko w cenie —{" "}
               <Box as="span" color="#A5B4FC">bez ukrytych opłat</Box>

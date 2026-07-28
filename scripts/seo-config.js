@@ -156,6 +156,7 @@ const HOME_ROUTE = {
       sameAs: [
         'https://www.facebook.com/seogrowpl',
         'https://www.linkedin.com/company/seogrowpl',
+        'https://www.google.com/maps/place/SeoGrow+-+Strony+WWW+i+SEO/@53.6990252,19.9613923,17z/',
       ],
     },
     {
@@ -166,7 +167,7 @@ const HOME_ROUTE = {
       givenName: 'Ayrton',
       jobTitle: 'Founder & CEO',
       worksFor: { '@id': 'https://seogrow.pl/#organization' },
-      url: 'https://seogrow.pl/o-nas',
+      url: 'https://seogrow.pl/',
       email: 'kontakt@seogrow.pl',
       telephone: '+48-517-105-423',
       address: {
@@ -214,6 +215,7 @@ const HOME_ROUTE = {
       sameAs: [
         'https://www.linkedin.com/company/seogrowpl',
         'https://www.facebook.com/seogrowpl',
+        'https://www.google.com/maps/place/SeoGrow+-+Strony+WWW+i+SEO/@53.6990252,19.9613923,17z/',
       ],
     },
     {
@@ -473,6 +475,14 @@ const HOME_ROUTE = {
         closes: '17:00',
       },
       geo: { '@type': 'GeoCoordinates', latitude: 53.6961, longitude: 19.9649 },
+      hasMap: 'https://www.google.com/maps/place/SeoGrow+-+Strony+WWW+i+SEO/@53.6990252,19.9613923,17z/',
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '4', bestRating: '5', worstRating: '1' },
+      review: [
+        { '@type': 'Review', author: { '@type': 'Person', name: 'Peko Parrello' }, datePublished: '2026-07-27', reviewBody: 'After extensive searching and unsuccessful attempts with various companies, we finally found SeoGrow. Our customers can easily view, purchase, and the entire process runs without complications. Highly recommended.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+        { '@type': 'Review', author: { '@type': 'Person', name: 'Patrycja Grabska' }, datePublished: '2026-07-22', reviewBody: 'Super kontakt i szybka realizacja, polecam.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+        { '@type': 'Review', author: { '@type': 'Person', name: 'Szcześliwej Drogi' }, datePublished: '2026-07-22', reviewBody: 'Profesjonalna obsługa i rzetelna realizacja. Serdecznie mogę polecić.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+        { '@type': 'Review', author: { '@type': 'Person', name: 'Maksymilian Kołodziej' }, datePublished: '2026-07-22', reviewBody: 'Polecam tę firmę. Dobra komunikacja i profesjonalne usługi w dobrych cenach.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+      ],
     },
   ],
 };
@@ -566,6 +576,19 @@ const DATA_PROCESSING_ROUTE = {
   title: 'Zasady przetwarzania danych | SEO Grow',
   description:
     'Zakres, cele, odbiorcy i okresy przechowywania danych osobowych przetwarzanych przez SEO Grow.',
+  selectors: ['main', 'h1', '#root:not(:empty)'],
+  includeInSitemap: true,
+  noindex: false,
+  expectJsonLd: true,
+  changefreq: 'yearly',
+  priority: '0.3',
+};
+
+const REGULAMIN_ROUTE = {
+  route: '/regulamin',
+  title: 'Regulamin sklepu i usług | SEO Grow — Grow Solutions',
+  description:
+    'Regulamin świadczenia usług przez Grow Solutions (NIP 7412176947). Prawa i obowiązki Klienta oraz Sprzedawcy, polityka zwrotów, reklamacji, ochrona danych. Płatności obsługiwane przez Tpay.',
   selectors: ['main', 'h1', '#root:not(:empty)'],
   includeInSitemap: true,
   noindex: false,
@@ -2224,19 +2247,6 @@ const CONTENT_ROUTES = [
     lastmod: '2026-07-21',
   },
   {
-    route: '/o-nas',
-    title: 'O nas — kim jesteśmy i dlaczego robimy SEO Grow | SEO Grow',
-    description: 'SEO Grow to jednoosobowa firma technologiczna z Ostródy. Budujemy strony internetowe z własnym CMS-em dla małych polskich firm. 5+ lat doświadczenia, 97 miast, ta sama cena wszędzie.',
-    keywords: 'o nas seo grow, founder seo grow, grow solutions, agencja seo ostróda, cms dla firm, twórca strony internetowej, kto robi seo grow, ayrton founder',
-    selectors: ['main', 'h1', '#root:not(:empty)'],
-    includeInSitemap: true,
-    noindex: false,
-    expectJsonLd: true,
-    changefreq: 'yearly',
-    priority: '0.5',
-    lastmod: '2026-07-22',
-  },
-  {
     route: '/press',
     title: 'Press kit — materiały dla mediów | SEO Grow',
     description: 'Press kit SEO Grow: bio foundera, logotypy w wysokiej rozdzielczości, statystyki firmy, fakty, cytaty i kontakt dla mediów. Materiały gotowe do publikacji.',
@@ -2858,6 +2868,14 @@ const cityLocalBusinessSchema = (citySlug) => {
       closes: '17:00',
     },
     geo: { '@type': 'GeoCoordinates', latitude: city.lat, longitude: city.lng },
+    hasMap: 'https://www.google.com/maps/place/SeoGrow+-+Strony+WWW+i+SEO/@53.6990252,19.9613923,17z/',
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '4', bestRating: '5', worstRating: '1' },
+    review: [
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Peko Parrello' }, datePublished: '2026-07-27', reviewBody: 'After extensive searching and unsuccessful attempts with various companies, we finally found SeoGrow. Our customers can easily view, purchase, and the entire process runs without complications. Highly recommended.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Patrycja Grabska' }, datePublished: '2026-07-22', reviewBody: 'Super kontakt i szybka realizacja, polecam.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Szcześliwej Drogi' }, datePublished: '2026-07-22', reviewBody: 'Profesjonalna obsługa i rzetelna realizacja. Serdecznie mogę polecić.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Maksymilian Kołodziej' }, datePublished: '2026-07-22', reviewBody: 'Polecam tę firmę. Dobra komunikacja i profesjonalne usługi w dobrych cenach.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+    ],
     parentOrganization: { '@id': 'https://seogrow.pl/#organization' },
   }
 }
@@ -2943,6 +2961,14 @@ const hubLocalBusinessSchema = (voivodeshipName) => {
       closes: '17:00',
     },
     geo: { '@type': 'GeoCoordinates', latitude: coords.lat, longitude: coords.lng },
+    hasMap: 'https://www.google.com/maps/place/SeoGrow+-+Strony+WWW+i+SEO/@53.6990252,19.9613923,17z/',
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '4', bestRating: '5', worstRating: '1' },
+    review: [
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Peko Parrello' }, datePublished: '2026-07-27', reviewBody: 'After extensive searching and unsuccessful attempts with various companies, we finally found SeoGrow. Our customers can easily view, purchase, and the entire process runs without complications. Highly recommended.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Patrycja Grabska' }, datePublished: '2026-07-22', reviewBody: 'Super kontakt i szybka realizacja, polecam.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Szcześliwej Drogi' }, datePublished: '2026-07-22', reviewBody: 'Profesjonalna obsługa i rzetelna realizacja. Serdecznie mogę polecić.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+      { '@type': 'Review', author: { '@type': 'Person', name: 'Maksymilian Kołodziej' }, datePublished: '2026-07-22', reviewBody: 'Polecam tę firmę. Dobra komunikacja i profesjonalne usługi w dobrych cenach.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+    ],
     parentOrganization: { '@id': 'https://seogrow.pl/#organization' },
   }
 }
@@ -3006,6 +3032,14 @@ export const getRouteDefinitions = () => {
           closes: '17:00',
         },
         geo: { '@type': 'GeoCoordinates', latitude: c.lat, longitude: c.lng },
+        hasMap: 'https://www.google.com/maps/place/SeoGrow+-+Strony+WWW+i+SEO/@53.6990252,19.9613923,17z/',
+        aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '4', bestRating: '5', worstRating: '1' },
+        review: [
+          { '@type': 'Review', author: { '@type': 'Person', name: 'Peko Parrello' }, datePublished: '2026-07-27', reviewBody: 'After extensive searching and unsuccessful attempts with various companies, we finally found SeoGrow. Our customers can easily view, purchase, and the entire process runs without complications. Highly recommended.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+          { '@type': 'Review', author: { '@type': 'Person', name: 'Patrycja Grabska' }, datePublished: '2026-07-22', reviewBody: 'Super kontakt i szybka realizacja, polecam.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+          { '@type': 'Review', author: { '@type': 'Person', name: 'Szcześliwej Drogi' }, datePublished: '2026-07-22', reviewBody: 'Profesjonalna obsługa i rzetelna realizacja. Serdecznie mogę polecić.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+          { '@type': 'Review', author: { '@type': 'Person', name: 'Maksymilian Kołodziej' }, datePublished: '2026-07-22', reviewBody: 'Polecam tę firmę. Dobra komunikacja i profesjonalne usługi w dobrych cenach.', reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } },
+        ],
         parentOrganization: { '@id': 'https://seogrow.pl/#organization' },
       })
       // FAQPage for Tier-1
@@ -3062,6 +3096,7 @@ export const getRouteDefinitions = () => {
     PRIVACY_POLICY_ROUTE,
     COOKIES_POLICY_ROUTE,
     DATA_PROCESSING_ROUTE,
+    REGULAMIN_ROUTE,
     ...contentRoutesWithSchema,
     ...blogPosts.map((post) => ({
       route: `/blog/${post.slug}`,

@@ -6,6 +6,7 @@ import { Header } from "./components/Header"
 import { CookieBanner } from "./components/CookieBanner"
 import { DeferredRender } from "./components/DeferredRender"
 import { SEO, SITE_URL } from "./components/SEO"
+import { FloatingCallButton } from "./components/FloatingCallButton"
 import { TranslationBanner } from "./components/LanguageSwitcher"
 import { HeroSection } from "./sections/HeroSection"
 import { WhatYouGetSection } from "./sections/WhatYouGetSection"
@@ -14,6 +15,7 @@ import { StatsSection } from "./sections/StatsSection"
 import { CoverageSection } from "./sections/CoverageSection"
 import { PressSection } from "./sections/PressSection"
 import { ClientResultsSection } from "./sections/ClientResultsSection"
+import { GoogleReviewsSection } from "./sections/GoogleReviewsSection"
 import { ProblemSection } from "./sections/ProblemSection"
 import { CustomDesignSection } from "./sections/CustomDesignSection"
 import { TargetAudienceSection } from "./sections/TargetAudienceSection"
@@ -71,6 +73,9 @@ const CookiesPolicyPage = lazy(() =>
 )
 const DataProcessingPage = lazy(() =>
   import("./pages/LegalPages").then((module) => ({ default: module.DataProcessingPage })),
+)
+const RegulaminPage = lazy(() =>
+  import("./pages/RegulaminPage").then((module) => ({ default: module.RegulaminPage })),
 )
 const CMSSESPage = lazy(() =>
   import("./pages/CMSSESPage").then((module) => ({ default: module.CMSSESPage })),
@@ -217,9 +222,6 @@ const StronaDlaWeterynarzaPage = lazy(() =>
 const Footer = lazy(() =>
   import("./components/Footer").then((module) => ({ default: module.Footer })),
 )
-const AboutPage = lazy(() =>
-  import("./pages/AboutPage").then((module) => ({ default: module.AboutPage })),
-)
 const PressKitPage = lazy(() =>
   import("./pages/PressKitPage").then((module) => ({ default: module.PressKitPage })),
 )
@@ -286,6 +288,7 @@ function LandingPage() {
         <CoverageSection />
         <PressSection />
         <ClientResultsSection />
+        <GoogleReviewsSection />
         <ProblemSection />
         <CustomDesignSection />
         <TargetAudienceSection />
@@ -323,6 +326,7 @@ function App() {
     <HistoryRouter history={history}>
       <ScrollToTop />
       <CookieBanner />
+      <FloatingCallButton />
       <DeferredRender>
         <PrefetchLinks />
       </DeferredRender>
@@ -340,6 +344,7 @@ function App() {
           <Route path="/polityka-prywatnosci" element={<PrivacyPolicyPage />} />
           <Route path="/polityka-cookies" element={<CookiesPolicyPage />} />
           <Route path="/przetwarzanie-danych" element={<DataProcessingPage />} />
+          <Route path="/regulamin" element={<RegulaminPage />} />
           <Route path="/cms-seo" element={<CMSSESPage />} />
           <Route path="/cms-seo-pequenas-empresas" element={<CMSSESPequePage />} />
           <Route path="/cms-con-seo-automatico" element={<CMSAutoSEOPage />} />
@@ -385,7 +390,6 @@ function App() {
           <Route path="/obsluga-strony-internetowej" element={<ObslugaStronyInternetowejPage />} />
           <Route path="/seo-lokalne-dla-firm" element={<SeoLokalneDlaFirmPage />} />
           <Route path="/cennik" element={<CennikPage />} />
-          <Route path="/o-nas" element={<AboutPage />} />
           <Route path="/press" element={<PressKitPage />} />
           <Route path="/strona-dla-fotografa" element={<StronaDlaFotografaPage />} />
           <Route path="/strona-dla-hotelu" element={<StronaDlaHoteluPage />} />

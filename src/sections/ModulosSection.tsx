@@ -1,4 +1,5 @@
 import { Box, Container, Heading, Text, VStack, Flex, SimpleGrid } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 
@@ -141,11 +142,8 @@ export const ModulosSection = () => {
             </Text>
             <Heading
               as="h2"
-              fontSize={{ base: "36px", md: "52px" }}
-              fontWeight="800"
-              letterSpacing="-0.04em"
-              color="#0F172A"
-              lineHeight="1.1"
+              {...SECTION_TITLE_PROPS}
+              color={SECTION_TITLE_COLOR_DARK}
             >
               9 modułów. Włączasz tylko te, których potrzebujesz.
             </Heading>

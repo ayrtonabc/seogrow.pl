@@ -15,11 +15,15 @@
     "serve:dist": "npx serve dist -p 4173",
     "test:ci:seo": "node scripts/test-ci-seo.js",
     "audit": "node scripts/lighthouse-full.mjs",
-    "audit:json": "node scripts/lighthouse-full.mjs --json"
+    "audit:json": "node scripts/lighthouse-full.mjs --json",
+    "lint:design": "impeccable detect src/ --no-inline-ignores 2>&1 || impeccable detect src/",
+    "lint:design:ci": "impeccable detect src/ --json 2>&1",
+    "lint:design:html": "impeccable detect dist/index.html"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.34.0",
     "@emotion/react": "^11.14.0",
+    "@lottiefiles/dotlottie-react": "^0.19.12",
     "history": "^5.3.0",
     "next-themes": "^0.4.6",
     "react": "^19.2.4",
@@ -40,6 +44,7 @@
     "express": "^5.2.1",
     "ffmpeg-static": "^5.2.0",
     "globals": "^17.4.0",
+    "impeccable": "^3.3.1",
     "puppeteer-core": "^24.0.0",
     "sharp": "^0.35.2",
     "typescript": "~5.9.3",

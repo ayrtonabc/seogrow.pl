@@ -5,6 +5,7 @@
 // valor al cliente que va a comprar.
 
 import { Box, Container, Heading, Text, SimpleGrid, HStack, VStack, Flex, Badge } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS } from "../lib/typography"
 import { Link as RouterLink } from "react-router-dom"
 import { pricingPlans } from "../data/pricingPlans"
 
@@ -51,11 +52,8 @@ export const CoverageSection = () => {
             </Text>
             <Heading
               as="h2"
-              fontSize={{ base: "2xl", md: "4xl" }}
-              fontWeight="800"
+              {...SECTION_TITLE_PROPS}
               color="white"
-              lineHeight="1.1"
-              letterSpacing="-0.03em"
             >
               Trzy plany. Dopasowane do Twojej branży
               <Box as="span" color="#A5B4FC"> i Twojego regionu.</Box>

@@ -1,4 +1,5 @@
 import { Box, Container, Heading, Text, VStack, Flex, Grid } from "@chakra-ui/react"
+import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
 import { Link } from "react-router-dom"
 
 const ArrowRightIcon = ({ size = 18 }: { size?: number }) => (
@@ -125,11 +126,8 @@ export const SolutionSection = () => {
               </Text>
               <Heading
                 as="h2"
-                fontSize={{ base: "36px", md: "52px" }}
-                fontWeight="800"
-                letterSpacing="-0.04em"
-                color="#0F172A"
-                lineHeight="1.05"
+                {...SECTION_TITLE_PROPS}
+                color={SECTION_TITLE_COLOR_DARK}
               >
                 Wystartuj w 5 dni. Z pełnym wsparciem po polsku.
               </Heading>

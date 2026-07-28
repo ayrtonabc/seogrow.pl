@@ -13,7 +13,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams, Link as RouterLink } from "react-router-dom"
 import {
   formatPLN,
   grossTotal,
@@ -237,10 +237,10 @@ export const PaymentPage = () => {
                   </Box>
                   <VStack align="flex-start" gap="0" flex="1">
                     <Text fontSize="sm" fontWeight={invoice.needsVatInvoice === "no" ? 700 : 500} color="#0F172A">
-                      Nie, wystawiaj paragon (osoba fizyczna)
+                      Paragon (osoba fizyczna)
                     </Text>
                     <Text fontSize="xs" color="#64748B" mt="0.5">
-                      Najczęściej wybierane — bez dodatkowych formalności
+                      Najczęściej wybierane – bez dodatkowych formalności.
                     </Text>
                   </VStack>
                 </Flex>
@@ -276,10 +276,10 @@ export const PaymentPage = () => {
                   </Box>
                   <VStack align="flex-start" gap="0" flex="1">
                     <Text fontSize="sm" fontWeight={invoice.needsVatInvoice === "yes" ? 700 : 500} color="#0F172A">
-                      Tak, potrzebuję faktury VAT (firma)
+                      Faktura VAT (firma)
                     </Text>
                     <Text fontSize="xs" color="#64748B" mt="0.5">
-                      Wpisz NIP, nazwę firmy i adres e-mail do faktury
+                      Podaj NIP i dane firmy.
                     </Text>
                   </VStack>
                 </Flex>
@@ -352,7 +352,29 @@ export const PaymentPage = () => {
               </Heading>
               <Text fontSize="sm" color="#475569" mb="5" lineHeight="1.6">
                 Płatności obsługiwane przez <Box as="strong" color="#0F172A">TPAY</Box> (operator KNF)
-                lub przelew tradycyjny. Wszystkie transakcje są szyfrowane (TLS 1.3).
+                lub przelew tradycyjny. Wszystkie transakcje są szyfrowane (TLS 1.3).{" "}
+                <Box
+                  as={RouterLink}
+                  to="/regulamin"
+                  color="#4F46E5"
+                  fontWeight="600"
+                  textDecoration="underline"
+                  _hover={{ color: "#4338CA" }}
+                >
+                  Regulamin
+                </Box>{" "}
+                i{" "}
+                <Box
+                  as={RouterLink}
+                  to="/polityka-prywatnosci"
+                  color="#4F46E5"
+                  fontWeight="600"
+                  textDecoration="underline"
+                  _hover={{ color: "#4338CA" }}
+                >
+                  polityka prywatności
+                </Box>{" "}
+                dostępne przed płatnością.
               </Text>
               <VStack align="stretch" gap="3">
                 {methods.map((m) => {

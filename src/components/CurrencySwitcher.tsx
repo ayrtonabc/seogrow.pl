@@ -146,16 +146,17 @@ export const CurrencySwitcher = () => {
           {CURRENCY_DATA[currency].code}
         </Text>
         <Box
-          as="span"
+          as="svg"
+          viewBox="0 0 10 6"
+          w="10px"
+          h="6px"
           display="inline-block"
-          w="0"
-          h="0"
-          borderLeft="4px solid transparent"
-          borderRight="4px solid transparent"
-          borderTop="4px solid currentColor"
           ml="0.5"
           opacity="0.6"
-        />
+          aria-hidden="true"
+        >
+          <path d="M 0 0 L 5 6 L 10 0 Z" fill="currentColor" />
+        </Box>
       </Box>
 
       {isOpen && (
