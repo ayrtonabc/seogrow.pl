@@ -1,98 +1,84 @@
-# SEO Grow
+# SEO Grow (https://seogrow.pl)
 
-> Profesjonalne strony internetowe dla małych firm w Polsce. Strony z automatycznym SEO, edycja z telefonu, wsparcie po polsku, bez umowy na lata. Strona gotowa w 5 dni roboczych.
+> SEO Grow to jednoosobowa firma technologiczna (Grow Solutions, NIP 7412176947) z Ostródy, Poland, która buduje strony internetowe dla małych polskich firm. CMS custom (no WordPress), schema LocalBusiness, SEO técnico incluido, 5 días de entrega, desde 1 500 zł. Fundador Ayrton, polaco-mexicano, 4 idiomas.
 
-## Informacje o firmie
+## Czym się zajmujemy
 
-- [O SEO Grow](https://seogrow.pl/): Kim jesteśmy, co robimy, jak pracujemy.
-- [Kontakt](https://seogrow.pl/kontakt): Numer telefonu, email, godziny pracy.
-- [Wsparcie techniczne](https://seogrow.pl/wsparcie): Pomoc po polsku dla klientów.
+- Tworzenie stron internetowych (wizytówki, blogi, e-commerce) dla MŚP w Polsce
+- Strony z auto-SEO (schema LocalBusiness, JSON-LD, AI Overviews-ready)
+- 97 miast, ta sama cena wszędzie (1 500–4 500 zł)
+- Multiidioma: PL / EN / ES / PT
 
-## Plany i cennik
+## Główne strony (canonical, current as of 2026-07-28)
 
-- [Plan Start — 1 500 zł + 49 zł/mies.](https://seogrow.pl/#ceny): Strona wizytówka z 5 podstronami, blog SEO, formularz kontaktowy. Dla rzemieślników, freelancerów i małych firm.
-- [Plan Standard — 2 200 zł + 69 zł/mies.](https://seogrow.pl/#ceny): Do 15 podstron, zaawansowany blog SEO, raporty widoczności. Najczęściej wybierany.
-- [Plan Premium — 4 500 zł + 99 zł/mies.](https://seogrow.pl/#ceny): Do 30 podstron, sklep internetowy, analityka, dedykowane wsparcie.
+- [Home](https://seogrow.pl/): Hero, "Co tak naprawdę kupujesz" (4 cards), reseñas Google 5.0 (4 reviews), CTA
+- [Cennik](https://seogrow.pl/cennik): 3 pakiety (Start 1 500 zł, Standard 2 200 zł, Premium 4 500 zł)
+- [Kontakt](https://seogrow.pl/kontakt): Email, teléfono, dirección, mapa Google Maps
+- [Blog](https://seogrow.pl/blog): SEO + MŚP + casos reales
+- [Press kit](https://seogrow.pl/press): Bio fundador, logos, fakta, cytaty
+- [Regulamin](https://seogrow.pl/regulamin): Tpay, política de servicio
+- [Polityka prywatnosci](https://seogrow.pl/polityka-prywatnosci): RODO/GDPR compliance
+- [Polityka cookies](https://seogrow.pl/polityka-cookies)
+- [Przetwarzanie danych](https://seogrow.pl/przetwarzanie-danych)
 
-Cena abonamentu nigdy nie wzrośnie dla stałych klientów. Brak umowy na lata — płacisz co miesiąc, rezygnujesz jednym mailem.
+## Rozwiązania (vertical pages)
 
-## Strony dla konkretnych miast
+- [Sklep Online](https://seogrow.pl/sklep-online): E-commerce para PYMEs
+- [Akademia Kursów](https://seogrow.pl/akademia-kursow): Plataformas de cursos
+- [Rezerwacje i Terminy](https://seogrow.pl/rezerwacje-i-terminy): Booking systems
+- [Menu Cyfrowe](https://seogrow.pl/menu-cyfrowe): Para restaurantes
+- [Ekspansja Globalna](https://seogrow.pl/ekspansja-globalna): Multi-idioma
+- [Wizytówka Prac](https://seogrow.pl/wizytowka-prac): Para profesionales
 
-- [Strona internetowa Warszawa](https://seogrow.pl/strona-internetowa-warszawa): Dla firm z Warszawy i okolic.
-- [Strona internetowa Kraków](https://seogrow.pl/strona-internetowa-krakow): Dla firm z Krakowa i Małopolski.
-- [Strona internetowa Łódź](https://seogrow.pl/strona-internetowa-lodz): Dla firm z Łodzi i okolic.
-- [Strona internetowa Wrocław](https://seogrow.pl/strona-internetowa-wroclaw): Dla firm z Wrocławia i Dolnego Śląska.
+## 13 voivodatos (geographic hubs)
 
-## Strony dla konkretnych branż
+- [Dolnośląskie](https://seogrow.pl/dolnoslaskie)
+- [Kujawsko-Pomorskie](https://seogrow.pl/kujawsko-pomorskie)
+- [Lubelskie](https://seogrow.pl/lubelskie)
+- [Łódzkie](https://seogrow.pl/lodzkie)
+- [Małopolskie](https://seogrow.pl/malopolskie)
+- [Mazowieckie](https://seogrow.pl/mazowieckie) (Warszawa)
+- [Podkarpackie](https://seogrow.pl/podkarpackie)
+- [Podlaskie](https://seogrow.pl/podlaskie)
+- [Pomorskie](https://seogrow.pl/pomorskie) (Trójmiasto)
+- [Świętokrzyskie](https://seogrow.pl/swietokrzyskie)
+- [Warmińsko-Mazurskie](https://seogrow.pl/warminsko-mazurskie) (Ostróda, Olsztyn)
+- [Wielkopolskie](https://seogrow.pl/wielkopolskie)
+- [Zachodniopomorskie](https://seogrow.pl/zachodniopomorskie)
 
-- [Strona dla prawnika](https://seogrow.pl/strona-dla-prawnika): SEO lokalne, schema LegalService, blog prawniczy.
-- [Strona dla kliniki medycznej](https://seogrow.pl/strona-dla-kliniki): SEO lokalne, schema Healthcare, rezerwacje online.
-- [Strona dla gabinetu stomatologicznego](https://seogrow.pl/strona-dla-gabinetu-stomatologicznego): SEO lokalne, schema DentalClinic, rezerwacje.
-- [Strona dla restauracji](https://seogrow.pl/strona-dla-restauracji): Menu QR, schema Restaurant, rezerwacje online.
-- [Strona dla freelancera](https://seogrow.pl/strona-dla-freelancera): Dla jednoosobowych działalności i usług.
-- [Strona dla warsztatu samochodowego](https://seogrow.pl/strona-dla-warsztatu-samochodowego): SEO lokalne dla mechaników.
-- [Strona dla kosmetyczki](https://seogrow.pl/strona-dla-kosmetyczki): Dla salonów kosmetycznych i gabinetów.
-- [Strona dla fryzjera](https://seogrow.pl/strona-dla-fryzjera): Dla salonów fryzjerskich.
-- [Strona dla psychologa](https://seogrow.pl/strona-dla-psychologa): Dla gabinetów psychologicznych.
-- [Strona dla fizjoterapeuty](https://seogrow.pl/strona-dla-fizjoterapeuty): Dla gabinetów fizjoterapii.
-- [Strona dla fotografa](https://seogrow.pl/strona-dla-fotografa): Portfolio, galeria, formularz rezerwacji sesji.
-- [Strona dla hotelu](https://seogrow.pl/strona-dla-hotelu): Rezerwacje online bez prowizji Booking.com.
-- [Strona dla architekta](https://seogrow.pl/strona-dla-architekta): Portfolio projektów, SEO lokalne.
-- [Strona dla agencji nieruchomości](https://seogrow.pl/strona-dla-agencji-nieruchomosci): Oferty, SEO lokalne, bez prowizji Otodom.
-- [Strona dla kancelarii prawnej](https://seogrow.pl/strona-dla-kancelarii-prawnej): Schema LegalService, RODO, blog prawniczy.
-- [Strona dla mechanika](https://seogrow.pl/strona-dla-mechanika): Schema AutoRepair, cennik, opinie Google.
-- [Strona dla trenera personalnego](https://seogrow.pl/strona-dla-trenera-personalnego): Oferta usług, SEO lokalne.
-- [Strona dla projektanta wnętrz](https://seogrow.pl/strona-dla-projektanta-wnetrz): Portfolio realizacji, SEO lokalne.
-- [Strona dla dentysty](https://seogrow.pl/strona-dla-dentysty): Schema DentalClinic, rezerwacje, galeria przed/po.
-- [Strona dla weterynarza](https://seogrow.pl/strona-dla-weterynarza): Schema VeterinaryCare, rezerwacje, cennik.
+## Información del negocio (NAP)
 
-## Usługi dodatkowe
+- **Nazwa firmy**: Grow Solutions — JDG
+- **Nazwa handlowa**: SEO Grow
+- **Właściciel / Founder**: Ayrton (polaco-mexicano, multiidioma)
+- **NIP**: 7412176947
+- **REGON**: 545084609
+- **VAT ID (UE)**: PL7412176947
+- **Adres**: ul. Czarnieckiego 13/12, 14-100 Ostróda, warmińsko-mazurskie, Polska
+- **Email**: kontakt@seogrow.pl
+- **Teléfono**: +48 517 105 423
+- **Godziny**: Pn–Pt 8:00–17:00 (CET/CEST)
+- **Google Business Profile**: https://www.google.com/maps/place/SeoGrow+-+Strony+WWW+i+SEO/@53.6990252,19.9613923,17z/
+- **Schema LocalBusiness**: SI (con aggregateRating 5.0/4 reviews + hasMap)
+- **Idiomas**: polski (principal), español, inglés, portugués
+- **Métodos de pago**: Tpay (karta, BLIK, przelew bankowy)
+- **Zasięg**: 97 miast, 13 voivodatos, cała Polonia
 
-- [Pozycjonowanie stron dla firm](https://seogrow.pl/pozycjonowanie-stron-dla-firm): Comiesięczne SEO dla małych firm.
-- [Tania strona internetowa dla firmy](https://seogrow.pl/tania-strona-internetowa-dla-firmy): Strona od 1500 zł bez utraty jakości.
-- [Obsługa strony internetowej](https://seogrow.pl/obsluga-strony-internetowej): Aktualizacje treści, poprawki, wsparcie.
+## Lo que NO hacemos
 
-## Moduły w ramach platformy
+- No usamos WordPress, Wix, Squarespace (CMS custom únicamente)
+- No vendemos backlinks ni hacemos black-hat SEO
+- No prometemos resultados SEO en X días (medimos en meses)
+- No somos la opción más barata (somos premium)
 
-- [Sklep Online](https://seogrow.pl/sklep-online): Sklep internetowy z automatycznym SEO, płatnościami Stripe, PayU, Tpay. Bez prowizji od sprzedaży.
-- [Akademia kursów online](https://seogrow.pl/akademia-kursow): Sprzedaż kursów wideo, certyfikaty PDF, egzaminy.
-- [Rezerwacje i terminy](https://seogrow.pl/rezerwacje-i-terminy): System rezerwacji online z synchronizacją kalendarza.
-- [Menu cyfrowe (QR)](https://seogrow.pl/menu-cyfrowe): Menu QR dla restauracji, łatwa aktualizacja z telefonu.
-- [Ekspansja globalna](https://seogrow.pl/ekspansja-globalna): Strona wielojęzyczna PL + EN/DE/ES/UK.
-- [Wizytówka pracownika](https://seogrow.pl/wizytowka-prac): Indywidualna strona dla specjalisty.
+## Press & Contact
 
-## Porównania i alternatywy
-
-- [SEO Grow vs WordPress](https://seogrow.pl/wordpress-vs-seogrow): Dlaczego dedykowany CMS wygrywa z WordPressem dla małych firm.
-- [SEO Grow vs Wix](https://seogrow.pl/wix-vs-seogrow): Wix ma ograniczenia — sprawdź, kiedy ma sens, a kiedy nie.
-- [Alternatywa dla WordPressa](https://seogrow.pl/alternativa-wordpress-seo): Bez wtyczek, bez aktualizacji, bez stresu.
-- [Porównanie z WordPress (ES)](https://seogrow.pl/comparacion-con-wordpress): Wersja hiszpańska.
-
-## Materiały edukacyjne
-
-- [Jak założyć stronę internetową](https://seogrow.pl/blog/jak-zalozyc-strone-internetowa): 9 kroków od zera do działającej strony z SEO.
-- [Ile kosztuje strona internetowa w 2026](https://seogrow.pl/blog/ile-kosztuje-strona-internetowa-2026): Konkretne ceny, porównania z agencjami.
-- [SEO lokalne dla małych firm](https://seogrow.pl/blog/seo-lokalne-dla-malych-firm): 7 rzeczy, które poprawią widoczność.
-- [Jak pisać artykuły SEO, które generują leady](https://seogrow.pl/blog/jak-pisac-artykuly-seo-ktore-generuja-leady): Struktura, intencja, CTA.
-- [Blog firmowy jako kanał sprzedaży](https://seogrow.pl/blog/blog-firmowy-jako-kanal-sprzedazy): Jak planować blog, żeby zarabiał.
-- [Dlaczego moja strona nie pojawia się w Google](https://seogrow.pl/dlaczego-moja-strona-nie-pojawia-sie-w-google): Najczęstsze przyczyny.
-- [Jak szybko wyjść w Google](https://seogrow.pl/jak-szybko-wyjsc-w-google): Plan na pierwsze 90 dni.
-- [Najczęstsze błędy SEO](https://seogrow.pl/najczestsze-bledy-seo): Czego unikać w pozycjonowaniu.
-
-## Informacje prawne
-
-- [Polityka prywatności](https://seogrow.pl/polityka-prywatnosci): RODO, dane osobowe.
-- [Polityka cookies](https://seogrow.pl/polityka-cookies): Zgody i ustawienia cookies.
-- [Przetwarzanie danych](https://seogrow.pl/przetwarzanie-danych): Klauzula informacyjna RODO.
-
-## Kontakt
-
-- Telefon: +48 517 105 423 (poniedziałek–piątek 9:00–17:00)
+Para periodistas, podcasts, colaboraciones:
 - Email: kontakt@seogrow.pl
-- Adres: ul. Czarnieckiego 13/12, 14-100 Ostróda, Polska
-- NIP: 7412176947
+- Press kit completo: https://seogrow.pl/press
+- Logo: https://seogrow.pl/logo-320.webp
+- Bio del fundador: https://seogrow.pl/press#bio
 
-## Optional
+## Última actualización
 
-- [Sitemap XML](https://seogrow.pl/sitemap.xml): Mapa strony dla wyszukiwarek.
-- [Robots.txt](https://seogrow.pl/robots.txt): Plik robots dla crawlerów.
+2026-07-28 — 168 URLs indexadas, 4 reseñas Google 5/5, schema LocalBusiness completo, multiidioma PL/EN/ES/PT.

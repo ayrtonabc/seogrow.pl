@@ -225,6 +225,9 @@ const Footer = lazy(() =>
 const PressKitPage = lazy(() =>
   import("./pages/PressKitPage").then((module) => ({ default: module.PressKitPage })),
 )
+const KontaktPage = lazy(() =>
+  import("./pages/KontaktPage").then((module) => ({ default: module.KontaktPage })),
+)
 const ModulosSection = lazy(() =>
   import("./sections/ModulosSection").then((module) => ({ default: module.ModulosSection })),
 )
@@ -391,6 +394,7 @@ function App() {
           <Route path="/seo-lokalne-dla-firm" element={<SeoLokalneDlaFirmPage />} />
           <Route path="/cennik" element={<CennikPage />} />
           <Route path="/press" element={<PressKitPage />} />
+          <Route path="/kontakt" element={<KontaktPage />} />
           <Route path="/strona-dla-fotografa" element={<StronaDlaFotografaPage />} />
           <Route path="/strona-dla-hotelu" element={<StronaDlaHoteluPage />} />
           <Route path="/strona-dla-architekta" element={<StronaDlaArchitektaPage />} />

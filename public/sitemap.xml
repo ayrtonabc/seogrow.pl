@@ -1033,6 +1033,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/press" />
   </url>
   <url>
+    <loc>https://seogrow.pl/kontakt</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://seogrow.pl/kontakt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seogrow.pl/kontakt" />
+  </url>
+  <url>
     <loc>https://seogrow.pl/mazowieckie</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>

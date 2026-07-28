@@ -44,6 +44,7 @@ const resources = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
   { label: "Wsparcie", href: "/wsparcie" },
+  { label: "Kontakt", href: "/kontakt" },
 ]
 
 const company = [
