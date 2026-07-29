@@ -60,11 +60,14 @@ const loadBuildTemplate = () => {
     throw new Error('No se pudo extraer la plantilla base de dist/index.html.');
   }
 
-  const scriptTags = bodyMatch[1].match(/<script\b[\s\S]*?<\/script>/gi) || [];
+  // Incluir <script> y <noscript> del body original — algunos píxeles de
+  // marketing (Facebook, LinkedIn, etc.) requieren el fallback <noscript>
+  // para usuarios sin JS, y debe estar en las 170 rutas prerenderizadas.
+  const bodyTags = bodyMatch[1].match(/<(script|noscript)\b[\s\S]*?<\/\1>/gi) || [];
 
   return {
     commonHeadTags: stripSeoTags(headMatch[1]),
-    bodyScripts: scriptTags.join('\n'),
+    bodyScripts: bodyTags.join('\n'),
   };
 };
 
