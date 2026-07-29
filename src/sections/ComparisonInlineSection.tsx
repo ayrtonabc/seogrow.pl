@@ -1,6 +1,6 @@
 // src/sections/ComparisonInlineSection.tsx
-// Tabla visual de comparación SEO Grow vs DIY vs WordPress vs Agencia.
-// SEO Grow gana en casi todas — pero el cliente ve las diferencias claras.
+// Tabela porównawcza SEO Grow vs samodzielnie vs WordPress vs agencja.
+// SEO Grow wygrywa w prawie wszystkich — klient widzi jasne różnice.
 
 import { Box, Container, Heading, Text, VStack, HStack, SimpleGrid, Flex } from "@chakra-ui/react"
 import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
@@ -45,14 +45,14 @@ const ROWS: Row[] = [
     agency: { value: "text", text: "5 000–15 000 zł" },
   },
   {
-    label: "Czas de entrega",
-    diy: { value: "text", text: "2–8 semanas" },
-    wordpress: { value: "text", text: "1–4 semanas" },
-    seogrow: { value: "text", text: "5 días" },
-    agency: { value: "text", text: "4–12 semanas" },
+    label: "Czas dostawy",
+    diy: { value: "text", text: "2–8 tygodni" },
+    wordpress: { value: "text", text: "1–4 tygodnie" },
+    seogrow: { value: "text", text: "5 dni" },
+    agency: { value: "text", text: "4–12 tygodni" },
   },
   {
-    label: "SEO local incluido",
+    label: "SEO lokalne w cenie",
     diy: { value: "x" },
     wordpress: { value: "minus" },
     seogrow: { value: "check" },
@@ -66,28 +66,28 @@ const ROWS: Row[] = [
     agency: { value: "minus" },
   },
   {
-    label: "CMS edición desde móvil",
+    label: "CMS do edycji z telefonu",
     diy: { value: "x" },
     wordpress: { value: "x" },
     seogrow: { value: "check" },
     agency: { value: "minus" },
   },
   {
-    label: "Soporte en polaco",
+    label: "Wsparcie po polsku",
     diy: { value: "x" },
     wordpress: { value: "x" },
     seogrow: { value: "check" },
     agency: { value: "check" },
   },
   {
-    label: "Sin contrato / permanencia",
+    label: "Bez umowy / bez zobowiązań",
     diy: { value: "check" },
     wordpress: { value: "check" },
     seogrow: { value: "check" },
     agency: { value: "x" },
   },
   {
-    label: "Factura VAT",
+    label: "Faktura VAT",
     diy: { value: "x" },
     wordpress: { value: "x" },
     seogrow: { value: "check" },
@@ -158,7 +158,7 @@ const Cell = ({ cell, highlight = false }: { cell: Cell; highlight?: boolean }) 
 
 const COLUMNS = [
   { key: "feature" as const, label: "" },
-  { key: "diy" as const, label: "DIY / sam" },
+  { key: "diy" as const, label: "Samodzielnie" },
   { key: "wordpress" as const, label: "WordPress" },
   { key: "seogrow" as const, label: "SEO Grow" },
   { key: "agency" as const, label: "Agencja" },
@@ -169,7 +169,7 @@ export const ComparisonInlineSection = () => {
     <Box as="section" id="porownanie" bg="#FAFBFC" py={{ base: "16", md: "20" }} aria-label="Porównanie SEO Grow z alternatywami">
       <Container maxW="5xl">
         <VStack gap={{ base: "8", md: "10" }}>
-          {/* Header */}
+          {/* Nagłówek */}
           <VStack gap="3" textAlign="center" maxW="2xl" mx="auto">
             <Text
               fontSize="xs"
@@ -181,14 +181,14 @@ export const ComparisonInlineSection = () => {
               Porównanie
             </Text>
             <Heading as="h2" {...SECTION_TITLE_PROPS} color={SECTION_TITLE_COLOR_DARK}>
-              SEO Grow vs WordPress vs agencja vs DIY
+              SEO Grow vs WordPress vs agencja vs samodzielnie
             </Heading>
             <Text color="#475569" fontSize="md" lineHeight="1.6">
-              Te same funciones, diferentes precios y tiempos. SEO Grow gana en casi todas — sobre todo en <Box as="span" fontWeight="700" color="#0F172A">relación calidad/precio</Box>.
+              Te same funkcje, różne ceny i terminy. SEO Grow wygrywa w prawie wszystkich — szczególnie w <Box as="span" fontWeight="700" color="#0F172A">stosunku jakości do ceny</Box>.
             </Text>
           </VStack>
 
-          {/* Tabla comparativa — desktop */}
+          {/* Tabela porównawcza — desktop */}
           <Box
             display={{ base: "none", md: "block" }}
             w="full"
@@ -198,7 +198,7 @@ export const ComparisonInlineSection = () => {
             overflow="hidden"
             boxShadow="0 4px 20px rgba(15, 23, 42, 0.04)"
           >
-            {/* Column headers */}
+            {/* Nagłówki kolumn */}
             <Box
               display="grid"
               gridTemplateColumns="1.4fr 1fr 1fr 1.1fr 1fr"
@@ -228,7 +228,7 @@ export const ComparisonInlineSection = () => {
                     </Text>
                     {isSeoGrow && (
                       <Text fontSize="2xs" color="#4F46E5" fontWeight="700" mt="0.5">
-                        Recomendado
+                        Polecane
                       </Text>
                     )}
                   </Box>
@@ -236,7 +236,7 @@ export const ComparisonInlineSection = () => {
               })}
             </Box>
 
-            {/* Rows */}
+            {/* Wiersze */}
             {ROWS.map((row, i) => (
               <Box
                 key={row.label}
@@ -271,7 +271,7 @@ export const ComparisonInlineSection = () => {
             ))}
           </Box>
 
-          {/* Tabla mobile — cards apiladas */}
+          {/* Tabela mobile — karty ułożone */}
           <VStack display={{ base: "flex", md: "none" }} gap="3" w="full" align="stretch">
             {ROWS.map((row) => (
               <Box
@@ -286,7 +286,7 @@ export const ComparisonInlineSection = () => {
                 </Text>
                 <VStack gap="2" align="stretch">
                   <HStack justify="space-between" align="center">
-                    <Text fontSize="xs" color="#64748B">DIY / sam</Text>
+                    <Text fontSize="xs" color="#64748B">Samodzielnie</Text>
                     <Cell cell={row.diy} />
                   </HStack>
                   <HStack justify="space-between" align="center">
@@ -306,7 +306,7 @@ export const ComparisonInlineSection = () => {
             ))}
           </VStack>
 
-          {/* Link a la página de comparación completa */}
+          {/* Link do pełnego porównania */}
           <Box textAlign="center" pt="2">
             <Box
               as={Link}
@@ -321,7 +321,7 @@ export const ComparisonInlineSection = () => {
               _hover={{ color: "#4338CA", gap: "3" }}
               transition="all 0.2s"
             >
-              Comparación detallada con WordPress
+              Szczegółowe porównanie z WordPress
               <FaArrowRight size={14} />
             </Box>
           </Box>
