@@ -14,26 +14,26 @@ type EditablePreferences = Pick<CookieConsentPreferences, "necessary" | "functio
 const categoryCards = [
   {
     key: "necessary",
-    title: "Niezbedne",
-    description: "Zapewniaja prawidlowe dzialanie serwisu, bezpieczenstwo oraz zapis podstawowych ustawien prywatnosci.",
+    title: "Niezbędne",
+    description: "Wymagane do działania strony. Zawsze aktywne.",
     locked: true,
   },
   {
     key: "functional",
     title: "Funkcjonalne",
-    description: "Pozwalaja zapamietac preferencje interfejsu i ulatwiaja korzystanie z formularzy oraz elementow strony.",
+    description: "Zapamiętują Twoje preferencje.",
     locked: false,
   },
   {
     key: "analytics",
     title: "Analityczne",
-    description: "Umozliwiaja analize ruchu i sposobu korzystania z serwisu w celu jego dalszego doskonalenia.",
+    description: "Pomagają nam ulepszać stronę.",
     locked: false,
   },
   {
     key: "marketing",
     title: "Marketingowe",
-    description: "Moga wspierac ocene skutecznosci kampanii i dopasowanie komunikacji reklamowej, jesli zostana aktywowane.",
+    description: "Mierzą skuteczność naszych kampanii.",
     locked: false,
   },
 ] as const
@@ -49,25 +49,27 @@ const ToggleButton = ({
 }) => {
   if (locked) {
     return (
-      <Box display="flex" alignItems="center" gap="1.5" flexShrink={0}>
+      <Box
+        w="9"
+        h="5"
+        bg="border.default"
+        rounded="full"
+        position="relative"
+        flexShrink={0}
+        aria-label="Zawsze aktywne"
+        role="switch"
+        aria-checked="true"
+        aria-disabled="true"
+      >
         <Box
-          w="8"
-          h="8"
-          bg="success.50"
-          border="1px solid #A7F3D0"
+          position="absolute"
+          top="2px"
+          left="calc(100% - 18px - 2px)"
+          w="4"
+          h="4"
+          bg="fg.subtle"
           rounded="full"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          flexShrink={0}
-        >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="success.600" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-        </Box>
-        <Text fontSize="xs" fontWeight="600" color="success.600">
-          Wymagane
-        </Text>
+        />
       </Box>
     )
   }
@@ -76,15 +78,15 @@ const ToggleButton = ({
       as="button"
       type="button"
       onClick={onClick}
-      w="11"
-      h="6"
+      w="9"
+      h="5"
       bg={active ? "accent.600" : "border.default"}
       rounded="full"
       flexShrink={0}
-      transition="background-color 0.2s ease"
+      transition="background-color 0.15s ease"
       cursor="pointer"
-      _hover={{ opacity: 0.9 }}
-      _focus={{ outline: "2px solid accent.600", outlineOffset: "2px" }}
+      _hover={{ opacity: 0.85 }}
+      _focus={{ outline: "2px solid", outlineColor: "accent.500", outlineOffset: "2px" }}
       role="switch"
       aria-checked={active}
       aria-label={active ? "Wyłącz" : "Włącz"}
@@ -94,13 +96,12 @@ const ToggleButton = ({
       <Box
         position="absolute"
         top="2px"
-        left={active ? "22px" : "2px"}
+        left={active ? "calc(100% - 18px - 2px)" : "2px"}
         w="4"
         h="4"
         bg="white"
         rounded="full"
-        transition="left 0.2s ease"
-        boxShadow="0 1px 3px rgba(0,0,0,0.2)"
+        transition="left 0.15s ease"
       />
     </Box>
   )
@@ -162,110 +163,98 @@ export const CookieBanner = () => {
   }
 
   return (
-    <Box position="fixed" insetX="0" bottom="0" zIndex="1500" px={{ base: "4", md: "6" }} pb={{ base: "4", md: "6" }}>
-      <Container maxW="7xl" px="0">
+    <Box position="fixed" insetX="0" bottom="0" zIndex="1500" px={{ base: "3", md: "6" }} pb={{ base: "3", md: "5" }}>
+      <Container maxW="6xl" px="0">
         <Box
-          bg="rgba(255, 255, 255, 0.96)"
-          border="1px solid rgba(226, 232, 240, 0.95)"
-          boxShadow="0 24px 60px rgba(15, 23, 42, 0.18)"
-          backdropFilter="blur(18px)"
-          rounded={{ base: "2xl", md: "3xl" }}
+          bg="bg.canvas"
+          border="1px solid"
+          borderColor="border.default"
+          rounded="xl"
           overflow="hidden"
         >
           <Flex
-            direction={{ base: "column", xl: "row" }}
-            align={{ base: "stretch", xl: "center" }}
+            direction={{ base: "column", lg: "row" }}
+            align={{ base: "stretch", lg: "center" }}
             justify="space-between"
-            gap={{ base: "6", xl: "8" }}
-            p={{ base: "5", md: "7" }}
+            gap={{ base: "5", lg: "8" }}
+            p={{ base: "5", md: "6" }}
           >
-            <VStack align="start" gap="4" flex="1">
-              <VStack align="start" gap="3">
-                <HStack gap="2" flexWrap="wrap">
-                  <Box
-                    px="3"
-                    py="1.5"
-                    rounded="full"
-                    bg="#F0FDF4"
-                    border="1px solid #BBF7D0"
-                    color="#15803D"
-                    fontSize="xs"
-                    fontWeight="700"
-                    letterSpacing="0.04em"
-                  >
-                    <HStack gap="1.5">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                      </svg>
-                      RODO / GDPR
-                    </HStack>
-                  </Box>
-                  <Text fontSize="lg" fontWeight="800" color="fg.default" lineHeight="1.2">
-                    Zarzadzanie plikami cookies
-                  </Text>
-                </HStack>
-                <Text fontSize="sm" color="fg.muted" lineHeight="1.7" maxW="5xl">
-                  Pliki cookies to niewielkie pliki tekstowe przechowywane na Twoim urzadzeniu. Umozliwiaja prawidlowe dzialanie serwisu oraz pozwalaja na analize ruchu i dostosowanie tresci do Twoich preferencji. Kazda kategoria plikow jest wylaczana dzieki Twojej zgodzie.
-                </Text>
-                <Text fontSize="sm" color="fg.muted" lineHeight="1.7" maxW="5xl">
-                  Szczegolowe informacje o celach przetwarzania, podstawach prawnych i zasadach zarzadzania zgoda znajdziesz w{" "}
-                  <ChakraLink as={RouterLink} to="/polityka-prywatnosci" fontWeight="600" color="accent.600" textDecoration="underline" textDecorationColor="accent.200" _hover={{ color: "accent.700", textDecorationColor: "accent.600" }}>
-                    Polityce prywatnosci
-                  </ChakraLink>
-                  {", "}
-                  <ChakraLink as={RouterLink} to="/polityka-cookies" fontWeight="600" color="accent.600" textDecoration="underline" textDecorationColor="accent.200" _hover={{ color: "accent.700", textDecorationColor: "accent.600" }}>
-                    Polityce cookies
-                  </ChakraLink>
-                  {" oraz "}
-                  <ChakraLink as={RouterLink} to="/przetwarzanie-danych" fontWeight="600" color="accent.600" textDecoration="underline" textDecorationColor="accent.200" _hover={{ color: "accent.700", textDecorationColor: "accent.600" }}>
-                    Zasadach przetwarzania danych
-                  </ChakraLink>
-                  .
-                </Text>
-              </VStack>
+            <VStack align="start" gap="3" flex="1" minW="0">
+              <Text fontSize="md" fontWeight="700" color="fg.default" letterSpacing="-0.01em">
+                Pliki cookies
+              </Text>
+              <Text fontSize="sm" color="fg.muted" lineHeight="1.6">
+                Używamy plików cookies, aby strona działała prawidłowo i pomagała nam ją ulepszać.{" "}
+                <ChakraLink as={RouterLink} to="/polityka-prywatnosci" color="fg.default" fontWeight="600" textDecoration="underline" textUnderlineOffset="3px" _hover={{ color: "accent.700" }}>
+                  Polityka prywatności
+                </ChakraLink>
+                {", "}
+                <ChakraLink as={RouterLink} to="/polityka-cookies" color="fg.default" fontWeight="600" textDecoration="underline" textUnderlineOffset="3px" _hover={{ color: "accent.700" }}>
+                  Polityka cookies
+                </ChakraLink>
+                {", "}
+                <ChakraLink as={RouterLink} to="/przetwarzanie-danych" color="fg.default" fontWeight="600" textDecoration="underline" textUnderlineOffset="3px" _hover={{ color: "accent.700" }}>
+                  Zasady przetwarzania
+                </ChakraLink>
+                .
+              </Text>
 
               {showSettings && (
-                <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap="3" w="full">
+                <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={{ base: "2", md: "3" }} w="full" pt="2">
                   {categoryCards.map((category) => {
                     const key = category.key as keyof EditablePreferences
                     const active = preferences[key]
 
                     return (
-                      <Box key={category.key} p="4" rounded="2xl" border="1px solid" borderColor="border.default" bg="bg.subtle">
-                        <Flex justify="space-between" align="start" gap="4" mb="3">
-                          <VStack align="start" gap="1">
-                            <Text fontSize="sm" fontWeight="800" color="fg.default">
-                              {category.title}
-                            </Text>
-                            <Text fontSize="xs" color="fg.subtle" lineHeight="1.6">
-                              {category.description}
-                            </Text>
-                          </VStack>
-                          <ToggleButton
-                            active={active}
-                            locked={category.locked}
-                            onClick={
-                              category.locked
-                                ? undefined
-                                : () => setPreferences((current) => ({ ...current, [key]: !current[key] }))
-                            }
-                          />
-                        </Flex>
-                      </Box>
+                      <Flex
+                        key={category.key}
+                        justify="space-between"
+                        align="center"
+                        gap="3"
+                        p="3"
+                        rounded="lg"
+                        border="1px solid"
+                        borderColor="border.subtle"
+                      >
+                        <Box minW="0">
+                          <Text fontSize="sm" fontWeight="600" color="fg.default" lineHeight="1.3">
+                            {category.title}
+                          </Text>
+                          <Text fontSize="xs" color="fg.subtle" lineHeight="1.4" mt="0.5">
+                            {category.description}
+                          </Text>
+                        </Box>
+                        <ToggleButton
+                          active={active}
+                          locked={category.locked}
+                          onClick={
+                            category.locked
+                              ? undefined
+                              : () => setPreferences((current) => ({ ...current, [key]: !current[key] }))
+                          }
+                        />
+                      </Flex>
                     )
                   })}
                 </Grid>
               )}
             </VStack>
 
-            <VStack align="stretch" gap="3" minW={{ base: "full", xl: "320px" }}>
+            <Flex
+              align="center"
+              gap={{ base: "2", md: "2" }}
+              direction={{ base: "column", sm: "row", lg: "row" }}
+              w={{ base: "full", lg: "auto" }}
+              minW={{ lg: "auto" }}
+            >
               <Button
                 type="button"
                 bg="fg.default"
                 color="white"
-                rounded="full"
-                size="lg"
-                fontWeight="700"
+                rounded="lg"
+                size="md"
+                fontWeight="600"
+                w={{ base: "full", sm: "auto" }}
                 _hover={{ bg: "slate.800" }}
                 onClick={() =>
                   savePreferences({
@@ -276,16 +265,18 @@ export const CookieBanner = () => {
                   })
                 }
               >
-                Akceptuj wszystkie
+                Akceptuj
               </Button>
               <Button
                 type="button"
                 variant="outline"
-                rounded="full"
-                size="lg"
-                fontWeight="700"
-                borderColor="border.strong"
+                rounded="lg"
+                size="md"
+                fontWeight="600"
+                borderColor="border.default"
                 color="fg.default"
+                w={{ base: "full", sm: "auto" }}
+                _hover={{ bg: "bg.subtle" }}
                 onClick={() =>
                   savePreferences({
                     necessary: true,
@@ -295,41 +286,38 @@ export const CookieBanner = () => {
                   })
                 }
               >
-                Akceptuj tylko niezbedne
+                Tylko niezbędne
               </Button>
               {showSettings ? (
                 <Button
                   type="button"
                   variant="ghost"
-                  rounded="full"
-                  size="lg"
-                  fontWeight="700"
-                  color="accent.900"
-                  bg="accent.50"
+                  rounded="lg"
+                  size="md"
+                  fontWeight="600"
+                  color="fg.muted"
+                  w={{ base: "full", sm: "auto" }}
+                  _hover={{ bg: "bg.subtle", color: "fg.default" }}
                   onClick={() => savePreferences(preferences)}
                 >
-                  Zapisz preferencje
+                  Zapisz
                 </Button>
               ) : (
                 <Button
                   type="button"
                   variant="ghost"
-                  rounded="full"
-                  size="lg"
-                  fontWeight="700"
+                  rounded="lg"
+                  size="md"
+                  fontWeight="600"
                   color="fg.muted"
+                  w={{ base: "full", sm: "auto" }}
+                  _hover={{ bg: "bg.subtle", color: "fg.default" }}
                   onClick={() => setShowSettings(true)}
                 >
-                  Dostosuj ustawienia
+                  Ustawienia
                 </Button>
               )}
-
-              <HStack justify={{ base: "flex-start", xl: "center" }} px="2">
-                <Text fontSize="xs" color="fg.subtle" lineHeight="1.6">
-                  Swoja decyzje mozesz zmienic w dowolnym momencie z poziomu stopki serwisu.
-                </Text>
-              </HStack>
-            </VStack>
+            </Flex>
           </Flex>
         </Box>
       </Container>
