@@ -96,12 +96,12 @@ const ModuleCardItem = ({ mod, featured = false }: { mod: ModuleCard; featured?:
     <Box
       bg="white"
       border={featured ? "2px solid" : "1px solid"}
-      borderColor={featured ? "#4F46E5" : "#E2E8F0"}
+      borderColor={featured ? "accent.600" : "border.default"}
       rounded="xl"
       p="5"
       h="full"
       transition="all 0.2s"
-      _hover={{ borderColor: "#4F46E5", boxShadow: "md", transform: "translateY(-2px)" }}
+      _hover={{ borderColor: "accent.600", boxShadow: "md", transform: "translateY(-2px)" }}
       display="flex"
       flexDirection="column"
       gap="3"
@@ -109,8 +109,8 @@ const ModuleCardItem = ({ mod, featured = false }: { mod: ModuleCard; featured?:
       {featured && (
         <Badge
           alignSelf="flex-start"
-          bg="#EEF2FF"
-          color="#4338CA"
+          bg="accent.50"
+          color="accent.700"
           px="2.5"
           py="1"
           rounded="full"
@@ -123,13 +123,13 @@ const ModuleCardItem = ({ mod, featured = false }: { mod: ModuleCard; featured?:
         </Badge>
       )}
       <VStack align="start" gap="1.5" flex="1">
-        <Text fontSize="md" fontWeight="700" color="#0F172A" lineHeight="1.25">
+        <Text fontSize="md" fontWeight="700" color="fg.default" lineHeight="1.25">
           {mod.title}
         </Text>
-        <Text fontSize="xs" color="#4F46E5" fontWeight="600" lineHeight="1.4">
+        <Text fontSize="xs" color="accent.600" fontWeight="600" lineHeight="1.4">
           {mod.shortFor}
         </Text>
-        <Text fontSize="sm" color="#475569" lineHeight="1.55" mt="1">
+        <Text fontSize="sm" color="fg.muted" lineHeight="1.55" mt="1">
           {mod.description}
         </Text>
       </VStack>
@@ -155,11 +155,11 @@ const ModuleCardItem = ({ mod, featured = false }: { mod: ModuleCard; featured?:
 
 const SectionDivider = ({ children }: { children: React.ReactNode }) => (
   <HStack gap="2" align="center" w="full">
-    <Box flex="1" h="1px" bg="#E2E8F0" />
+    <Box flex="1" h="1px" bg="border.default" />
     <Text
       fontSize="11px"
       fontWeight="700"
-      color="#4F46E5"
+      color="accent.600"
       letterSpacing="0.14em"
       textTransform="uppercase"
       whiteSpace="nowrap"
@@ -167,13 +167,13 @@ const SectionDivider = ({ children }: { children: React.ReactNode }) => (
     >
       {children}
     </Text>
-    <Box flex="1" h="1px" bg="#E2E8F0" />
+    <Box flex="1" h="1px" bg="border.default" />
   </HStack>
 )
 
 export const ModulesGrid = () => {
   return (
-    <Box id="moduly" py={{ base: "16", md: "22" }} bg="#F8FAFC">
+    <Box id="moduly" py={{ base: "16", md: "22" }} bg="bg.subtle">
       <Container maxW="7xl">
         <VStack gap={{ base: "10", md: "14" }}>
           {/* Header */}
@@ -181,7 +181,7 @@ export const ModulesGrid = () => {
             <Text
               fontSize="11px"
               fontWeight="700"
-              color="#4F46E5"
+              color="accent.600"
               letterSpacing="0.14em"
               textTransform="uppercase"
             >
@@ -192,17 +192,17 @@ export const ModulesGrid = () => {
               fontSize={{ base: "32px", md: "44px" }}
               fontWeight="800"
               letterSpacing="-0.035em"
-              color="#0F172A"
+              color="fg.default"
               lineHeight="1.08"
             >
               Wszystko, czego potrzebuje Twoja firma
             </Heading>
             <VStack gap="3" maxW="2xl">
-              <Text color="#475569" fontSize="15px" lineHeight="1.55">
+              <Text color="fg.muted" fontSize="15px" lineHeight="1.55">
                 Aktywujesz to, czego potrzebujesz. Wyłączasz to, z czego nie korzystasz.
                 Wszystko w jednym panelu, bez dodatkowych opłat za moduły.
               </Text>
-              <Text color="#059669" fontSize="13px" fontWeight="600" lineHeight="1.4">
+              <Text color="success.600" fontSize="13px" fontWeight="600" lineHeight="1.4">
                 Każdy moduł włączasz i wyłączasz jednym kliknięciem
               </Text>
             </VStack>
@@ -232,17 +232,17 @@ export const ModulesGrid = () => {
           <Box
             bg="white"
             border="1px solid"
-            borderColor="#E2E8F0"
+            borderColor="border.default"
             rounded="xl"
             px="5"
             py="3"
-            color="#475569"
+            color="fg.muted"
             fontSize="sm"
             maxW="2xl"
             textAlign="center"
             lineHeight="1.5"
           >
-            <Text as="span" fontWeight="700" color="#0F172A">Żadnych ukrytych opłat</Text> za moduły. Płacisz tylko za plan (49 / 69 / 99 zł miesięcznie).
+            <Text as="span" fontWeight="700" color="fg.default">Żadnych ukrytych opłat</Text> za moduły. Płacisz tylko za plan (49 / 69 / 99 zł miesięcznie).
           </Box>
         </VStack>
       </Container>

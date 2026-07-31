@@ -37,6 +37,15 @@ public/logo.webp
 # Local audit scripts (never commit)
 _audit-*.cjs
 _audit-*.mjs
+__v*.cjs
+__v*.mjs
+__v*.png
+__v*.jpg
+__v*.webp
+__rename_*.cjs
+__serve_spa.py
+__serve.log
+__serve.err
 
 # Impeccable design lint local config
 .impeccable/

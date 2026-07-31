@@ -29,6 +29,10 @@ export type IntakeForm = {
   contactName: string
   contactPhone: string
   contactEmail: string
+  businessDescription: string
+  competitorAnalysis: string
+  serviceArea: string
+  businessGoals: string
   projectName: string
   projectDescription: string
   projectObjectives: string
@@ -48,6 +52,10 @@ export const emptyIntake: IntakeForm = {
   contactName: "",
   contactPhone: "",
   contactEmail: "",
+  businessDescription: "",
+  competitorAnalysis: "",
+  serviceArea: "",
+  businessGoals: "",
   projectName: "",
   projectDescription: "",
   projectObjectives: "",

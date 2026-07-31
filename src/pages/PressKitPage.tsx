@@ -73,7 +73,7 @@ export const PressKitPage = () => {
               <Text
                 fontSize="11px"
                 fontWeight="700"
-                color="#4F46E5"
+                color="accent.600"
                 textTransform="uppercase"
                 letterSpacing="0.14em"
               >
@@ -83,23 +83,23 @@ export const PressKitPage = () => {
                 as="h1"
                 fontSize={{ base: "34px", md: "48px" }}
                 fontWeight="800"
-                color="#0F172A"
+                color="fg.default"
                 letterSpacing="-0.035em"
                 lineHeight="1.08"
               >
                 Wszystko, czego potrzebujesz, żeby napisać o SEO Grow.
               </Heading>
-              <Text fontSize="md" color="#475569" lineHeight="1.6">
+              <Text fontSize="md" color="fg.muted" lineHeight="1.6">
                 Bio foundera, logotypy, statystyki, cytaty i kontakt — gotowe do publikacji. Jeśli czegoś brakuje, napisz do nas.
               </Text>
             </VStack>
 
             {/* CONTACT BANNER */}
-            <Box bg="linear-gradient(135deg, #0F172A 0%, #1E293B 100%)" rounded="2xl" p={{ base: "6", md: "8" }} color="white" position="relative" overflow="hidden">
+            <Box bg="linear-gradient(135deg, fg.default 0%, slate.800 100%)" rounded="2xl" p={{ base: "6", md: "8" }} color="white" position="relative" overflow="hidden">
               <Box position="absolute" top="-100px" right="-100px" w="300px" h="300px" bg="radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%)" borderRadius="full" filter="blur(60px)" />
               <Flex direction={{ base: "column", md: "row" }} align={{ base: "flex-start", md: "center" }} justify="space-between" gap="5" position="relative" zIndex="1">
                 <VStack align="flex-start" gap="2" maxW="md">
-                  <Text fontSize="xs" fontWeight="700" color="#A5B4FC" textTransform="uppercase" letterSpacing="0.12em">
+                  <Text fontSize="xs" fontWeight="700" color="accent.300" textTransform="uppercase" letterSpacing="0.12em">
                     Kontakt dla mediów
                   </Text>
                   <Text fontSize="lg" fontWeight="700" lineHeight="1.3">
@@ -116,14 +116,14 @@ export const PressKitPage = () => {
                   alignItems="center"
                   gap="2"
                   bg="white"
-                  color="#0F172A"
+                  color="fg.default"
                   px="5"
                   py="3"
                   rounded="lg"
                   fontWeight="700"
                   fontSize="13px"
                   textDecoration="none"
-                  _hover={{ bg: "#F1F5F9" }}
+                  _hover={{ bg: "border.subtle" }}
                   flexShrink={0}
                 >
                   Napisz do nas
@@ -133,32 +133,32 @@ export const PressKitPage = () => {
 
             {/* BIO FOUNDER */}
             <Box>
-              <Text fontSize="11px" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em" mb="3">
+              <Text fontSize="11px" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em" mb="3">
                 Bio foundera — krótka wersja
               </Text>
-              <Text fontSize="md" color="#334155" lineHeight="1.7" mb="3" p="5" bg="#F8FAFC" rounded="xl" border="1px solid" borderColor="#E2E8F0">
+              <Text fontSize="md" color="slate.700" lineHeight="1.7" mb="3" p="5" bg="bg.subtle" rounded="xl" border="1px solid" borderColor="border.default">
                 Ayrton jest założycielem Grow Solutions — jednoosobowej firmy technologicznej zarejestrowanej w Ostródzie (Polska). Od 2019 roku zajmuje się SEO, tworzeniem stron i automatyzacją marketingu dla małych firm. Wcześniej pracował przy projektach digitalowych w Hiszpanii, Portugalii i Polsce. Mówi w czterech językach (polski, hiszpański, portugalski, angielski) i prowadzi SEO Grow w modelu 100% zdalnym, obsługując firmy w 97 miastach Polski.
               </Text>
-              <Text fontSize="11px" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em" mb="3" mt="6">
+              <Text fontSize="11px" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em" mb="3" mt="6">
                 Bio foundera — pełna wersja
               </Text>
-              <Text fontSize="sm" color="#334155" lineHeight="1.7" p="5" bg="#F8FAFC" rounded="xl" border="1px solid" borderColor="#E2E8F0">
+              <Text fontSize="sm" color="slate.700" lineHeight="1.7" p="5" bg="bg.subtle" rounded="xl" border="1px solid" borderColor="border.default">
                 Ayrton to founder i CEO SEO Grow — marki komercyjnej firmy Grow Solutions (polska jednoosobowa działalność gospodarcza, NIP 7412176947, zarejestrowana w 2024 roku w Ostródzie, województwo warmińsko-mazurskie). Zajmuje się profesjonalnym tworzeniem stron internetowych i pozycjonowaniem w Google dla małych polskich firm. Jego specjalizacja to własny CMS łączący zarządzanie treścią z automatycznym SEO technicznym (schema.org JSON-LD, Core Web Vitals, LocalBusiness markup). Wcześniej pracował przy projektach digital marketingu w Hiszpanii, Portugalii i Polsce. Polski nie jest jego językiem ojczystym — mówi po polsku, hiszpańsku, portugalsku i angielsku. Prowadzi firmę w 100% zdalnie, bez biura i bez pracowników. Misja SEO Grow: udowodnić, że profesjonalna strona dla MŚP nie musi kosztować fortuny.
               </Text>
             </Box>
 
             {/* FAKTS */}
             <Box>
-              <Text fontSize="11px" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em" mb="4">
+              <Text fontSize="11px" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em" mb="4">
                 Fakty w pigułce
               </Text>
               <SimpleGrid columns={{ base: 1, sm: 2 }} gap="3">
                 {facts.map((f) => (
-                  <Flex key={f.label} p="4" bg="white" border="1px solid #E2E8F0" rounded="md" justify="space-between" align="center" gap="3">
-                    <Text fontSize="xs" color="#64748B" fontWeight="600" textTransform="uppercase" letterSpacing="0.04em">
+                  <Flex key={f.label} p="4" bg="white" border="1px solid border.default" rounded="md" justify="space-between" align="center" gap="3">
+                    <Text fontSize="xs" color="fg.subtle" fontWeight="600" textTransform="uppercase" letterSpacing="0.04em">
                       {f.label}
                     </Text>
-                    <Text fontSize="sm" color="#0F172A" fontWeight="700" textAlign="right">
+                    <Text fontSize="sm" color="fg.default" fontWeight="700" textAlign="right">
                       {f.value}
                     </Text>
                   </Flex>
@@ -168,28 +168,28 @@ export const PressKitPage = () => {
 
             {/* CYTATY */}
             <Box>
-              <Text fontSize="11px" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em" mb="4">
+              <Text fontSize="11px" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em" mb="4">
                 Cytaty do publikacji (z atrybucją)
               </Text>
               <VStack gap="3" align="stretch">
                 {pressQuotes.map((q, i) => (
-                  <Box key={i} p="4" bg="#EEF2FF" border="1px solid #E0E7FF" rounded="md" position="relative">
+                  <Box key={i} p="4" bg="accent.50" border="1px solid accent.100" rounded="md" position="relative">
                     <Text
                       position="absolute"
                       top="2"
                       right="3"
                       fontSize="3xl"
                       fontWeight="800"
-                      color="#C7D2FE"
+                      color="accent.200"
                       lineHeight="1"
                       aria-hidden="true"
                     >
                       &ldquo;
                     </Text>
-                    <Text fontSize="sm" color="#334155" lineHeight="1.6" fontStyle="italic">
+                    <Text fontSize="sm" color="slate.700" lineHeight="1.6" fontStyle="italic">
                       {q}
                     </Text>
-                    <Text fontSize="xs" color="#94A3B8" mt="2">
+                    <Text fontSize="xs" color="fg.faint" mt="2">
                       — Ayrton, founder SEO Grow
                     </Text>
                   </Box>
@@ -199,28 +199,28 @@ export const PressKitPage = () => {
 
             {/* LOGOTYPES */}
             <Box>
-              <Text fontSize="11px" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em" mb="3">
+              <Text fontSize="11px" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em" mb="3">
                 Logotypy
               </Text>
-              <Text fontSize="sm" color="#475569" lineHeight="1.6" mb="4">
+              <Text fontSize="sm" color="fg.muted" lineHeight="1.6" mb="4">
                 Dostępne w wersji kolorowej (PNG) i białej na ciemnym tle. Użyj wersji PNG z przezroczystym tłem do publikacji cyfrowych.
               </Text>
               <SimpleGrid columns={{ base: 1, sm: 3 }} gap="4">
-                <Box p="6" bg="white" border="1px solid #E2E8F0" rounded="xl" textAlign="center">
+                <Box p="6" bg="white" border="1px solid border.default" rounded="xl" textAlign="center">
                   <img src="/logo-320.webp" alt="SEO Grow logo — wersja kolorowa" width={180} height={48} style={{ margin: "0 auto", display: "block" }} />
-                  <Text fontSize="xs" color="#94A3B8" mt="3">PNG · przezroczyste tło</Text>
-                  <Box as="a" href="/logo-320.webp" download display="inline-flex" alignItems="center" gap="1.5" mt="3" fontSize="xs" fontWeight="700" color="#4F46E5" textDecoration="none">
+                  <Text fontSize="xs" color="fg.faint" mt="3">PNG · przezroczyste tło</Text>
+                  <Box as="a" href="/logo-320.webp" download display="inline-flex" alignItems="center" gap="1.5" mt="3" fontSize="xs" fontWeight="700" color="accent.600" textDecoration="none">
                     {downloadIcon()} Pobierz
                   </Box>
                 </Box>
-                <Box p="6" bg="#0F172A" border="1px solid #1E293B" rounded="xl" textAlign="center">
+                <Box p="6" bg="fg.default" border="1px solid slate.800" rounded="xl" textAlign="center">
                   <img src="/logo-320.webp" alt="SEO Grow logo — wersja biała" width={180} height={48} style={{ margin: "0 auto", display: "block", filter: "brightness(0) invert(1)" }} />
                   <Text fontSize="xs" color="rgba(255,255,255,0.6)" mt={3}>Na ciemnym tle</Text>
-                  <Box as="a" href="/logo-320.webp" download display="inline-flex" alignItems="center" gap="1.5" mt="3" fontSize="xs" fontWeight="700" color="#A5B4FC" textDecoration="none">
+                  <Box as="a" href="/logo-320.webp" download display="inline-flex" alignItems="center" gap="1.5" mt="3" fontSize="xs" fontWeight="700" color="accent.300" textDecoration="none">
                     {downloadIcon()} Pobierz
                   </Box>
                 </Box>
-                <Box p="6" bg="#4F46E5" border="1px solid #4338CA" rounded="xl" textAlign="center">
+                <Box p="6" bg="accent.600" border="1px solid accent.700" rounded="xl" textAlign="center">
                   <Text fontSize="22px" fontWeight="800" color="white" lineHeight="1" mb="2">SEO Grow</Text>
                   <Text fontSize="9px" color="rgba(255,255,255,0.7)" letterSpacing="0.14em" textTransform="uppercase">press kit</Text>
                   <Text fontSize="xs" color="rgba(255,255,255,0.7)" mt={3}>Wersja na tle firmowym</Text>
@@ -228,12 +228,12 @@ export const PressKitPage = () => {
               </SimpleGrid>
             </Box>
 
-            <Box h="1px" w="full" bg="#E2E8F0" />
+            <Box h="1px" w="full" bg="border.default" />
 
             {/* LAST NOTE */}
-            <Box bg="#F8FAFC" p="6" rounded="xl" border="1px solid #E2E8F0">
-              <Text fontSize="sm" color="#475569" lineHeight="1.6">
-                <Box as="span" fontWeight="700" color="#0F172A">Zasady współpracy z mediami:</Box> nie wymagamy akceptacji tekstu przed publikacją. Używaj naszych materiałów bezpłatnie z atrybucją „SEO Grow / Grow Solutions". Jeśli potrzebujesz eksperckiego komentarza o rynku stron w Polsce, automatyzacji marketingu w MŚP lub cenach w branży — jestem dostępny mailowo i telefonicznie.
+            <Box bg="bg.subtle" p="6" rounded="xl" border="1px solid border.default">
+              <Text fontSize="sm" color="fg.muted" lineHeight="1.6">
+                <Box as="span" fontWeight="700" color="fg.default">Zasady współpracy z mediami:</Box> nie wymagamy akceptacji tekstu przed publikacją. Używaj naszych materiałów bezpłatnie z atrybucją „SEO Grow / Grow Solutions". Jeśli potrzebujesz eksperckiego komentarza o rynku stron w Polsce, automatyzacji marketingu w MŚP lub cenach w branży — jestem dostępny mailowo i telefonicznie.
               </Text>
             </Box>
           </VStack>

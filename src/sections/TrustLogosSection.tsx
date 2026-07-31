@@ -15,23 +15,30 @@ export const TrustLogosSection = () => {
   const allClients = [...clients, ...clients]
 
   return (
-    <Box as="section" bg="white" py="12" borderBottom="1px solid" borderColor="#E2E8F0" overflow="hidden" aria-label="Wybrane projekty i marki">
-      <Container maxW="6xl">
+    <Box
+      as="section"
+      bg="bg.canvas"
+      py={{ base: "12", md: "16" }}
+      borderTop="1px solid rgba(10, 10, 10, 0.06)"
+      borderBottom="1px solid rgba(10, 10, 10, 0.06)"
+      overflow="hidden"
+      aria-label="Wybrane projekty i marki"
+    >
+      <Container maxW="6xl" mb={{ base: "6", md: "8" }}>
         <Text
           textAlign="center"
-          fontSize="12px"
-          color="#94A3B8"
-          mb="6"
+          fontSize="xs"
+          color="fg.subtle"
           textTransform="uppercase"
-          letterSpacing="0.12em"
+          letterSpacing="0.14em"
           fontWeight="700"
         >
-          Nasi klienci
+          Zaufali nam właściciele firm z całej Polski
         </Text>
       </Container>
-      
+
       {/* Carrusel infinito */}
-      <Box 
+      <Box
         className="logo-carousel"
         display="flex"
         alignItems="center"
@@ -48,9 +55,9 @@ export const TrustLogosSection = () => {
             alignItems="center"
             justifyContent="center"
             filter="grayscale(100%)"
-            opacity="0.6"
+            opacity="0.55"
             _hover={{ filter: "grayscale(0%)", opacity: "1" }}
-            transition="all 0.3s"
+            transition="all 0.3s ease"
             flexShrink={0}
           >
             <Image
@@ -59,7 +66,6 @@ export const TrustLogosSection = () => {
               sizes={client.sizes}
               alt={i < clients.length ? `Logo klienta ${client.name}` : ""}
               aria-hidden={i >= clients.length ? true : undefined}
-              loading={i < 2 ? "eager" : "lazy"}
               htmlWidth={client.width}
               htmlHeight={client.height}
               maxH={client.maxH}

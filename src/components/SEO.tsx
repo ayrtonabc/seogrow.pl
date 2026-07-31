@@ -103,7 +103,7 @@ export const SEO = ({
     upsertMeta('meta[property="og:updated_time"]', { property: "og:updated_time", content: new Date().toISOString() })
 
     // Theme color for mobile browsers (matches brand)
-    upsertMeta('meta[name="theme-color"]', { name: "theme-color", content: "#4F46E5" })
+    upsertMeta('meta[name="theme-color"]', { name: "theme-color", content: "accent.600" })
     upsertMeta('meta[name="apple-mobile-web-app-capable"]', { name: "apple-mobile-web-app-capable", content: "yes" })
     upsertMeta('meta[name="apple-mobile-web-app-status-bar-style"]', { name: "apple-mobile-web-app-status-bar-style", content: "default" })
     upsertMeta('meta[name="apple-mobile-web-app-title"]', { name: "apple-mobile-web-app-title", content: SITE_NAME })

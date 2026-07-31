@@ -197,6 +197,11 @@ a, button {
   will-change: transform, opacity;
 }
 
+/* Footer logo: blanco en todos los tamaños (footer siempre es dark) */
+.footer-logo {
+  filter: brightness(0) invert(1);
+}
+
 @media (max-width: 768px) {
   .logo-carousel {
     animation-duration: 40s;

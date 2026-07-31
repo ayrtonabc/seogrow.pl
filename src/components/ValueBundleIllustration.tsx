@@ -40,17 +40,17 @@ const ITEMS: Array<{
 // ─── ICONOS SVG (paths custom, no emojis) ──────────────────────────────────
 
 const ItemIcon = ({ k }: { k: ItemKey }) => {
-  const stroke = "#4F46E5"
-  const fill = "#EEF2FF"
+  const stroke = "accent.600"
+  const fill = "accent.50"
   switch (k) {
     case "strona":
       return (
         <g>
           <rect x="2" y="3" width="32" height="22" rx="3" fill={fill} stroke={stroke} strokeWidth="1.6" />
           <rect x="2" y="3" width="32" height="5" rx="3" fill={stroke} />
-          <circle cx="6" cy="5.5" r="0.8" fill="#FFFFFF" />
-          <circle cx="9" cy="5.5" r="0.8" fill="#FFFFFF" />
-          <circle cx="12" cy="5.5" r="0.8" fill="#FFFFFF" />
+          <circle cx="6" cy="5.5" r="0.8" fill="bg.canvas" />
+          <circle cx="9" cy="5.5" r="0.8" fill="bg.canvas" />
+          <circle cx="12" cy="5.5" r="0.8" fill="bg.canvas" />
           <line x1="6" y1="14" x2="20" y2="14" stroke={stroke} strokeWidth="1.4" strokeLinecap="round" />
           <line x1="6" y1="18" x2="14" y2="18" stroke={stroke} strokeWidth="1.4" strokeLinecap="round" />
           <line x1="6" y1="22" x2="16" y2="22" stroke={stroke} strokeWidth="1.4" strokeLinecap="round" />
@@ -60,7 +60,7 @@ const ItemIcon = ({ k }: { k: ItemKey }) => {
       return (
         <g>
           <rect x="9" y="2" width="18" height="32" rx="3.5" fill={fill} stroke={stroke} strokeWidth="1.6" />
-          <rect x="11" y="6" width="14" height="22" rx="1" fill="#FFFFFF" stroke={stroke} strokeWidth="1" />
+          <rect x="11" y="6" width="14" height="22" rx="1" fill="bg.canvas" stroke={stroke} strokeWidth="1" />
           {/* mini "content" lines inside the screen */}
           <line x1="13" y1="10" x2="20" y2="10" stroke={stroke} strokeWidth="1" strokeLinecap="round" />
           <line x1="13" y1="13" x2="22" y2="13" stroke={stroke} strokeWidth="1" strokeLinecap="round" />
@@ -93,11 +93,11 @@ const ItemIcon = ({ k }: { k: ItemKey }) => {
           <rect x="4" y="22" width="14" height="3" rx="0.6" fill={stroke} />
           <rect x="4" y="26" width="14" height="3" rx="0.6" fill={stroke} />
           <rect x="4" y="30" width="14" height="3" rx="0.6" fill={stroke} />
-          <circle cx="6" cy="23.5" r="0.5" fill="#FFFFFF" />
-          <circle cx="6" cy="27.5" r="0.5" fill="#FFFFFF" />
-          <circle cx="6" cy="31.5" r="0.5" fill="#FFFFFF" />
+          <circle cx="6" cy="23.5" r="0.5" fill="bg.canvas" />
+          <circle cx="6" cy="27.5" r="0.5" fill="bg.canvas" />
+          <circle cx="6" cy="31.5" r="0.5" fill="bg.canvas" />
           <rect x="22" y="24" width="10" height="10" rx="1" fill={stroke} />
-          <path d="M 25 29 l 2 2 l 4 -4" fill="none" stroke="#FFFFFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 25 29 l 2 2 l 4 -4" fill="none" stroke="bg.canvas" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
         </g>
       )
     case "ssl":
@@ -107,21 +107,21 @@ const ItemIcon = ({ k }: { k: ItemKey }) => {
           <path
             d="M 11 14 v -5 a 7 7 0 0 1 14 0 v 5"
             fill="none"
-            stroke="#059669"
+            stroke="success.600"
             strokeWidth="2"
             strokeLinecap="round"
           />
           {/* Cuerpo del candado */}
-          <rect x="6" y="13" width="24" height="19" rx="3" fill={fill} stroke="#059669" strokeWidth="1.8" />
+          <rect x="6" y="13" width="24" height="19" rx="3" fill={fill} stroke="success.600" strokeWidth="1.8" />
           {/* Keyhole */}
-          <circle cx="18" cy="21" r="2.6" fill="#059669" />
-          <rect x="17" y="21" width="2" height="6.5" rx="0.6" fill="#059669" />
+          <circle cx="18" cy="21" r="2.6" fill="success.600" />
+          <rect x="17" y="21" width="2" height="6.5" rx="0.6" fill="success.600" />
           {/* Mini escudo/check badge en bottom-right */}
-          <circle cx="29" cy="29" r="5" fill="#059669" />
+          <circle cx="29" cy="29" r="5" fill="success.600" />
           <path
             d="M 26.5 29 l 1.7 1.7 l 3.3 -3.3"
             fill="none"
-            stroke="#FFFFFF"
+            stroke="bg.canvas"
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -142,10 +142,10 @@ const ItemIcon = ({ k }: { k: ItemKey }) => {
           <circle cx="16" cy="13" r="1.2" fill={stroke} />
           <circle cx="22" cy="13" r="1.2" fill={stroke} />
           {/* mini "phone" badge abajo a la derecha */}
-          <circle cx="26" cy="28" r="6" fill="#059669" />
+          <circle cx="26" cy="28" r="6" fill="success.600" />
           <path
             d="M 23 25.5 a 4 4 0 0 0 4 4 l 1 -1.5 l -1.5 -1 l -0.5 0.3 a 2.5 2.5 0 0 1 -1.5 -1.5 l 0.3 -0.5 l -1 -1.5 l -1.5 1 z"
-            fill="#FFFFFF"
+            fill="bg.canvas"
           />
         </g>
       )
@@ -166,7 +166,7 @@ const ItemIcon = ({ k }: { k: ItemKey }) => {
           <line x1="11" y1="22" x2="20" y2="22" stroke={stroke} strokeWidth="1.3" strokeLinecap="round" />
           {/* Total + VAT badge */}
           <rect x="11" y="25" width="14" height="6" rx="1" fill={stroke} />
-          <text x="18" y="29.6" textAnchor="middle" fontSize="4" fontWeight="800" fill="#FFFFFF" fontFamily="Inter, system-ui, sans-serif">
+          <text x="18" y="29.6" textAnchor="middle" fontSize="4" fontWeight="800" fill="bg.canvas" fontFamily="Inter, system-ui, sans-serif">
             VAT 23%
           </text>
         </g>
@@ -179,28 +179,28 @@ const ItemIcon = ({ k }: { k: ItemKey }) => {
 const Package3D = () => (
   <g>
     {/* Sombra elíptica debajo */}
-    <ellipse cx="60" cy="76" rx="48" ry="5" fill="#0F172A" opacity="0.08" />
+    <ellipse cx="60" cy="76" rx="48" ry="5" fill="fg.default" opacity="0.08" />
     {/* Cara superior (techo) */}
     <path
       d="M 20 30 L 60 14 L 100 30 L 60 46 Z"
-      fill="#A5B4FC"
-      stroke="#4F46E5"
+      fill="accent.300"
+      stroke="accent.600"
       strokeWidth="1.5"
       strokeLinejoin="round"
     />
     {/* Cara frontal */}
     <path
       d="M 20 30 L 20 60 L 60 76 L 60 46 Z"
-      fill="#6366F1"
-      stroke="#4F46E5"
+      fill="accent.500"
+      stroke="accent.600"
       strokeWidth="1.5"
       strokeLinejoin="round"
     />
     {/* Cara lateral */}
     <path
       d="M 100 30 L 100 60 L 60 76 L 60 46 Z"
-      fill="#4F46E5"
-      stroke="#3730A3"
+      fill="accent.600"
+      stroke="accent.800"
       strokeWidth="1.5"
       strokeLinejoin="round"
     />
@@ -208,17 +208,17 @@ const Package3D = () => (
     <path
       d="M 20 30 L 60 46 L 100 30"
       fill="none"
-      stroke="#312E81"
+      stroke="accent.900"
       strokeWidth="1.2"
       strokeDasharray="2 2"
       opacity="0.6"
     />
     {/* Checkmark en la cara frontal */}
-    <circle cx="40" cy="50" r="6" fill="#FFFFFF" opacity="0.95" />
+    <circle cx="40" cy="50" r="6" fill="bg.canvas" opacity="0.95" />
     <path
       d="M 36.5 50 l 2.5 2.5 l 5 -5"
       fill="none"
-      stroke="#059669"
+      stroke="success.600"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -270,11 +270,11 @@ export const ValueBundleIllustration = ({
       mx="auto"
       role="img"
       aria-label="Pakiet zawiera: strona, panel CMS, hosting, certyfikat SSL, wsparcie po polsku, faktura VAT. Wszystko w jednym planie, bez ukrytych opłat."
-      bg="linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%)"
+      bg="linear-gradient(135deg, bg.subtle 0%, accent.50 100%)"
       borderRadius="2xl"
       p={{ base: "5", md: "7" }}
       border="1px solid"
-      borderColor="#E2E8F0"
+      borderColor="border.default"
       boxShadow="0 12px 40px rgba(15, 23, 42, 0.06)"
       opacity={inView ? 1 : 0}
       transform={inView ? "translateY(0)" : "translateY(8px)"}
@@ -298,7 +298,7 @@ export const ValueBundleIllustration = ({
             display="block"
             fontSize="2xs"
             fontWeight="800"
-            color="#4F46E5"
+            color="accent.600"
             letterSpacing="0.18em"
             textTransform="uppercase"
             mb="1"
@@ -309,7 +309,7 @@ export const ValueBundleIllustration = ({
             as="h3"
             fontSize={{ base: "lg", md: "xl" }}
             fontWeight="800"
-            color="#0F172A"
+            color="fg.default"
             letterSpacing="-0.02em"
             lineHeight="1.2"
           >
@@ -318,7 +318,7 @@ export const ValueBundleIllustration = ({
           <Box
             as="p"
             fontSize="sm"
-            color="#475569"
+            color="fg.muted"
             mt="1"
             lineHeight="1.5"
           >
@@ -342,7 +342,7 @@ export const ValueBundleIllustration = ({
               borderRadius="lg"
               p="4"
               border="1px solid"
-              borderColor={isHovered ? "#4F46E5" : "#E2E8F0"}
+              borderColor={isHovered ? "accent.600" : "border.default"}
               boxShadow={
                 isHovered
                   ? "0 8px 20px rgba(79, 70, 229, 0.15)"
@@ -368,7 +368,7 @@ export const ValueBundleIllustration = ({
                 w="18px"
                 h="18px"
                 borderRadius="full"
-                bg="#059669"
+                bg="success.600"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
@@ -383,7 +383,7 @@ export const ValueBundleIllustration = ({
                   <path
                     d="M 2.5 6 L 5 8.5 L 9.5 4"
                     fill="none"
-                    stroke="#FFFFFF"
+                    stroke="bg.canvas"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -409,7 +409,7 @@ export const ValueBundleIllustration = ({
                 display="block"
                 fontSize="sm"
                 fontWeight="800"
-                color="#0F172A"
+                color="fg.default"
                 lineHeight="1.3"
                 mb="0.5"
               >
@@ -421,7 +421,7 @@ export const ValueBundleIllustration = ({
                 as="span"
                 display="block"
                 fontSize="xs"
-                color="#64748B"
+                color="fg.subtle"
                 lineHeight="1.4"
               >
                 {item.desc}
@@ -436,13 +436,13 @@ export const ValueBundleIllustration = ({
         mt="5"
         pt="4"
         borderTop="1px dashed"
-        borderColor="#CBD5E1"
+        borderColor="border.strong"
         display="flex"
         alignItems="center"
         justifyContent="center"
         gap="2"
         fontSize="xs"
-        color="#475569"
+        color="fg.muted"
         fontWeight="600"
       >
         <Box
@@ -455,7 +455,7 @@ export const ValueBundleIllustration = ({
           <path
             d="M 4 8 L 7 11 L 12 5"
             fill="none"
-            stroke="#4F46E5"
+            stroke="accent.600"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

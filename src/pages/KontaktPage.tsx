@@ -8,8 +8,8 @@ const ContactIcon = ({ children }: { children: React.ReactNode }) => (
     w="48px"
     h="48px"
     rounded="2xl"
-    bg="linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)"
-    color="#4F46E5"
+    bg="linear-gradient(135deg, accent.50 0%, accent.100 100%)"
+    color="accent.600"
     display="flex"
     alignItems="center"
     justifyContent="center"
@@ -29,7 +29,7 @@ export const KontaktPage = () => {
             <Text
               fontSize="13px"
               fontWeight="700"
-              color="#4F46E5"
+              color="accent.600"
               letterSpacing="0.18em"
               textTransform="uppercase"
             >
@@ -41,11 +41,11 @@ export const KontaktPage = () => {
               color={SECTION_TITLE_COLOR_DARK}
             >
               Napisz lub zadzwoń.{" "}
-              <Box as="span" color="#4F46E5">Odpowiadam w 24h.</Box>
+              <Box as="span" color="accent.600">Odpowiadam w 24h.</Box>
             </Heading>
             <Text
               fontSize={{ base: "md", md: "lg" }}
-              color="#475569"
+              color="fg.muted"
               lineHeight="1.65"
               maxW="2xl"
             >
@@ -59,10 +59,10 @@ export const KontaktPage = () => {
             <VStack
               align="stretch"
               gap="5"
-              bg="#F8FAFC"
+              bg="bg.subtle"
               p={{ base: "7", md: "9" }}
               rounded="3xl"
-              border="1px solid #E2E8F0"
+              border="1px solid border.default"
             >
               {/* Email */}
               <HStack gap="4" align="start">
@@ -73,21 +73,21 @@ export const KontaktPage = () => {
                   </svg>
                 </ContactIcon>
                 <VStack align="start" gap="0.5">
-                  <Text fontSize="xs" fontWeight="700" color="#64748B" textTransform="uppercase" letterSpacing="0.08em">
+                  <Text fontSize="xs" fontWeight="700" color="fg.subtle" textTransform="uppercase" letterSpacing="0.08em">
                     Email
                   </Text>
                   <Link
                     href="mailto:kontakt@seogrow.pl"
                     fontSize="lg"
                     fontWeight="700"
-                    color="#0F172A"
+                    color="fg.default"
                     textDecoration="none"
-                    _hover={{ color: "#4F46E5" }}
+                    _hover={{ color: "accent.600" }}
                     transition="color 0.18s"
                   >
                     kontakt@seogrow.pl
                   </Link>
-                  <Text fontSize="sm" color="#64748B">
+                  <Text fontSize="sm" color="fg.subtle">
                     Odpowiadam w ciągu 24 godzin, zwykle szybciej.
                   </Text>
                 </VStack>
@@ -101,21 +101,21 @@ export const KontaktPage = () => {
                   </svg>
                 </ContactIcon>
                 <VStack align="start" gap="0.5">
-                  <Text fontSize="xs" fontWeight="700" color="#64748B" textTransform="uppercase" letterSpacing="0.08em">
+                  <Text fontSize="xs" fontWeight="700" color="fg.subtle" textTransform="uppercase" letterSpacing="0.08em">
                     Telefon
                   </Text>
                   <Link
                     href="tel:+48517105423"
                     fontSize="lg"
                     fontWeight="700"
-                    color="#0F172A"
+                    color="fg.default"
                     textDecoration="none"
-                    _hover={{ color: "#4F46E5" }}
+                    _hover={{ color: "accent.600" }}
                     transition="color 0.18s"
                   >
                     +48 517 105 423
                   </Link>
-                  <Text fontSize="sm" color="#64748B">
+                  <Text fontSize="sm" color="fg.subtle">
                     Pn–Pt, 8:00–17:00 (czas PL). WhatsApp również.
                   </Text>
                 </VStack>
@@ -130,15 +130,15 @@ export const KontaktPage = () => {
                   </svg>
                 </ContactIcon>
                 <VStack align="start" gap="0.5">
-                  <Text fontSize="xs" fontWeight="700" color="#64748B" textTransform="uppercase" letterSpacing="0.08em">
+                  <Text fontSize="xs" fontWeight="700" color="fg.subtle" textTransform="uppercase" letterSpacing="0.08em">
                     Adres
                   </Text>
-                  <Text fontSize="md" fontWeight="700" color="#0F172A" lineHeight="1.4">
+                  <Text fontSize="md" fontWeight="700" color="fg.default" lineHeight="1.4">
                     Grow Solutions — JDG<br />
                     ul. Czarnieckiego 13/12<br />
                     14-100 Ostróda, Polska
                   </Text>
-                  <Text fontSize="sm" color="#64748B">
+                  <Text fontSize="sm" color="fg.subtle">
                     NIP 7412176947 · warmińsko-mazurskie
                   </Text>
                 </VStack>
@@ -147,12 +147,12 @@ export const KontaktPage = () => {
               {/* Google Business */}
               <HStack gap="4" align="start">
                 <ContactIcon>
-                  <Box fontSize="20px" lineHeight="1" fontWeight="800" color="#4F46E5">
+                  <Box fontSize="20px" lineHeight="1" fontWeight="800" color="accent.600">
                     G
                   </Box>
                 </ContactIcon>
                 <VStack align="start" gap="0.5">
-                  <Text fontSize="xs" fontWeight="700" color="#64748B" textTransform="uppercase" letterSpacing="0.08em">
+                  <Text fontSize="xs" fontWeight="700" color="fg.subtle" textTransform="uppercase" letterSpacing="0.08em">
                     Google Business
                   </Text>
                   <Link
@@ -161,14 +161,14 @@ export const KontaktPage = () => {
                     rel="noopener noreferrer"
                     fontSize="md"
                     fontWeight="700"
-                    color="#0F172A"
+                    color="fg.default"
                     textDecoration="none"
-                    _hover={{ color: "#4F46E5" }}
+                    _hover={{ color: "accent.600" }}
                     transition="color 0.18s"
                   >
                     Znajdź nas w Google Maps →
                   </Link>
-                  <Text fontSize="sm" color="#64748B">
+                  <Text fontSize="sm" color="fg.subtle">
                     Zostaw opinię, sprawdź naszą lokalizację.
                   </Text>
                 </VStack>
@@ -179,7 +179,7 @@ export const KontaktPage = () => {
             <Box
               rounded="3xl"
               overflow="hidden"
-              border="1px solid #E2E8F0"
+              border="1px solid border.default"
               h={{ base: "320px", md: "100%" }}
               minH="320px"
             >
@@ -200,33 +200,33 @@ export const KontaktPage = () => {
           <VStack
             align="stretch"
             gap="4"
-            bg="#F8FAFC"
+            bg="bg.subtle"
             p={{ base: "7", md: "9" }}
             rounded="3xl"
-            border="1px solid #E2E8F0"
+            border="1px solid border.default"
             w="full"
             maxW="4xl"
             mx="auto"
           >
-            <Text fontSize="13px" fontWeight="700" color="#4F46E5" letterSpacing="0.18em" textTransform="uppercase" textAlign="center">
+            <Text fontSize="13px" fontWeight="700" color="accent.600" letterSpacing="0.18em" textTransform="uppercase" textAlign="center">
               Często pytane
             </Text>
             <VStack align="stretch" gap="3" mt="2">
-              <Text fontSize="md" color="#0F172A" lineHeight="1.5">
+              <Text fontSize="md" color="fg.default" lineHeight="1.5">
                 <Box as="span" fontWeight="700">Ile kosztuje strona?</Box>{" "}
-                <Box as="span" color="#475569">— Od 1 500 zł jednorazowo (pakiet Start) lub 2 200 zł (pakiet Standard). Opłata miesięczna 49 zł obejmuje hosting, CMS, SSL i wsparcie.</Box>
+                <Box as="span" color="fg.muted">— Od 1 500 zł jednorazowo (pakiet Start) lub 2 200 zł (pakiet Standard). Opłata miesięczna 49 zł obejmuje hosting, CMS, SSL i wsparcie.</Box>
               </Text>
-              <Text fontSize="md" color="#0F172A" lineHeight="1.5">
+              <Text fontSize="md" color="fg.default" lineHeight="1.5">
                 <Box as="span" fontWeight="700">Ile trwa realizacja?</Box>{" "}
-                <Box as="span" color="#475569">— 5 dni roboczych od pierwszej 15-minutowej rozmowy.</Box>
+                <Box as="span" color="fg.muted">— 5 dni roboczych od pierwszej 15-minutowej rozmowy.</Box>
               </Text>
-              <Text fontSize="md" color="#0F172A" lineHeight="1.5">
+              <Text fontSize="md" color="fg.default" lineHeight="1.5">
                 <Box as="span" fontWeight="700">Czy obsługujecie moje miasto?</Box>{" "}
-                <Box as="span" color="#475569">— Tak. Działamy w 97 miastach w całej Polsce, ta sama cena, ta sama jakość.</Box>
+                <Box as="span" color="fg.muted">— Tak. Działamy w 97 miastach w całej Polsce, ta sama cena, ta sama jakość.</Box>
               </Text>
-              <Text fontSize="md" color="#0F172A" lineHeight="1.5">
+              <Text fontSize="md" color="fg.default" lineHeight="1.5">
                 <Box as="span" fontWeight="700">Czy mogę płacić online?</Box>{" "}
-                <Box as="span" color="#475569">— Tak, przez Tpay (karta, BLIK, przelew).</Box>
+                <Box as="span" color="fg.muted">— Tak, przez Tpay (karta, BLIK, przelew).</Box>
               </Text>
             </VStack>
             <Box textAlign="center" pt="2">
@@ -234,7 +234,7 @@ export const KontaktPage = () => {
                 href="/cennik"
                 fontSize="sm"
                 fontWeight="700"
-                color="#4F46E5"
+                color="accent.600"
                 textDecoration="none"
                 _hover={{ textDecoration: "underline" }}
               >

@@ -71,7 +71,7 @@ const MagnifyingGlassIcon = () => (
 )
 
 const LockIcon = ({ size = 12 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="fg.subtle" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <rect x="3" y="11" width="18" height="10" rx="2" />
     <path d="M7 11V7a4 4 0 0 1 8 0v4" />
   </svg>
@@ -180,7 +180,7 @@ export const GoogleSearchAnimation = ({
       bg="white"
       rounded="2xl"
       border="1px solid"
-      borderColor="#E2E8F0"
+      borderColor="border.default"
       boxShadow="0 12px 40px rgba(15,23,42,0.12)"
       overflow="hidden"
       maxW="3xl"
@@ -188,7 +188,7 @@ export const GoogleSearchAnimation = ({
       w="full"
     >
       {/* Browser bar (chrome) — siempre visible */}
-      <Box bg="#F1F5F9" px="3" py="2.5" borderBottom="1px solid #E2E8F0">
+      <Box bg="border.subtle" px="3" py="2.5" borderBottom="1px solid border.default">
         <HStack gap="2">
           <Box w="3" h="3" rounded="full" bg="#FF5F57" />
           <Box w="3" h="3" rounded="full" bg="#FEBC2E" />
@@ -199,14 +199,14 @@ export const GoogleSearchAnimation = ({
             px="3"
             py="1.5"
             flex="1"
-            border="1px solid #E2E8F0"
+            border="1px solid border.default"
             ml="2"
             display="flex"
             alignItems="center"
             gap="2"
           >
             <LockIcon size={10} />
-            <Text fontSize="xs" color="#64748B" fontWeight="500">
+            <Text fontSize="xs" color="fg.subtle" fontWeight="500">
               https://google.pl
             </Text>
           </Box>
@@ -321,7 +321,7 @@ export const GoogleSearchAnimation = ({
 
           <Text
             fontSize="2xs"
-            color="#94A3B8"
+            color="fg.faint"
             textAlign="center"
             mt="4"
             fontStyle="italic"
@@ -409,7 +409,7 @@ export const GoogleSearchAnimation = ({
                       w="1.5"
                       h="1.5"
                       rounded="full"
-                      bg="#94A3B8"
+                      bg="fg.faint"
                       sx={SEARCHING_DOT}
                       style={{
                         animation: `searchingDot 1.2s ease-in-out ${i * 200}ms infinite`,
@@ -417,7 +417,7 @@ export const GoogleSearchAnimation = ({
                     />
                   ))}
                 </HStack>
-                <Text fontSize="xs" color="#94A3B8">
+                <Text fontSize="xs" color="fg.faint">
                   Wyszukuję najlepsze wyniki...
                 </Text>
               </Box>
@@ -442,7 +442,7 @@ export const GoogleSearchAnimation = ({
                 w={i === roundIndex ? "20px" : "6px"}
                 h="6px"
                 rounded="full"
-                bg={i === roundIndex ? "#4F46E5" : "#CBD5E1"}
+                bg={i === roundIndex ? "accent.600" : "border.strong"}
                 transition="all 0.3s"
               />
             ))}

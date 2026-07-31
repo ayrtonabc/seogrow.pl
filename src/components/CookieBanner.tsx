@@ -53,7 +53,7 @@ const ToggleButton = ({
         <Box
           w="8"
           h="8"
-          bg="#ECFDF5"
+          bg="success.50"
           border="1px solid #A7F3D0"
           rounded="full"
           display="flex"
@@ -61,11 +61,11 @@ const ToggleButton = ({
           justifyContent="center"
           flexShrink={0}
         >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="success.600" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </Box>
-        <Text fontSize="xs" fontWeight="600" color="#059669">
+        <Text fontSize="xs" fontWeight="600" color="success.600">
           Wymagane
         </Text>
       </Box>
@@ -78,13 +78,13 @@ const ToggleButton = ({
       onClick={onClick}
       w="11"
       h="6"
-      bg={active ? "#4F46E5" : "#E2E8F0"}
+      bg={active ? "accent.600" : "border.default"}
       rounded="full"
       flexShrink={0}
       transition="background-color 0.2s ease"
       cursor="pointer"
       _hover={{ opacity: 0.9 }}
-      _focus={{ outline: "2px solid #4F46E5", outlineOffset: "2px" }}
+      _focus={{ outline: "2px solid accent.600", outlineOffset: "2px" }}
       role="switch"
       aria-checked={active}
       aria-label={active ? "Wyłącz" : "Włącz"}
@@ -200,24 +200,24 @@ export const CookieBanner = () => {
                       RODO / GDPR
                     </HStack>
                   </Box>
-                  <Text fontSize="lg" fontWeight="800" color="#0F172A" lineHeight="1.2">
+                  <Text fontSize="lg" fontWeight="800" color="fg.default" lineHeight="1.2">
                     Zarzadzanie plikami cookies
                   </Text>
                 </HStack>
-                <Text fontSize="sm" color="#475569" lineHeight="1.7" maxW="5xl">
+                <Text fontSize="sm" color="fg.muted" lineHeight="1.7" maxW="5xl">
                   Pliki cookies to niewielkie pliki tekstowe przechowywane na Twoim urzadzeniu. Umozliwiaja prawidlowe dzialanie serwisu oraz pozwalaja na analize ruchu i dostosowanie tresci do Twoich preferencji. Kazda kategoria plikow jest wylaczana dzieki Twojej zgodzie.
                 </Text>
-                <Text fontSize="sm" color="#475569" lineHeight="1.7" maxW="5xl">
+                <Text fontSize="sm" color="fg.muted" lineHeight="1.7" maxW="5xl">
                   Szczegolowe informacje o celach przetwarzania, podstawach prawnych i zasadach zarzadzania zgoda znajdziesz w{" "}
-                  <ChakraLink as={RouterLink} to="/polityka-prywatnosci" fontWeight="600" color="#4F46E5" textDecoration="underline" textDecorationColor="#C7D2FE" _hover={{ color: "#4338CA", textDecorationColor: "#4F46E5" }}>
+                  <ChakraLink as={RouterLink} to="/polityka-prywatnosci" fontWeight="600" color="accent.600" textDecoration="underline" textDecorationColor="accent.200" _hover={{ color: "accent.700", textDecorationColor: "accent.600" }}>
                     Polityce prywatnosci
                   </ChakraLink>
                   {", "}
-                  <ChakraLink as={RouterLink} to="/polityka-cookies" fontWeight="600" color="#4F46E5" textDecoration="underline" textDecorationColor="#C7D2FE" _hover={{ color: "#4338CA", textDecorationColor: "#4F46E5" }}>
+                  <ChakraLink as={RouterLink} to="/polityka-cookies" fontWeight="600" color="accent.600" textDecoration="underline" textDecorationColor="accent.200" _hover={{ color: "accent.700", textDecorationColor: "accent.600" }}>
                     Polityce cookies
                   </ChakraLink>
                   {" oraz "}
-                  <ChakraLink as={RouterLink} to="/przetwarzanie-danych" fontWeight="600" color="#4F46E5" textDecoration="underline" textDecorationColor="#C7D2FE" _hover={{ color: "#4338CA", textDecorationColor: "#4F46E5" }}>
+                  <ChakraLink as={RouterLink} to="/przetwarzanie-danych" fontWeight="600" color="accent.600" textDecoration="underline" textDecorationColor="accent.200" _hover={{ color: "accent.700", textDecorationColor: "accent.600" }}>
                     Zasadach przetwarzania danych
                   </ChakraLink>
                   .
@@ -231,13 +231,13 @@ export const CookieBanner = () => {
                     const active = preferences[key]
 
                     return (
-                      <Box key={category.key} p="4" rounded="2xl" border="1px solid" borderColor="#E2E8F0" bg="#F8FAFC">
+                      <Box key={category.key} p="4" rounded="2xl" border="1px solid" borderColor="border.default" bg="bg.subtle">
                         <Flex justify="space-between" align="start" gap="4" mb="3">
                           <VStack align="start" gap="1">
-                            <Text fontSize="sm" fontWeight="800" color="#0F172A">
+                            <Text fontSize="sm" fontWeight="800" color="fg.default">
                               {category.title}
                             </Text>
-                            <Text fontSize="xs" color="#64748B" lineHeight="1.6">
+                            <Text fontSize="xs" color="fg.subtle" lineHeight="1.6">
                               {category.description}
                             </Text>
                           </VStack>
@@ -261,12 +261,12 @@ export const CookieBanner = () => {
             <VStack align="stretch" gap="3" minW={{ base: "full", xl: "320px" }}>
               <Button
                 type="button"
-                bg="#0F172A"
+                bg="fg.default"
                 color="white"
                 rounded="full"
                 size="lg"
                 fontWeight="700"
-                _hover={{ bg: "#1E293B" }}
+                _hover={{ bg: "slate.800" }}
                 onClick={() =>
                   savePreferences({
                     necessary: true,
@@ -284,8 +284,8 @@ export const CookieBanner = () => {
                 rounded="full"
                 size="lg"
                 fontWeight="700"
-                borderColor="#CBD5E1"
-                color="#0F172A"
+                borderColor="border.strong"
+                color="fg.default"
                 onClick={() =>
                   savePreferences({
                     necessary: true,
@@ -304,8 +304,8 @@ export const CookieBanner = () => {
                   rounded="full"
                   size="lg"
                   fontWeight="700"
-                  color="#312E81"
-                  bg="#EEF2FF"
+                  color="accent.900"
+                  bg="accent.50"
                   onClick={() => savePreferences(preferences)}
                 >
                   Zapisz preferencje
@@ -317,7 +317,7 @@ export const CookieBanner = () => {
                   rounded="full"
                   size="lg"
                   fontWeight="700"
-                  color="#475569"
+                  color="fg.muted"
                   onClick={() => setShowSettings(true)}
                 >
                   Dostosuj ustawienia
@@ -325,7 +325,7 @@ export const CookieBanner = () => {
               )}
 
               <HStack justify={{ base: "flex-start", xl: "center" }} px="2">
-                <Text fontSize="xs" color="#64748B" lineHeight="1.6">
+                <Text fontSize="xs" color="fg.subtle" lineHeight="1.6">
                   Swoja decyzje mozesz zmienic w dowolnym momencie z poziomu stopki serwisu.
                 </Text>
               </HStack>

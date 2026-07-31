@@ -1,4 +1,5 @@
-// src/pages/order/PaymentPage.tsx — Krok 2: płatność + faktura VAT (TPAY dla BLIK/karta, przelew)
+// src/pages/order/PaymentPage.tsx — Krok 2: płatność + faktura VAT (rediseño total wix-style)
+// Métodos de pago como cards visuales, factura VAT con accordion, summary con el mismo diseño.
 import { useEffect, useMemo, useState } from "react"
 import {
   Box,
@@ -41,6 +42,7 @@ type MethodDef = {
   comingSoon?: boolean
   icon: React.ReactNode
   iconImage?: string
+  recommended?: boolean
 }
 
 const methods: MethodDef[] = [
@@ -50,13 +52,14 @@ const methods: MethodDef[] = [
     sub: "Natychmiastowa płatność z aplikacji banku",
     iconImage: "/blik.webp",
     icon: null,
+    recommended: true,
   },
   {
     id: "tpay_card",
     label: "Karta płatnicza",
     sub: "Visa, Mastercard, Apple Pay, Google Pay",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="5" width="20" height="14" rx="2" />
         <line x1="2" y1="10" x2="22" y2="10" />
       </svg>
@@ -67,7 +70,7 @@ const methods: MethodDef[] = [
     label: "Przelew tradycyjny",
     sub: "Realizacja 1–2 dni robocze",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
         <polyline points="14 2 14 8 20 8" />
         <line x1="9" y1="13" x2="15" y2="13" />
@@ -82,7 +85,7 @@ const methods: MethodDef[] = [
     badge: "Wkrótce",
     comingSoon: true,
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
         <path d="M9 8h4.5a2.5 2.5 0 0 1 0 5H9V8zM9 13h5a2.5 2.5 0 0 1 0 5H9v-5zM10 6v2M10 16v2" />
       </svg>
@@ -90,14 +93,40 @@ const methods: MethodDef[] = [
   },
 ]
 
+// Iconos auxiliares
+const ArrowRightIcon = ({ size = 16 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12" />
+    <polyline points="12 5 19 12 12 19" />
+  </svg>
+)
+
+const ReceiptIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <polyline points="14 2 14 8 20 8" />
+    <line x1="9" y1="13" x2="15" y2="13" />
+    <line x1="9" y1="17" x2="13" y2="17" />
+  </svg>
+)
+
+const ShieldIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  </svg>
+)
+
 const fieldStyle = {
   bg: "white",
-  border: "1px solid #E2E8F0",
-  rounded: "lg",
-  h: "11",
+  border: "1.5px solid",
+  borderColor: "border.default",
+  rounded: "xl",
+  h: "12",
   fontSize: "sm",
-  _placeholder: { color: "#94A3B8" },
-  _focus: { borderColor: "#4F46E5", boxShadow: "0 0 0 3px rgba(79, 70, 229, 0.12)" },
+  color: "fg.default",
+  _placeholder: { color: "fg.faint" },
+  _hover: { borderColor: "border.strong" },
+  _focus: { borderColor: "accent.600", boxShadow: "0 0 0 3px rgba(15, 118, 110, 0.12)", outline: "none" },
 }
 
 export const PaymentPage = () => {
@@ -117,14 +146,12 @@ export const PaymentPage = () => {
     [planSlug],
   )
 
-  // Load invoice data
   useEffect(() => {
     if (!planSlug) return
     const stored = loadInvoice(planSlug)
     if (stored) setInvoice(stored)
   }, [planSlug])
 
-  // Persist invoice on change
   useEffect(() => {
     if (!planSlug) return
     saveInvoice(planSlug, invoice)
@@ -139,7 +166,7 @@ export const PaymentPage = () => {
   if (!plan || !config) {
     return (
       <Flex justify="center" py="20">
-        <Spinner color="#4F46E5" />
+        <Spinner color="accent.600" />
       </Flex>
     )
   }
@@ -167,58 +194,55 @@ export const PaymentPage = () => {
 
   return (
     <OrderLayout step="payment">
-      <Grid templateColumns={{ base: "1fr", lg: "1.4fr 1fr" }} gap={{ base: "6", lg: "10" }}>
+      <Grid templateColumns={{ base: "1fr", lg: "1.55fr 1fr" }} gap={{ base: "6", lg: "8" }} alignItems="start">
         <GridItem>
           <VStack align="stretch" gap={{ base: "5", md: "6" }}>
-            {/* Faktura VAT — pytanie B2B */}
+            {/* Factura VAT */}
             <Box
-              bg="white"
+              bg="bg.canvas"
               rounded="2xl"
-              border="1px solid #E2E8F0"
-              p={{ base: "6", md: "8" }}
-              boxShadow="0 1px 3px rgba(15, 23, 42, 0.04)"
+              border="1px solid"
+              borderColor="border.default"
+              p={{ base: "5", md: "7" }}
             >
-              <HStack gap="3" mb="3">
+              <Flex align="center" gap="3" mb="5">
                 <Flex
-                  w="9"
-                  h="9"
-                  rounded="lg"
-                  bg="#EEF2FF"
-                  color="#4F46E5"
+                  w="10"
+                  h="10"
+                  rounded="xl"
+                  bg="accent.50"
+                  color="accent.700"
                   align="center"
                   justifyContent="center"
                   flexShrink={0}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <line x1="9" y1="13" x2="15" y2="13" />
-                    <line x1="9" y1="17" x2="13" y2="17" />
-                  </svg>
+                  <ReceiptIcon size={20} />
                 </Flex>
-                <Heading as="h2" size="md" color="#0F172A">
-                  Faktura VAT
-                </Heading>
-              </HStack>
-              <Text fontSize="sm" color="#475569" mb="5" lineHeight="1.6">
-                Czy potrzebujesz faktury VAT na firmę? Jeśli tak, podaj dane — wyślemy ją
-                automatycznie po zaksięgowaniu wpłaty.
-              </Text>
+                <Box>
+                  <Heading as="h2" size="md" color="fg.default" letterSpacing="-0.01em">
+                    Faktura VAT
+                  </Heading>
+                  <Text fontSize="xs" color="fg.muted" mt="0.5">
+                    Wybierz typ dokumentu
+                  </Text>
+                </Box>
+              </Flex>
 
-              <VStack align="stretch" gap="3">
+              <VStack align="stretch" gap="2.5">
                 <Flex
                   as="button"
                   type="button"
                   onClick={() => setInvoice({ ...invoice, needsVatInvoice: "no" })}
                   align="center"
                   gap="3"
-                  p="3.5"
+                  p="4"
                   rounded="xl"
                   border="2px solid"
-                  borderColor={invoice.needsVatInvoice === "no" ? "#4F46E5" : "#E2E8F0"}
-                  bg={invoice.needsVatInvoice === "no" ? "#FAFBFF" : "white"}
+                  borderColor={invoice.needsVatInvoice === "no" ? "accent.500" : "border.default"}
+                  bg={invoice.needsVatInvoice === "no" ? "accent.50" : "bg.canvas"}
                   transition="all 0.15s"
                   cursor="pointer"
+                  _hover={invoice.needsVatInvoice !== "no" ? { borderColor: "border.strong" } : undefined}
                 >
                   <Box
                     w="5"
@@ -226,20 +250,20 @@ export const PaymentPage = () => {
                     rounded="full"
                     flexShrink={0}
                     border="2px solid"
-                    borderColor={invoice.needsVatInvoice === "no" ? "#4F46E5" : "#CBD5E1"}
+                    borderColor={invoice.needsVatInvoice === "no" ? "accent.600" : "border.strong"}
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
                   >
                     {invoice.needsVatInvoice === "no" && (
-                      <Box w="2.5" h="2.5" rounded="full" bg="#4F46E5" />
+                      <Box w="2.5" h="2.5" rounded="full" bg="accent.600" />
                     )}
                   </Box>
                   <VStack align="flex-start" gap="0" flex="1">
-                    <Text fontSize="sm" fontWeight={invoice.needsVatInvoice === "no" ? 700 : 500} color="#0F172A">
+                    <Text fontSize="sm" fontWeight={invoice.needsVatInvoice === "no" ? 700 : 500} color="fg.default">
                       Paragon (osoba fizyczna)
                     </Text>
-                    <Text fontSize="xs" color="#64748B" mt="0.5">
+                    <Text fontSize="xs" color="fg.muted" mt="0.5">
                       Najczęściej wybierane – bez dodatkowych formalności.
                     </Text>
                   </VStack>
@@ -251,13 +275,14 @@ export const PaymentPage = () => {
                   onClick={() => setInvoice({ ...invoice, needsVatInvoice: "yes" })}
                   align="center"
                   gap="3"
-                  p="3.5"
+                  p="4"
                   rounded="xl"
                   border="2px solid"
-                  borderColor={invoice.needsVatInvoice === "yes" ? "#4F46E5" : "#E2E8F0"}
-                  bg={invoice.needsVatInvoice === "yes" ? "#FAFBFF" : "white"}
+                  borderColor={invoice.needsVatInvoice === "yes" ? "accent.500" : "border.default"}
+                  bg={invoice.needsVatInvoice === "yes" ? "accent.50" : "bg.canvas"}
                   transition="all 0.15s"
                   cursor="pointer"
+                  _hover={invoice.needsVatInvoice !== "yes" ? { borderColor: "border.strong" } : undefined}
                 >
                   <Box
                     w="5"
@@ -265,20 +290,20 @@ export const PaymentPage = () => {
                     rounded="full"
                     flexShrink={0}
                     border="2px solid"
-                    borderColor={invoice.needsVatInvoice === "yes" ? "#4F46E5" : "#CBD5E1"}
+                    borderColor={invoice.needsVatInvoice === "yes" ? "accent.600" : "border.strong"}
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
                   >
                     {invoice.needsVatInvoice === "yes" && (
-                      <Box w="2.5" h="2.5" rounded="full" bg="#4F46E5" />
+                      <Box w="2.5" h="2.5" rounded="full" bg="accent.600" />
                     )}
                   </Box>
                   <VStack align="flex-start" gap="0" flex="1">
-                    <Text fontSize="sm" fontWeight={invoice.needsVatInvoice === "yes" ? 700 : 500} color="#0F172A">
+                    <Text fontSize="sm" fontWeight={invoice.needsVatInvoice === "yes" ? 700 : 500} color="fg.default">
                       Faktura VAT (firma)
                     </Text>
-                    <Text fontSize="xs" color="#64748B" mt="0.5">
+                    <Text fontSize="xs" color="fg.muted" mt="0.5">
                       Podaj NIP i dane firmy.
                     </Text>
                   </VStack>
@@ -290,14 +315,15 @@ export const PaymentPage = () => {
                   align="stretch"
                   gap="4"
                   mt="5"
-                  p="4"
+                  p={{ base: "4", md: "5" }}
                   rounded="xl"
-                  bg="#F8FAFC"
-                  border="1px solid #E2E8F0"
+                  bg="bg.subtle"
+                  border="1px solid"
+                  borderColor="border.default"
                 >
                   <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap="4">
                     <Box>
-                      <Text fontSize="xs" fontWeight="700" color="#0F172A" mb="1.5">
+                      <Text fontSize="xs" fontWeight="700" color="fg.default" mb="1.5">
                         Nazwa firmy <Box as="span" color="#EF4444">*</Box>
                       </Text>
                       <Input
@@ -308,7 +334,7 @@ export const PaymentPage = () => {
                       />
                     </Box>
                     <Box>
-                      <Text fontSize="xs" fontWeight="700" color="#0F172A" mb="1.5">
+                      <Text fontSize="xs" fontWeight="700" color="fg.default" mb="1.5">
                         NIP <Box as="span" color="#EF4444">*</Box>
                       </Text>
                       <Input
@@ -324,7 +350,7 @@ export const PaymentPage = () => {
                     </Box>
                   </Grid>
                   <Box>
-                    <Text fontSize="xs" fontWeight="700" color="#0F172A" mb="1.5">
+                    <Text fontSize="xs" fontWeight="700" color="fg.default" mb="1.5">
                       E-mail do faktury <Box as="span" color="#EF4444">*</Box>
                     </Text>
                     <Input
@@ -339,102 +365,101 @@ export const PaymentPage = () => {
               )}
             </Box>
 
-            {/* Wybór metody płatności */}
+            {/* Método de pago */}
             <Box
-              bg="white"
+              bg="bg.canvas"
               rounded="2xl"
-              border="1px solid #E2E8F0"
-              p={{ base: "6", md: "8" }}
-              boxShadow="0 1px 3px rgba(15, 23, 42, 0.04)"
+              border="1px solid"
+              borderColor="border.default"
+              p={{ base: "5", md: "7" }}
             >
-              <Heading as="h2" size="md" mb="2" color="#0F172A">
-                Wybierz metodę płatności
-              </Heading>
-              <Text fontSize="sm" color="#475569" mb="5" lineHeight="1.6">
-                Płatności obsługiwane przez <Box as="strong" color="#0F172A">TPAY</Box> (operator KNF)
-                lub przelew tradycyjny. Wszystkie transakcje są szyfrowane (TLS 1.3).{" "}
-                <Box
-                  as={RouterLink}
-                  to="/regulamin"
-                  color="#4F46E5"
-                  fontWeight="600"
-                  textDecoration="underline"
-                  _hover={{ color: "#4338CA" }}
-                >
-                  Regulamin
-                </Box>{" "}
-                i{" "}
-                <Box
-                  as={RouterLink}
-                  to="/polityka-prywatnosci"
-                  color="#4F46E5"
-                  fontWeight="600"
-                  textDecoration="underline"
-                  _hover={{ color: "#4338CA" }}
-                >
-                  polityka prywatności
-                </Box>{" "}
-                dostępne przed płatnością.
-              </Text>
-              <VStack align="stretch" gap="3">
+              <Box mb="5">
+                <Heading as="h2" size="md" color="fg.default" mb="1" letterSpacing="-0.01em">
+                  Wybierz metodę płatności
+                </Heading>
+                <Text fontSize="sm" color="fg.muted" lineHeight="1.5">
+                  Płatności obsługuje <Box as="strong" color="fg.default">TPAY</Box> (operator KNF) lub przelew tradycyjny.{" "}
+                  <Box
+                    as={RouterLink}
+                    to="/regulamin"
+                    color="accent.700"
+                    fontWeight="600"
+                    textDecoration="underline"
+                    _hover={{ color: "accent.800" }}
+                  >
+                    Regulamin
+                  </Box>{" "}
+                  dostępny przed płatnością.
+                </Text>
+              </Box>
+
+              <Grid templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)" }} gap="3">
                 {methods.map((m) => {
                   const isActive = method === m.id
                   const isDisabled = m.comingSoon
                   return (
-                    <Flex
+                    <Box
                       key={m.id}
                       as="button"
                       type="button"
                       onClick={() => !isDisabled && setMethod(m.id)}
-                      align="center"
-                      gap="3"
+                      position="relative"
                       p="4"
                       rounded="xl"
                       border="2px solid"
                       borderColor={
                         isDisabled
-                          ? "#E2E8F0"
+                          ? "border.default"
                           : isActive
-                            ? "#4F46E5"
-                            : "#E2E8F0"
+                            ? "accent.500"
+                            : "border.default"
                       }
                       bg={
                         isDisabled
-                          ? "#F8FAFC"
+                          ? "bg.subtle"
                           : isActive
-                            ? "#FAFBFF"
-                            : "white"
+                            ? "accent.50"
+                            : "bg.canvas"
                       }
                       transition="all 0.15s"
                       cursor={isDisabled ? "not-allowed" : "pointer"}
-                      opacity={isDisabled ? 0.65 : 1}
+                      opacity={isDisabled ? 0.55 : 1}
+                      textAlign="left"
                       _hover={
                         !isDisabled && !isActive
-                          ? { borderColor: "#CBD5E1", bg: "#FAFBFC" }
+                          ? { borderColor: "border.strong", bg: "bg.subtle" }
                           : undefined
                       }
                     >
+                      {m.recommended && !isDisabled && (
+                        <Box
+                          position="absolute"
+                          top="-2"
+                          right="3"
+                          fontSize="2xs"
+                          fontWeight="800"
+                          color="white"
+                          bg="accent.600"
+                          rounded="full"
+                          px="2"
+                          py="0.5"
+                          textTransform="uppercase"
+                          letterSpacing="0.06em"
+                        >
+                          Szybko
+                        </Box>
+                      )}
                       <Flex
-                        w="10"
-                        h="10"
+                        w="11"
+                        h="11"
                         rounded="lg"
-                        bg={
-                          isDisabled
-                            ? "#E2E8F0"
-                            : isActive
-                              ? "#4F46E5"
-                              : "#F1F5F9"
-                        }
-                        color={
-                          isDisabled
-                            ? "#94A3B8"
-                            : isActive
-                              ? "white"
-                              : "#475569"
-                        }
+                        bg={isActive ? "accent.600" : "bg.subtle"}
+                        color={isActive ? "white" : "fg.muted"}
+                        border="1px solid"
+                        borderColor={isActive ? "accent.600" : "border.default"}
                         align="center"
                         justifyContent="center"
-                        flexShrink={0}
+                        mb="3"
                         overflow="hidden"
                       >
                         {m.iconImage ? (
@@ -442,219 +467,251 @@ export const PaymentPage = () => {
                             as="img"
                             src={m.iconImage}
                             alt={m.label}
-                            w="80%"
-                            h="80%"
+                            w="70%"
+                            h="70%"
                             objectFit="contain"
                           />
                         ) : (
                           m.icon
                         )}
                       </Flex>
-                      <VStack align="flex-start" gap="0" flex="1" minW="0">
-                        <HStack gap="2" wrap="wrap">
-                          <Text fontSize="sm" fontWeight="700" color={isDisabled ? "#94A3B8" : "#0F172A"}>
-                            {m.label}
-                          </Text>
-                          {m.badge && (
-                            <Box
-                              fontSize="2xs"
-                              fontWeight="800"
-                              textTransform="uppercase"
-                              letterSpacing="0.06em"
-                              color="#92400E"
-                              bg="#FEF3C7"
-                              rounded="full"
-                              px="2"
-                              py="0.5"
-                            >
-                              {m.badge}
-                            </Box>
-                          )}
-                        </HStack>
-                        <Text
-                          fontSize="xs"
-                          color={isDisabled ? "#94A3B8" : "#64748B"}
-                          lineHeight="1.3"
+                      <Text
+                        fontSize="sm"
+                        fontWeight="700"
+                        color={isDisabled ? "fg.faint" : "fg.default"}
+                        mb="0.5"
+                      >
+                        {m.label}
+                      </Text>
+                      <Text
+                        fontSize="2xs"
+                        color={isDisabled ? "fg.faint" : "fg.muted"}
+                        lineHeight="1.3"
+                      >
+                        {m.sub}
+                      </Text>
+                      {m.badge && (
+                        <Box
+                          mt="2"
+                          display="inline-block"
+                          fontSize="2xs"
+                          fontWeight="800"
+                          textTransform="uppercase"
+                          letterSpacing="0.06em"
+                          color="#92400E"
+                          bg="#FEF3C7"
+                          rounded="full"
+                          px="2"
+                          py="0.5"
                         >
-                          {m.sub}
-                        </Text>
-                      </VStack>
-                    </Flex>
+                          {m.badge}
+                        </Box>
+                      )}
+                    </Box>
                   )
                 })}
-              </VStack>
+              </Grid>
 
               <Box
-                mt="5"
-                p="3"
+                mt="4"
+                p="3.5"
                 rounded="lg"
-                bg="#F8FAFC"
-                border="1px solid #E2E8F0"
+                bg="bg.subtle"
+                border="1px solid"
+                borderColor="border.default"
               >
-                <Text fontSize="xs" color="#64748B" lineHeight="1.5">
+                <Text fontSize="xs" color="fg.muted" lineHeight="1.5">
                   {method === "tpay_blik" && (
-                    <>Po kliknięciu „Zapłać” podajesz kod BLIK w aplikacji banku. Gotowe.</>
+                    <>Po kliknięciu „Zapłać” podajesz kod BLIK w aplikacji banku. Gotowe w 5 sekund.</>
                   )}
                   {method === "tpay_card" && (
                     <>Po kliknięciu „Zapłać” przekierujemy Cię do TPAY. Karta nie jest zapisywana.</>
                   )}
                   {method === "transfer" && (
-                    <>Po kliknięciu „Zapłać” wyświetlimy numer konta i tytuł przelewu. Realizacja po zaksięgowaniu (1–2 dni).</>
+                    <>Po kliknięciu „Zapłać” wyświetlimy numer konta i tytuł przelewu. Realizacja 1–2 dni robocze.</>
                   )}
                 </Text>
               </Box>
             </Box>
 
-            {/* Bezpieczeństwo */}
-            <Box
-              bg="white"
+            {/* Seguridad */}
+            <Flex
+              bg="bg.subtle"
               rounded="2xl"
-              border="1px solid #E2E8F0"
-              p={{ base: "6", md: "8" }}
-              boxShadow="0 1px 3px rgba(15, 23, 42, 0.04)"
+              p={{ base: "4", md: "5" }}
+              gap="3"
+              align="center"
             >
-              <HStack gap="3" mb="3">
-                <Flex
-                  w="9"
-                  h="9"
-                  rounded="lg"
-                  bg="#D1FAE5"
-                  color="#059669"
-                  align="center"
-                  justifyContent="center"
-                  flexShrink={0}
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                </Flex>
-                <Heading as="h3" size="sm" color="#0F172A">
+              <Flex
+                w="10"
+                h="10"
+                rounded="xl"
+                bg="bg.canvas"
+                border="1px solid border.default"
+                align="center"
+                justifyContent="center"
+                color="success.700"
+                flexShrink={0}
+              >
+                <ShieldIcon size={18} />
+              </Flex>
+              <Box>
+                <Text fontSize="sm" fontWeight="700" color="fg.default">
                   Bezpieczna transakcja
-                </Heading>
-              </HStack>
-              <Text fontSize="sm" color="#475569" lineHeight="1.6">
-                Płatności są realizowane przez TPAY (operator KNF, nadzorowany przez Komisję
-                Nadzoru Finansowego) z szyfrowaniem TLS 1.3 i zgodnością z dyrektywą PSD2.
-                Nie przechowujemy danych Twojej karty.
-                {invoice.needsVatInvoice === "yes" ? (
-                  <> Faktura VAT przyjdzie automatycznie na adres <Box as="strong">{invoice.invoiceEmail || "(podaj adres e-mail)"}</Box>.</>
-                ) : (
-                  <> Paragon / faktura imienna przyjdzie automatycznie na maila po zaksięgowaniu wpłaty.</>
-                )}
-              </Text>
-            </Box>
+                </Text>
+                <Text fontSize="xs" color="fg.muted" lineHeight="1.4">
+                  TPAY (KNF) · TLS 1.3 · PSD2. Nie przechowujemy danych karty.
+                </Text>
+              </Box>
+            </Flex>
           </VStack>
         </GridItem>
 
-        {/* Podsumowanie płatności */}
+        {/* Resumen sticky */}
         <GridItem>
           <Box
             position={{ base: "static", lg: "sticky" }}
             top="6"
-            bg="linear-gradient(180deg, #191C32 0%, #0F172A 100%)"
-            color="white"
+            bg="bg.canvas"
             rounded="2xl"
-            p={{ base: "6", md: "7" }}
-            boxShadow="0 25px 50px -20px rgba(15, 23, 42, 0.5)"
-            border="1px solid rgba(255, 255, 255, 0.06)"
+            border="1px solid"
+            borderColor="border.default"
+            overflow="hidden"
+            boxShadow="0 25px 50px -20px rgba(15, 23, 42, 0.12)"
           >
-            <Text
-              fontSize="xs"
-              color="#A5B4FC"
-              textTransform="uppercase"
-              letterSpacing="0.1em"
-              fontWeight="800"
-              mb="2"
-            >
-              Do zapłaty (brutto)
-            </Text>
-            <Heading as="h3" size="2xl" mb="1" color="white">
-              {formatPLN(total)}
-            </Heading>
-            <Text fontSize="xs" color="#94A3B8" mb="5">
-              w tym {formatPLN(vat)} VAT ({VAT_PERCENT}%)
-            </Text>
-            <VStack align="stretch" gap="2.5" mb="5">
-              <Flex justify="space-between" fontSize="sm">
-                <Text color="#CBD5E1">Setup (jednorazowo)</Text>
-                <Text fontWeight="600" color="white">{formatPLN(plan.sitePrice)}</Text>
-              </Flex>
-              <Flex justify="space-between" fontSize="sm">
-                <Text color="#CBD5E1">
-                  Abonament · {config.billing === "annual" ? "12 miesięcy" : "1 miesiąc"}
-                </Text>
-                <Text fontWeight="600" color="white">
-                  {config.billing === "annual"
-                    ? formatPLN(plan.monthlyPrice * 12)
-                    : formatPLN(monthly)}
-                </Text>
-              </Flex>
-              <Box h="1px" bg="rgba(255, 255, 255, 0.08)" my="1" />
-              <Flex justify="space-between" fontSize="xs" color="#94A3B8">
-                <Text>Netto</Text>
-                <Text>{formatPLN(netTotal)}</Text>
-              </Flex>
-              <Flex justify="space-between" fontSize="xs" color="#94A3B8">
-                <Text>VAT ({VAT_PERCENT}%)</Text>
-                <Text>{formatPLN(vat)}</Text>
-              </Flex>
-              <Flex justify="space-between" align="baseline" pt="1">
-                <Text color="white" fontSize="sm" fontWeight="700">Razem (brutto)</Text>
-                <Text fontWeight="800" fontSize="lg" color="white">{formatPLN(total)}</Text>
-              </Flex>
-            </VStack>
-
             <Box
-              rounded="lg"
-              bg="rgba(255, 255, 255, 0.04)"
-              border="1px solid rgba(255, 255, 255, 0.08)"
-              p="3"
-              mb="4"
+              px={{ base: "5", md: "6" }}
+              py="5"
+              borderBottom="1px solid"
+              borderColor="border.default"
+              bg="linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%)"
             >
-              <HStack gap="2" justify="space-between">
-                <HStack gap="2">
-                  <Box color="#A5B4FC">
-                    {selectedMethod.iconImage ? (
-                      <Box as="img" src={selectedMethod.iconImage} alt={selectedMethod.label} w="5" h="5" objectFit="contain" />
-                    ) : (
-                      selectedMethod.icon
-                    )}
-                  </Box>
-                  <Text fontSize="xs" color="#CBD5E1">
-                    Zapłacisz przez: <Box as="strong" color="white">{selectedMethod.label}</Box>
-                  </Text>
-                </HStack>
-                {invoice.needsVatInvoice === "yes" && (
-                  <Text fontSize="2xs" fontWeight="700" color="#A5B4FC" bg="rgba(165, 180, 252, 0.12)" rounded="md" px="2" py="0.5">
-                    FAKTURA VAT
-                  </Text>
-                )}
-              </HStack>
+              <Text
+                fontSize="2xs"
+                color="accent.700"
+                textTransform="uppercase"
+                letterSpacing="0.12em"
+                fontWeight="800"
+                mb="2"
+              >
+                Do zapłaty (brutto)
+              </Text>
+              <Flex align="baseline" gap="2">
+                <Text
+                  fontSize="3xl"
+                  fontWeight="800"
+                  color="fg.default"
+                  letterSpacing="-0.03em"
+                  lineHeight="1"
+                >
+                  {formatPLN(total)}
+                </Text>
+                <Text fontSize="xs" color="fg.muted" fontWeight="600">
+                  brutto
+                </Text>
+              </Flex>
+              <Text fontSize="xs" color="fg.subtle" mt="1">
+                w tym {formatPLN(vat)} VAT ({VAT_PERCENT}%) · {config.billing === "annual" ? "płatność roczna" : "płatność miesięczna"}
+              </Text>
             </Box>
 
-            <Button
-              onClick={handlePay}
-              isLoading={processing}
-              loadingText="Przetwarzanie płatności..."
-              spinner={<Spinner size="sm" color="#0F172A" />}
-              isDisabled={!invoiceReady}
-              w="full"
-              h="14"
-              rounded="xl"
-              bg="white"
-              color="#0F172A"
-              fontWeight="800"
-              fontSize="md"
-              _hover={{ bg: "#F8FAFC" }}
-              _active={{ bg: "#F1F5F9" }}
-              _disabled={{ bg: "rgba(255, 255, 255, 0.5)", color: "#64748B", cursor: "not-allowed" }}
-            >
-              Zapłać {formatPLN(total)} →
-            </Button>
+            <Box p={{ base: "5", md: "6" }}>
+              <VStack align="stretch" gap="3" mb="4">
+                <Flex justify="space-between" fontSize="sm">
+                  <Text color="fg.muted">Setup (jednorazowo)</Text>
+                  <Text fontWeight="700" color="fg.default">{formatPLN(plan.sitePrice)}</Text>
+                </Flex>
+                <Flex justify="space-between" fontSize="sm">
+                  <Text color="fg.muted">
+                    Abonament · {config.billing === "annual" ? "12 miesięcy" : "1 miesiąc"}
+                  </Text>
+                  <Text fontWeight="700" color="fg.default">
+                    {config.billing === "annual"
+                      ? formatPLN(plan.monthlyPrice * 12)
+                      : formatPLN(monthly)}
+                  </Text>
+                </Flex>
+                <Box h="1px" bg="border.default" my="1" />
+                <Flex justify="space-between" fontSize="xs" color="fg.muted">
+                  <Text>Netto</Text>
+                  <Text>{formatPLN(netTotal)}</Text>
+                </Flex>
+                <Flex justify="space-between" fontSize="xs" color="fg.muted">
+                  <Text>VAT ({VAT_PERCENT}%)</Text>
+                  <Text>{formatPLN(vat)}</Text>
+                </Flex>
+              </VStack>
 
-            <Text fontSize="xs" color="#94A3B8" mt="3" textAlign="center" lineHeight="1.5">
-              Po płatności poprosimy Cię o krótki brief, żebyśmy mogli wystartować z Twoją stroną.
-            </Text>
+              <Box
+                rounded="lg"
+                bg="bg.subtle"
+                border="1px solid"
+                borderColor="border.default"
+                p="3"
+                mb="4"
+              >
+                <Flex align="center" justify="space-between" gap="2">
+                  <HStack gap="2" minW="0">
+                    <Flex
+                      w="6"
+                      h="6"
+                      rounded="md"
+                      bg="bg.canvas"
+                      border="1px solid"
+                      borderColor="border.default"
+                      align="center"
+                      justifyContent="center"
+                      color="fg.muted"
+                      flexShrink={0}
+                      overflow="hidden"
+                    >
+                      {selectedMethod.iconImage ? (
+                        <Box as="img" src={selectedMethod.iconImage} alt={selectedMethod.label} w="70%" h="70%" objectFit="contain" />
+                      ) : (
+                        <Box transform="scale(0.7)">{selectedMethod.icon}</Box>
+                      )}
+                    </Flex>
+                    <Text fontSize="xs" color="fg.muted" truncate>
+                      <Box as="span" color="fg.default" fontWeight="700">{selectedMethod.label}</Box>
+                    </Text>
+                  </HStack>
+                  {invoice.needsVatInvoice === "yes" && (
+                    <Text fontSize="2xs" fontWeight="800" color="accent.700" bg="accent.50" border="1px solid" borderColor="accent.200" rounded="md" px="2" py="0.5">
+                      FAKTURA VAT
+                    </Text>
+                  )}
+                </Flex>
+              </Box>
+
+              <Button
+                onClick={handlePay}
+                isLoading={processing}
+                loadingText="Przetwarzanie..."
+                spinner={<Spinner size="sm" color="white" />}
+                isDisabled={!invoiceReady}
+                w="full"
+                h="14"
+                rounded="xl"
+                bg="accent.600"
+                color="white"
+                fontWeight="800"
+                fontSize="md"
+                _hover={{ bg: "accent.700", transform: "translateY(-1px)" }}
+                _active={{ bg: "accent.800" }}
+                _disabled={{ bg: "border.subtle", color: "fg.faint", cursor: "not-allowed", transform: "none" }}
+                transition="all 0.15s"
+                boxShadow="0 10px 25px -10px rgba(15, 118, 110, 0.5)"
+              >
+                Zapłać {formatPLN(total)}
+                <Box ml="1.5" display="inline-flex" alignItems="center">
+                  <ArrowRightIcon size={16} />
+                </Box>
+              </Button>
+
+              <Text fontSize="xs" color="fg.subtle" mt="4" textAlign="center" lineHeight="1.5">
+                Po płatności poprosimy Cię o krótki brief projektu.
+              </Text>
+            </Box>
           </Box>
         </GridItem>
       </Grid>

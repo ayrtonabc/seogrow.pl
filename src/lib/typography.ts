@@ -16,5 +16,5 @@ export const SECTION_TITLE_PROPS = {
   lineHeight: "1.15",
 } as const
 
-export const SECTION_TITLE_COLOR_DARK = "#0F172A" // slate-900
-export const SECTION_TITLE_COLOR_LIGHT = "#FFFFFF" // white (para fondos oscuros)
+export const SECTION_TITLE_COLOR_DARK = "fg.default" // slate-900
+export const SECTION_TITLE_COLOR_LIGHT = "bg.canvas" // white (para fondos oscuros)

@@ -142,25 +142,25 @@ export const RegulaminPage = () => {
 
       <Box as="main" id="main-content" tabIndex={-1} outline="none">
         {/* Hero */}
-        <Box bg="white" borderBottom="1px solid" borderColor="#E2E8F0" pt={{ base: "12", md: "16" }} pb={{ base: "8", md: "10" }}>
+        <Box bg="white" borderBottom="1px solid" borderColor="border.default" pt={{ base: "12", md: "16" }} pb={{ base: "8", md: "10" }}>
           <Container maxW="3xl">
             <VStack gap="3" align="flex-start">
               <Text
                 fontSize="xs"
                 fontWeight="700"
-                color="#4F46E5"
+                color="accent.600"
                 letterSpacing="0.14em"
                 textTransform="uppercase"
               >
                 Regulamin
               </Text>
-              <Heading as="h1" fontSize={{ base: "28px", md: "36px" }} fontWeight="800" color="#0F172A" letterSpacing="-0.025em" lineHeight="1.15">
+              <Heading as="h1" fontSize={{ base: "28px", md: "36px" }} fontWeight="800" color="fg.default" letterSpacing="-0.025em" lineHeight="1.15">
                 Regulamin sklepu i usług
               </Heading>
-              <Text color="#475569" fontSize="md" lineHeight="1.6">
+              <Text color="fg.muted" fontSize="md" lineHeight="1.6">
                 Zasady świadczenia usług przez Grow Solutions (NIP 7412176947) obowiązujące od 2026 roku. Płatności obsługiwane przez Tpay (KNF).
               </Text>
-              <Text fontSize="sm" color="#94A3B8" mt="2">
+              <Text fontSize="sm" color="fg.faint" mt="2">
                 Ostatnia aktualizacja: 24 lipca 2026
               </Text>
             </VStack>
@@ -173,12 +173,12 @@ export const RegulaminPage = () => {
           <Box
             bg="white"
             border="1px solid"
-            borderColor="#E2E8F0"
+            borderColor="border.default"
             borderRadius="xl"
             p={{ base: "5", md: "6" }}
             mb="10"
           >
-            <Text fontSize="xs" fontWeight="700" color="#64748B" textTransform="uppercase" letterSpacing="0.12em" mb="3">
+            <Text fontSize="xs" fontWeight="700" color="fg.subtle" textTransform="uppercase" letterSpacing="0.12em" mb="3">
               Spis treści
             </Text>
             <VStack align="stretch" gap="1.5">
@@ -186,11 +186,11 @@ export const RegulaminPage = () => {
                 <ChakraLink
                   key={item.id}
                   href={`#${item.id}`}
-                  color="#0F172A"
+                  color="fg.default"
                   fontSize="sm"
                   fontWeight="500"
                   textDecoration="none"
-                  _hover={{ color: "#4F46E5" }}
+                  _hover={{ color: "accent.600" }}
                   transition="color 0.15s"
                 >
                   {item.title} {item.label}
@@ -207,7 +207,7 @@ export const RegulaminPage = () => {
                 id={section.id}
                 bg="white"
                 border="1px solid"
-                borderColor="#E2E8F0"
+                borderColor="border.default"
                 borderRadius="xl"
                 p={{ base: "6", md: "8" }}
                 scrollMarginTop="80px"
@@ -216,7 +216,7 @@ export const RegulaminPage = () => {
                   as="h2"
                   fontSize={{ base: "lg", md: "xl" }}
                   fontWeight="800"
-                  color="#0F172A"
+                  color="fg.default"
                   letterSpacing="-0.015em"
                   lineHeight="1.3"
                   mb="4"
@@ -225,7 +225,7 @@ export const RegulaminPage = () => {
                 </Heading>
 
                 {section.paragraphs?.map((p, i) => (
-                  <Text key={i} color="#334155" fontSize="sm" lineHeight="1.7" mb={i < (section.paragraphs?.length ?? 0) - 1 ? "3" : "0"}>
+                  <Text key={i} color="slate.700" fontSize="sm" lineHeight="1.7" mb={i < (section.paragraphs?.length ?? 0) - 1 ? "3" : "0"}>
                     {p}
                   </Text>
                 ))}
@@ -236,7 +236,7 @@ export const RegulaminPage = () => {
                       <Box
                         as="li"
                         key={i}
-                        color="#334155"
+                        color="slate.700"
                         fontSize="sm"
                         lineHeight="1.7"
                         mb="2"
@@ -253,23 +253,23 @@ export const RegulaminPage = () => {
           {/* Footer legal box */}
           <Box
             mt="12"
-            bg="#EEF2FF"
-            border="1px solid #C7D2FE"
+            bg="accent.50"
+            border="1px solid accent.200"
             borderRadius="xl"
             p={{ base: "6", md: "8" }}
           >
             <VStack gap="2" align="flex-start">
-              <Text fontWeight="800" color="#0F172A" fontSize="md">
+              <Text fontWeight="800" color="fg.default" fontSize="md">
                 Masz pytania dotyczące regulaminu?
               </Text>
-              <Text color="#475569" fontSize="sm" lineHeight="1.6">
+              <Text color="fg.muted" fontSize="sm" lineHeight="1.6">
                 Skontaktuj się z nami przed złożeniem zamówienia — chętnie wyjaśnimy każdy punkt.
               </Text>
               <HStack gap="4" flexWrap="wrap" pt="2">
-                <ChakraLink href="tel:+48517105423" color="#4F46E5" fontWeight="700" fontSize="sm" textDecoration="none" _hover={{ textDecoration: "underline" }}>
+                <ChakraLink href="tel:+48517105423" color="accent.600" fontWeight="700" fontSize="sm" textDecoration="none" _hover={{ textDecoration: "underline" }}>
                   517 105 423
                 </ChakraLink>
-                <ChakraLink href="mailto:kontakt@seogrow.pl" color="#4F46E5" fontWeight="700" fontSize="sm" textDecoration="none" _hover={{ textDecoration: "underline" }}>
+                <ChakraLink href="mailto:kontakt@seogrow.pl" color="accent.600" fontWeight="700" fontSize="sm" textDecoration="none" _hover={{ textDecoration: "underline" }}>
                   kontakt@seogrow.pl
                 </ChakraLink>
               </HStack>

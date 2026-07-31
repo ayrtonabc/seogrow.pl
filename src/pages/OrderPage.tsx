@@ -81,27 +81,27 @@ const steps = [
 const fieldStyle = {
   width: "100%",
   border: "2px solid",
-  borderColor: "#E2E8F0",
+  borderColor: "border.default",
   borderRadius: "16px",
-  background: "#F8FAFC",
+  background: "bg.subtle",
   px: 5,
   py: 3,
   fontSize: "md",
-  color: "#0F172A",
+  color: "fg.default",
   transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
   _hover: {
-    borderColor: "#CBD5E1",
+    borderColor: "border.strong",
     background: "white",
     boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
   },
   _focus: {
-    borderColor: "#2563EB",
+    borderColor: "accent.700",
     background: "white",
     boxShadow: "0 0 0 4px rgba(37, 99, 235, 0.1), 0 4px 12px rgba(37, 99, 235, 0.15)",
     transform: "translateY(-1px)",
   },
   _placeholder: {
-    color: "#94A3B8",
+    color: "fg.faint",
     fontWeight: "500",
   }
 }
@@ -216,26 +216,26 @@ export const OrderPage = () => {
           >
             Zamówienie przyjęte
           </Text>
-          <Heading as="h1" fontSize={{ base: "3xl", md: "4xl" }} color="#0F172A" lineHeight="1.1">
+          <Heading as="h1" fontSize={{ base: "3xl", md: "4xl" }} color="fg.default" lineHeight="1.1">
             Dziękujemy, Twoje zamówienie zostało opłacone i zapisane
           </Heading>
-          <Text fontSize="lg" color="#475569" lineHeight="1.8">
+          <Text fontSize="lg" color="fg.muted" lineHeight="1.8">
             Numer rezerwacji: <strong>{submittedOrderId}</strong>. Zespół może teraz przygotować
             zakres, projekt i dalsze kroki wdrożenia na podstawie przesłanych informacji.
           </Text>
-          <Box bg="#F8FAFC" rounded="2xl" border="1px solid" borderColor="#E2E8F0" p="6" w="full">
+          <Box bg="bg.subtle" rounded="2xl" border="1px solid" borderColor="border.default" p="6" w="full">
             <VStack align="start" gap="3">
-              <Text fontWeight="700" color="#0F172A">Co dalej?</Text>
-              <Text color="#475569">1. Weryfikujemy komplet materiałów i zakres projektu.</Text>
-              <Text color="#475569">2. Przygotowujemy plan wdrożenia i harmonogram startu.</Text>
-              <Text color="#475569">3. Poinformujemy Cię o kolejnych krokach rozpoczęcia prac.</Text>
+              <Text fontWeight="700" color="fg.default">Co dalej?</Text>
+              <Text color="fg.muted">1. Weryfikujemy komplet materiałów i zakres projektu.</Text>
+              <Text color="fg.muted">2. Przygotowujemy plan wdrożenia i harmonogram startu.</Text>
+              <Text color="fg.muted">3. Poinformujemy Cię o kolejnych krokach rozpoczęcia prac.</Text>
             </VStack>
           </Box>
           <HStack gap="4" flexWrap="wrap">
-            <Button as={Link} to="/" bg="#0F172A" color="white" _hover={{ bg: "#1E293B" }}>
+            <Button as={Link} to="/" bg="fg.default" color="white" _hover={{ bg: "slate.800" }}>
               Wróć na stronę główną
             </Button>
-            <Button as={Link} to="/blog" variant="outline" borderColor="#CBD5E1">
+            <Button as={Link} to="/blog" variant="outline" borderColor="border.strong">
               Przejdź do bloga
             </Button>
           </HStack>
@@ -246,41 +246,41 @@ export const OrderPage = () => {
     if (isPaymentPending) {
       return (
         <VStack align="stretch" gap="6">
-          <Text fontSize="sm" fontWeight="700" color="#2563EB" textTransform="uppercase" letterSpacing="wider">
+          <Text fontSize="sm" fontWeight="700" color="accent.700" textTransform="uppercase" letterSpacing="wider">
             Opłacenie zamówienia
           </Text>
-          <Heading as="h2" fontSize="3xl" color="#0F172A" lineHeight="1.2">
+          <Heading as="h2" fontSize="3xl" color="fg.default" lineHeight="1.2">
             Dokończ płatność aby zarezerwować projekt
           </Heading>
-          <Text color="#475569" fontSize="md">
+          <Text color="fg.muted" fontSize="md">
             Wybierz sposób sfinalizowania płatności za plan <strong>{selectedPlan.name}</strong>.
           </Text>
 
           {form.paymentMethod === "transfer" ? (
-            <Box bg="#F8FAFC" rounded="2xl" border="1px solid" borderColor="#E2E8F0" p="6">
+            <Box bg="bg.subtle" rounded="2xl" border="1px solid" borderColor="border.default" p="6">
               <VStack align="start" gap="4">
-                <Text fontWeight="700" color="#0F172A">Dane do przelewu bankowego</Text>
-                <Box w="full" bg="white" p="4" rounded="xl" border="1px solid" borderColor="#CBD5E1">
+                <Text fontWeight="700" color="fg.default">Dane do przelewu bankowego</Text>
+                <Box w="full" bg="white" p="4" rounded="xl" border="1px solid" borderColor="border.strong">
                   <Grid templateColumns={{ base: "1fr", sm: "120px 1fr" }} gap="2">
-                    <Text color="#64748B" fontSize="sm">Odbiorca:</Text>
-                    <Text fontWeight="600" color="#0F172A">Grow Solutions — JDG</Text>
-                    <Text color="#64748B" fontSize="sm">Numer konta:</Text>
-                    <Text fontWeight="600" color="#0F172A" fontFamily="monospace" fontSize="lg">PL 12 3456 7890 0000 0000 1234 5678</Text>
-                    <Text color="#64748B" fontSize="sm">Tytulem:</Text>
-                    <Text fontWeight="600" color="#0F172A">Zaliczka - plan {selectedPlan.name}</Text>
-                    <Text color="#64748B" fontSize="sm">Kwota:</Text>
-                    <Text fontWeight="700" color="#2563EB" fontSize="lg">{totalPaymentAmount} PLN</Text>
+                    <Text color="fg.subtle" fontSize="sm">Odbiorca:</Text>
+                    <Text fontWeight="600" color="fg.default">Grow Solutions — JDG</Text>
+                    <Text color="fg.subtle" fontSize="sm">Numer konta:</Text>
+                    <Text fontWeight="600" color="fg.default" fontFamily="monospace" fontSize="lg">PL 12 3456 7890 0000 0000 1234 5678</Text>
+                    <Text color="fg.subtle" fontSize="sm">Tytulem:</Text>
+                    <Text fontWeight="600" color="fg.default">Zaliczka - plan {selectedPlan.name}</Text>
+                    <Text color="fg.subtle" fontSize="sm">Kwota:</Text>
+                    <Text fontWeight="700" color="accent.700" fontSize="lg">{totalPaymentAmount} PLN</Text>
                   </Grid>
                 </Box>
-                <Text fontSize="sm" color="#64748B" mt="2">
+                <Text fontSize="sm" color="fg.subtle" mt="2">
                   Prosimy o dokonanie przelewu w ciągu 3 dni roboczych. Po księgowaniu wpłaty, przystąpimy do prac.
                 </Text>
                 <Button 
                   w="full" 
                   size="lg" 
-                  bg="#0F172A" 
+                  bg="fg.default" 
                   color="white" 
-                  _hover={{ bg: "#1E293B" }} 
+                  _hover={{ bg: "slate.800" }} 
                   onClick={confirmPayment}
                   isLoading={isProcessingPayment}
                   loadingText="Potwierdzanie..."
@@ -291,23 +291,23 @@ export const OrderPage = () => {
               </VStack>
             </Box>
           ) : (
-            <Box bg="#F8FAFC" rounded="2xl" border="1px solid" borderColor="#E2E8F0" p="6">
+            <Box bg="bg.subtle" rounded="2xl" border="1px solid" borderColor="border.default" p="6">
               <VStack align="center" gap="5" py="4">
-                <Box bg="#EEF2FF" w="16" h="16" rounded="full" display="flex" alignItems="center" justifyContent="center">
+                <Box bg="accent.50" w="16" h="16" rounded="full" display="flex" alignItems="center" justifyContent="center">
                   <Text fontSize="2xl">💳</Text>
                 </Box>
                 <VStack gap="1" textAlign="center">
-                  <Text fontWeight="700" fontSize="lg" color="#0F172A">Przekierowanie do PayU</Text>
-                  <Text color="#64748B" fontSize="sm">
+                  <Text fontWeight="700" fontSize="lg" color="fg.default">Przekierowanie do PayU</Text>
+                  <Text color="fg.subtle" fontSize="sm">
                     Kliknij poniższy przycisk, aby bezpiecznie opłacić zamówienie za pomocą PayU.
                   </Text>
                 </VStack>
                 <Button 
                   w="full" 
                   size="lg" 
-                  bg="#2563EB" 
+                  bg="accent.700" 
                   color="white" 
-                  _hover={{ bg: "#1D4ED8" }} 
+                  _hover={{ bg: "accent.800" }} 
                   onClick={confirmPayment}
                   isLoading={isProcessingPayment}
                   loadingText="Przetwarzanie platnosci..."
@@ -321,7 +321,7 @@ export const OrderPage = () => {
           
           <Button 
             variant="ghost" 
-            color="#64748B" 
+            color="fg.subtle" 
             onClick={() => setIsPaymentPending(false)}
             isDisabled={isProcessingPayment}
           >
@@ -339,7 +339,7 @@ export const OrderPage = () => {
               <Box
                 key={plan.slug}
                 border="2px solid"
-                borderColor={form.planSlug === plan.slug ? "#2563EB" : "#E2E8F0"}
+                borderColor={form.planSlug === plan.slug ? "accent.700" : "border.default"}
                 bg={form.planSlug === plan.slug ? "#EFF6FF" : "white"}
                 rounded="xl"
                 p={6}
@@ -354,57 +354,57 @@ export const OrderPage = () => {
                     h={5}
                     rounded="full"
                     border="2px solid"
-                    borderColor={form.planSlug === plan.slug ? "#2563EB" : "#CBD5E1"}
+                    borderColor={form.planSlug === plan.slug ? "accent.700" : "border.strong"}
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
                     flexShrink={0}
                     bg="white"
                   >
-                    {form.planSlug === plan.slug && <Box w={2.5} h={2.5} rounded="full" bg="#2563EB" />}
+                    {form.planSlug === plan.slug && <Box w={2.5} h={2.5} rounded="full" bg="accent.700" />}
                   </Box>
 
                   <Box flex="1">
                     <Flex align="center" gap={3} mb={1}>
-                      <Text fontWeight="700" color="#0F172A" fontSize="lg">
+                      <Text fontWeight="700" color="fg.default" fontSize="lg">
                         Plan {plan.name}
                       </Text>
                       {plan.badge && (
-                        <Text bg="#DBEAFE" color="#1D4ED8" textTransform="uppercase" fontSize="2xs" px={2} py={0.5} rounded="full" fontWeight="700">
+                        <Text bg="#DBEAFE" color="accent.800" textTransform="uppercase" fontSize="2xs" px={2} py={0.5} rounded="full" fontWeight="700">
                           Polecany
                         </Text>
                       )}
                     </Flex>
-                    <Text color="#64748B" fontSize="sm" mb={4}>{plan.title}</Text>
+                    <Text color="fg.subtle" fontSize="sm" mb={4}>{plan.title}</Text>
 
                     <Grid templateColumns={{ base: "1fr", sm: "1fr 1fr" }} gap={4}>
                       <Box>
-                        <Text fontSize="xs" color="#64748B" textTransform="uppercase" fontWeight="600" mb={1}>Wdrożenie</Text>
+                        <Text fontSize="xs" color="fg.subtle" textTransform="uppercase" fontWeight="600" mb={1}>Wdrożenie</Text>
                         {plan.originalSetupPrice && (
                           <Flex align="center" gap="2" mb="1">
-                            <Text fontSize="sm" color="#94A3B8" textDecoration="line-through" fontWeight="500">
+                            <Text fontSize="sm" color="fg.faint" textDecoration="line-through" fontWeight="500">
                               {plan.originalSetupPrice}
                             </Text>
                           </Flex>
                         )}
-                        <Text fontSize="xl" fontWeight="800" color="#0F172A">{plan.setupPrice}</Text>
+                        <Text fontSize="xl" fontWeight="800" color="fg.default">{plan.setupPrice}</Text>
                       </Box>
                       <Box>
-                        <Text fontSize="xs" color="#64748B" textTransform="uppercase" fontWeight="600" mb={1}>Utrzymanie</Text>
-                        <Text fontSize="lg" fontWeight="700" color="#2563EB" mt="6">{plan.monthlyPrice} <Box as="span" fontSize="xs" color="#64748B" fontWeight="500">/ mies</Box></Text>
+                        <Text fontSize="xs" color="fg.subtle" textTransform="uppercase" fontWeight="600" mb={1}>Utrzymanie</Text>
+                        <Text fontSize="lg" fontWeight="700" color="accent.700" mt="6">{plan.monthlyPrice} <Box as="span" fontSize="xs" color="fg.subtle" fontWeight="500">/ mies</Box></Text>
                       </Box>
                     </Grid>
                   </Box>
 
-                  <Box display={{ base: "none", lg: "block" }} flex="1" borderLeft="1px solid" borderColor={form.planSlug === plan.slug ? "#BFDBFE" : "#E2E8F0"} pl={6}>
+                  <Box display={{ base: "none", lg: "block" }} flex="1" borderLeft="1px solid" borderColor={form.planSlug === plan.slug ? "#BFDBFE" : "border.default"} pl={6}>
                     <VStack align="start" gap={2}>
                       {plan.features.slice(0, 4).map((feature, idx) => (
                         <Flex key={idx} align="start" gap={2}>
-                          <Box color="#2563EB" mt={0.5}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></Box>
-                          <Text fontSize="sm" color="#475569">{feature}</Text>
+                          <Box color="accent.700" mt={0.5}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></Box>
+                          <Text fontSize="sm" color="fg.muted">{feature}</Text>
                         </Flex>
                       ))}
-                      {plan.features.length > 4 && <Text fontSize="xs" color="#64748B" mt={1}>+ więcej funkcji...</Text>}
+                      {plan.features.length > 4 && <Text fontSize="xs" color="fg.subtle" mt={1}>+ więcej funkcji...</Text>}
                     </VStack>
                   </Box>
                 </Flex>
@@ -416,27 +416,27 @@ export const OrderPage = () => {
         return (
           <VStack align="stretch" gap="5" w="full">
             <Box w="full">
-              <Text mb="2" fontWeight="600" color="#0F172A">Nazwa firmy lub projektu</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Nazwa firmy lub projektu</Text>
               <Input value={form.businessName} onChange={(e) => setField("businessName", e.target.value)} sx={fieldStyle} placeholder="Np. SEO Grow / Nazwa firmy" />
             </Box>
             <Box w="full">
-              <Text mb="2" fontWeight="600" color="#0F172A">Branza</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Branza</Text>
               <Input value={form.industry} onChange={(e) => setField("industry", e.target.value)} sx={fieldStyle} placeholder="Np. klinika, restauracja, e-commerce, uslugi lokalne" />
             </Box>
             <Box w="full">
-              <Text mb="2" fontWeight="600" color="#0F172A">Główny cel projektu</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Główny cel projektu</Text>
               <Textarea value={form.projectGoal} onChange={(e) => setField("projectGoal", e.target.value)} sx={fieldStyle} minH="120px" placeholder="Co ma sprzedawać strona, jaki efekt ma dać i na czym najbardziej Ci zależy?" />
             </Box>
             <Box w="full">
-              <Text mb="2" fontWeight="600" color="#0F172A">Glowna oferta lub usluga</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Glowna oferta lub usluga</Text>
               <Textarea value={form.mainOffer} onChange={(e) => setField("mainOffer", e.target.value)} sx={fieldStyle} minH="100px" placeholder="Opisz główną ofertę, kluczowe usługi, przewagi i to, co klient powinien od razu zrozumieć." />
             </Box>
             <Box w="full">
-              <Text mb="2" fontWeight="600" color="#0F172A">Jakie podstrony sa potrzebne?</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Jakie podstrony sa potrzebne?</Text>
               <Textarea value={form.requiredPages} onChange={(e) => setField("requiredPages", e.target.value)} sx={fieldStyle} minH="100px" placeholder="Np. Strona główna, oferta, o nas, blog, kontakt, FAQ, realizacje..." />
             </Box>
             <Box>
-              <Text mb="3" fontWeight="700" color="#0F172A" fontSize="lg">Czy masz już obecnie stronę?</Text>
+              <Text mb="3" fontWeight="700" color="fg.default" fontSize="lg">Czy masz już obecnie stronę?</Text>
               <HStack gap="4" flexWrap="wrap">
                 <Button 
                   size="lg"
@@ -445,17 +445,17 @@ export const OrderPage = () => {
                   height="auto"
                   py="4"
                   variant={form.hasCurrentWebsite === "yes" ? "solid" : "outline"} 
-                  bg={form.hasCurrentWebsite === "yes" ? "#EEF2FF" : "white"} 
-                  color={form.hasCurrentWebsite === "yes" ? "#2563EB" : "#475569"} 
-                  borderColor={form.hasCurrentWebsite === "yes" ? "#2563EB" : "#E2E8F0"}
+                  bg={form.hasCurrentWebsite === "yes" ? "accent.50" : "white"} 
+                  color={form.hasCurrentWebsite === "yes" ? "accent.700" : "fg.muted"} 
+                  borderColor={form.hasCurrentWebsite === "yes" ? "accent.700" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
-                  _hover={{ borderColor: "#2563EB", bg: form.hasCurrentWebsite === "yes" ? "#EEF2FF" : "#F8FAFC" }}
+                  _hover={{ borderColor: "accent.700", bg: form.hasCurrentWebsite === "yes" ? "accent.50" : "bg.subtle" }}
                   onClick={() => setField("hasCurrentWebsite", "yes")}
                 >
                   <VStack gap="1">
                     <Text fontWeight="700" fontSize="md">Tak</Text>
-                    <Text fontSize="xs" fontWeight="normal" color={form.hasCurrentWebsite === "yes" ? "#4F46E5" : "#64748B"}>Mam już stronę</Text>
+                    <Text fontSize="xs" fontWeight="normal" color={form.hasCurrentWebsite === "yes" ? "accent.600" : "fg.subtle"}>Mam już stronę</Text>
                   </VStack>
                 </Button>
                 <Button 
@@ -465,30 +465,30 @@ export const OrderPage = () => {
                   height="auto"
                   py="4"
                   variant={form.hasCurrentWebsite === "no" ? "solid" : "outline"} 
-                  bg={form.hasCurrentWebsite === "no" ? "#EEF2FF" : "white"} 
-                  color={form.hasCurrentWebsite === "no" ? "#2563EB" : "#475569"} 
-                  borderColor={form.hasCurrentWebsite === "no" ? "#2563EB" : "#E2E8F0"}
+                  bg={form.hasCurrentWebsite === "no" ? "accent.50" : "white"} 
+                  color={form.hasCurrentWebsite === "no" ? "accent.700" : "fg.muted"} 
+                  borderColor={form.hasCurrentWebsite === "no" ? "accent.700" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
-                  _hover={{ borderColor: "#2563EB", bg: form.hasCurrentWebsite === "no" ? "#EEF2FF" : "#F8FAFC" }}
+                  _hover={{ borderColor: "accent.700", bg: form.hasCurrentWebsite === "no" ? "accent.50" : "bg.subtle" }}
                   onClick={() => setField("hasCurrentWebsite", "no")}
                 >
                   <VStack gap="1">
                     <Text fontWeight="700" fontSize="md">Nie</Text>
-                    <Text fontSize="xs" fontWeight="normal" color={form.hasCurrentWebsite === "no" ? "#4F46E5" : "#64748B"}>To mój pierwszy projekt</Text>
+                    <Text fontSize="xs" fontWeight="normal" color={form.hasCurrentWebsite === "no" ? "accent.600" : "fg.subtle"}>To mój pierwszy projekt</Text>
                   </VStack>
                 </Button>
               </HStack>
             </Box>
             {form.hasCurrentWebsite === "yes" && (
               <Box>
-                <Text mb="2" fontWeight="600" color="#0F172A">Adres obecnej strony</Text>
+                <Text mb="2" fontWeight="600" color="fg.default">Adres obecnej strony</Text>
                 <Input value={form.currentWebsiteUrl} onChange={(e) => setField("currentWebsiteUrl", e.target.value)} sx={fieldStyle} placeholder="https://twojastrona.pl" />
               </Box>
             )}
             
             <Box>
-              <Text mb="3" fontWeight="700" color="#0F172A" fontSize="lg">Czy posiadasz logo?</Text>
+              <Text mb="3" fontWeight="700" color="fg.default" fontSize="lg">Czy posiadasz logo?</Text>
               <VStack align="stretch" gap="4">
                 <Button 
                   justifyContent="flex-start" 
@@ -496,17 +496,17 @@ export const OrderPage = () => {
                   py="4"
                   px="5"
                   variant={form.hasLogo === "yes" ? "solid" : "outline"} 
-                  bg={form.hasLogo === "yes" ? "#EEF2FF" : "white"} 
-                  color={form.hasLogo === "yes" ? "#2563EB" : "#475569"} 
-                  borderColor={form.hasLogo === "yes" ? "#2563EB" : "#E2E8F0"}
+                  bg={form.hasLogo === "yes" ? "accent.50" : "white"} 
+                  color={form.hasLogo === "yes" ? "accent.700" : "fg.muted"} 
+                  borderColor={form.hasLogo === "yes" ? "accent.700" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
-                  _hover={{ borderColor: "#2563EB", bg: form.hasLogo === "yes" ? "#EEF2FF" : "#F8FAFC" }}
+                  _hover={{ borderColor: "accent.700", bg: form.hasLogo === "yes" ? "accent.50" : "bg.subtle" }}
                   onClick={() => setField("hasLogo", "yes")}
                 >
                   <VStack align="start" gap="1">
                     <Text fontWeight="700" fontSize="md">Tak, mam logo</Text>
-                    <Text fontSize="sm" fontWeight="normal" color={form.hasLogo === "yes" ? "#4F46E5" : "#64748B"} whiteSpace="normal" textAlign="left">Mam gotowe logo i chcę je użyć</Text>
+                    <Text fontSize="sm" fontWeight="normal" color={form.hasLogo === "yes" ? "accent.600" : "fg.subtle"} whiteSpace="normal" textAlign="left">Mam gotowe logo i chcę je użyć</Text>
                   </VStack>
                 </Button>
                 <Button 
@@ -515,17 +515,17 @@ export const OrderPage = () => {
                   py="4"
                   px="5"
                   variant={form.hasLogo === "no" ? "solid" : "outline"} 
-                  bg={form.hasLogo === "no" ? "#EEF2FF" : "white"} 
-                  color={form.hasLogo === "no" ? "#2563EB" : "#475569"} 
-                  borderColor={form.hasLogo === "no" ? "#2563EB" : "#E2E8F0"}
+                  bg={form.hasLogo === "no" ? "accent.50" : "white"} 
+                  color={form.hasLogo === "no" ? "accent.700" : "fg.muted"} 
+                  borderColor={form.hasLogo === "no" ? "accent.700" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
-                  _hover={{ borderColor: "#2563EB", bg: form.hasLogo === "no" ? "#EEF2FF" : "#F8FAFC" }}
+                  _hover={{ borderColor: "accent.700", bg: form.hasLogo === "no" ? "accent.50" : "bg.subtle" }}
                   onClick={() => setField("hasLogo", "no")}
                 >
                   <VStack align="start" gap="1">
                     <Text fontWeight="700" fontSize="md">Nie mam logo</Text>
-                    <Text fontSize="sm" fontWeight="normal" color={form.hasLogo === "no" ? "#4F46E5" : "#64748B"} whiteSpace="normal" textAlign="left">Potrzebuję nowego logo</Text>
+                    <Text fontSize="sm" fontWeight="normal" color={form.hasLogo === "no" ? "accent.600" : "fg.subtle"} whiteSpace="normal" textAlign="left">Potrzebuję nowego logo</Text>
                   </VStack>
                 </Button>
                 <Button 
@@ -534,46 +534,46 @@ export const OrderPage = () => {
                   py="4"
                   px="5"
                   variant={form.hasLogo === "need-design" ? "solid" : "outline"} 
-                  bg={form.hasLogo === "need-design" ? "#EEF2FF" : "white"} 
-                  color={form.hasLogo === "need-design" ? "#2563EB" : "#475569"} 
-                  borderColor={form.hasLogo === "need-design" ? "#2563EB" : "#E2E8F0"}
+                  bg={form.hasLogo === "need-design" ? "accent.50" : "white"} 
+                  color={form.hasLogo === "need-design" ? "accent.700" : "fg.muted"} 
+                  borderColor={form.hasLogo === "need-design" ? "accent.700" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
-                  _hover={{ borderColor: "#2563EB", bg: form.hasLogo === "need-design" ? "#EEF2FF" : "#F8FAFC" }}
+                  _hover={{ borderColor: "accent.700", bg: form.hasLogo === "need-design" ? "accent.50" : "bg.subtle" }}
                   onClick={() => setField("hasLogo", "need-design")}
                 >
                   <VStack align="start" gap="1">
                     <Text fontWeight="700" fontSize="md">Mam logo, ale chcę nowe</Text>
-                    <Text fontSize="sm" fontWeight="normal" color={form.hasLogo === "need-design" ? "#4F46E5" : "#64748B"} whiteSpace="normal" textAlign="left">Chcę odświeżyć istniejące logo</Text>
+                    <Text fontSize="sm" fontWeight="normal" color={form.hasLogo === "need-design" ? "accent.600" : "fg.subtle"} whiteSpace="normal" textAlign="left">Chcę odświeżyć istniejące logo</Text>
                   </VStack>
                 </Button>
               </VStack>
             </Box>
             {(form.hasLogo === "yes" || form.hasLogo === "need-design") && (
               <Box w="full">
-                <Text mb="2" fontWeight="600" color="#0F172A">
+                <Text mb="2" fontWeight="600" color="fg.default">
                   {form.hasLogo === "yes" ? "Prześlij swoje logo" : "Prześlij inspiracje dla nowego logo"}
                 </Text>
                 <Box
                   border="2px dashed"
-                  borderColor="#CBD5E1"
+                  borderColor="border.strong"
                   rounded="xl"
                   p="6"
                   textAlign="center"
-                  bg="#F8FAFC"
-                  _hover={{ borderColor: "#2563EB", bg: "#F0F9FF" }}
+                  bg="bg.subtle"
+                  _hover={{ borderColor: "accent.700", bg: "#F0F9FF" }}
                   transition="all 0.2s"
                   cursor="pointer"
                 >
                   <VStack gap="3">
-                    <Box bg="#F1F5F9" color="#475569" w="12" h="12" rounded="full" display="flex" alignItems="center" justifyContent="center">
+                    <Box bg="border.subtle" color="fg.muted" w="12" h="12" rounded="full" display="flex" alignItems="center" justifyContent="center">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
                     </Box>
                     <VStack gap="1">
-                      <Text fontWeight="600" color="#0F172A">
+                      <Text fontWeight="600" color="fg.default">
                         {form.hasLogo === "yes" ? "Kliknij aby dodać logo" : "Kliknij aby dodać inspiracje"}
                       </Text>
-                      <Text fontSize="sm" color="#64748B">
+                      <Text fontSize="sm" color="fg.subtle">
                         {form.hasLogo === "yes" 
                           ? "Dozwolone formaty: PNG, JPG, SVG (max 5MB)" 
                           : "Możesz dodać zdjęcia, screenshoty, linki (max 5MB)"
@@ -584,9 +584,9 @@ export const OrderPage = () => {
                       size="sm"
                       variant="outline"
                       colorScheme="blue"
-                      borderColor="#2563EB"
-                      color="#2563EB"
-                      _hover={{ bg: "#EEF2FF" }}
+                      borderColor="accent.700"
+                      color="accent.700"
+                      _hover={{ bg: "accent.50" }}
                     >
                       Wybierz pliki
                     </Button>
@@ -600,7 +600,7 @@ export const OrderPage = () => {
         return (
           <VStack align="stretch" gap="5">
             <Box>
-              <Text mb="3" fontWeight="700" color="#0F172A" fontSize="lg">Jak mamy podejsc do designu?</Text>
+              <Text mb="3" fontWeight="700" color="fg.default" fontSize="lg">Jak mamy podejsc do designu?</Text>
               <VStack align="stretch" gap="4">
                 {form.hasCurrentWebsite === "yes" && (
                   <Button 
@@ -609,17 +609,17 @@ export const OrderPage = () => {
                     py="4"
                     px="5"
                     variant={form.designDirection === "adapt-current" ? "solid" : "outline"} 
-                    bg={form.designDirection === "adapt-current" ? "#EEF2FF" : "white"} 
-                    color={form.designDirection === "adapt-current" ? "#2563EB" : "#475569"} 
-                    borderColor={form.designDirection === "adapt-current" ? "#2563EB" : "#E2E8F0"}
+                    bg={form.designDirection === "adapt-current" ? "accent.50" : "white"} 
+                    color={form.designDirection === "adapt-current" ? "accent.700" : "fg.muted"} 
+                    borderColor={form.designDirection === "adapt-current" ? "accent.700" : "border.default"}
                     borderWidth="2px"
                     rounded="xl"
-                    _hover={{ borderColor: "#2563EB", bg: form.designDirection === "adapt-current" ? "#EEF2FF" : "#F8FAFC" }}
+                    _hover={{ borderColor: "accent.700", bg: form.designDirection === "adapt-current" ? "accent.50" : "bg.subtle" }}
                     onClick={() => setField("designDirection", "adapt-current")}
                   >
                     <VStack align="start" gap="1">
                       <Text fontWeight="700" fontSize="md">Zaadaptujcie obecny design do CMS</Text>
-                      <Text fontSize="sm" fontWeight="normal" color={form.designDirection === "adapt-current" ? "#4F46E5" : "#64748B"} whiteSpace="normal" textAlign="left">Przeniesiemy Twoją stronę bez większych zmian w wyglądzie</Text>
+                      <Text fontSize="sm" fontWeight="normal" color={form.designDirection === "adapt-current" ? "accent.600" : "fg.subtle"} whiteSpace="normal" textAlign="left">Przeniesiemy Twoją stronę bez większych zmian w wyglądzie</Text>
                     </VStack>
                   </Button>
                 )}
@@ -629,17 +629,17 @@ export const OrderPage = () => {
                   py="4"
                   px="5"
                   variant={form.designDirection === "new-design" ? "solid" : "outline"} 
-                  bg={form.designDirection === "new-design" ? "#EEF2FF" : "white"} 
-                  color={form.designDirection === "new-design" ? "#2563EB" : "#475569"} 
-                  borderColor={form.designDirection === "new-design" ? "#2563EB" : "#E2E8F0"}
+                  bg={form.designDirection === "new-design" ? "accent.50" : "white"} 
+                  color={form.designDirection === "new-design" ? "accent.700" : "fg.muted"} 
+                  borderColor={form.designDirection === "new-design" ? "accent.700" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
-                  _hover={{ borderColor: "#2563EB", bg: form.designDirection === "new-design" ? "#EEF2FF" : "#F8FAFC" }}
+                  _hover={{ borderColor: "accent.700", bg: form.designDirection === "new-design" ? "accent.50" : "bg.subtle" }}
                   onClick={() => setField("designDirection", "new-design")}
                 >
                   <VStack align="start" gap="1">
                     <Text fontWeight="700" fontSize="md">Chce nowy projekt</Text>
-                    <Text fontSize="sm" fontWeight="normal" color={form.designDirection === "new-design" ? "#4F46E5" : "#64748B"} whiteSpace="normal" textAlign="left">Zaprojektujemy wszystko od nowa w oparciu o Twoje wytyczne</Text>
+                    <Text fontSize="sm" fontWeight="normal" color={form.designDirection === "new-design" ? "accent.600" : "fg.subtle"} whiteSpace="normal" textAlign="left">Zaprojektujemy wszystko od nowa w oparciu o Twoje wytyczne</Text>
                   </VStack>
                 </Button>
               </VStack>
@@ -647,7 +647,7 @@ export const OrderPage = () => {
 
             {form.designDirection === "new-design" && (
               <Box>
-                <Text mb="3" fontWeight="700" color="#0F172A" fontSize="lg">Jaki model projektu wybierasz?</Text>
+                <Text mb="3" fontWeight="700" color="fg.default" fontSize="lg">Jaki model projektu wybierasz?</Text>
                 <VStack align="stretch" gap="4">
                   <Button 
                     justifyContent="flex-start" 
@@ -655,17 +655,17 @@ export const OrderPage = () => {
                     py="4"
                     px="5"
                     variant={form.newDesignMode === "custom" ? "solid" : "outline"} 
-                    bg={form.newDesignMode === "custom" ? "#EEF2FF" : "white"} 
-                    color={form.newDesignMode === "custom" ? "#2563EB" : "#475569"} 
-                    borderColor={form.newDesignMode === "custom" ? "#2563EB" : "#E2E8F0"}
+                    bg={form.newDesignMode === "custom" ? "accent.50" : "white"} 
+                    color={form.newDesignMode === "custom" ? "accent.700" : "fg.muted"} 
+                    borderColor={form.newDesignMode === "custom" ? "accent.700" : "border.default"}
                     borderWidth="2px"
                     rounded="xl"
-                    _hover={{ borderColor: "#2563EB", bg: form.newDesignMode === "custom" ? "#EEF2FF" : "#F8FAFC" }}
+                    _hover={{ borderColor: "accent.700", bg: form.newDesignMode === "custom" ? "accent.50" : "bg.subtle" }}
                     onClick={() => setField("newDesignMode", "custom")}
                   >
                     <VStack align="start" gap="1">
                       <Text fontWeight="700" fontSize="md">Design spersonalizowany na podstawie moich referencji</Text>
-                      <Text fontSize="sm" fontWeight="normal" color={form.newDesignMode === "custom" ? "#4F46E5" : "#64748B"} whiteSpace="normal" textAlign="left">Przekażesz nam konkretne przykłady i wytyczne, których będziemy się trzymać</Text>
+                      <Text fontSize="sm" fontWeight="normal" color={form.newDesignMode === "custom" ? "accent.600" : "fg.subtle"} whiteSpace="normal" textAlign="left">Przekażesz nam konkretne przykłady i wytyczne, których będziemy się trzymać</Text>
                     </VStack>
                   </Button>
                   <Button 
@@ -674,17 +674,17 @@ export const OrderPage = () => {
                     py="4"
                     px="5"
                     variant={form.newDesignMode === "designer" ? "solid" : "outline"} 
-                    bg={form.newDesignMode === "designer" ? "#EEF2FF" : "white"} 
-                    color={form.newDesignMode === "designer" ? "#2563EB" : "#475569"} 
-                    borderColor={form.newDesignMode === "designer" ? "#2563EB" : "#E2E8F0"}
+                    bg={form.newDesignMode === "designer" ? "accent.50" : "white"} 
+                    color={form.newDesignMode === "designer" ? "accent.700" : "fg.muted"} 
+                    borderColor={form.newDesignMode === "designer" ? "accent.700" : "border.default"}
                     borderWidth="2px"
                     rounded="xl"
-                    _hover={{ borderColor: "#2563EB", bg: form.newDesignMode === "designer" ? "#EEF2FF" : "#F8FAFC" }}
+                    _hover={{ borderColor: "accent.700", bg: form.newDesignMode === "designer" ? "accent.50" : "bg.subtle" }}
                     onClick={() => setField("newDesignMode", "designer")}
                   >
                     <VStack align="start" gap="1">
                       <Text fontWeight="700" fontSize="md">Ufam projektantowi i chce design pod Waszym kryterium</Text>
-                      <Text fontSize="sm" fontWeight="normal" color={form.newDesignMode === "designer" ? "#4F46E5" : "#64748B"} whiteSpace="normal" textAlign="left">Zaprojektujemy stronę według naszego doświadczenia i najlepszych praktyk</Text>
+                      <Text fontSize="sm" fontWeight="normal" color={form.newDesignMode === "designer" ? "accent.600" : "fg.subtle"} whiteSpace="normal" textAlign="left">Zaprojektujemy stronę według naszego doświadczenia i najlepszych praktyk</Text>
                     </VStack>
                   </Button>
                 </VStack>
@@ -692,7 +692,7 @@ export const OrderPage = () => {
             )}
 
             <Box>
-              <Text mb="2" fontWeight="600" color="#0F172A">Logo lub materiały brandowe</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Logo lub materiały brandowe</Text>
               <Input
                 type="file"
                 accept=".png,.jpg,.jpeg,.webp,.svg,.pdf"
@@ -701,19 +701,19 @@ export const OrderPage = () => {
                 onChange={(e) => setField("projectLogoFile", e.target.files?.[0]?.name ?? "")}
               />
               {form.projectLogoFile && (
-                <Text mt="2" fontSize="sm" color="#64748B">
+                <Text mt="2" fontSize="sm" color="fg.subtle">
                   Zalaczono: {form.projectLogoFile}
                 </Text>
               )}
             </Box>
 
             <Box>
-              <Text mb="2" fontWeight="600" color="#0F172A">Strony referencyjne</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Strony referencyjne</Text>
               <Textarea value={form.referenceWebsite} onChange={(e) => setField("referenceWebsite", e.target.value)} sx={fieldStyle} minH="110px" placeholder="Wklej linki do stron, które Ci się podobają, oraz napisz co chcesz z nich zachować." />
             </Box>
 
             <Box>
-              <Text mb="2" fontWeight="600" color="#0F172A">Pliki referencyjne / inspiracje</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Pliki referencyjne / inspiracje</Text>
               <Input
                 type="file"
                 multiple
@@ -730,14 +730,14 @@ export const OrderPage = () => {
                 }
               />
               {form.referenceFiles && (
-                <Text mt="2" fontSize="sm" color="#64748B">
+                <Text mt="2" fontSize="sm" color="fg.subtle">
                   Zalaczniki: {form.referenceFiles}
                 </Text>
               )}
             </Box>
 
             <Box>
-              <Text mb="2" fontWeight="600" color="#0F172A">Uwagi do stylu i projektu</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Uwagi do stylu i projektu</Text>
               <Textarea value={form.designNotes} onChange={(e) => setField("designNotes", e.target.value)} sx={fieldStyle} minH="140px" placeholder="Kolory, charakter marki, elementy, których unikać, oczekiwania do UX, sekcje sprzedażowe, priorytety mobilne..." />
             </Box>
           </VStack>
@@ -745,57 +745,57 @@ export const OrderPage = () => {
       case 3:
         return (
           <VStack align="stretch" gap="6">
-            <Box bg="#F8FAFC" p="6" rounded="2xl" border="1px solid" borderColor="#E2E8F0">
-              <Text mb="2" fontWeight="700" color="#0F172A" fontSize="lg">1. Dane do kontaktu z Tobą</Text>
-              <Text fontSize="sm" color="#64748B" mb="5">Te dane posłużą nam wyłącznie do komunikacji w trakcie tworzenia projektu.</Text>
+            <Box bg="bg.subtle" p="6" rounded="2xl" border="1px solid" borderColor="border.default">
+              <Text mb="2" fontWeight="700" color="fg.default" fontSize="lg">1. Dane do kontaktu z Tobą</Text>
+              <Text fontSize="sm" color="fg.subtle" mb="5">Te dane posłużą nam wyłącznie do komunikacji w trakcie tworzenia projektu.</Text>
               <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap="5" w="full">
                 <Box w="full" gridColumn={{ md: "span 2" }}>
-                  <Text mb="2" fontWeight="600" color="#0F172A">Imię i nazwisko osoby kontaktowej</Text>
+                  <Text mb="2" fontWeight="600" color="fg.default">Imię i nazwisko osoby kontaktowej</Text>
                   <Input value={form.contactName} onChange={(e) => setField("contactName", e.target.value)} sx={fieldStyle} placeholder="Jan Kowalski" />
                 </Box>
                 <Box w="full">
-                  <Text mb="2" fontWeight="600" color="#0F172A">Twój telefon</Text>
+                  <Text mb="2" fontWeight="600" color="fg.default">Twój telefon</Text>
                   <Input value={form.contactPhone} onChange={(e) => setField("contactPhone", e.target.value)} sx={fieldStyle} placeholder="+48 ..." />
                 </Box>
                 <Box w="full">
-                  <Text mb="2" fontWeight="600" color="#0F172A">Twój email</Text>
+                  <Text mb="2" fontWeight="600" color="fg.default">Twój email</Text>
                   <Input value={form.contactEmail} onChange={(e) => setField("contactEmail", e.target.value)} sx={fieldStyle} placeholder="kontakt@twojmail.pl" />
                 </Box>
               </Grid>
             </Box>
 
-            <Box bg="#F8FAFC" p="6" rounded="2xl" border="1px solid" borderColor="#E2E8F0">
-              <Text mb="2" fontWeight="700" color="#0F172A" fontSize="lg">2. Dane kontaktowe na stronę internetową</Text>
-              <Text fontSize="sm" color="#64748B" mb="5">Wypełnij informacje, które chcesz opublikować na swojej nowej stronie (w zakładce Kontakt, stopce itp.).</Text>
+            <Box bg="bg.subtle" p="6" rounded="2xl" border="1px solid" borderColor="border.default">
+              <Text mb="2" fontWeight="700" color="fg.default" fontSize="lg">2. Dane kontaktowe na stronę internetową</Text>
+              <Text fontSize="sm" color="fg.subtle" mb="5">Wypełnij informacje, które chcesz opublikować na swojej nowej stronie (w zakładce Kontakt, stopce itp.).</Text>
               <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap="5" w="full">
                 <Box w="full">
-                  <Text mb="2" fontWeight="600" color="#0F172A">Firmowy adres email (widoczny na stronie)</Text>
+                  <Text mb="2" fontWeight="600" color="fg.default">Firmowy adres email (widoczny na stronie)</Text>
                   <Input value={form.companyEmail} onChange={(e) => setField("companyEmail", e.target.value)} sx={fieldStyle} placeholder="biuro@firma.pl" />
                 </Box>
                 <Box w="full">
-                  <Text mb="2" fontWeight="600" color="#0F172A">Firmowy telefon (widoczny na stronie)</Text>
+                  <Text mb="2" fontWeight="600" color="fg.default">Firmowy telefon (widoczny na stronie)</Text>
                   <Input value={form.companyPhone} onChange={(e) => setField("companyPhone", e.target.value)} sx={fieldStyle} placeholder="+48 ..." />
                 </Box>
                 <Box w="full" gridColumn={{ md: "span 2" }}>
-                  <Text mb="2" fontWeight="600" color="#0F172A">Adres firmy (widoczny na stronie)</Text>
+                  <Text mb="2" fontWeight="600" color="fg.default">Adres firmy (widoczny na stronie)</Text>
                   <Input value={form.companyAddress} onChange={(e) => setField("companyAddress", e.target.value)} sx={fieldStyle} placeholder="ul. Przykładowa 1, 00-000 Warszawa" />
                 </Box>
                 <Box w="full" gridColumn={{ md: "span 2" }}>
-                  <Text mb="2" fontWeight="600" color="#0F172A">Link do wizytówki Google Maps</Text>
+                  <Text mb="2" fontWeight="600" color="fg.default">Link do wizytówki Google Maps</Text>
                   <Input value={form.googleMapsUrl} onChange={(e) => setField("googleMapsUrl", e.target.value)} sx={fieldStyle} placeholder="https://maps.google.com/..." />
                 </Box>
                 <Box w="full" gridColumn={{ md: "span 2" }}>
-                  <Text mb="2" fontWeight="600" color="#0F172A">Linki do social media</Text>
+                  <Text mb="2" fontWeight="600" color="fg.default">Linki do social media</Text>
                   <Textarea value={form.socialLinks} onChange={(e) => setField("socialLinks", e.target.value)} sx={fieldStyle} minH="110px" placeholder="Facebook, Instagram, LinkedIn, TikTok, YouTube..." />
                 </Box>
               </Grid>
             </Box>
 
-            <Box bg="#F8FAFC" p="6" rounded="2xl" border="1px solid" borderColor="#E2E8F0">
-              <Text mb="5" fontWeight="700" color="#0F172A" fontSize="lg">3. Kwestie techniczne (Domena i Skrzynki)</Text>
+            <Box bg="bg.subtle" p="6" rounded="2xl" border="1px solid" borderColor="border.default">
+              <Text mb="5" fontWeight="700" color="fg.default" fontSize="lg">3. Kwestie techniczne (Domena i Skrzynki)</Text>
               <VStack align="stretch" gap="5">
                 <Box>
-                  <Text mb="3" fontWeight="700" color="#0F172A" fontSize="md">Czy posiadasz już własną domenę internetową?</Text>
+                  <Text mb="3" fontWeight="700" color="fg.default" fontSize="md">Czy posiadasz już własną domenę internetową?</Text>
                   <HStack gap="4" flexWrap="wrap">
                     <Button 
                       size="lg"
@@ -804,12 +804,12 @@ export const OrderPage = () => {
                       height="auto"
                       py="4"
                       variant={form.hasDomain === "yes" ? "solid" : "outline"} 
-                      bg={form.hasDomain === "yes" ? "#EEF2FF" : "white"} 
-                      color={form.hasDomain === "yes" ? "#2563EB" : "#475569"} 
-                      borderColor={form.hasDomain === "yes" ? "#2563EB" : "#E2E8F0"}
+                      bg={form.hasDomain === "yes" ? "accent.50" : "white"} 
+                      color={form.hasDomain === "yes" ? "accent.700" : "fg.muted"} 
+                      borderColor={form.hasDomain === "yes" ? "accent.700" : "border.default"}
                       borderWidth="2px"
                       rounded="xl"
-                      _hover={{ borderColor: "#2563EB", bg: form.hasDomain === "yes" ? "#EEF2FF" : "#F8FAFC" }}
+                      _hover={{ borderColor: "accent.700", bg: form.hasDomain === "yes" ? "accent.50" : "bg.subtle" }}
                       onClick={() => setField("hasDomain", "yes")}
                     >
                       <VStack gap="1">
@@ -823,12 +823,12 @@ export const OrderPage = () => {
                       height="auto"
                       py="4"
                       variant={form.hasDomain === "no" ? "solid" : "outline"} 
-                      bg={form.hasDomain === "no" ? "#EEF2FF" : "white"} 
-                      color={form.hasDomain === "no" ? "#2563EB" : "#475569"} 
-                      borderColor={form.hasDomain === "no" ? "#2563EB" : "#E2E8F0"}
+                      bg={form.hasDomain === "no" ? "accent.50" : "white"} 
+                      color={form.hasDomain === "no" ? "accent.700" : "fg.muted"} 
+                      borderColor={form.hasDomain === "no" ? "accent.700" : "border.default"}
                       borderWidth="2px"
                       rounded="xl"
-                      _hover={{ borderColor: "#2563EB", bg: form.hasDomain === "no" ? "#EEF2FF" : "#F8FAFC" }}
+                      _hover={{ borderColor: "accent.700", bg: form.hasDomain === "no" ? "accent.50" : "bg.subtle" }}
                       onClick={() => setField("hasDomain", "no")}
                     >
                       <VStack gap="1">
@@ -839,7 +839,7 @@ export const OrderPage = () => {
                 </Box>
 
                 <Box>
-                  <Text mb="2" fontWeight="600" color="#0F172A">
+                  <Text mb="2" fontWeight="600" color="fg.default">
                     {form.hasDomain === "yes" ? "Podaj adres swojej domeny" : "Podaj proponowaną nazwę domeny (sprawdzimy jej dostępność)"}
                   </Text>
                   <Input value={form.domainName} onChange={(e) => setField("domainName", e.target.value)} sx={fieldStyle} placeholder="np. twojadomena.pl" />
@@ -847,28 +847,28 @@ export const OrderPage = () => {
               </VStack>
             </Box>
 
-            <Box bg="#F8FAFC" rounded="xl" p="6" border="1px solid" borderColor="#E2E8F0">
+            <Box bg="bg.subtle" rounded="xl" p="6" border="1px solid" borderColor="border.default">
               <HStack gap="3" align="flex-start">
-                <Box bg="white" color="#0F172A" border="1px solid" borderColor="#E2E8F0" w="10" h="10" rounded="full" display="flex" alignItems="center" justifyContent="center" flexShrink="0">
+                <Box bg="white" color="fg.default" border="1px solid" borderColor="border.default" w="10" h="10" rounded="full" display="flex" alignItems="center" justifyContent="center" flexShrink="0">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 </Box>
                 <VStack align="start" gap="2">
-                  <Text fontWeight="700" color="#2563EB" fontSize="sm" textTransform="uppercase" letterSpacing="wider">
+                  <Text fontWeight="700" color="accent.700" fontSize="sm" textTransform="uppercase" letterSpacing="wider">
                     Bezpieczeństwo Twoich danych
                   </Text>
-                  <Text color="#0F172A" lineHeight="1.7" fontWeight="500">
+                  <Text color="fg.default" lineHeight="1.7" fontWeight="500">
                     Twoje dane są u nas w pełni bezpieczne. Potrzebujemy ich, aby przygotować dane logowania do Twojego sklepu SEO Grow i rozpocząć współpracę.
                   </Text>
-                  <Text color="#64748B" fontSize="sm" lineHeight="1.6">
+                  <Text color="fg.subtle" fontSize="sm" lineHeight="1.6">
                     Informacje są przechowywane zgodnie z RODO i nigdy nie są udostępniane osobom trzecim.
                   </Text>
                 </VStack>
               </HStack>
             </Box>
 
-            <Box bg="#F8FAFC" p="6" rounded="2xl" border="1px solid" borderColor="#E2E8F0">
-              <Text mb="3" fontWeight="700" color="#0F172A">Skrzynki pocztowe w domenie</Text>
-              <Text fontSize="sm" color="#64748B" mb="4">
+            <Box bg="bg.subtle" p="6" rounded="2xl" border="1px solid" borderColor="border.default">
+              <Text mb="3" fontWeight="700" color="fg.default">Skrzynki pocztowe w domenie</Text>
+              <Text fontSize="sm" color="fg.subtle" mb="4">
                 Pierwsza skrzynka pocztowa jest w cenie planu. Każda kolejna to koszt 30 PLN / rocznie.
               </Text>
               <HStack gap="4" flexWrap="wrap" mb="5">
@@ -879,12 +879,12 @@ export const OrderPage = () => {
                   height="auto"
                   py="4"
                   variant={form.wantsMailBox === "yes" ? "solid" : "outline"} 
-                  bg={form.wantsMailBox === "yes" ? "#EEF2FF" : "white"} 
-                  color={form.wantsMailBox === "yes" ? "#2563EB" : "#475569"} 
-                  borderColor={form.wantsMailBox === "yes" ? "#2563EB" : "#E2E8F0"}
+                  bg={form.wantsMailBox === "yes" ? "accent.50" : "white"} 
+                  color={form.wantsMailBox === "yes" ? "accent.700" : "fg.muted"} 
+                  borderColor={form.wantsMailBox === "yes" ? "accent.700" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
-                  _hover={{ borderColor: "#2563EB", bg: form.wantsMailBox === "yes" ? "#EEF2FF" : "#F8FAFC" }}
+                  _hover={{ borderColor: "accent.700", bg: form.wantsMailBox === "yes" ? "accent.50" : "bg.subtle" }}
                   onClick={() => setField("wantsMailBox", "yes")}
                 >
                   <VStack gap="1">
@@ -898,12 +898,12 @@ export const OrderPage = () => {
                   height="auto"
                   py="4"
                   variant={form.wantsMailBox === "no" ? "solid" : "outline"} 
-                  bg={form.wantsMailBox === "no" ? "#EEF2FF" : "white"} 
-                  color={form.wantsMailBox === "no" ? "#2563EB" : "#475569"} 
-                  borderColor={form.wantsMailBox === "no" ? "#2563EB" : "#E2E8F0"}
+                  bg={form.wantsMailBox === "no" ? "accent.50" : "white"} 
+                  color={form.wantsMailBox === "no" ? "accent.700" : "fg.muted"} 
+                  borderColor={form.wantsMailBox === "no" ? "accent.700" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
-                  _hover={{ borderColor: "#2563EB", bg: form.wantsMailBox === "no" ? "#EEF2FF" : "#F8FAFC" }}
+                  _hover={{ borderColor: "accent.700", bg: form.wantsMailBox === "no" ? "accent.50" : "bg.subtle" }}
                   onClick={() => { setField("wantsMailBox", "no"); setField("extraEmailsCount", 0); }}
                 >
                   <VStack gap="1">
@@ -915,11 +915,11 @@ export const OrderPage = () => {
               {form.wantsMailBox === "yes" && (
                 <VStack align="stretch" gap="4">
                   <Box>
-                    <Text mb="2" fontWeight="600" color="#0F172A" fontSize="sm">Główny adres email (w cenie)</Text>
+                    <Text mb="2" fontWeight="600" color="fg.default" fontSize="sm">Główny adres email (w cenie)</Text>
                     <Input value={form.mailboxName} onChange={(e) => setField("mailboxName", e.target.value)} sx={fieldStyle} placeholder="np. kontakt@twojadomena.pl" />
                   </Box>
                   <Box>
-                    <Text mb="2" fontWeight="600" color="#0F172A" fontSize="sm">Liczba dodatkowych skrzynek (+30 PLN/szt)</Text>
+                    <Text mb="2" fontWeight="600" color="fg.default" fontSize="sm">Liczba dodatkowych skrzynek (+30 PLN/szt)</Text>
                     <HStack>
                       <Button onClick={() => setField("extraEmailsCount", Math.max(0, form.extraEmailsCount - 1))} size="sm" variant="outline">-</Button>
                       <Text fontWeight="700" w="8" textAlign="center">{form.extraEmailsCount}</Text>
@@ -934,54 +934,54 @@ export const OrderPage = () => {
       default:
         return (
           <VStack align="stretch" gap="6">
-            <Box bg="#F8FAFC" rounded="2xl" border="1px solid" borderColor="#E2E8F0" p="6">
+            <Box bg="bg.subtle" rounded="2xl" border="1px solid" borderColor="border.default" p="6">
               <VStack align="start" gap="4">
-                <Text fontSize="sm" fontWeight="700" color="#2563EB" textTransform="uppercase" letterSpacing="wider">Podsumowanie zamówienia</Text>
+                <Text fontSize="sm" fontWeight="700" color="accent.700" textTransform="uppercase" letterSpacing="wider">Podsumowanie zamówienia</Text>
                 <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap="4" w="full">
                   <Box>
-                    <Text fontSize="xs" color="#64748B" mb="1">Wybrany plan</Text>
-                    <Text fontWeight="600" color="#0F172A">{selectedPlan.name}</Text>
+                    <Text fontSize="xs" color="fg.subtle" mb="1">Wybrany plan</Text>
+                    <Text fontWeight="600" color="fg.default">{selectedPlan.name}</Text>
                   </Box>
                   <Box>
-                    <Text fontSize="xs" color="#64748B" mb="1">Domena</Text>
-                    <Text fontWeight="600" color="#0F172A">{form.hasDomain === "yes" ? "Własna domena:" : "Do rejestracji:"} {form.domainName || "Nie podano"}</Text>
+                    <Text fontSize="xs" color="fg.subtle" mb="1">Domena</Text>
+                    <Text fontWeight="600" color="fg.default">{form.hasDomain === "yes" ? "Własna domena:" : "Do rejestracji:"} {form.domainName || "Nie podano"}</Text>
                   </Box>
                   <Box>
-                    <Text fontSize="xs" color="#64748B" mb="1">Skrzynki pocztowe</Text>
-                    <Text fontWeight="600" color="#0F172A">
+                    <Text fontSize="xs" color="fg.subtle" mb="1">Skrzynki pocztowe</Text>
+                    <Text fontWeight="600" color="fg.default">
                       {form.wantsMailBox === "yes" ? `1 główna + ${form.extraEmailsCount} dodatkowych` : "Brak skrzynek"}
                     </Text>
                   </Box>
                   <Box>
-                    <Text fontSize="xs" color="#64748B" mb="1">Dane kontaktowe</Text>
-                    <Text fontWeight="600" color="#0F172A">{form.contactName || "Nie podano"} / {form.contactPhone || "Nie podano"}</Text>
+                    <Text fontSize="xs" color="fg.subtle" mb="1">Dane kontaktowe</Text>
+                    <Text fontWeight="600" color="fg.default">{form.contactName || "Nie podano"} / {form.contactPhone || "Nie podano"}</Text>
                   </Box>
                 </Grid>
                 
-                <Box w="full" pt="4" mt="2" borderTop="1px dashed" borderColor="#CBD5E1">
+                <Box w="full" pt="4" mt="2" borderTop="1px dashed" borderColor="border.strong">
                   <HStack justify="space-between" mb="2">
-                    <Text color="#475569">Wdrożenie jednorazowe</Text>
-                    <Text fontWeight="600" color="#0F172A">{selectedPlan.setupPrice}</Text>
+                    <Text color="fg.muted">Wdrożenie jednorazowe</Text>
+                    <Text fontWeight="600" color="fg.default">{selectedPlan.setupPrice}</Text>
                   </HStack>
                   <HStack justify="space-between" mb="2">
-                    <Text color="#475569">Utrzymanie miesięczne (plan)</Text>
-                    <Text fontWeight="600" color="#0F172A">{selectedPlan.monthlyPrice}</Text>
+                    <Text color="fg.muted">Utrzymanie miesięczne (plan)</Text>
+                    <Text fontWeight="600" color="fg.default">{selectedPlan.monthlyPrice}</Text>
                   </HStack>
                   {form.extraEmailsCount > 0 && (
                     <HStack justify="space-between" mb="2">
-                      <Text color="#475569">Dodatkowe skrzynki pocztowe ({form.extraEmailsCount} x 30 PLN)</Text>
-                      <Text fontWeight="600" color="#0F172A">+{form.extraEmailsCount * 30} PLN / rok</Text>
+                      <Text color="fg.muted">Dodatkowe skrzynki pocztowe ({form.extraEmailsCount} x 30 PLN)</Text>
+                      <Text fontWeight="600" color="fg.default">+{form.extraEmailsCount * 30} PLN / rok</Text>
                     </HStack>
                   )}
                   {form.hasDomain === "no" && (
                     <HStack justify="space-between" mb="2">
-                      <Text color="#475569">Rejestracja domeny (1 rok)</Text>
-                      <Text fontWeight="600" color="#0F172A">Zależnie od rozszerzenia (ustalane indywidualnie)</Text>
+                      <Text color="fg.muted">Rejestracja domeny (1 rok)</Text>
+                      <Text fontWeight="600" color="fg.default">Zależnie od rozszerzenia (ustalane indywidualnie)</Text>
                     </HStack>
                   )}
-                  <HStack justify="space-between" pt="3" mt="3" borderTop="1px solid" borderColor="#CBD5E1">
-                    <Text fontWeight="700" color="#0F172A">Szacowany koszt miesięczny</Text>
-                    <Text fontWeight="800" color="#2563EB" fontSize="xl">
+                  <HStack justify="space-between" pt="3" mt="3" borderTop="1px solid" borderColor="border.strong">
+                    <Text fontWeight="700" color="fg.default">Szacowany koszt miesięczny</Text>
+                    <Text fontWeight="800" color="accent.700" fontSize="xl">
                       {parseInt(selectedPlan.monthlyPrice.replace(/\D/g, ''))} PLN / mies
                     </Text>
                   </HStack>
@@ -991,43 +991,43 @@ export const OrderPage = () => {
 
             <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap="5" w="full">
               <Box w="full">
-                <Text mb="2" fontWeight="600" color="#0F172A">Dane do faktury</Text>
+                <Text mb="2" fontWeight="600" color="fg.default">Dane do faktury</Text>
                 <Input value={form.billingName} onChange={(e) => setField("billingName", e.target.value)} sx={fieldStyle} placeholder="Nazwa firmy / imię i nazwisko" />
               </Box>
               <Box w="full">
-                <Text mb="2" fontWeight="600" color="#0F172A">NIP / numer podatkowy</Text>
+                <Text mb="2" fontWeight="600" color="fg.default">NIP / numer podatkowy</Text>
                 <Input value={form.taxId} onChange={(e) => setField("taxId", e.target.value)} sx={fieldStyle} placeholder="Opcjonalnie" />
               </Box>
             </Grid>
 
             <Box>
-              <Text mb="2" fontWeight="600" color="#0F172A">Adres do faktury</Text>
+              <Text mb="2" fontWeight="600" color="fg.default">Adres do faktury</Text>
               <Textarea value={form.billingAddress} onChange={(e) => setField("billingAddress", e.target.value)} sx={fieldStyle} minH="110px" placeholder="Ulica, numer, kod pocztowy, miasto, kraj" />
             </Box>
 
             <Box>
-              <Text mb="3" fontWeight="700" color="#0F172A" fontSize="lg">Metoda platnosci</Text>
+              <Text mb="3" fontWeight="700" color="fg.default" fontSize="lg">Metoda platnosci</Text>
               <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap="4">
                 <Button 
                   height="auto"
                   py="4"
                   px="5"
                   variant={form.paymentMethod === "payu_blik" ? "solid" : "outline"} 
-                  bg={form.paymentMethod === "payu_blik" ? "#F8FAFC" : "white"} 
-                  color={form.paymentMethod === "payu_blik" ? "#0F172A" : "#64748B"} 
-                  borderColor={form.paymentMethod === "payu_blik" ? "#0F172A" : "#E2E8F0"}
+                  bg={form.paymentMethod === "payu_blik" ? "bg.subtle" : "white"} 
+                  color={form.paymentMethod === "payu_blik" ? "fg.default" : "fg.subtle"} 
+                  borderColor={form.paymentMethod === "payu_blik" ? "fg.default" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
                   _hover={{ 
-                    borderColor: "#0F172A", 
-                    bg: form.paymentMethod === "payu_blik" ? "#F8FAFC" : "#F8FAFC",
+                    borderColor: "fg.default", 
+                    bg: form.paymentMethod === "payu_blik" ? "bg.subtle" : "bg.subtle",
                   }}
                   transition="all 0.2s"
                   onClick={() => setField("paymentMethod", "payu_blik")}
                 >
                   <VStack gap="1">
-                    <Text fontWeight="600" fontSize="md" color="#0F172A">BLIK (PayU)</Text>
-                    <Text fontSize="xs" fontWeight="normal" color={form.paymentMethod === "payu_blik" ? "#0F172A" : "#64748B"}>Szybka płatność kodem</Text>
+                    <Text fontWeight="600" fontSize="md" color="fg.default">BLIK (PayU)</Text>
+                    <Text fontSize="xs" fontWeight="normal" color={form.paymentMethod === "payu_blik" ? "fg.default" : "fg.subtle"}>Szybka płatność kodem</Text>
                   </VStack>
                 </Button>
                 <Button 
@@ -1035,21 +1035,21 @@ export const OrderPage = () => {
                   py="4"
                   px="5"
                   variant={form.paymentMethod === "payu_p24" ? "solid" : "outline"} 
-                  bg={form.paymentMethod === "payu_p24" ? "#F8FAFC" : "white"} 
-                  color={form.paymentMethod === "payu_p24" ? "#0F172A" : "#64748B"} 
-                  borderColor={form.paymentMethod === "payu_p24" ? "#0F172A" : "#E2E8F0"}
+                  bg={form.paymentMethod === "payu_p24" ? "bg.subtle" : "white"} 
+                  color={form.paymentMethod === "payu_p24" ? "fg.default" : "fg.subtle"} 
+                  borderColor={form.paymentMethod === "payu_p24" ? "fg.default" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
                   _hover={{ 
-                    borderColor: "#0F172A", 
-                    bg: form.paymentMethod === "payu_p24" ? "#F8FAFC" : "#F8FAFC",
+                    borderColor: "fg.default", 
+                    bg: form.paymentMethod === "payu_p24" ? "bg.subtle" : "bg.subtle",
                   }}
                   transition="all 0.2s"
                   onClick={() => setField("paymentMethod", "payu_p24")}
                 >
                   <VStack gap="1">
-                    <Text fontWeight="600" fontSize="md" color="#0F172A">Przelew online (PayU)</Text>
-                    <Text fontSize="xs" fontWeight="normal" color={form.paymentMethod === "payu_p24" ? "#0F172A" : "#64748B"}>Szybki przelew z banku</Text>
+                    <Text fontWeight="600" fontSize="md" color="fg.default">Przelew online (PayU)</Text>
+                    <Text fontSize="xs" fontWeight="normal" color={form.paymentMethod === "payu_p24" ? "fg.default" : "fg.subtle"}>Szybki przelew z banku</Text>
                   </VStack>
                 </Button>
                 <Button 
@@ -1057,21 +1057,21 @@ export const OrderPage = () => {
                   py="4"
                   px="5"
                   variant={form.paymentMethod === "payu_card" ? "solid" : "outline"} 
-                  bg={form.paymentMethod === "payu_card" ? "#F8FAFC" : "white"} 
-                  color={form.paymentMethod === "payu_card" ? "#0F172A" : "#64748B"} 
-                  borderColor={form.paymentMethod === "payu_card" ? "#0F172A" : "#E2E8F0"}
+                  bg={form.paymentMethod === "payu_card" ? "bg.subtle" : "white"} 
+                  color={form.paymentMethod === "payu_card" ? "fg.default" : "fg.subtle"} 
+                  borderColor={form.paymentMethod === "payu_card" ? "fg.default" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
                   _hover={{ 
-                    borderColor: "#0F172A", 
-                    bg: form.paymentMethod === "payu_card" ? "#F8FAFC" : "#F8FAFC",
+                    borderColor: "fg.default", 
+                    bg: form.paymentMethod === "payu_card" ? "bg.subtle" : "bg.subtle",
                   }}
                   transition="all 0.2s"
                   onClick={() => setField("paymentMethod", "payu_card")}
                 >
                   <VStack gap="1">
-                    <Text fontWeight="600" fontSize="md" color="#0F172A">Karta płatnicza (PayU)</Text>
-                    <Text fontSize="xs" fontWeight="normal" color={form.paymentMethod === "payu_card" ? "#0F172A" : "#64748B"}>Visa, Mastercard</Text>
+                    <Text fontWeight="600" fontSize="md" color="fg.default">Karta płatnicza (PayU)</Text>
+                    <Text fontSize="xs" fontWeight="normal" color={form.paymentMethod === "payu_card" ? "fg.default" : "fg.subtle"}>Visa, Mastercard</Text>
                   </VStack>
                 </Button>
                 <Button 
@@ -1079,38 +1079,38 @@ export const OrderPage = () => {
                   py="4"
                   px="5"
                   variant={form.paymentMethod === "transfer" ? "solid" : "outline"} 
-                  bg={form.paymentMethod === "transfer" ? "#F8FAFC" : "white"} 
-                  color={form.paymentMethod === "transfer" ? "#0F172A" : "#64748B"} 
-                  borderColor={form.paymentMethod === "transfer" ? "#0F172A" : "#E2E8F0"}
+                  bg={form.paymentMethod === "transfer" ? "bg.subtle" : "white"} 
+                  color={form.paymentMethod === "transfer" ? "fg.default" : "fg.subtle"} 
+                  borderColor={form.paymentMethod === "transfer" ? "fg.default" : "border.default"}
                   borderWidth="2px"
                   rounded="xl"
                   _hover={{ 
-                    borderColor: "#0F172A", 
-                    bg: form.paymentMethod === "transfer" ? "#F8FAFC" : "#F8FAFC",
+                    borderColor: "fg.default", 
+                    bg: form.paymentMethod === "transfer" ? "bg.subtle" : "bg.subtle",
                   }}
                   transition="all 0.2s"
                   onClick={() => setField("paymentMethod", "transfer")}
                 >
                   <VStack gap="1">
-                    <Text fontWeight="600" fontSize="md" color="#0F172A">Przelew tradycyjny</Text>
-                    <Text fontSize="xs" fontWeight="normal" color={form.paymentMethod === "transfer" ? "#0F172A" : "#64748B"}>Na numer konta</Text>
+                    <Text fontWeight="600" fontSize="md" color="fg.default">Przelew tradycyjny</Text>
+                    <Text fontSize="xs" fontWeight="normal" color={form.paymentMethod === "transfer" ? "fg.default" : "fg.subtle"}>Na numer konta</Text>
                   </VStack>
                 </Button>
               </Grid>
             </Box>
 
-            <Box bg="#F8FAFC" rounded="xl" p="6" border="2px solid" borderColor={form.acceptTerms ? "#2563EB" : "#E2E8F0"} transition="all 0.3s ease">
+            <Box bg="bg.subtle" rounded="xl" p="6" border="2px solid" borderColor={form.acceptTerms ? "accent.700" : "border.default"} transition="all 0.3s ease">
               <HStack gap="4" align="flex-start">
                 <Box
                   as="button"
                   onClick={() => setField("acceptTerms", !form.acceptTerms)}
                   w="7" h="7" rounded="lg" 
                   border="3px solid" 
-                  borderColor={form.acceptTerms ? "#2563EB" : "#CBD5E1"}
-                  bg={form.acceptTerms ? "#2563EB" : "white"}
+                  borderColor={form.acceptTerms ? "accent.700" : "border.strong"}
+                  bg={form.acceptTerms ? "accent.700" : "white"}
                   display="flex" alignItems="center" justifyContent="center"
                   transition="all 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
-                  _hover={{ borderColor: "#2563EB", transform: "scale(1.1)" }}
+                  _hover={{ borderColor: "accent.700", transform: "scale(1.1)" }}
                   cursor="pointer"
                 >
                   {form.acceptTerms && (
@@ -1118,17 +1118,17 @@ export const OrderPage = () => {
                   )}
                 </Box>
                 <VStack align="start" gap="2">
-                  <Text color="#0F172A" fontWeight="600" lineHeight="1.6">
+                  <Text color="fg.default" fontWeight="600" lineHeight="1.6">
                     Potwierdzam, że przesłane dane są kompletne i mogą zostać wykorzystane do przygotowania projektu, harmonogramu oraz finalizacji zamówienia. 
-                    <Text as="span" color="#2563EB" fontWeight="700" cursor="pointer" _hover={{ textDecoration: "underline" }}>
+                    <Text as="span" color="accent.700" fontWeight="700" cursor="pointer" _hover={{ textDecoration: "underline" }}>
                       Zapoznałem się z regulaminem
                     </Text> i akceptuję jego warunki.
                   </Text>
                   <HStack gap="2">
-                    <Box bg={form.acceptTerms ? "#2563EB" : "#F1F5F9"} color={form.acceptTerms ? "white" : "#64748B"} px="3" py="1" rounded="full" fontSize="xs" fontWeight="700" transition="all 0.2s cubic-bezier(0.4, 0, 0.2, 1)" border={form.acceptTerms ? "1px solid rgba(255,255,255,0.2)" : "1px solid #E2E8F0"}>
+                    <Box bg={form.acceptTerms ? "accent.700" : "border.subtle"} color={form.acceptTerms ? "white" : "fg.subtle"} px="3" py="1" rounded="full" fontSize="xs" fontWeight="700" transition="all 0.2s cubic-bezier(0.4, 0, 0.2, 1)" border={form.acceptTerms ? "1px solid rgba(255,255,255,0.2)" : "1px solid border.default"}>
                       {form.acceptTerms ? "Zaakceptowane" : "Wymagane"}
                     </Box>
-                    <Text fontSize="xs" color="#64748B">
+                    <Text fontSize="xs" color="fg.subtle">
                       Musisz zaakceptować, aby kontynuować
                     </Text>
                   </HStack>
@@ -1144,7 +1144,7 @@ export const OrderPage = () => {
   const currentStepDescription = submittedOrderId ? "Dziękujemy, Twoje zamówienie zostało opłacone i zapisane." : isPaymentPending ? "Dokończ płatność aby zarezerwować projekt." : steps[step].description;
 
   return (
-    <Box bg="#F8FAFC" minH="100vh">
+    <Box bg="bg.subtle" minH="100vh">
       <SEO
         title={`${currentStepTitle} | Zamów wdrożenie | SEO Grow`}
         description={`${currentStepDescription} Wybierz plan, przekaż materiały i uruchom projekt z automatycznym SEO oraz blogiem firmowym.`}
@@ -1174,16 +1174,16 @@ export const OrderPage = () => {
               top="132px"
             >
               <Box bg="white" rounded="3xl" border="1px solid" borderColor="var(--color-border-secondary)" p="6" boxShadow="0 25px 50px -12px rgba(0,0,0,0.05)">
-                <Text fontSize="sm" fontWeight="700" color="#2563EB" mb="3">
+                <Text fontSize="sm" fontWeight="700" color="accent.700" mb="3">
                   Proces zamowienia
                 </Text>
-                <Heading as="h2" fontSize="2xl" color="#0F172A" lineHeight="1.2" mb="4">
+                <Heading as="h2" fontSize="2xl" color="fg.default" lineHeight="1.2" mb="4">
                   Zamów projekt i uzupełnij brief bez ręcznej konsultacji
                 </Heading>
                 {hasPlanParam && (
-                  <Box bg="#EEF2FF" rounded="xl" p="4" mb="5" border="1px solid" borderColor="var(--color-brand-primary)" boxShadow="var(--shadow-sm)">
+                  <Box bg="accent.50" rounded="xl" p="4" mb="5" border="1px solid" borderColor="var(--color-brand-primary)" boxShadow="var(--shadow-sm)">
                     <HStack gap="3">
-                      <Box bg="#2563EB" color="white" px="3" py="1" rounded="full" fontSize="xs" fontWeight="700">
+                      <Box bg="accent.700" color="white" px="3" py="1" rounded="full" fontSize="xs" fontWeight="700">
                         PLAN PREWYBRANY
                       </Box>
                       <Text fontSize="sm" color="var(--color-brand-primary)" fontWeight="600">
@@ -1192,7 +1192,7 @@ export const OrderPage = () => {
                     </HStack>
                   </Box>
                 )}
-                <Text color="#475569" lineHeight="1.8" mb="5">
+                <Text color="fg.muted" lineHeight="1.8" mb="5">
                   Formularz prowadzi krok po kroku przez plan, branding, materiały, kontakt i finalizację.
                 </Text>
                 <VStack gap="4" mb="5">
@@ -1202,7 +1202,7 @@ export const OrderPage = () => {
                         key={index}
                         flex="1"
                         h="2"
-                        bg={index < displayStepIndex ? "#2563EB" : index === displayStepIndex ? "#EEF2FF" : "var(--color-border-secondary)"}
+                        bg={index < displayStepIndex ? "accent.700" : index === displayStepIndex ? "accent.50" : "var(--color-border-secondary)"}
                         rounded="full"
                         transition="all 0.3s ease"
                         border={index === displayStepIndex ? "2px solid var(--color-brand-secondary)" : "none"}
@@ -1210,10 +1210,10 @@ export const OrderPage = () => {
                     ))}
                   </HStack>
                   <HStack w="full" justify="space-between">
-                    <Text fontSize="xs" color="#64748B" fontWeight="600">
+                    <Text fontSize="xs" color="fg.subtle" fontWeight="600">
                       Krok {displayStepIndex + 1} z {displaySteps.length}
                     </Text>
-                    <Text fontSize="xs" color="#2563EB" fontWeight="700">
+                    <Text fontSize="xs" color="accent.700" fontWeight="700">
                       {Math.round(progress)}% ukończone
                     </Text>
                   </HStack>
@@ -1222,47 +1222,47 @@ export const OrderPage = () => {
 
               <Box bg="white" rounded="3xl" border="1px solid" borderColor="var(--color-border-secondary)" p="6" boxShadow="var(--shadow-xl)">
                 <HStack mb="4" justify="space-between" align="center">
-                  <Text fontWeight="700" color="#0F172A" textTransform="uppercase" fontSize="xs" letterSpacing="wider">
+                  <Text fontWeight="700" color="fg.default" textTransform="uppercase" fontSize="xs" letterSpacing="wider">
                     Twoje zamówienie
                   </Text>
-                  <Box bg="#2563EB" color="white" px="3" py="1" rounded="full" fontSize="xs" fontWeight="700">
+                  <Box bg="accent.700" color="white" px="3" py="1" rounded="full" fontSize="xs" fontWeight="700">
                     {selectedPlan.name}
                   </Box>
                 </HStack>
                 <Box mb="4">
-                  <Text color="#64748B" fontSize="sm" mb="1">Plan wdrożenia</Text>
-                  <Text color="#2563EB" fontWeight="800" fontSize="lg">
+                  <Text color="fg.subtle" fontSize="sm" mb="1">Plan wdrożenia</Text>
+                  <Text color="accent.700" fontWeight="800" fontSize="lg">
                     {selectedPlan.title}
                   </Text>
                 </Box>
                 <HStack justify="space-between" mb="2">
-                  <Text color="#475569" fontSize="sm">Wdrożenie</Text>
-                  <Text color="#0F172A" fontWeight="700" fontSize="sm">{selectedPlan.setupPrice}</Text>
+                  <Text color="fg.muted" fontSize="sm">Wdrożenie</Text>
+                  <Text color="fg.default" fontWeight="700" fontSize="sm">{selectedPlan.setupPrice}</Text>
                 </HStack>
                 <HStack justify="space-between" mb="4">
-                  <Text color="#475569" fontSize="sm">Utrzymanie</Text>
-                  <Text color="#0F172A" fontWeight="700" fontSize="sm">{selectedPlan.monthlyPrice}</Text>
+                  <Text color="fg.muted" fontSize="sm">Utrzymanie</Text>
+                  <Text color="fg.default" fontWeight="700" fontSize="sm">{selectedPlan.monthlyPrice}</Text>
                 </HStack>
                 {form.extraEmailsCount > 0 && (
                   <HStack justify="space-between" mb="4">
-                    <Text color="#475569" fontSize="sm">Dodatkowe maile ({form.extraEmailsCount})</Text>
-                    <Text color="#0F172A" fontWeight="700" fontSize="sm">+{form.extraEmailsCount * 30} PLN/m</Text>
+                    <Text color="fg.muted" fontSize="sm">Dodatkowe maile ({form.extraEmailsCount})</Text>
+                    <Text color="fg.default" fontWeight="700" fontSize="sm">+{form.extraEmailsCount * 30} PLN/m</Text>
                   </HStack>
                 )}
-                <Box pt="4" borderTop="1px dashed" borderColor="#CBD5E1">
+                <Box pt="4" borderTop="1px dashed" borderColor="border.strong">
                   <HStack justify="space-between" mb="1">
-                    <Text color="#0F172A" fontWeight="700">Miesięcznie (szacunkowo)</Text>
-                    <Text color="#2563EB" fontWeight="800" fontSize="lg">
+                    <Text color="fg.default" fontWeight="700">Miesięcznie (szacunkowo)</Text>
+                    <Text color="accent.700" fontWeight="800" fontSize="lg">
                       {parseInt(selectedPlan.monthlyPrice.replace(/\D/g, '')) + form.extraEmailsCount * 30} PLN
                     </Text>
                   </HStack>
-                  <Text fontSize="xs" color="#94A3B8" textAlign="right">
+                  <Text fontSize="xs" color="fg.faint" textAlign="right">
                     Kwota ostateczna na umowie
                   </Text>
                 </Box>
               </Box>
 
-              <Box bg="#0F172A" color="white" rounded="3xl" p="6">
+              <Box bg="fg.default" color="white" rounded="3xl" p="6">
                 <Text fontWeight="700" mb="4">Co przygotować przed startem</Text>
                 <VStack align="start" gap="3">
                   <Text color="rgba(255,255,255,0.8)">- logo, jeśli już istnieje</Text>
@@ -1276,21 +1276,21 @@ export const OrderPage = () => {
             <Box bg="white" rounded="3xl" border="1px solid" borderColor="var(--color-border-secondary)" p={{ base: "6", md: "8" }} boxShadow="0 25px 50px -12px rgba(0,0,0,0.08)">
               <VStack align="start" gap="8">
                 {!submittedOrderId && !isPaymentPending && (
-                  <Box bg="#F8FAFC" rounded="xl" p="6" border="1px solid" borderColor="var(--color-border-secondary)">
+                  <Box bg="bg.subtle" rounded="xl" p="6" border="1px solid" borderColor="var(--color-border-secondary)">
                     <HStack gap="3" mb="3">
-                      <Box bg="#0F172A" color="white" w="8" h="8" rounded="full" display="flex" alignItems="center" justifyContent="center" fontSize="sm" fontWeight="600">
+                      <Box bg="fg.default" color="white" w="8" h="8" rounded="full" display="flex" alignItems="center" justifyContent="center" fontSize="sm" fontWeight="600">
                         {displayStepIndex + 1}
                       </Box>
                       <VStack align="start" gap="1">
-                        <Text fontSize="xs" fontWeight="600" color="#64748B" textTransform="uppercase" letterSpacing="wider">
+                        <Text fontSize="xs" fontWeight="600" color="fg.subtle" textTransform="uppercase" letterSpacing="wider">
                           Krok {displayStepIndex + 1} z {displaySteps.length}
                         </Text>
-                        <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} color="#0F172A" lineHeight="1.2">
+                        <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} color="fg.default" lineHeight="1.2">
                           {steps[step].title}
                         </Heading>
                       </VStack>
                     </HStack>
-                    <Text color="#64748B" lineHeight="1.7" fontSize="sm">
+                    <Text color="fg.subtle" lineHeight="1.7" fontSize="sm">
                       {steps[step].description}
                     </Text>
                   </Box>
@@ -1299,18 +1299,18 @@ export const OrderPage = () => {
                 {renderStepContent()}
 
                 {!submittedOrderId && !isPaymentPending && (
-                  <Flex justify="space-between" align="center" w="full" gap="4" flexWrap="wrap" pt="6" borderTop="1px solid" borderColor="#E2E8F0">
+                  <Flex justify="space-between" align="center" w="full" gap="4" flexWrap="wrap" pt="6" borderTop="1px solid" borderColor="border.default">
                     <Button
                       onClick={() => {
                         setStep((current) => Math.max(current - 1, 0));
                       }}
                       variant="outline"
-                      borderColor="#E2E8F0"
-                      color="#475569"
+                      borderColor="border.default"
+                      color="fg.muted"
                       _hover={{ 
-                        borderColor: "#0F172A", 
-                        color: "#0F172A",
-                        bg: "#F8FAFC",
+                        borderColor: "fg.default", 
+                        color: "fg.default",
+                        bg: "bg.subtle",
                       }}
                       isDisabled={step === 0 || (hasPlanParam && step === 1)}
                       size="lg"
@@ -1328,10 +1328,10 @@ export const OrderPage = () => {
                         onClick={() => {
                           setStep((current) => Math.min(current + 1, steps.length - 1));
                         }} 
-                        bg="#0F172A"
+                        bg="fg.default"
                         color="white"
                         _hover={{ 
-                          bg: "#1E293B", 
+                          bg: "slate.800", 
                           transform: "translateY(-1px)", 
                           boxShadow: "0 10px 25px -5px rgba(15, 23, 42, 0.2)"
                         }}
@@ -1349,10 +1349,10 @@ export const OrderPage = () => {
                     ) : (
                       <Button 
                         onClick={handleSubmit} 
-                        bg="#0F172A" 
+                        bg="fg.default" 
                         color="white" 
                         _hover={{ 
-                          bg: "#1E293B", 
+                          bg: "slate.800", 
                           transform: "translateY(-1px)", 
                           boxShadow: "0 10px 25px -5px rgba(15, 23, 42, 0.2)"
                         }}
@@ -1374,31 +1374,31 @@ export const OrderPage = () => {
                 )}
                 
                 {/* Data Protection Footer */}
-                <Box mt="8" pt="6" borderTop="1px solid" borderColor="#E2E8F0">
+                <Box mt="8" pt="6" borderTop="1px solid" borderColor="border.default">
                   <VStack align="start" gap="4">
                     <HStack gap="3" align="flex-start">
-                      <Box bg="#F1F5F9" color="#475569" w="8" h="8" rounded="full" display="flex" alignItems="center" justifyContent="center" flexShrink="0">
+                      <Box bg="border.subtle" color="fg.muted" w="8" h="8" rounded="full" display="flex" alignItems="center" justifyContent="center" flexShrink="0">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                       </Box>
                       <VStack align="start" gap="2">
-                        <Text fontWeight="700" color="#0F172A" fontSize="sm">
+                        <Text fontWeight="700" color="fg.default" fontSize="sm">
                           Informacja Administratora Danych Osobowych
                         </Text>
-                        <Text color="#475569" lineHeight="1.6" fontSize="sm">
+                        <Text color="fg.muted" lineHeight="1.6" fontSize="sm">
                           Twoje dane są u nas w pełni bezpieczne. Potrzebujemy ich, aby przygotować dane logowania do Twojego sklepu SEO Grow i rozpocząć współpracę.
                         </Text>
                       </VStack>
                     </HStack>
                     
                     <VStack align="start" gap="3" pl="11" w="full">
-                      <Text color="#64748B" fontSize="xs" lineHeight="1.5">
+                      <Text color="fg.subtle" fontSize="xs" lineHeight="1.5">
                         Administratorem Twoich danych osobowych jest Grow Solutions — JDG z siedzibą w Ostródzie (14-100), ul. Czarnieckiego 13/12, NIP: 7412176947, REGON: 545084609.
                         Możesz wycofać zgody w każdym czasie poprzez wysłanie żądania na następujący adres e-mail: kontakt@seogrow.pl.
                         Wycofanie zgody nie wpływa na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem.
                       </Text>
-                      <Text color="#64748B" fontSize="xs" lineHeight="1.5">
+                      <Text color="fg.subtle" fontSize="xs" lineHeight="1.5">
                         Więcej informacji na temat przetwarzania danych osobowych, w tym o przysługujących Ci prawach znajduje się w 
-                        <Text as={Link} to="/polityka-prywatnosci" display="inline" color="#2563EB" fontWeight="600" _hover={{ textDecoration: "underline" }}>
+                        <Text as={Link} to="/polityka-prywatnosci" display="inline" color="accent.700" fontWeight="600" _hover={{ textDecoration: "underline" }}>
                           Polityce Prywatności
                         </Text>.
                       </Text>

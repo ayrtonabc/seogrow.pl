@@ -148,7 +148,7 @@ type SEOLandingPageProps = {
 }
 
 const CheckIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="success.600" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="20 6 9 17 4 12" />
   </svg>
 )
@@ -160,7 +160,7 @@ const ArrowIcon = () => (
 )
 
 const CheckCircleIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="accent.600" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
     <polyline points="22 4 12 14.01 9 11.01" />
   </svg>
@@ -226,14 +226,14 @@ export const SEOLandingPage = ({
 
       <Box as="main">
         {breadcrumb && breadcrumb.length > 0 && (
-          <Box bg="white" borderBottom="1px solid" borderColor="#E2E8F0" py="3">
+          <Box bg="white" borderBottom="1px solid" borderColor="border.default" py="3">
             <Container maxW="7xl">
-              <HStack gap="2" fontSize="sm" color="#64748B" flexWrap="wrap">
-                <a href="/" style={{ textDecoration: "none", color: "#64748B" }}>Start</a>
+              <HStack gap="2" fontSize="sm" color="fg.subtle" flexWrap="wrap">
+                <a href="/" style={{ textDecoration: "none", color: "fg.subtle" }}>Start</a>
                 {breadcrumb.map((crumb) => (
                   <HStack key={crumb.href} gap="2">
-                    <Text color="#CBD5E1">›</Text>
-                    <a href={crumb.href} style={{ textDecoration: "none", color: "#64748B" }}>{crumb.name}</a>
+                    <Text color="border.strong">›</Text>
+                    <a href={crumb.href} style={{ textDecoration: "none", color: "fg.subtle" }}>{crumb.name}</a>
                   </HStack>
                 ))}
               </HStack>
@@ -241,13 +241,13 @@ export const SEOLandingPage = ({
           </Box>
         )}
 
-        <Box pt={{ base: "14", md: "24" }} pb={{ base: "14", md: "20" }} bgGradient="linear(to-b, #EEF2FF, #FAFBFC)" position="relative" overflow="hidden">
-          <Box position="absolute" top="-10%" left="50%" transform="translateX(-50%)" w="800px" h="500px" bg="#C7D2FE" filter="blur(120px)" rounded="full" opacity="0.5" zIndex="0" />
-          <Box position="absolute" bottom="-20%" right="-5%" w="400px" h="400px" bg="#A5B4FC" filter="blur(100px)" rounded="full" opacity="0.3" zIndex="0" />
+        <Box pt={{ base: "14", md: "24" }} pb={{ base: "14", md: "20" }} bgGradient="linear(to-b, accent.50, #FAFBFC)" position="relative" overflow="hidden">
+          <Box position="absolute" top="-10%" left="50%" transform="translateX(-50%)" w="800px" h="500px" bg="accent.200" filter="blur(120px)" rounded="full" opacity="0.5" zIndex="0" />
+          <Box position="absolute" bottom="-20%" right="-5%" w="400px" h="400px" bg="accent.300" filter="blur(100px)" rounded="full" opacity="0.3" zIndex="0" />
           <Container maxW="5xl" position="relative" zIndex="1">
             <VStack align="center" gap={{ base: "5", md: "6" }} textAlign="center" maxW="3xl" mx="auto">
               {breadcrumb && breadcrumb[0] && (
-                <Badge bg="#EEF2FF" color="#4338CA" px="3" py="1.5" rounded="full" fontSize="xs" fontWeight="700" textTransform="uppercase" letterSpacing="0.05em">
+                <Badge bg="accent.50" color="accent.700" px="3" py="1.5" rounded="full" fontSize="xs" fontWeight="700" textTransform="uppercase" letterSpacing="0.05em">
                   {breadcrumb[0].name}
                 </Badge>
               )}
@@ -255,7 +255,7 @@ export const SEOLandingPage = ({
                 <Text
                   fontSize="xs"
                   fontWeight="700"
-                  color="#4F46E5"
+                  color="accent.600"
                   textTransform="uppercase"
                   letterSpacing="0.12em"
                 >
@@ -266,7 +266,7 @@ export const SEOLandingPage = ({
                 as="h1"
                 fontSize={{ base: "34px", sm: "40px", md: "52px", lg: "60px" }}
                 fontWeight="800"
-                color="#0F172A"
+                color="fg.default"
                 letterSpacing="-0.03em"
                 lineHeight="1.05"
                 maxW="900px"
@@ -278,7 +278,7 @@ export const SEOLandingPage = ({
                   as="h2"
                   fontSize={{ base: "20px", sm: "22px", md: "26px", lg: "30px" }}
                   fontWeight="600"
-                  color="#4F46E5"
+                  color="accent.600"
                   letterSpacing="-0.015em"
                   lineHeight="1.3"
                   mt="-1"
@@ -288,12 +288,12 @@ export const SEOLandingPage = ({
                 </Heading>
               )}
               {h1Sub && (
-                <Text fontSize={{ base: "md", md: "lg" }} color="#475569" lineHeight="1.65" mt="2" maxW="640px" fontWeight="400">
+                <Text fontSize={{ base: "md", md: "lg" }} color="fg.muted" lineHeight="1.65" mt="2" maxW="640px" fontWeight="400">
                   {renderTextWithGoogle(h1Sub)}
                 </Text>
               )}
               {intro && (
-                <Text fontSize="sm" color="#64748B" lineHeight="1.6" maxW="640px" fontWeight="400" mt="1">
+                <Text fontSize="sm" color="fg.subtle" lineHeight="1.6" maxW="640px" fontWeight="400" mt="1">
                   {intro}
                 </Text>
               )}
@@ -302,7 +302,7 @@ export const SEOLandingPage = ({
                     <Box
                       as={Link}
                       to="/zamowienie?plan=express"
-                      bg="#4F46E5"
+                      bg="accent.600"
                       color="white"
                       px="7"
                       py="3"
@@ -310,7 +310,7 @@ export const SEOLandingPage = ({
                       fontWeight="700"
                       fontSize="md"
                       textDecoration="none"
-                      _hover={{ bg: "#4338CA", transform: "translateY(-1px)", boxShadow: "lg" }}
+                      _hover={{ bg: "accent.700", transform: "translateY(-1px)", boxShadow: "lg" }}
                       transition="all 0.2s"
                       display="flex"
                       alignItems="center"
@@ -324,15 +324,15 @@ export const SEOLandingPage = ({
                         as="a"
                         href={cta.secondaryHref ?? "#"}
                         bg="white"
-                        color="#0F172A"
+                        color="fg.default"
                         px="7"
                       py="3"
                         rounded="full"
                         fontWeight="600"
                         fontSize="md"
                         textDecoration="none"
-                        border="1px solid #E2E8F0"
-                        _hover={{ borderColor: "#4F46E5", color: "#4F46E5" }}
+                        border="1px solid border.default"
+                        _hover={{ borderColor: "accent.600", color: "accent.600" }}
                         transition="all 0.2s"
                       >
                         {cta.secondaryLabel}
@@ -367,13 +367,13 @@ export const SEOLandingPage = ({
         </Box>
 
         {trust.length > 0 && (
-          <Box bg="white" py="10" borderBottom="1px solid" borderColor="#E2E8F0">
+          <Box bg="white" py="10" borderBottom="1px solid" borderColor="border.default">
             <Container maxW="7xl">
               <SimpleGrid columns={{ base: 2, md: 4 }} gap="8">
                 {trust.map((item, i) => (
                   <VStack key={i} gap="1" textAlign="center">
-                    <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="900" color="#0F172A" letterSpacing="-0.03em">{item.number}</Text>
-                    <Text fontSize="sm" color="#64748B" lineHeight="1.4">{item.label}</Text>
+                    <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="900" color="fg.default" letterSpacing="-0.03em">{item.number}</Text>
+                    <Text fontSize="sm" color="fg.subtle" lineHeight="1.4">{item.label}</Text>
                   </VStack>
                 ))}
               </SimpleGrid>
@@ -388,20 +388,20 @@ export const SEOLandingPage = ({
                 // ── Process timeline: heading + 4 pasos conectados por línea ──
                 <VStack gap={{ base: "8", md: "10" }} align="stretch">
                   <VStack gap="3" align="center" textAlign="center" maxW="2xl" mx="auto">
-                    <Text fontSize="xs" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em">
+                    <Text fontSize="xs" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em">
                       Krok po kroku
                     </Text>
                     <Heading
                       as="h2"
                       fontSize={{ base: "xl", md: "2xl" }}
                       fontWeight="800"
-                      color="#0F172A"
+                      color="fg.default"
                       letterSpacing="-0.02em"
                       lineHeight="1.3"
                     >
                       {section.heading}
                     </Heading>
-                    <Text fontSize="md" color="#475569" lineHeight="1.7" maxW="lg">
+                    <Text fontSize="md" color="fg.muted" lineHeight="1.7" maxW="lg">
                       {section.content}
                     </Text>
                   </VStack>
@@ -416,7 +416,7 @@ export const SEOLandingPage = ({
                       left={{ md: "calc(12.5% + 12px)" }}
                       right={{ md: "calc(12.5% + 12px)" }}
                       h="2px"
-                      bgGradient="linear(to-r, #C7D2FE, #4F46E5, #C7D2FE)"
+                      bgGradient="linear(to-r, accent.200, accent.600, accent.200)"
                       zIndex="0"
                     />
                     {/* Línea vertical — solo mobile */}
@@ -427,7 +427,7 @@ export const SEOLandingPage = ({
                       bottom="20px"
                       left="20px"
                       w="2px"
-                      bgGradient="linear(to-b, #C7D2FE, #4F46E5, #C7D2FE)"
+                      bgGradient="linear(to-b, accent.200, accent.600, accent.200)"
                       zIndex="0"
                     />
 
@@ -441,8 +441,8 @@ export const SEOLandingPage = ({
                             rounded="full"
                             bg="white"
                             border="2px solid"
-                            borderColor="#4F46E5"
-                            color="#4F46E5"
+                            borderColor="accent.600"
+                            color="accent.600"
                             align="center"
                             justify="center"
                             fontWeight="800"
@@ -454,10 +454,10 @@ export const SEOLandingPage = ({
                             {step.step}
                           </Flex>
                           <VStack align={{ base: "flex-start", md: "center" }} gap="1.5" textAlign={{ base: "left", md: "center" }}>
-                            <Text fontSize="sm" fontWeight="700" color="#0F172A" lineHeight="1.3">
+                            <Text fontSize="sm" fontWeight="700" color="fg.default" lineHeight="1.3">
                               {step.title}
                             </Text>
-                            <Text fontSize="xs" color="#475569" lineHeight="1.5" maxW="220px">
+                            <Text fontSize="xs" color="fg.muted" lineHeight="1.5" maxW="220px">
                               {step.description}
                             </Text>
                           </VStack>
@@ -478,13 +478,13 @@ export const SEOLandingPage = ({
                       as="h2"
                       fontSize={{ base: "xl", md: "2xl" }}
                       fontWeight="800"
-                      color="#0F172A"
+                      color="fg.default"
                       letterSpacing="-0.02em"
                       lineHeight="1.3"
                     >
                       {section.heading}
                     </Heading>
-                    <Text fontSize="md" color="#475569" lineHeight="1.7">
+                    <Text fontSize="md" color="fg.muted" lineHeight="1.7">
                       {section.content}
                     </Text>
                     {section.highlights && section.highlights.length > 0 && (
@@ -492,7 +492,7 @@ export const SEOLandingPage = ({
                         {section.highlights.map((hl, j) => (
                           <HStack key={j} gap="2" align="start">
                             <Box flexShrink={0} mt="0.5"><CheckCircleIcon /></Box>
-                            <Text fontSize="sm" color="#334155" lineHeight="1.6">{hl}</Text>
+                            <Text fontSize="sm" color="slate.700" lineHeight="1.6">{hl}</Text>
                           </HStack>
                         ))}
                       </VStack>
@@ -542,18 +542,18 @@ export const SEOLandingPage = ({
         {features.length > 0 && (
           <Box py={{ base: "12", md: "20" }} bg="white">
             <Container maxW="7xl">
-              <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="800" color="#0F172A" letterSpacing="-0.02em" textAlign="center" mb="10">
+              <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="800" color="fg.default" letterSpacing="-0.02em" textAlign="center" mb="10">
                 Co zyskujesz
               </Heading>
               <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} gap="5">
                 {features.map((feature, i) => (
-                  <Box key={i} bg="#F8FAFC" rounded="xl" p="5" border="1px solid" borderColor="#E2E8F0" _hover={{ borderColor: "#4F46E5", boxShadow: "sm" }} transition="all 0.2s">
+                  <Box key={i} bg="bg.subtle" rounded="xl" p="5" border="1px solid" borderColor="border.default" _hover={{ borderColor: "accent.600", boxShadow: "sm" }} transition="all 0.2s">
                     <VStack align="start" gap="2">
-                      <HStack gap="2" color="#059669">
+                      <HStack gap="2" color="success.600">
                         <CheckIcon />
-                        <Text fontWeight="700" color="#0F172A" fontSize="sm">{feature.title}</Text>
+                        <Text fontWeight="700" color="fg.default" fontSize="sm">{feature.title}</Text>
                       </HStack>
-                      <Text fontSize="sm" color="#64748B" lineHeight="1.6">{feature.description}</Text>
+                      <Text fontSize="sm" color="fg.subtle" lineHeight="1.6">{feature.description}</Text>
                     </VStack>
                   </Box>
                 ))}
@@ -563,9 +563,9 @@ export const SEOLandingPage = ({
         )}
 
         {internalLinks.length > 0 && (
-          <Box py={{ base: "8", md: "12" }} bg="#F8FAFC" borderTop="1px solid" borderColor="#E2E8F0">
+          <Box py={{ base: "8", md: "12" }} bg="bg.subtle" borderTop="1px solid" borderColor="border.default">
             <Container maxW="7xl">
-              <Text fontSize="xs" fontWeight="700" color="#64748B" mb="3" textTransform="uppercase" letterSpacing="0.05em">
+              <Text fontSize="xs" fontWeight="700" color="fg.subtle" mb="3" textTransform="uppercase" letterSpacing="0.05em">
                 Powiązane strony
               </Text>
               <Flex gap="3" flexWrap="wrap">
@@ -576,16 +576,16 @@ export const SEOLandingPage = ({
                     to={link.href}
                     bg="white"
                     border="1px solid"
-                    borderColor="#E2E8F0"
+                    borderColor="border.default"
                     rounded="xl"
                     px="5"
                     py="2.5"
                     textDecoration="none"
-                    _hover={{ borderColor: "#4F46E5", boxShadow: "sm" }}
+                    _hover={{ borderColor: "accent.600", boxShadow: "sm" }}
                     transition="all 0.2s"
                   >
-                    <Text fontSize="sm" fontWeight="700" color="#0F172A">{link.label}</Text>
-                    {link.note && <Text fontSize="xs" color="#94A3B8" mt="0.5">{link.note}</Text>}
+                    <Text fontSize="sm" fontWeight="700" color="fg.default">{link.label}</Text>
+                    {link.note && <Text fontSize="xs" color="fg.faint" mt="0.5">{link.note}</Text>}
                   </Box>
                 ))}
               </Flex>
@@ -596,14 +596,14 @@ export const SEOLandingPage = ({
         {faq.length > 0 && (
           <Box py={{ base: "12", md: "20" }} bg="white">
             <Container maxW="2xl">
-              <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="800" color="#0F172A" letterSpacing="-0.02em" mb="8" textAlign="center">
+              <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="800" color="fg.default" letterSpacing="-0.02em" mb="8" textAlign="center">
                 Często zadawane pytania
               </Heading>
-              <VStack align="stretch" gap="0" divider={<Box borderBottom="1px solid" borderColor="#F1F5F9" />}>
+              <VStack align="stretch" gap="0" divider={<Box borderBottom="1px solid" borderColor="border.subtle" />}>
                 {faq.map((item, i) => (
                   <Box key={i} py="5">
-                    <Text fontWeight="700" color="#0F172A" fontSize="md" mb="2">{item.q}</Text>
-                    <Text fontSize="sm" color="#64748B" lineHeight="1.7">{item.a}</Text>
+                    <Text fontWeight="700" color="fg.default" fontSize="md" mb="2">{item.q}</Text>
+                    <Text fontSize="sm" color="fg.subtle" lineHeight="1.7">{item.a}</Text>
                   </Box>
                 ))}
               </VStack>
@@ -612,20 +612,20 @@ export const SEOLandingPage = ({
         )}
 
         {cta && (
-          <Box py={{ base: "16", md: "24" }} bg="linear-gradient(135deg, #0F172A 0%, #1E293B 100%)">
+          <Box py={{ base: "16", md: "24" }} bg="linear-gradient(135deg, fg.default 0%, slate.800 100%)">
             <Container maxW="2xl">
               <VStack gap="6" textAlign="center">
                 <Heading as="h2" fontSize={{ base: "2xl", md: "4xl" }} fontWeight="900" color="white" letterSpacing="-0.03em" lineHeight="1.1">
                   {cta.title}
                 </Heading>
-                <Text fontSize={{ base: "md", md: "lg" }} color="#94A3B8" lineHeight="1.7" maxW="xl">
+                <Text fontSize={{ base: "md", md: "lg" }} color="fg.faint" lineHeight="1.7" maxW="xl">
                   {cta.description}
                 </Text>
                 <Flex gap="3" flexWrap="wrap" justify="center" pt="2">
                   <Box
                     as={Link}
                     to="/zamowienie?plan=express"
-                    bg="#4F46E5"
+                    bg="accent.600"
                     color="white"
                     px="8"
                     py="3.5"
@@ -633,7 +633,7 @@ export const SEOLandingPage = ({
                     fontWeight="700"
                     fontSize="md"
                     textDecoration="none"
-                    _hover={{ bg: "#4338CA", transform: "translateY(-2px)", boxShadow: "lg" }}
+                    _hover={{ bg: "accent.700", transform: "translateY(-2px)", boxShadow: "lg" }}
                     transition="all 0.2s"
                     display="flex"
                     alignItems="center"

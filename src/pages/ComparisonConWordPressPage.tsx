@@ -68,13 +68,13 @@ export const ComparisonConWordPressPage = () => {
 
           {/* Header */}
           <VStack gap="4" textAlign="center" maxW="3xl" mx="auto">
-            <Badge bg="#EEF2FF" color="#3730A3" px="3" py="1" rounded="full" fontSize="xs" fontWeight="700">
+            <Badge bg="accent.50" color="accent.800" px="3" py="1" rounded="full" fontSize="xs" fontWeight="700">
               Porównanie
             </Badge>
-            <Heading as="h1" fontSize={{ base: "32px", md: "48px" }} fontWeight="800" letterSpacing="-0.03em" color="#0F172A">
+            <Heading as="h1" fontSize={{ base: "32px", md: "48px" }} fontWeight="800" letterSpacing="-0.03em" color="fg.default">
               SEO Grow vs WordPress vs strona statyczna
             </Heading>
-            <Text color="#475569" fontSize={{ base: "md", md: "lg" }} lineHeight="1.7">
+            <Text color="fg.muted" fontSize={{ base: "md", md: "lg" }} lineHeight="1.7">
               Szczegółowe porównanie trzech podejść do tworzenia stron internetowych dla małych firm.
             </Text>
             <Box
@@ -83,12 +83,12 @@ export const ComparisonConWordPressPage = () => {
               display="inline-flex"
               alignItems="center"
               gap="2"
-              color="#4F46E5"
+              color="accent.600"
               fontSize="sm"
               fontWeight="700"
               textDecoration="none"
               mt="2"
-              _hover={{ color: "#4338CA", gap: "3" }}
+              _hover={{ color: "accent.700", gap: "3" }}
               transition="all 0.2s"
             >
               ← Wróć na stronę główną
@@ -97,7 +97,7 @@ export const ComparisonConWordPressPage = () => {
 
           {/* Comparison Cards */}
           <Box>
-            <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="700" color="#0F172A" mb="6" textAlign="center">
+            <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="700" color="fg.default" mb="6" textAlign="center">
               Trzy podejścia, trzy filozofie
             </Heading>
             <Grid templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }} gap="5">
@@ -107,36 +107,36 @@ export const ComparisonConWordPressPage = () => {
                   bg="white"
                   rounded="2xl"
                   border="1px solid"
-                  borderColor={option.highlighted ? "#4F46E5" : "#E2E8F0"}
+                  borderColor={option.highlighted ? "accent.600" : "border.default"}
                   boxShadow={option.highlighted ? "0 18px 40px rgba(79, 70, 229, 0.10)" : "none"}
                   p="6"
                 >
                   <VStack align="stretch" gap="5" h="full">
                     <Box>
                       {option.highlighted && (
-                        <Text display="inline-flex" bg="#DBEAFE" color="#1D4ED8" px="3" py="1" rounded="full" fontSize="xs" fontWeight="800" mb="3">
+                        <Text display="inline-flex" bg="#DBEAFE" color="accent.800" px="3" py="1" rounded="full" fontSize="xs" fontWeight="800" mb="3">
                           Najprostszy start
                         </Text>
                       )}
-                      <Heading as="h3" fontSize="xl" fontWeight="800" color="#0F172A" mb="2">
+                      <Heading as="h3" fontSize="xl" fontWeight="800" color="fg.default" mb="2">
                         {option.name}
                       </Heading>
-                      <Text fontSize="sm" color="#64748B" lineHeight="1.7">
+                      <Text fontSize="sm" color="fg.subtle" lineHeight="1.7">
                         {option.bestFor}
                       </Text>
                     </Box>
 
                     <Box>
-                      <Text fontSize="xs" fontWeight="800" color={option.highlighted ? "#4F46E5" : "#64748B"} textTransform="uppercase" letterSpacing="0.08em" mb="3">
+                      <Text fontSize="xs" fontWeight="800" color={option.highlighted ? "accent.600" : "fg.subtle"} textTransform="uppercase" letterSpacing="0.08em" mb="3">
                         Plusy
                       </Text>
                       <VStack align="stretch" gap="2">
                         {option.pluses.map((item) => (
                           <Flex key={item} gap="2" align="start">
-                            <Box color={option.highlighted ? "#10B981" : "#10B981"} mt="0.5" flexShrink={0}>
+                            <Box color={option.highlighted ? "success.500" : "success.500"} mt="0.5" flexShrink={0}>
                               <CheckIcon />
                             </Box>
-                            <Text fontSize="sm" color="#334155" lineHeight="1.5">
+                            <Text fontSize="sm" color="slate.700" lineHeight="1.5">
                               {item}
                             </Text>
                           </Flex>
@@ -145,16 +145,16 @@ export const ComparisonConWordPressPage = () => {
                     </Box>
 
                     <Box>
-                      <Text fontSize="xs" fontWeight="800" color={option.highlighted ? "#4F46E5" : "#64748B"} textTransform="uppercase" letterSpacing="0.08em" mb="3">
+                      <Text fontSize="xs" fontWeight="800" color={option.highlighted ? "accent.600" : "fg.subtle"} textTransform="uppercase" letterSpacing="0.08em" mb="3">
                         {option.highlighted ? "Co w zamian" : "Ograniczenia"}
                       </Text>
                       <VStack align="stretch" gap="2">
                         {option.minuses.map((item) => (
                           <Flex key={item} gap="2" align="start">
-                            <Box color={option.highlighted ? "#10B981" : "#94A3B8"} mt="0.5" flexShrink={0}>
+                            <Box color={option.highlighted ? "success.500" : "fg.faint"} mt="0.5" flexShrink={0}>
                               {option.highlighted ? <CheckIcon /> : <MinusIcon />}
                             </Box>
-                            <Text fontSize="sm" color={option.highlighted ? "#1E293B" : "#475569"} lineHeight="1.5" fontWeight={option.highlighted ? "500" : "400"}>
+                            <Text fontSize="sm" color={option.highlighted ? "slate.800" : "fg.muted"} lineHeight="1.5" fontWeight={option.highlighted ? "500" : "400"}>
                               {item}
                             </Text>
                           </Flex>
@@ -169,10 +169,10 @@ export const ComparisonConWordPressPage = () => {
 
           {/* Integrations */}
           <Box>
-            <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="700" color="#0F172A" mb="4">
+            <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="700" color="fg.default" mb="4">
               Integracje, które działają od razu
             </Heading>
-            <Text color="#475569" fontSize="md" mb="6">
+            <Text color="fg.muted" fontSize="md" mb="6">
               SEO Grow łączy się z narzędziami, których Twoi klienci już używają.
             </Text>
             <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap="4">
@@ -181,19 +181,19 @@ export const ComparisonConWordPressPage = () => {
                   key={i}
                   gap="3"
                   align="start"
-                  bg="#F8FAFC"
+                  bg="bg.subtle"
                   p="5"
                   rounded="xl"
-                  border="1px solid #E2E8F0"
-                  _hover={{ borderColor: "#4F46E5", transform: "translateY(-2px)" }}
+                  border="1px solid border.default"
+                  _hover={{ borderColor: "accent.600", transform: "translateY(-2px)" }}
                   transition="all 0.2s"
                 >
-                  <Box w="2" h="2" mt="2" rounded="full" bg="#4F46E5" flexShrink={0} />
+                  <Box w="2" h="2" mt="2" rounded="full" bg="accent.600" flexShrink={0} />
                   <Box>
-                    <Text fontSize="sm" fontWeight="700" color="#0F172A" mb="1">
+                    <Text fontSize="sm" fontWeight="700" color="fg.default" mb="1">
                       {integration.name}
                     </Text>
-                    <Text fontSize="xs" color="#64748B" lineHeight="1.5">
+                    <Text fontSize="xs" color="fg.subtle" lineHeight="1.5">
                       {integration.desc}
                     </Text>
                   </Box>
@@ -204,10 +204,10 @@ export const ComparisonConWordPressPage = () => {
 
           {/* Documentation */}
           <Box>
-            <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="700" color="#0F172A" mb="4">
+            <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="700" color="fg.default" mb="4">
               Dokumentacja techniczna
             </Heading>
-            <Text color="#475569" fontSize="md" mb="6">
+            <Text color="fg.muted" fontSize="md" mb="6">
               Standardy, na których opiera się SEO Grow.
             </Text>
             <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap="4">
@@ -225,19 +225,19 @@ export const ComparisonConWordPressPage = () => {
                     bg="white"
                     p="5"
                     rounded="xl"
-                    border="1px solid #E2E8F0"
-                    _hover={{ borderColor: "#4F46E5" }}
+                    border="1px solid border.default"
+                    _hover={{ borderColor: "accent.600" }}
                     transition="all 0.2s"
                   >
                     <Box flex="1">
-                      <Text fontSize="sm" fontWeight="700" color="#0F172A" mb="0.5">
+                      <Text fontSize="sm" fontWeight="700" color="fg.default" mb="0.5">
                         {doc.name}
                       </Text>
-                      <Text fontSize="xs" color="#64748B">
+                      <Text fontSize="xs" color="fg.subtle">
                         {doc.desc}
                       </Text>
                     </Box>
-                    <Box color="#4F46E5" flexShrink={0}>
+                    <Box color="accent.600" flexShrink={0}>
                       <ArrowIcon />
                     </Box>
                   </Flex>
@@ -248,7 +248,7 @@ export const ComparisonConWordPressPage = () => {
 
           {/* CTA final */}
           <Box
-            bg="#191C32"
+            bg="fg.default"
             rounded="2xl"
             p={{ base: "7", md: "9" }}
             textAlign="center"
@@ -265,7 +265,7 @@ export const ComparisonConWordPressPage = () => {
               display="inline-flex"
               alignItems="center"
               gap="2"
-              bg="linear-gradient(135deg, #4F46E5 0%, #2563EB 100%)"
+              bg="linear-gradient(135deg, accent.600 0%, accent.700 100%)"
               color="white"
               px="7"
               py="3.5"
@@ -274,7 +274,7 @@ export const ComparisonConWordPressPage = () => {
               fontSize="md"
               textDecoration="none"
               boxShadow="0 4px 14px rgba(79, 70, 229, 0.35)"
-              _hover={{ bg: "linear-gradient(135deg, #4338CA 0%, #1D4ED8 100%)", transform: "translateY(-2px)" }}
+              _hover={{ bg: "linear-gradient(135deg, accent.700 0%, accent.800 100%)", transform: "translateY(-2px)" }}
               transition="all 0.2s"
             >
               Zamów stronę

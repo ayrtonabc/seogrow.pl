@@ -157,7 +157,7 @@ export const LanguageSwitcher = () => {
         cursor="pointer"
         transition="opacity 0.15s"
         _hover={{ opacity: 0.7 }}
-        _focusVisible={{ outline: "2px solid", outlineColor: "#4F46E5", outlineOffset: "2px", borderRadius: "4px" }}
+        _focusVisible={{ outline: "2px solid", outlineColor: "accent.600", outlineOffset: "2px", borderRadius: "4px" }}
       >
         <CurrentFlag size={18} />
       </Box>
@@ -169,7 +169,7 @@ export const LanguageSwitcher = () => {
           left="50%"
           transform="translateX(-50%)"
           bg="white"
-          border="1px solid #E2E8F0"
+          border="1px solid border.default"
           rounded="lg"
           boxShadow="0 12px 28px -8px rgba(15, 23, 42, 0.18), 0 2px 6px rgba(15, 23, 42, 0.04)"
           zIndex={50}
@@ -200,9 +200,9 @@ export const LanguageSwitcher = () => {
                 px="2"
                 py="1.5"
                 cursor="pointer"
-                bg={isActive ? "#EEF2FF" : "transparent"}
+                bg={isActive ? "accent.50" : "transparent"}
                 transition="background 0.12s"
-                _hover={{ bg: isActive ? "#EEF2FF" : "#F8FAFC" }}
+                _hover={{ bg: isActive ? "accent.50" : "bg.subtle" }}
                 textAlign="left"
               >
                 <Flag size={18} />
@@ -245,7 +245,7 @@ export const TranslationBanner = () => {
       zIndex={40}
       maxW="lg"
       w="calc(100% - 32px)"
-      bg="#0F172A"
+      bg="fg.default"
       color="white"
       borderRadius="full"
       px={{ base: "4", md: "6" }}
@@ -268,14 +268,14 @@ export const TranslationBanner = () => {
         onClick={() => setLanguage("pl")}
         flexShrink={0}
         bg="white"
-        color="#0F172A"
+        color="fg.default"
         fontSize={{ base: "10px", md: "11px" }}
         fontWeight="700"
         px={{ base: "3", md: "3.5" }}
         py="1.5"
         rounded="full"
         cursor="pointer"
-        _hover={{ bg: "#E0E7FF" }}
+        _hover={{ bg: "accent.100" }}
         transition="background 0.15s"
       >
         {copy.back}

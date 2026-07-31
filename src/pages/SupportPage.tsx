@@ -94,7 +94,7 @@ export const SupportPage = () => {
         noindex={true}
       />
       {/* Top Header */}
-      <Box bg="white" borderBottom="1px solid" borderColor="#E2E8F0" py="3" position="sticky" top="0" zIndex="100">
+      <Box bg="white" borderBottom="1px solid" borderColor="border.default" py="3" position="sticky" top="0" zIndex="100">
         <Container maxW="7xl">
           <Flex justify="space-between" align="center">
             <ChakraLink 
@@ -102,22 +102,22 @@ export const SupportPage = () => {
               display="flex" 
               alignItems="center" 
               gap="2" 
-              color="#64748B"
-              _hover={{ color: "#0F172A" }}
+              color="fg.subtle"
+              _hover={{ color: "fg.default" }}
               fontSize="sm"
               fontWeight="500"
             >
               <FaArrowLeft size={14} />
-              <Text fontWeight="700" color="#0F172A">SEO Grow</Text>
-              <Text color="#94A3B8">|</Text>
+              <Text fontWeight="700" color="fg.default">SEO Grow</Text>
+              <Text color="fg.faint">|</Text>
               <Text>Dokumentacja</Text>
             </ChakraLink>
             
             <HStack gap="6" display={{ base: "none", md: "flex" }}>
-              <ChakraLink href="#" color="#64748B" fontSize="sm" _hover={{ color: "#0F172A" }}>
+              <ChakraLink href="#" color="fg.subtle" fontSize="sm" _hover={{ color: "fg.default" }}>
                 Cennik
               </ChakraLink>
-              <ChakraLink href="#" color="#64748B" fontSize="sm" _hover={{ color: "#0F172A" }}>
+              <ChakraLink href="#" color="fg.subtle" fontSize="sm" _hover={{ color: "fg.default" }}>
                 Status systemu
               </ChakraLink>
               <ChakraLink 
@@ -150,7 +150,7 @@ export const SupportPage = () => {
                   <Text 
                     fontSize="xs" 
                     fontWeight="600" 
-                    color="#94A3B8" 
+                    color="fg.faint" 
                     textTransform="uppercase" 
                     letterSpacing="0.05em"
                     mb="2"
@@ -169,10 +169,10 @@ export const SupportPage = () => {
                         fontWeight="500"
                         cursor="pointer"
                         bg={activeSection === item.id ? "#F0FDF4" : "transparent"}
-                        color={activeSection === item.id ? "#16A34A" : "#64748B"}
+                        color={activeSection === item.id ? "#16A34A" : "fg.subtle"}
                         _hover={{ 
-                          bg: activeSection === item.id ? "#F0FDF4" : "#F1F5F9",
-                          color: activeSection === item.id ? "#16A34A" : "#0F172A"
+                          bg: activeSection === item.id ? "#F0FDF4" : "border.subtle",
+                          color: activeSection === item.id ? "#16A34A" : "fg.default"
                         }}
                       >
                         {item.label}
@@ -189,17 +189,17 @@ export const SupportPage = () => {
             {/* Overview Section */}
             <Box id="overview" mb="16" scrollMarginTop="100px">
               <Badge colorScheme="green" mb="4">Wprowadzenie</Badge>
-              <Heading as="h1" fontSize="3xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h1" fontSize="3xl" fontWeight="700" color="fg.default" mb="4">
                 Przegląd systemu SEO Grow
               </Heading>
-              <Text fontSize="lg" color="#64748B" lineHeight="1.7" mb="6">
+              <Text fontSize="lg" color="fg.subtle" lineHeight="1.7" mb="6">
                 SEO Grow to kompletny system CMS (Content Management System) z wbudowanym 
                 automatycznym SEO technicznym. Twórz, edytuj i publikuj profesjonalne strony 
                 internetowe bez znajomości kodu programowania.
               </Text>
               
-              <Box bg="white" rounded="xl" border="1px solid" borderColor="#E2E8F0" p="6" mb="6">
-                <Heading as="h3" fontSize="lg" fontWeight="600" color="#0F172A" mb="4">
+              <Box bg="white" rounded="xl" border="1px solid" borderColor="border.default" p="6" mb="6">
+                <Heading as="h3" fontSize="lg" fontWeight="600" color="fg.default" mb="4">
                   <HStack gap="2">
                     <Icon as={FaRocket} color="#16A34A" />
                     <Text>Co zawiera system</Text>
@@ -236,10 +236,10 @@ export const SupportPage = () => {
 
             {/* Quick Start Section */}
             <Box id="quickstart" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 Szybki start
               </Heading>
-              <Text color="#64748B" mb="6">
+              <Text color="fg.subtle" mb="6">
                 Rozpocznij pracę z SEO Grow w 3 prostych krokach. Cały proces zajmuje 
                 mniej niż 10 minut.
               </Text>
@@ -262,7 +262,7 @@ export const SupportPage = () => {
                     desc: "Dostosuj treści, dodaj logo i zdjęcia. Kliknij 'Opublikuj' - Twoja strona będzie dostępna w internecie natychmiast."
                   }
                 ].map((item, idx) => (
-                  <Box key={idx} bg="white" rounded="lg" border="1px solid" borderColor="#E2E8F0" p="5">
+                  <Box key={idx} bg="white" rounded="lg" border="1px solid" borderColor="border.default" p="5">
                     <HStack gap="4" align="start">
                       <Box 
                         w="10" 
@@ -280,8 +280,8 @@ export const SupportPage = () => {
                         {item.step}
                       </Box>
                       <Box>
-                        <Text fontWeight="600" color="#0F172A" mb="1">{item.title}</Text>
-                        <Text fontSize="sm" color="#64748B">{item.desc}</Text>
+                        <Text fontWeight="600" color="fg.default" mb="1">{item.title}</Text>
+                        <Text fontSize="sm" color="fg.subtle">{item.desc}</Text>
                       </Box>
                     </HStack>
                   </Box>
@@ -291,25 +291,25 @@ export const SupportPage = () => {
 
             {/* Editor Section */}
             <Box id="editor" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 <HStack gap="2">
                   <Icon as={FaPaintBrush} color="#16A34A" />
                   <Text>Edytor wizualny</Text>
                 </HStack>
               </Heading>
-              <Text color="#64748B" lineHeight="1.7" mb="6">
+              <Text color="fg.subtle" lineHeight="1.7" mb="6">
                 Edytor SEO Grow działa jak zaawansowany dokument tekstowy. Dodawaj sekcje, 
                 teksty, zdjęcia i inne elementy przeciągając je na stronę. Wszystkie zmiany 
                 są widoczne natychmiast w podglądzie na żywo.
               </Text>
 
               <Box overflowX="auto" mb="6">
-                <Box as="table" w="100%" bg="white" rounded="xl" border="1px solid" borderColor="#E2E8F0">
-                  <Box as="thead" bg="#F8FAFC">
+                <Box as="table" w="100%" bg="white" rounded="xl" border="1px solid" borderColor="border.default">
+                  <Box as="thead" bg="bg.subtle">
                     <Box as="tr">
-                      <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="#64748B">Element</Box>
-                      <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="#64748B">Opis</Box>
-                      <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="#64748B">Dostępność</Box>
+                      <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="fg.subtle">Element</Box>
+                      <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="fg.subtle">Opis</Box>
+                      <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="fg.subtle">Dostępność</Box>
                     </Box>
                   </Box>
                   <Box as="tbody">
@@ -320,10 +320,10 @@ export const SupportPage = () => {
                       { el: "E-commerce", desc: "Produkty, koszyk, płatności", avail: "Pro" },
                       { el: "Blog", desc: "Artykuły, kategorie, tagi", avail: "Standard, Pro" },
                     ].map((row, idx) => (
-                      <Box as="tr" key={idx} borderTop="1px solid" borderColor="#E2E8F0">
-                        <Box as="td" p="4" fontSize="sm" fontWeight="500" color="#0F172A">{row.el}</Box>
-                        <Box as="td" p="4" fontSize="sm" color="#64748B">{row.desc}</Box>
-                        <Box as="td" p="4" fontSize="sm" color="#64748B">{row.avail}</Box>
+                      <Box as="tr" key={idx} borderTop="1px solid" borderColor="border.default">
+                        <Box as="td" p="4" fontSize="sm" fontWeight="500" color="fg.default">{row.el}</Box>
+                        <Box as="td" p="4" fontSize="sm" color="fg.subtle">{row.desc}</Box>
+                        <Box as="td" p="4" fontSize="sm" color="fg.subtle">{row.avail}</Box>
                       </Box>
                     ))}
                   </Box>
@@ -333,13 +333,13 @@ export const SupportPage = () => {
 
             {/* SEO Section */}
             <Box id="seo" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 <HStack gap="2">
                   <Icon as={FaSearch} color="#16A34A" />
                   <Text>SEO automatyczne</Text>
                 </HStack>
               </Heading>
-              <Text color="#64748B" lineHeight="1.7" mb="6">
+              <Text color="fg.subtle" lineHeight="1.7" mb="6">
                 System automatycznie wykonuje optymalizację SEO technicznego bez Twojej 
                 ingerencji. Skup się na tworzeniu treści, a resztą zajmiemy się my.
               </Text>
@@ -352,14 +352,14 @@ export const SupportPage = () => {
                   { icon: FaRocket, title: "Szybkość ładowania", desc: "Optymalizacja Core Web Vitals, wynik 90+ w PageSpeed" },
                   { icon: FaShieldAlt, title: "SSL/HTTPS", desc: "Wymuszona obsługa bezpiecznego połączenia" },
                 ].map((item, idx) => (
-                  <Box key={idx} bg="white" rounded="lg" border="1px solid" borderColor="#E2E8F0" p="4">
+                  <Box key={idx} bg="white" rounded="lg" border="1px solid" borderColor="border.default" p="4">
                     <HStack gap="3" align="start">
                       <Box w="10" h="10" bg="#F0FDF4" rounded="lg" display="flex" alignItems="center" justifyContent="center" flexShrink={0}>
                         <Icon as={item.icon} color="#16A34A" />
                       </Box>
                       <Box>
-                        <Text fontWeight="600" color="#0F172A">{item.title}</Text>
-                        <Text fontSize="sm" color="#64748B">{item.desc}</Text>
+                        <Text fontWeight="600" color="fg.default">{item.title}</Text>
+                        <Text fontSize="sm" color="fg.subtle">{item.desc}</Text>
                       </Box>
                     </HStack>
                   </Box>
@@ -369,41 +369,41 @@ export const SupportPage = () => {
 
             {/* Pages Management */}
             <Box id="pages" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 Zarządzanie stronami
               </Heading>
-              <Text color="#64748B" lineHeight="1.7" mb="6">
+              <Text color="fg.subtle" lineHeight="1.7" mb="6">
                 Twórz nieograniczoną liczbę podstron, zarządzaj ich strukturą i nawigacją. 
                 System automatycznie aktualizuje menu i linki wewnętrzne.
               </Text>
 
-              <Box bg="white" rounded="xl" border="1px solid" borderColor="#E2E8F0" p="6">
+              <Box bg="white" rounded="xl" border="1px solid" borderColor="border.default" p="6">
                 <VStack align="stretch" gap="4">
                   <HStack justify="space-between">
-                    <Text fontWeight="600" color="#0F172A">Strona główna</Text>
+                    <Text fontWeight="600" color="fg.default">Strona główna</Text>
                     <Badge colorScheme="green">Opublikowana</Badge>
                   </HStack>
-                  <Box borderLeft="2px solid" borderColor="#E2E8F0" pl="4">
+                  <Box borderLeft="2px solid" borderColor="border.default" pl="4">
                     <HStack justify="space-between">
                       <Text color="#374151">O nas</Text>
                       <Badge colorScheme="green">Opublikowana</Badge>
                     </HStack>
                   </Box>
-                  <Box borderLeft="2px solid" borderColor="#E2E8F0" pl="4">
+                  <Box borderLeft="2px solid" borderColor="border.default" pl="4">
                     <HStack justify="space-between">
                       <Text color="#374151">Usługi</Text>
                       <Badge colorScheme="green">Opublikowana</Badge>
                     </HStack>
                   </Box>
-                  <Box borderLeft="2px solid" borderColor="#E2E8F0" pl="4">
+                  <Box borderLeft="2px solid" borderColor="border.default" pl="4">
                     <VStack align="stretch" gap="2">
                       <HStack justify="space-between">
                         <Text color="#374151">Blog</Text>
                         <Badge colorScheme="green">Opublikowana</Badge>
                       </HStack>
-                      <Box pl="4" borderLeft="2px solid" borderColor="#E2E8F0">
-                        <Text fontSize="sm" color="#64748B">Jak zacząć z SEO</Text>
-                        <Text fontSize="sm" color="#64748B">10 wskazówek dla początkujących</Text>
+                      <Box pl="4" borderLeft="2px solid" borderColor="border.default">
+                        <Text fontSize="sm" color="fg.subtle">Jak zacząć z SEO</Text>
+                        <Text fontSize="sm" color="fg.subtle">10 wskazówek dla początkujących</Text>
                       </Box>
                     </VStack>
                   </Box>
@@ -417,10 +417,10 @@ export const SupportPage = () => {
 
             {/* Blog Module */}
             <Box id="blog" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 Moduł bloga
               </Heading>
-              <Text color="#64748B" lineHeight="1.7" mb="6">
+              <Text color="fg.subtle" lineHeight="1.7" mb="6">
                 Prowadź firmowego bloga z pełnym wsparciem SEO. System automatycznie 
                 generuje meta tagi, schema markup i optymalizuje obrazy.
               </Text>
@@ -443,13 +443,13 @@ export const SupportPage = () => {
 
             {/* Analytics */}
             <Box id="analytics" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 <HStack gap="2">
                   <Icon as={FaChartLine} color="#16A34A" />
                   <Text>Analityka</Text>
                 </HStack>
               </Heading>
-              <Text color="#64748B" lineHeight="1.7" mb="6">
+              <Text color="fg.subtle" lineHeight="1.7" mb="6">
                 Monitoruj ruch na stronie w czasie rzeczywistym. Śledź źródła odwiedzin, 
                 najpopularniejsze strony i zachowanie użytkowników.
               </Text>
@@ -457,43 +457,43 @@ export const SupportPage = () => {
 
             {/* Domains & Hosting */}
             <Box id="domains" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 <HStack gap="2">
                   <Icon as={FaGlobe} color="#16A34A" />
                   <Text>Domeny i hosting</Text>
                 </HStack>
               </Heading>
-              <Text color="#64748B" lineHeight="1.7" mb="6">
+              <Text color="fg.subtle" lineHeight="1.7" mb="6">
                 Każdy plan zawiera domenę i hosting. Brak ukrytych kosztów, brak limitów 
                 transferu. Strona działa szybko i niezawodnie 24/7.
               </Text>
 
-              <Box as="table" w="100%" bg="white" rounded="xl" border="1px solid" borderColor="#E2E8F0" overflow="hidden">
-                <Box as="thead" bg="#F8FAFC">
+              <Box as="table" w="100%" bg="white" rounded="xl" border="1px solid" borderColor="border.default" overflow="hidden">
+                <Box as="thead" bg="bg.subtle">
                   <Box as="tr">
-                    <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="#64748B">Funkcja</Box>
-                    <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="#64748B">Start</Box>
-                    <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="#64748B">Standard</Box>
-                    <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="#64748B">Pro</Box>
+                    <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="fg.subtle">Funkcja</Box>
+                    <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="fg.subtle">Start</Box>
+                    <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="fg.subtle">Standard</Box>
+                    <Box as="th" p="4" textAlign="left" fontSize="sm" fontWeight="600" color="fg.subtle">Pro</Box>
                   </Box>
                 </Box>
                 <Box as="tbody">
-                  <Box as="tr" borderTop="1px solid" borderColor="#E2E8F0">
+                  <Box as="tr" borderTop="1px solid" borderColor="border.default">
                     <Box as="td" p="4" fontSize="sm" color="#374151">Domena .pl/.com.pl</Box>
-                    <Box as="td" p="4" fontSize="sm" color="#64748B">-</Box>
+                    <Box as="td" p="4" fontSize="sm" color="fg.subtle">-</Box>
                     <Box as="td" p="4" fontSize="sm" color="#16A34A"><FaCheckCircle /></Box>
                     <Box as="td" p="4" fontSize="sm" color="#16A34A"><FaCheckCircle /></Box>
                   </Box>
-                  <Box as="tr" borderTop="1px solid" borderColor="#E2E8F0">
+                  <Box as="tr" borderTop="1px solid" borderColor="border.default">
                     <Box as="td" p="4" fontSize="sm" color="#374151">SSL (HTTPS)</Box>
                     <Box as="td" p="4" fontSize="sm" color="#16A34A"><FaCheckCircle /></Box>
                     <Box as="td" p="4" fontSize="sm" color="#16A34A"><FaCheckCircle /></Box>
                     <Box as="td" p="4" fontSize="sm" color="#16A34A"><FaCheckCircle /></Box>
                   </Box>
-                  <Box as="tr" borderTop="1px solid" borderColor="#E2E8F0">
+                  <Box as="tr" borderTop="1px solid" borderColor="border.default">
                     <Box as="td" p="4" fontSize="sm" color="#374151">CDN globalny</Box>
-                    <Box as="td" p="4" fontSize="sm" color="#64748B">-</Box>
-                    <Box as="td" p="4" fontSize="sm" color="#64748B">-</Box>
+                    <Box as="td" p="4" fontSize="sm" color="fg.subtle">-</Box>
+                    <Box as="td" p="4" fontSize="sm" color="fg.subtle">-</Box>
                     <Box as="td" p="4" fontSize="sm" color="#16A34A"><FaCheckCircle /></Box>
                   </Box>
                 </Box>
@@ -502,13 +502,13 @@ export const SupportPage = () => {
 
             {/* Security */}
             <Box id="security" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 <HStack gap="2">
                   <Icon as={FaShieldAlt} color="#16A34A" />
                   <Text>Bezpieczeństwo</Text>
                 </HStack>
               </Heading>
-              <Text color="#64748B" lineHeight="1.7" mb="6">
+              <Text color="fg.subtle" lineHeight="1.7" mb="6">
                 Twoja strona jest chroniona na wielu poziomach. Automatyczne kopie zapasowe, 
                 ochrona przed atakami DDoS i certyfikat SSL to standard.
               </Text>
@@ -521,7 +521,7 @@ export const SupportPage = () => {
                   "Monitoring uptime 24/7",
                   "Zgodność z RODO/GDPR"
                 ].map((item, idx) => (
-                  <HStack key={idx} gap="3" bg="white" rounded="lg" border="1px solid" borderColor="#E2E8F0" p="3">
+                  <HStack key={idx} gap="3" bg="white" rounded="lg" border="1px solid" borderColor="border.default" p="3">
                     <Icon as={FaCheckCircle} color="#16A34A" />
                     <Text fontSize="sm" color="#374151">{item}</Text>
                   </HStack>
@@ -531,13 +531,13 @@ export const SupportPage = () => {
 
             {/* Integrations */}
             <Box id="integrations" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 <HStack gap="2">
                   <Icon as={FaCog} color="#16A34A" />
                   <Text>Integracje</Text>
                 </HStack>
               </Heading>
-              <Text color="#64748B" lineHeight="1.7" mb="6">
+              <Text color="fg.subtle" lineHeight="1.7" mb="6">
                 Połącz SEO Grow z ulubionymi narzędziami. Google Analytics, Search Console, 
                 Facebook Pixel i wiele innych.
               </Text>
@@ -545,7 +545,7 @@ export const SupportPage = () => {
 
             {/* FAQ Section */}
             <Box id="faq" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="6">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="6">
                 Najczęściej zadawane pytania
               </Heading>
               
@@ -572,9 +572,9 @@ export const SupportPage = () => {
                     a: "Strona pozostaje aktywna do końca okresu, potem jest archiwizowana. Możesz pobrać kopię zapasową."
                   }
                 ].map((faq, idx) => (
-                  <Box key={idx} bg="white" rounded="lg" border="1px solid" borderColor="#E2E8F0" p="5">
-                    <Text fontWeight="600" color="#0F172A" mb="2">{faq.q}</Text>
-                    <Text fontSize="sm" color="#64748B" lineHeight="1.6">{faq.a}</Text>
+                  <Box key={idx} bg="white" rounded="lg" border="1px solid" borderColor="border.default" p="5">
+                    <Text fontWeight="600" color="fg.default" mb="2">{faq.q}</Text>
+                    <Text fontSize="sm" color="fg.subtle" lineHeight="1.6">{faq.a}</Text>
                   </Box>
                 ))}
               </VStack>
@@ -582,13 +582,13 @@ export const SupportPage = () => {
 
             {/* Support Section */}
             <Box id="support" mb="16" scrollMarginTop="100px">
-              <Heading as="h2" fontSize="2xl" fontWeight="700" color="#0F172A" mb="4">
+              <Heading as="h2" fontSize="2xl" fontWeight="700" color="fg.default" mb="4">
                 <HStack gap="2">
                   <Icon as={FaEnvelope} color="#16A34A" />
                   <Text>Wsparcie techniczne</Text>
                 </HStack>
               </Heading>
-              <Text color="#64748B" lineHeight="1.7" mb="6">
+              <Text color="fg.subtle" lineHeight="1.7" mb="6">
                 Masz pytania lub potrzebujesz pomocy? Nasz zespół wsparcia jest dostępny 
                 w języku polskim. Odpowiadamy zazwyczaj w ciągu 24 godzin.
               </Text>
@@ -616,7 +616,7 @@ export const SupportPage = () => {
             <Text 
               fontSize="xs" 
               fontWeight="600" 
-              color="#94A3B8" 
+              color="fg.faint" 
               textTransform="uppercase" 
               letterSpacing="0.05em"
               mb="3"
@@ -628,7 +628,7 @@ export const SupportPage = () => {
                 <ChakraLink
                   key={section}
                   fontSize="sm"
-                  color="#64748B"
+                  color="fg.subtle"
                   _hover={{ color: "#16A34A" }}
                   cursor="pointer"
                   onClick={() => {
@@ -647,9 +647,9 @@ export const SupportPage = () => {
       </Container>
 
       {/* Footer */}
-      <Box bg="white" borderTop="1px solid" borderColor="#E2E8F0" py="8" mt="16">
+      <Box bg="white" borderTop="1px solid" borderColor="border.default" py="8" mt="16">
         <Container maxW="6xl">
-          <Text fontSize="sm" color="#94A3B8" textAlign="center">
+          <Text fontSize="sm" color="fg.faint" textAlign="center">
             © 2026 Grow Solutions — JDG · NIP: 7412176947 · REGON: 545084609 · ul. Czarnieckiego 13/12, 14-100 Ostróda
           </Text>
         </Container>

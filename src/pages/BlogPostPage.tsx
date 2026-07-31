@@ -153,17 +153,17 @@ export const BlogPostPage = () => {
       <Header />
       
       {/* Article Hero */}
-      <Box as="article" pt={{ base: "32", md: "40" }} pb={{ base: "12", md: "16" }} bg="white" borderBottom="1px solid" borderColor="#E2E8F0">
+      <Box as="article" pt={{ base: "32", md: "40" }} pb={{ base: "12", md: "16" }} bg="white" borderBottom="1px solid" borderColor="border.default">
         <Container maxW="4xl">
           <VStack align="start" gap="8">
             <Box
               as={Link}
               to="/blog"
-              color="#64748B"
+              color="fg.subtle"
               fontWeight="600"
               fontSize="sm"
               textDecoration="none"
-              _hover={{ color: "#4F46E5" }}
+              _hover={{ color: "accent.600" }}
               display="inline-flex"
               alignItems="center"
               gap="2"
@@ -176,8 +176,8 @@ export const BlogPostPage = () => {
             <VStack align="start" gap="5" w="full">
               <HStack gap="3" flexWrap="wrap">
                 <Text
-                  bg="#EEF2FF"
-                  color="#4338CA"
+                  bg="accent.50"
+                  color="accent.700"
                   px="3"
                   py="1"
                   rounded="full"
@@ -192,8 +192,8 @@ export const BlogPostPage = () => {
                   <Text
                     key={tag}
                     fontSize="xs"
-                    color="#64748B"
-                    bg="#F1F5F9"
+                    color="fg.subtle"
+                    bg="border.subtle"
                     px="3"
                     py="1"
                     rounded="full"
@@ -208,19 +208,19 @@ export const BlogPostPage = () => {
                 as="h1"
                 fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
                 fontWeight="800"
-                color="#0F172A"
+                color="fg.default"
                 lineHeight="1.2"
                 letterSpacing="-0.02em"
               >
                 {post.title}
               </Heading>
 
-              <Text fontSize={{ base: "lg", md: "xl" }} color="#475569" lineHeight="1.6" maxW="3xl">
+              <Text fontSize={{ base: "lg", md: "xl" }} color="fg.muted" lineHeight="1.6" maxW="3xl">
                 {post.excerpt}
               </Text>
 
               <Flex align="center" justify="space-between" w="full" pt="4" flexWrap="wrap" gap="4">
-                <HStack color="#64748B" fontSize="xs" gap="3">
+                <HStack color="fg.subtle" fontSize="xs" gap="3">
                   <HStack gap="1"><Icon as={FiCalendar} /><Text>{post.date}</Text></HStack>
                   <HStack gap="1"><Icon as={FiClock} /><Text>{post.readTime} czytania</Text></HStack>
                   <HStack gap="1"><FaEye size={12} /><Text>{viewCount} wyświetleń</Text></HStack>
@@ -242,7 +242,7 @@ export const BlogPostPage = () => {
                 overflow="hidden"
                 rounded="2xl"
                 border="1px solid"
-                borderColor="#E2E8F0"
+                borderColor="border.default"
                 boxShadow="sm"
               >
                 <Image
@@ -256,9 +256,9 @@ export const BlogPostPage = () => {
                 />
               </Box>
 
-              <Box className="article-content" color="#334155" fontSize={{ base: "lg", md: "xl" }} lineHeight="1.9">
+              <Box className="article-content" color="slate.700" fontSize={{ base: "lg", md: "xl" }} lineHeight="1.9">
                 <Box
-                  bg="#EEF2FF"
+                  bg="accent.50"
                   p="8"
                   rounded="2xl"
                   mb="10"
@@ -271,16 +271,16 @@ export const BlogPostPage = () => {
                     right="4"
                     fontSize="5xl"
                     fontWeight="800"
-                    color="#C7D2FE"
+                    color="accent.200"
                     lineHeight="1"
                     aria-hidden="true"
                   >
                     &ldquo;
                   </Text>
-                  <Text fontWeight="800" color="#0F172A" mb="3" fontSize="sm" textTransform="uppercase" letterSpacing="0.14em" color="#4F46E5">
+                  <Text fontWeight="800" color="fg.default" mb="3" fontSize="sm" textTransform="uppercase" letterSpacing="0.14em" color="accent.600">
                     W skrócie
                   </Text>
-                  <Text color="#334155" fontSize="md" lineHeight="1.7" fontWeight="500">
+                  <Text color="slate.700" fontSize="md" lineHeight="1.7" fontWeight="500">
                     {post.excerpt}
                   </Text>
                 </Box>
@@ -291,7 +291,7 @@ export const BlogPostPage = () => {
                     
                     if (isHeading) {
                       return (
-                        <Heading key={index} as="h3" fontSize="2xl" color="#0F172A" mt="6" mb="2" fontWeight="800" letterSpacing="-0.01em">
+                        <Heading key={index} as="h3" fontSize="2xl" color="fg.default" mt="6" mb="2" fontWeight="800" letterSpacing="-0.01em">
                           {paragraph}
                         </Heading>
                       )
@@ -300,7 +300,7 @@ export const BlogPostPage = () => {
                     // First paragraph styling (Lead)
                     if (index === 0) {
                       return (
-                        <Text key={index} fontSize="xl" fontWeight="500" color="#1E293B" lineHeight="1.8">
+                        <Text key={index} fontSize="xl" fontWeight="500" color="slate.800" lineHeight="1.8">
                           {paragraph}
                         </Text>
                       )
@@ -315,15 +315,15 @@ export const BlogPostPage = () => {
                 </VStack>
               </Box>
               
-              <Box h="1px" w="full" bg="#E2E8F0" my="8" />
+              <Box h="1px" w="full" bg="border.default" my="8" />
               
-              <HStack justify="space-between" w="full" bg="#F8FAFC" p="6" rounded="xl" border="1px solid" borderColor="#E2E8F0">
+              <HStack justify="space-between" w="full" bg="bg.subtle" p="6" rounded="xl" border="1px solid" borderColor="border.default">
                 <VStack align="start" gap="1">
-                  <Text fontWeight="600" color="#0F172A">Podobał Ci się ten artykuł?</Text>
-                  <Text fontSize="sm" color="#64748B">Udostępnij go swojej sieci kontaktów.</Text>
+                  <Text fontWeight="600" color="fg.default">Podobał Ci się ten artykuł?</Text>
+                  <Text fontSize="sm" color="fg.subtle">Udostępnij go swojej sieci kontaktów.</Text>
                 </VStack>
                 <HStack gap="2">
-                  <Button size="sm" onClick={handleNativeShare} colorScheme="indigo" bg="#4F46E5" color="white" _hover={{ bg: "#4338CA" }}>
+                  <Button size="sm" onClick={handleNativeShare} colorScheme="indigo" bg="accent.600" color="white" _hover={{ bg: "accent.700" }}>
                     <FaShareAlt style={{ marginRight: "8px" }} /> Udostępnij
                   </Button>
                 </HStack>
@@ -338,8 +338,8 @@ export const BlogPostPage = () => {
               position={{ base: "static", lg: "sticky" }}
               top="120px"
             >
-              <Box bg="white" rounded="xl" border="1px solid" borderColor="#E2E8F0" p="6" boxShadow="sm">
-                <Text fontSize="sm" fontWeight="700" color="#0F172A" mb="4" textTransform="uppercase" letterSpacing="wider">
+              <Box bg="white" rounded="xl" border="1px solid" borderColor="border.default" p="6" boxShadow="sm">
+                <Text fontSize="sm" fontWeight="700" color="fg.default" mb="4" textTransform="uppercase" letterSpacing="wider">
                   Udostępnij
                 </Text>
                 <VStack align="stretch" gap="3">
@@ -347,9 +347,9 @@ export const BlogPostPage = () => {
                     onClick={handleCopyLink}
                     justifyContent="flex-start"
                     variant="outline"
-                    color="#475569"
-                    borderColor="#CBD5E1"
-                    _hover={{ bg: "#F8FAFC", color: "#0F172A" }}
+                    color="fg.muted"
+                    borderColor="border.strong"
+                    _hover={{ bg: "bg.subtle", color: "fg.default" }}
                     size="sm"
                   >
                     <FaLink style={{ marginRight: "8px" }} />
@@ -363,7 +363,7 @@ export const BlogPostPage = () => {
                     justifyContent="flex-start"
                     variant="outline"
                     color="#0077B5"
-                    borderColor="#CBD5E1"
+                    borderColor="border.strong"
                     _hover={{ bg: "#F0F7FC" }}
                     size="sm"
                   >
@@ -378,7 +378,7 @@ export const BlogPostPage = () => {
                     justifyContent="flex-start"
                     variant="outline"
                     color="#1DA1F2"
-                    borderColor="#CBD5E1"
+                    borderColor="border.strong"
                     _hover={{ bg: "#F4F8FB" }}
                     size="sm"
                   >
@@ -393,7 +393,7 @@ export const BlogPostPage = () => {
                     justifyContent="flex-start"
                     variant="outline"
                     color="#1877F2"
-                    borderColor="#CBD5E1"
+                    borderColor="border.strong"
                     _hover={{ bg: "#F4F8FB" }}
                     size="sm"
                   >
@@ -403,7 +403,7 @@ export const BlogPostPage = () => {
                 </VStack>
               </Box>
 
-              <Box bgGradient="linear(to-br, #4F46E5, #4338CA)" rounded="xl" p="6" color="white" boxShadow="md">
+              <Box bgGradient="linear(to-br, accent.600, accent.700)" rounded="xl" p="6" color="white" boxShadow="md">
                 <Text fontWeight="700" fontSize="lg" mb="2">{post.sidebarCta?.title ?? "Potrzebujesz nowej strony?"}</Text>
                 <Text fontSize="sm" opacity="0.9" mb="5" lineHeight="1.6">
                   {post.sidebarCta?.description ?? "Zbudujemy stronę, która nie tylko dobrze wygląda, ale przede wszystkim sprzedaje."}
@@ -413,8 +413,8 @@ export const BlogPostPage = () => {
                   to={post.sidebarCta?.href ?? "/#jak-to-dziala"}
                   w="full"
                   bg="white"
-                  color="#4F46E5"
-                  _hover={{ bg: "#F8FAFC" }}
+                  color="accent.600"
+                  _hover={{ bg: "bg.subtle" }}
                   size="sm"
                 >
                   {post.sidebarCta?.buttonLabel ?? "Sprawdź ofertę"}
@@ -426,10 +426,10 @@ export const BlogPostPage = () => {
       </Box>
 
       {/* Related Posts */}
-      <Box bg="white" py={{ base: "16", md: "24" }} borderTop="1px solid" borderColor="#E2E8F0">
+      <Box bg="white" py={{ base: "16", md: "24" }} borderTop="1px solid" borderColor="border.default">
         <Container maxW="7xl">
           <VStack align="start" gap="10">
-            <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} color="#0F172A" fontWeight="800">
+            <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} color="fg.default" fontWeight="800">
               Podobne artykuły
             </Heading>
 
@@ -442,14 +442,14 @@ export const BlogPostPage = () => {
                   bg="white"
                   rounded="2xl"
                   border="1px solid"
-                  borderColor="#E2E8F0"
+                  borderColor="border.default"
                   overflow="hidden"
                   textDecoration="none"
                   role="group"
                   _hover={{
                     transform: "translateY(-6px)",
                     boxShadow: "0 20px 40px -15px rgba(15, 23, 42, 0.1)",
-                    borderColor: "#CBD5E1",
+                    borderColor: "border.strong",
                   }}
                   transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
                 >
@@ -467,13 +467,13 @@ export const BlogPostPage = () => {
                     />
                   </Box>
                   <VStack align="start" p="6" gap="3">
-                    <Text fontSize="xs" color="#4338CA" fontWeight="700" textTransform="uppercase" letterSpacing="wider">
+                    <Text fontSize="xs" color="accent.700" fontWeight="700" textTransform="uppercase" letterSpacing="wider">
                       {relatedPost.category}
                     </Text>
-                    <Heading as="h3" fontSize="lg" lineHeight="1.4" color="#0F172A" fontWeight="700" _groupHover={{ color: "#4F46E5" }} transition="color 0.2s">
+                    <Heading as="h3" fontSize="lg" lineHeight="1.4" color="fg.default" fontWeight="700" _groupHover={{ color: "accent.600" }} transition="color 0.2s">
                       {relatedPost.title}
                     </Heading>
-                    <Text fontSize="sm" color="#64748B" lineHeight="1.6" noOfLines={2}>
+                    <Text fontSize="sm" color="fg.subtle" lineHeight="1.6" noOfLines={2}>
                       {relatedPost.excerpt}
                     </Text>
                   </VStack>

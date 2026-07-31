@@ -64,17 +64,17 @@ export const VoivodeshipContent = ({
     <>
       {/* ── BRANŻE — grid visual con iconos ────────────────────── */}
       <Box py={{ base: "14", md: "20" }} bg="white" position="relative" overflow="hidden">
-        <Box position="absolute" top="-15%" right="-10%" w="500px" h="500px" bg="#EEF2FF" rounded="full" filter="blur(120px)" opacity="0.6" pointerEvents="none" />
+        <Box position="absolute" top="-15%" right="-10%" w="500px" h="500px" bg="accent.50" rounded="full" filter="blur(120px)" opacity="0.6" pointerEvents="none" />
         <Container maxW="6xl" position="relative" zIndex="1">
           <VStack gap={{ base: "8", md: "10" }} align="stretch">
             <VStack gap="3" align="center" textAlign="center" maxW="2xl" mx="auto">
-              <Text fontSize="xs" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em">
+              <Text fontSize="xs" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em">
                 Strategia dopasowana do Twojej branży
               </Text>
-              <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="800" color="#0F172A" letterSpacing="-0.025em" lineHeight="1.15">
+              <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="800" color="fg.default" letterSpacing="-0.025em" lineHeight="1.15">
                 Strona, która pracuje dla Twojego biznesu
               </Heading>
-              <Text fontSize="sm" color="#475569" lineHeight="1.6" maxW="lg">
+              <Text fontSize="sm" color="fg.muted" lineHeight="1.6" maxW="lg">
                 Każda branża ma inny klient, inną intencję wyszukiwania, inne CTA. Dlatego stronę budujemy pod Twoją specyfikę, a nie pod uniwersalny szablon.
               </Text>
             </VStack>
@@ -89,17 +89,17 @@ export const VoivodeshipContent = ({
                     key={i}
                     p="6"
                     bg="white"
-                    border="1px solid #E2E8F0"
+                    border="1px solid border.default"
                     rounded="xl"
                     transition="all 0.22s"
-                    _hover={{ borderColor: "#4F46E5", transform: "translateY(-2px)", boxShadow: "0 12px 30px -10px rgba(79, 70, 229, 0.18)" }}
+                    _hover={{ borderColor: "accent.600", transform: "translateY(-2px)", boxShadow: "0 12px 30px -10px rgba(79, 70, 229, 0.18)" }}
                   >
                     <Box
                       w="11"
                       h="11"
                       rounded="lg"
-                      bg="#EEF2FF"
-                      color="#4F46E5"
+                      bg="accent.50"
+                      color="accent.600"
                       display="flex"
                       alignItems="center"
                       justifyContent="center"
@@ -107,10 +107,10 @@ export const VoivodeshipContent = ({
                     >
                       <Icon size={20} />
                     </Box>
-                    <Text fontSize="md" fontWeight="700" color="#0F172A" mb="2" textTransform="capitalize">
+                    <Text fontSize="md" fontWeight="700" color="fg.default" mb="2" textTransform="capitalize">
                       {ind}
                     </Text>
-                    <Text fontSize="sm" color="#475569" lineHeight="1.55">
+                    <Text fontSize="sm" color="fg.muted" lineHeight="1.55">
                       {data.benefit}
                     </Text>
                   </Box>
@@ -126,17 +126,17 @@ export const VoivodeshipContent = ({
         <Container maxW="6xl">
           <VStack gap={{ base: "8", md: "10" }} align="stretch">
             <VStack gap="3" align="center" textAlign="center" maxW="2xl" mx="auto">
-              <Text fontSize="xs" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em">
+              <Text fontSize="xs" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em">
                 Zasięg w {voivodeship}
               </Text>
-              <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="800" color="#0F172A" letterSpacing="-0.025em" lineHeight="1.15">
+              <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="800" color="fg.default" letterSpacing="-0.025em" lineHeight="1.15">
                 {cities.length === 1
                   ? "1 miasto w zasięgu"
                   : cities.length < 5
                   ? `${cities.length} miasta w zasięgu`
                   : `${cities.length} miast w zasięgu`}
               </Heading>
-              <Text fontSize="sm" color="#475569" lineHeight="1.6" maxW="lg">
+              <Text fontSize="sm" color="fg.muted" lineHeight="1.6" maxW="lg">
                 Ta sama cena, ta sama jakość, ten sam zespół. Działamy w całym {voivodeship} — jeśli Twojego miasta nie ma na liście, zadzwoń i powiemy szczerze, czy ją obsługujemy.
               </Text>
             </VStack>
@@ -149,22 +149,22 @@ export const VoivodeshipContent = ({
                   to={`/${c.slug}`}
                   p="5"
                   bg="white"
-                  border="1px solid #E2E8F0"
+                  border="1px solid border.default"
                   rounded="xl"
                   textDecoration="none"
                   transition="all 0.2s"
-                  _hover={{ borderColor: "#4F46E5", transform: "translateY(-2px)", boxShadow: "0 8px 20px -8px rgba(79, 70, 229, 0.2)" }}
+                  _hover={{ borderColor: "accent.600", transform: "translateY(-2px)", boxShadow: "0 8px 20px -8px rgba(79, 70, 229, 0.2)" }}
                 >
                   <HStack gap="2" align="center" mb="2">
-                    <Box w="2" h="2" rounded="full" bg="#10B981" flexShrink={0} />
-                    <Text fontSize="xs" color="#10B981" fontWeight="700" textTransform="uppercase" letterSpacing="0.05em">
+                    <Box w="2" h="2" rounded="full" bg="success.500" flexShrink={0} />
+                    <Text fontSize="xs" color="success.500" fontWeight="700" textTransform="uppercase" letterSpacing="0.05em">
                       w zasięgu
                     </Text>
                   </HStack>
-                  <Text fontSize="md" fontWeight="700" color="#0F172A" lineHeight="1.2">
+                  <Text fontSize="md" fontWeight="700" color="fg.default" lineHeight="1.2">
                     {c.name}
                   </Text>
-                  <HStack gap="1" align="center" mt="3" color="#4F46E5" fontSize="xs" fontWeight="600">
+                  <HStack gap="1" align="center" mt="3" color="accent.600" fontSize="xs" fontWeight="600">
                     <Text>Zobacz ofertę</Text>
                     <Box display="flex"><ArrowRightIcon size={12} /></Box>
                   </HStack>
@@ -180,10 +180,10 @@ export const VoivodeshipContent = ({
         <Container maxW="6xl">
           <VStack gap={{ base: "8", md: "10" }} align="stretch">
             <VStack gap="3" align="center" textAlign="center" maxW="2xl" mx="auto">
-              <Text fontSize="xs" fontWeight="700" color="#4F46E5" textTransform="uppercase" letterSpacing="0.14em">
+              <Text fontSize="xs" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em">
                 Dlaczego SEO Grow
               </Text>
-              <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="800" color="#0F172A" letterSpacing="-0.025em" lineHeight="1.15">
+              <Heading as="h2" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="800" color="fg.default" letterSpacing="-0.025em" lineHeight="1.15">
                 Rozmawiamy po ludzku. Robimy robotę.
               </Heading>
             </VStack>
@@ -197,14 +197,14 @@ export const VoivodeshipContent = ({
               ].map((item, i) => {
                 const Icon = item.icon
                 return (
-                  <Box key={i} p="6" bg="#F8FAFC" border="1px solid #E2E8F0" rounded="xl">
-                    <Box w="10" h="10" rounded="lg" bg="#EEF2FF" color="#4F46E5" display="flex" alignItems="center" justifyContent="center" mb="3">
+                  <Box key={i} p="6" bg="bg.subtle" border="1px solid border.default" rounded="xl">
+                    <Box w="10" h="10" rounded="lg" bg="accent.50" color="accent.600" display="flex" alignItems="center" justifyContent="center" mb="3">
                       <Icon size={18} />
                     </Box>
-                    <Text fontSize="sm" fontWeight="700" color="#0F172A" mb="2" lineHeight="1.3">
+                    <Text fontSize="sm" fontWeight="700" color="fg.default" mb="2" lineHeight="1.3">
                       {item.title}
                     </Text>
-                    <Text fontSize="xs" color="#475569" lineHeight="1.55">
+                    <Text fontSize="xs" color="fg.muted" lineHeight="1.55">
                       {item.desc}
                     </Text>
                   </Box>
@@ -216,11 +216,11 @@ export const VoivodeshipContent = ({
       </Box>
 
       {/* ── CTA OSCURO — final, fuerte ──────────────────────────── */}
-      <Box py={{ base: "16", md: "24" }} bg="linear-gradient(135deg, #0F172A 0%, #1E293B 100%)" position="relative" overflow="hidden">
+      <Box py={{ base: "16", md: "24" }} bg="linear-gradient(135deg, fg.default 0%, slate.800 100%)" position="relative" overflow="hidden">
         <Box position="absolute" top="-200px" right="-100px" w="500px" h="500px" bg="radial-gradient(circle, rgba(79, 70, 229, 0.25) 0%, transparent 70%)" pointerEvents="none" />
         <Container maxW="3xl" position="relative" zIndex="1">
           <VStack gap="5" textAlign="center">
-            <Text fontSize="xs" fontWeight="700" color="#A5B4FC" textTransform="uppercase" letterSpacing="0.14em">
+            <Text fontSize="xs" fontWeight="700" color="accent.300" textTransform="uppercase" letterSpacing="0.14em">
               Porozmawiajmy
             </Text>
             <Heading as="h2" fontSize={{ base: "26px", md: "38px" }} fontWeight="800" color="white" letterSpacing="-0.03em" lineHeight="1.18">
@@ -234,14 +234,14 @@ export const VoivodeshipContent = ({
                 as={Link}
                 to="/zamowienie?plan=express"
                 bg="white"
-                color="#0F172A"
+                color="fg.default"
                 px="8"
                 py="4"
                 rounded="xl"
                 fontWeight="700"
                 fontSize="md"
                 textDecoration="none"
-                _hover={{ bg: "#F1F5F9", transform: "translateY(-2px)", boxShadow: "0 12px 30px rgba(255,255,255,0.2)" }}
+                _hover={{ bg: "border.subtle", transform: "translateY(-2px)", boxShadow: "0 12px 30px rgba(255,255,255,0.2)" }}
                 transition="all 0.2s"
                 display="flex"
                 alignItems="center"

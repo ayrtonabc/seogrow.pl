@@ -1,21 +1,25 @@
-import { Box, Container, Grid, Heading, Text, VStack, Flex } from "@chakra-ui/react"
-import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
+// src/sections/PricingSection.tsx
+// Cennik — 3 plany. Diseño claro, sin fondos oscuros, sin tecnicismos.
+// Cada card cabe en el viewport (scroll natural sin trampas). Mismo estilo
+// de headings que el hero (weight 600 base + 700 en palabra destacada).
+
+import { Box, Container, Grid, Heading, Text, VStack, HStack, Flex } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import { pricingPlans } from "../data/pricingPlans"
 
-const CheckIcon = ({ size = 14 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+const CheckIcon = ({ size = 16 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" focusable="false">
     <path d="M20 6 9 17l-5-5" />
   </svg>
 )
 
-const XIcon = ({ size = 14 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
-    <path d="M18 6 6 18M6 6l12 12" />
+const SparkleIcon = ({ size = 14 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+    <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2zM5 16l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3zm14 0l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" />
   </svg>
 )
 
-const ArrowRightIcon = ({ size = 14 }: { size?: number }) => (
+const ArrowRightIcon = ({ size = 16 }: { size?: number }) => (
   <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
     <path d="M5 12h14M13 5l7 7-7 7" />
   </svg>
@@ -28,363 +32,284 @@ const LockIcon = ({ size = 12 }: { size?: number }) => (
   </svg>
 )
 
+const ShieldIcon = ({ size = 16 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <path d="M9 12l2 2 4-4" />
+  </svg>
+)
+
+const PhoneIcon = ({ size = 16 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+  </svg>
+)
+
+const PlanCard = ({ plan }: { plan: (typeof pricingPlans)[number] }) => {
+  const isRec = plan.recommended
+  return (
+    <Box
+      position="relative"
+      bg="bg.canvas"
+      borderWidth="1px"
+      borderColor={isRec ? "accent.200" : "border.default"}
+      borderRadius="2xl"
+      overflow="hidden"
+      display="flex"
+      flexDirection="column"
+      transition="all 0.25s cubic-bezier(0.22, 1, 0.36, 1)"
+      _hover={{ transform: "translateY(-3px)", boxShadow: "lg", borderColor: isRec ? "accent.400" : "border.muted" }}
+      className="wix-fade-up-1"
+    >
+      {/* Badge superior — solo el recomendado, integrado en la card */}
+      {isRec && (
+        <Box bg="accent.600" color="white" py="2" textAlign="center" fontSize="xs" fontWeight="700" letterSpacing="0.08em" textTransform="uppercase" display="flex" alignItems="center" justifyContent="center" gap="1.5">
+          <SparkleIcon size={12} />
+          {plan.badge || "Najczęściej wybierany"}
+        </Box>
+      )}
+
+      {/* Header: nombre + para quién */}
+      <VStack align="flex-start" gap="2" px={{ base: "6", md: "7" }} pt={{ base: "7", md: "8" }} pb="4">
+        <Text fontSize="11px" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.12em">
+          {plan.name}
+        </Text>
+        <Heading as="h3" fontSize="20px" fontWeight="700" color="fg.default" letterSpacing="-0.02em" lineHeight="1.3">
+          {plan.title}
+        </Heading>
+        <Text fontSize="13px" color="fg.muted" lineHeight="1.55" minH="60px">
+          {plan.description}
+        </Text>
+      </VStack>
+
+      {/* Bloque de precios: 2 columnas claras */}
+      <Box px={{ base: "6", md: "7" }} pb="5">
+        <Grid templateColumns="1fr 1fr" gap="3">
+          {/* Proyecto (pago único) */}
+          <Box p="4" borderRadius="xl" bg="bg.subtle" borderWidth="1px" borderColor="border.subtle">
+            <HStack gap="1.5" mb="2" color="fg.muted">
+              <ShieldIcon size={13} />
+              <Text fontSize="10px" fontWeight="700" textTransform="uppercase" letterSpacing="0.08em">
+                Projekt strony
+              </Text>
+            </HStack>
+            <Text fontSize="22px" fontWeight="700" color="fg.default" letterSpacing="-0.02em" lineHeight="1">
+              {plan.sitePrice} zł
+            </Text>
+            <Text fontSize="11px" color="fg.muted" fontWeight="500" mt="1">
+              płatne raz
+            </Text>
+          </Box>
+
+          {/* Mensualidad */}
+          <Box p="4" borderRadius="xl" bg={isRec ? "accent.50" : "bg.subtle"} borderWidth="1px" borderColor={isRec ? "accent.200" : "border.subtle"}>
+            <HStack gap="1.5" mb="2" color={isRec ? "accent.700" : "fg.muted"}>
+              <Text fontSize="10px" fontWeight="700" textTransform="uppercase" letterSpacing="0.08em">
+                Opieka co miesiąc
+              </Text>
+            </HStack>
+            <Flex align="baseline" gap="1">
+              <Text fontSize="22px" fontWeight="700" color={isRec ? "accent.700" : "fg.default"} letterSpacing="-0.02em" lineHeight="1">
+                {plan.monthlyPrice} zł
+              </Text>
+              <Text fontSize="11px" color="fg.muted" fontWeight="500">
+                /mies.
+              </Text>
+            </Flex>
+            <Text fontSize="11px" color="fg.muted" fontWeight="500" mt="1">
+              bez umowy
+            </Text>
+          </Box>
+        </Grid>
+
+        {/* Garantía de precio: mensaje PyME claro */}
+        <HStack
+          mt="3"
+          px="3"
+          py="2"
+          borderRadius="md"
+          bg="success.50"
+          borderWidth="1px"
+          borderColor="#A7F3D0"
+          align="center"
+          gap="2"
+        >
+          <Box color="success.600" flexShrink={0}>
+            <LockIcon />
+          </Box>
+          <Text fontSize="11px" color="success.700" fontWeight="600" lineHeight="1.4">
+            Twoja cena miesięczna zostaje taka sama co rok
+          </Text>
+        </HStack>
+      </Box>
+
+      {/* Qué incluye cada precio */}
+      <Box px={{ base: "6", md: "7" }} pb="5">
+        <VStack gap="1.5" align="stretch">
+          <Text fontSize="12px" color="fg.default" lineHeight="1.5">
+            <Box as="span" color="accent.600" fontWeight="700" mr="1.5">✓</Box>
+            {plan.siteIncludes}
+          </Text>
+          <Text fontSize="12px" color="fg.default" lineHeight="1.5">
+            <Box as="span" color="accent.600" fontWeight="700" mr="1.5">✓</Box>
+            {plan.monthlyIncludes}
+          </Text>
+        </VStack>
+      </Box>
+
+      {/* Features */}
+      <Box px={{ base: "6", md: "7" }} pt="4" pb="6" borderTop="1px solid" borderColor="border.subtle" flex="1">
+        <Text fontSize="11px" fontWeight="700" color="fg.muted" textTransform="uppercase" letterSpacing="0.12em" mb="3" pt="4">
+          Wszystko, co dostajesz
+        </Text>
+        <VStack gap="2.5" align="stretch">
+          {plan.features.map((feature, j) => (
+            <HStack key={j} gap="2.5" align="start">
+              <Box flexShrink={0} color="accent.600" mt="2px">
+                <CheckIcon size={14} />
+              </Box>
+              <Text fontSize="13px" color="fg.default" lineHeight="1.5" fontWeight="500">
+                {feature}
+              </Text>
+            </HStack>
+          ))}
+        </VStack>
+      </Box>
+
+      {/* CTA pegado al fondo de la card */}
+      <Box p={{ base: "6", md: "7" }} pt="2">
+        <Box
+          as={Link}
+          to={`/zamowienie/${plan.slug}/configure`}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          gap="2"
+          w="full"
+          h="12"
+          borderRadius="full"
+          fontWeight="600"
+          fontSize="14px"
+          textDecoration="none"
+          bg={isRec ? "accent.600" : "fg.default"}
+          color="white"
+          _hover={isRec ? { bg: "accent.700", transform: "translateY(-1px)" } : { bg: "bg.darkSubtle", transform: "translateY(-1px)" }}
+          transition="all 0.2s cubic-bezier(0.22, 1, 0.36, 1)"
+        >
+          Wybieram {plan.name}
+          <ArrowRightIcon />
+        </Box>
+        <Text fontSize="11px" color="fg.muted" textAlign="center" mt="2.5" lineHeight="1.4">
+          Strona zostaje Twoja · Bez umowy
+        </Text>
+      </Box>
+    </Box>
+  )
+}
+
 export const PricingSection = () => {
   return (
-    <Box id="ceny" bg="#F8FAFC" py={{ base: "16", md: "22" }}>
-      <Container maxW="6xl">
+    <Box id="ceny" bg="bg.cream" py={{ base: "20", md: "28" }} position="relative" overflow="hidden">
+      <Container maxW="7xl" position="relative" zIndex="1">
         <VStack gap={{ base: "10", md: "14" }}>
-          {/* Header */}
-          <VStack gap="4" textAlign="center" maxW="3xl">
-            <Text
-              fontSize="11px"
-              fontWeight="700"
-              color="#4F46E5"
-              letterSpacing="0.14em"
-              textTransform="uppercase"
+          {/* Header — tipografía idéntica al hero */}
+          <VStack gap="5" textAlign="center" maxW="3xl" mx="auto" className="wix-fade-up">
+            <HStack
+              gap="2"
+              px="3"
+              py="1.5"
+              bg="rgba(13, 148, 136, 0.1)"
+              borderWidth="1px"
+              borderColor="rgba(13, 148, 136, 0.25)"
+              borderRadius="full"
             >
-              Cennik
-            </Text>
+              <Box w="1.5" h="1.5" borderRadius="full" bg="accent.500" />
+              <Text fontSize="xs" fontWeight="700" letterSpacing="0.08em" textTransform="uppercase" color="accent.700">
+                Cennik
+              </Text>
+            </HStack>
+
             <Heading
               as="h2"
-              {...SECTION_TITLE_PROPS}
-              color={SECTION_TITLE_COLOR_DARK}
+              fontWeight="600"
+              color="fg.default"
+              letterSpacing="-0.015em"
+              lineHeight="1.1"
+              fontSize={{ base: "32px", sm: "38px", md: "44px", lg: "50px" }}
+              maxW="720px"
             >
-              Co płacisz i co dostajesz
+              Trzy plany.{" "}
+              <Box as="span" color="accent.700" fontWeight="700">
+                Jeden zaczyna dziś.
+              </Box>
             </Heading>
-            <VStack gap="2" maxW="2xl">
-              <Text color="#475569" fontSize="15px" lineHeight="1.55">
-                <Box as="span" fontWeight="700" color="#0F172A">Płacisz dwa razy:</Box>{" "}
-                raz za zaprojektowanie strony, raz za to, że dbamy o nią co miesiąc.
+
+            <VStack gap="2" maxW="2xl" className="wix-fade-up-2">
+              <Text fontSize="lg" color="fg.muted" lineHeight="1.6">
+                <Box as="span" fontWeight="700" color="fg.default">Jasny cennik. Bez haczyków.</Box>{" "}
+                Płacisz raz za wykonanie strony, a potem tylko comiesięczną opłatę za CMS, hosting i wsparcie.
               </Text>
-              <Text color="#475569" fontSize="15px" lineHeight="1.55">
-                Żadnych ukrytych kosztów. Żadnych niespodzianek. Wiesz, za co płacisz, i wiesz, co dostajesz.
+              <Text fontSize="md" color="fg.muted" lineHeight="1.5">
+                Wiesz, za co płacisz — od pierwszego dnia, bez ukrytych faktur.
               </Text>
             </VStack>
           </VStack>
 
-          {/* Grid de cards */}
+          {/* 3 cards — todas claras, mismo fondo */}
           <Grid
             templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
-            gap={{ base: "4", md: "5" }}
+            gap={{ base: "5", md: "6" }}
             w="full"
             alignItems="stretch"
           >
-            {pricingPlans.map((plan) => {
-              const isRec = plan.recommended
-              return (
-                <Box
-                  key={plan.slug}
-                  position="relative"
-                  bg="white"
-                  border="1px solid"
-                  borderColor={isRec ? "#4F46E5" : "#E2E8F0"}
-                  rounded="xl"
-                  overflow="hidden"
-                  display="flex"
-                  flexDirection="column"
-                  transition="all 0.2s ease"
-                  boxShadow={isRec ? "0 4px 16px -4px rgba(79, 70, 229, 0.15)" : "none"}
-                  _hover={isRec ? {} : { borderColor: "#CBD5E1", boxShadow: "0 4px 12px -4px rgba(15, 23, 42, 0.06)" }}
-                >
-                  {/* Recommended tag (dentro, no flotante) */}
-                  {isRec && (
-                    <Box bg="#4F46E5" color="white" py="1.5" textAlign="center" fontSize="10px" fontWeight="700" letterSpacing="0.1em" textTransform="uppercase">
-                      Najczęściej wybierany
-                    </Box>
-                  )}
-
-                  {/* Header: plan name */}
-                  <Box px={{ base: "7", md: "8" }} pt={{ base: "7", md: "8" }} pb="3">
-                    <Text
-                      fontSize="11px"
-                      fontWeight="700"
-                      color={isRec ? "#4F46E5" : "#94A3B8"}
-                      textTransform="uppercase"
-                      letterSpacing="0.14em"
-                    >
-                      {plan.name}
-                    </Text>
-                  </Box>
-
-                  {/* Title + description */}
-                  <VStack
-                    align="flex-start"
-                    gap="2"
-                    px={{ base: "7", md: "8" }}
-                    pb="6"
-                  >
-                    <Heading
-                      as="h3"
-                      fontSize="20px"
-                      fontWeight="700"
-                      lineHeight="1.3"
-                      color="#0F172A"
-                      letterSpacing="-0.02em"
-                    >
-                      {plan.title}
-                    </Heading>
-                    <Text fontSize="13px" color="#64748B" lineHeight="1.55" minH="60px">
-                      {plan.description}
-                    </Text>
-                  </VStack>
-
-                  {/* Price block — dos columnas claras */}
-                  <Box px={{ base: "7", md: "8" }} pb="6">
-                    <Grid templateColumns="1fr 1fr" gap="3">
-                      {/* Strona — jednorazowo */}
-                      <Box
-                        p="3.5"
-                        rounded="lg"
-                        bg={isRec ? "#FAFAFF" : "#F8FAFC"}
-                        border="1px solid"
-                        borderColor={isRec ? "#E0E7FF" : "#F1F5F9"}
-                      >
-                        <Text
-                          fontSize="9px"
-                          fontWeight="700"
-                          color="#64748B"
-                          textTransform="uppercase"
-                          letterSpacing="0.1em"
-                          mb="1.5"
-                        >
-                          Projekt strony
-                        </Text>
-                        <Text
-                          fontSize="22px"
-                          fontWeight="800"
-                          color="#0F172A"
-                          letterSpacing="-0.03em"
-                          lineHeight="1"
-                          mb="1"
-                        >
-                          {plan.sitePrice}
-                        </Text>
-                        <Text fontSize="10px" color="#64748B" fontWeight="500">
-                          płatne raz
-                        </Text>
-                      </Box>
-
-                      {/* Abonament — miesięcznie */}
-                      <Box
-                        p="3.5"
-                        rounded="lg"
-                        bg={isRec ? "#EEF2FF" : "#F8FAFC"}
-                        border="1px solid"
-                        borderColor={isRec ? "#C7D2FE" : "#F1F5F9"}
-                      >
-                        <Text
-                          fontSize="9px"
-                          fontWeight="700"
-                          color={isRec ? "#4338CA" : "#64748B"}
-                          textTransform="uppercase"
-                          letterSpacing="0.1em"
-                          mb="1.5"
-                        >
-                          Opieka miesięczna
-                        </Text>
-                        <Flex align="baseline" gap="0.5" mb="1">
-                          <Text
-                            fontSize="22px"
-                            fontWeight="800"
-                            color={isRec ? "#4F46E5" : "#0F172A"}
-                            letterSpacing="-0.03em"
-                            lineHeight="1"
-                          >
-                            {plan.monthlyPrice}
-                          </Text>
-                          <Text fontSize="10px" color="#64748B" fontWeight="500">
-                            /mies.
-                          </Text>
-                        </Flex>
-                        <Text fontSize="10px" color="#64748B" fontWeight="500">
-                          bez umowy długoterminowej
-                        </Text>
-                      </Box>
-                    </Grid>
-
-                    {/* Gwarancja ceny — cena abonamentu nie wzrośnie dla stałych klientów */}
-                    <Flex
-                      align="center"
-                      gap="1.5"
-                      mt="3"
-                      px="2.5"
-                      py="1.5"
-                      rounded="md"
-                      bg="#ECFDF5"
-                      border="1px solid #A7F3D0"
-                      role="note"
-                      aria-label="Gwarancja stałej ceny abonamentu"
-                    >
-                      <Box color="#059669" display="flex" flexShrink={0}>
-                        <LockIcon size={12} />
-                      </Box>
-                      <Text fontSize="11px" color="#047857" fontWeight="600" lineHeight="1.3">
-                        Cena abonamentu nigdy nie wzrośnie dla stałych klientów
-                      </Text>
-                    </Flex>
-
-                    {/* Notas inline: qué incluye cada precio */}
-                    <VStack gap="1" mt="3" align="stretch">
-                      <Text fontSize="11px" color="#475569" lineHeight="1.4">
-                        <Box as="span" color="#94A3B8" mr="1">+</Box>
-                        {plan.siteIncludes}
-                      </Text>
-                      <Text fontSize="11px" color="#475569" lineHeight="1.4">
-                        <Box as="span" color="#94A3B8" mr="1">+</Box>
-                        {plan.monthlyIncludes}
-                      </Text>
-                    </VStack>
-                  </Box>
-
-                  {/* Divider sutil */}
-                  <Box h="1px" bg="#F1F5F9" />
-
-                  {/* Features */}
-                  <Box
-                    px={{ base: "7", md: "8" }}
-                    py="6"
-                    flex="1"
-                  >
-                    <Text
-                      fontSize="10px"
-                      fontWeight="700"
-                      color="#94A3B8"
-                      textTransform="uppercase"
-                      letterSpacing="0.16em"
-                      mb="4"
-                    >
-                      Co dostajesz
-                    </Text>
-                    <VStack gap="3" align="stretch">
-                      {plan.features.map((feature, j) => (
-                        <Flex key={j} gap="2.5" align="start">
-                          <Box
-                            flexShrink={0}
-                            color={isRec ? "#4F46E5" : "#10B981"}
-                            mt="2px"
-                            display="flex"
-                          >
-                            <CheckIcon />
-                          </Box>
-                          <Text
-                            fontSize="13px"
-                            color="#334155"
-                            lineHeight="1.5"
-                            fontWeight="500"
-                          >
-                            {feature}
-                          </Text>
-                        </Flex>
-                      ))}
-                      {plan.notIncluded?.map((missing, j) => (
-                        <Flex key={`x-${j}`} gap="2.5" align="start" opacity="0.55">
-                          <Box
-                            flexShrink={0}
-                            color="#94A3B8"
-                            mt="2px"
-                            display="flex"
-                          >
-                            <XIcon />
-                          </Box>
-                          <Text
-                            fontSize="12px"
-                            color="#64748B"
-                            lineHeight="1.5"
-                            fontWeight="500"
-                          >
-                            {missing}
-                          </Text>
-                        </Flex>
-                      ))}
-                    </VStack>
-                  </Box>
-
-                  {/* CTA — pegado al fondo */}
-                  <Box p={{ base: "7", md: "8" }} pt="2">
-                    <Box
-                      as={Link}
-                      to={`/zamowienie/${plan.slug}/configure`}
-                      display="block"
-                      w="full"
-                      py="3"
-                      px="4"
-                      rounded="lg"
-                      fontWeight="600"
-                      fontSize="13px"
-                      textAlign="center"
-                      bg={isRec ? "#4F46E5" : "white"}
-                      color={isRec ? "white" : "#0F172A"}
-                      border="1px solid"
-                      borderColor={isRec ? "#4F46E5" : "#E2E8F0"}
-                      cursor="pointer"
-                      _hover={
-                        isRec
-                          ? { bg: "#4338CA", borderColor: "#4338CA" }
-                          : { borderColor: "#0F172A", bg: "#F8FAFC" }
-                      }
-                      transition="all 0.18s ease"
-                    >
-                      <Flex align="center" justify="center" gap="2">
-                        <span>{`Wybieram ${plan.name}`}</span>
-                        <Box display="flex"><ArrowRightIcon /></Box>
-                      </Flex>
-                    </Box>
-                    <Text fontSize="11px" color="#94A3B8" textAlign="center" mt="3" lineHeight="1.4">
-                      Strona zostaje Twoja · Wsparcie po polsku · Bez umowy
-                    </Text>
-                  </Box>
-                </Box>
-              )
-            })}
+            {pricingPlans.map((plan) => (
+              <PlanCard key={plan.slug} plan={plan} />
+            ))}
           </Grid>
 
-          {/* Línea "no empiezas de cero" — refuerza anti-miedo */}
+          {/* Banda de tranquilidad: precio fijo, módulos a la carta */}
           <Box
-            bg="linear-gradient(135deg, #EEF2FF 0%, #F5F3FF 100%)"
-            border="1px solid #C7D2FE"
-            p={{ base: "5", md: "6" }}
-            rounded="xl"
-            textAlign="center"
+            mt={{ base: "4", md: "6" }}
+            p={{ base: "6", md: "7" }}
+            borderRadius="2xl"
+            bg="bg.canvas"
+            borderWidth="1px"
+            borderColor="border.subtle"
             maxW="3xl"
             w="full"
+            className="wix-fade-up-2"
           >
-            <Text
-              fontSize={{ base: "15px", md: "17px" }}
-              color="#0F172A"
-              fontWeight="700"
-              lineHeight="1.4"
-            >
-              🔁 Nie zaczynasz od nowa co 2 lata.
-            </Text>
-            <Text
-              fontSize="14px"
-              color="#475569"
-              lineHeight="1.5"
-              mt="1.5"
-            >
-              Dodajesz sklep, rezerwacje, blog czy kursy, kiedy ich potrzebujesz —
-              <Box as="span" fontWeight="600" color="#0F172A"> bez zmiany platformy, bez nowego projektu.</Box>
-            </Text>
+            <VStack gap="3" textAlign="center">
+              <Text fontSize="md" fontWeight="700" color="fg.default" lineHeight="1.4">
+                Nie zaczynasz od nowa co 2 lata.
+              </Text>
+              <Text fontSize="sm" color="fg.muted" lineHeight="1.55" maxW="2xl">
+                Jak Twoja firma rośnie, dokupujesz moduły: sklep, rezerwacje, blog, kursy, wielojęzyczność. Bez zmiany strony, bez nowego projektu, bez stresu.
+              </Text>
+            </VStack>
           </Box>
 
-          {/* Bottom CTA — minimalista */}
+          {/* CTA inferior — humano, sin tecnicismos */}
           <Flex
             direction={{ base: "column", md: "row" }}
             align="center"
             justify="space-between"
             gap="4"
-            p={{ base: "5", md: "6" }}
-            bg="white"
-            border="1px solid #E2E8F0"
-            rounded="xl"
+            p={{ base: "6", md: "7" }}
+            borderRadius="2xl"
+            bg="bg.canvas"
+            borderWidth="1px"
+            borderColor="border.default"
             maxW="3xl"
+            w="full"
             textAlign={{ base: "center", md: "left" }}
+            className="wix-fade-up-3"
           >
             <Box>
-              <Text fontSize="14px" fontWeight="700" color="#0F172A" mb="0.5">
+              <Text fontSize="md" fontWeight="700" color="fg.default" mb="1">
                 Nie wiesz, który plan?
               </Text>
-              <Text fontSize="13px" color="#475569" lineHeight="1.5">
+              <Text fontSize="sm" color="fg.muted" lineHeight="1.5">
                 15 minut rozmowy i powiemy Ci szczerze, czego naprawdę potrzebujesz.
               </Text>
             </Box>
@@ -394,18 +319,19 @@ export const PricingSection = () => {
               display="inline-flex"
               alignItems="center"
               gap="2"
-              bg="#0F172A"
+              bg="fg.default"
               color="white"
-              px="5"
-              py="2.5"
-              rounded="lg"
+              px="6"
+              h="12"
+              borderRadius="full"
               fontWeight="600"
-              fontSize="13px"
+              fontSize="14px"
               textDecoration="none"
               flexShrink={0}
-              _hover={{ bg: "#1E293B" }}
-              transition="all 0.18s ease"
+              _hover={{ bg: "bg.darkSubtle", transform: "translateY(-1px)" }}
+              transition="all 0.2s cubic-bezier(0.22, 1, 0.36, 1)"
             >
+              <PhoneIcon />
               Zadzwoń: 517 105 423
             </Box>
           </Flex>

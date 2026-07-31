@@ -48,8 +48,8 @@ export const ThankYouPage = () => {
     return (
       <Box textAlign="center" py="20">
         <Heading size="lg" mb="3">Brak danych</Heading>
-        <Text color="#64748B" mb="6">Wróć na stronę główną i wybierz plan.</Text>
-        <Button as={Link} to="/" bg="#4F46E5" color="white" _hover={{ bg: "#4338CA" }}>
+        <Text color="fg.subtle" mb="6">Wróć na stronę główną i wybierz plan.</Text>
+        <Button as={Link} to="/" bg="accent.600" color="white" _hover={{ bg: "accent.700" }}>
           Wróć na stronę główną
         </Button>
       </Box>
@@ -65,7 +65,7 @@ export const ThankYouPage = () => {
           w="20"
           h="20"
           rounded="full"
-          bg="#10B981"
+          bg="success.500"
           color="white"
           align="center"
           justifyContent="center"
@@ -78,16 +78,16 @@ export const ThankYouPage = () => {
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </Flex>
-        <Heading as="h1" size="2xl" mb="4" color="#0F172A" letterSpacing="-0.02em">
+        <Heading as="h1" size="2xl" mb="4" color="fg.default" letterSpacing="-0.02em">
           Gotowe — Twoje zamówienie jest w drodze
         </Heading>
-        <Text color="#475569" fontSize="lg" lineHeight="1.6" mb="2">
-          Cześć <Box as="strong" color="#0F172A">{intake.contactName || "Kliencie"}</Box>, otrzymaliśmy
+        <Text color="fg.muted" fontSize="lg" lineHeight="1.6" mb="2">
+          Cześć <Box as="strong" color="fg.default">{intake.contactName || "Kliencie"}</Box>, otrzymaliśmy
           Twoje zamówienie i brief.
         </Text>
-        <Text color="#475569" fontSize="md" lineHeight="1.6">
+        <Text color="fg.muted" fontSize="md" lineHeight="1.6">
           Odezwiemy się w ciągu kilku godzin na adres{" "}
-          <Box as="strong" color="#0F172A">{intake.contactEmail}</Box>{" "}
+          <Box as="strong" color="fg.default">{intake.contactEmail}</Box>{" "}
           żeby potwierdzić pierwszą rozmowę i zacząć pracę.
         </Text>
       </Box>
@@ -97,14 +97,14 @@ export const ThankYouPage = () => {
         mx="auto"
         bg="white"
         rounded="2xl"
-        border="1px solid #E2E8F0"
+        border="1px solid border.default"
         p={{ base: "6", md: "8" }}
         mb="6"
         boxShadow="0 1px 3px rgba(15, 23, 42, 0.04)"
       >
         <Text
           fontSize="xs"
-          color="#64748B"
+          color="fg.subtle"
           textTransform="uppercase"
           letterSpacing="0.1em"
           fontWeight="800"
@@ -123,8 +123,8 @@ export const ThankYouPage = () => {
             value={formatPLN(plan.sitePrice + (config.billing === "annual" ? plan.monthlyPrice * 12 : monthly))}
           />
           {config.modules.length > 0 && (
-            <Box pt="3" borderTop="1px solid #E2E8F0">
-              <Text fontSize="sm" color="#0F172A" fontWeight="700" mb="2">
+            <Box pt="3" borderTop="1px solid border.default">
+              <Text fontSize="sm" color="fg.default" fontWeight="700" mb="2">
                 Aktywowane moduły
               </Text>
               <Flex gap="2" wrap="wrap">
@@ -137,8 +137,8 @@ export const ThankYouPage = () => {
                       px="3"
                       py="1.5"
                       rounded="full"
-                      bg="#EEF2FF"
-                      color="#4F46E5"
+                      bg="accent.50"
+                      color="accent.600"
                       fontSize="xs"
                       fontWeight="700"
                     >
@@ -155,7 +155,7 @@ export const ThankYouPage = () => {
       <Box
         maxW="2xl"
         mx="auto"
-        bg="linear-gradient(180deg, #191C32 0%, #0F172A 100%)"
+        bg="linear-gradient(180deg, fg.default 0%, fg.default 100%)"
         color="white"
         rounded="2xl"
         p={{ base: "6", md: "8" }}
@@ -177,7 +177,7 @@ export const ThankYouPage = () => {
                 w="8"
                 h="8"
                 rounded="full"
-                bg="#4F46E5"
+                bg="accent.600"
                 color="white"
                 align="center"
                 justifyContent="center"
@@ -189,7 +189,7 @@ export const ThankYouPage = () => {
               </Flex>
               <VStack align="flex-start" gap="0" flex="1">
                 <Text fontSize="sm" fontWeight="700" color="white">{step.t}</Text>
-                <Text fontSize="xs" color="#A5B4FC" lineHeight="1.5">{step.d}</Text>
+                <Text fontSize="xs" color="accent.300" lineHeight="1.5">{step.d}</Text>
               </VStack>
             </HStack>
           ))}
@@ -206,10 +206,10 @@ export const ThankYouPage = () => {
             px="8"
             rounded="xl"
             bg="white"
-            color="#0F172A"
-            border="1px solid #E2E8F0"
+            color="fg.default"
+            border="1px solid border.default"
             fontWeight="700"
-            _hover={{ bg: "#F8FAFC" }}
+            _hover={{ bg: "bg.subtle" }}
           >
             Wróć na stronę główną
           </Button>
@@ -220,10 +220,10 @@ export const ThankYouPage = () => {
             h="12"
             px="8"
             rounded="xl"
-            bg="#4F46E5"
+            bg="accent.600"
             color="white"
             fontWeight="700"
-            _hover={{ bg: "#4338CA" }}
+            _hover={{ bg: "accent.700" }}
             boxShadow="0 10px 30px -10px rgba(79, 70, 229, 0.5)"
           >
             Zadzwoń: 517 105 423
@@ -236,7 +236,7 @@ export const ThankYouPage = () => {
 
 const SummaryRow = ({ label, value }: { label: string; value: string }) => (
   <Flex justify="space-between" align="baseline" gap="4">
-    <Text color="#475569" fontSize="sm">{label}</Text>
-    <Text color="#0F172A" fontSize="sm" fontWeight="700" textAlign="right">{value}</Text>
+    <Text color="fg.muted" fontSize="sm">{label}</Text>
+    <Text color="fg.default" fontSize="sm" fontWeight="700" textAlign="right">{value}</Text>
   </Flex>
 )

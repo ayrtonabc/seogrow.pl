@@ -1,641 +1,336 @@
-import { Box, Container, Heading, Text, VStack, Flex, Grid } from "@chakra-ui/react"
-import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
+// src/sections/SolutionSection.tsx
+// "Zacznij w 5 dni. Bez stresu." — Timeline horizontal con 4 steps numerados.
+// Visual: editor-mockup.webp o hero-mockup.webp como bg.
+
+import { Box, Container, Heading, Text, VStack, HStack, Image, Grid } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 
-const ArrowRightIcon = ({ size = 18 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" focusable="false">
-    <path d="M5 12h14M13 5l7 7-7 7" />
-  </svg>
-)
-
-const CheckIcon = ({ size = 12 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+const CheckIcon = ({ size = 14 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" focusable="false">
     <path d="M20 6 9 17l-5-5" />
   </svg>
 )
 
-const SearchIcon = ({ size = 14 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
-    <circle cx="11" cy="11" r="8" />
-    <path d="m21 21-4.3-4.3" />
+const ArrowRightIcon = ({ size = 16 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+    <path d="M5 12h14M13 5l7 7-7 7" />
   </svg>
 )
 
-const TrendUpIcon = ({ size = 12 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" focusable="false">
-    <path d="m22 7-8.5 8.5-5-5L2 17" />
-    <path d="M16 7h6v6" />
-  </svg>
-)
-
-const BrainIcon = ({ size = 14 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" focusable="false">
-    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2z" />
-    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2z" />
-  </svg>
-)
-
-const PenNibIcon = ({ size = 14 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
-    <path d="M12 19l7-7 3 3-7 7-3-3z" />
-    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-    <path d="M2 2l7.586 7.586" />
-    <circle cx="11" cy="11" r="2" />
-  </svg>
-)
-
-const ZapIcon = ({ size = 14 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
-    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-  </svg>
-)
-
-const ChartIcon = ({ size = 14 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" focusable="false">
-    <path d="M3 3v18h18" />
-    <path d="M7 14l4-4 4 4 5-5" />
-  </svg>
-)
-
-const PlusIcon = ({ size = 10 }: { size?: number }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" focusable="false">
-    <path d="M12 5v14M5 12h14" />
-  </svg>
-)
-
-type ToolItem = {
-  label: string
-  description: string
-  icon: (size: number) => JSX.Element
-  accentBg: string
-  accentColor: string
+type Step = {
+  number: string
+  title: string
+  desc: string
+  duration: string
+  deliverables: string[]
 }
 
-const intelligentTools: ToolItem[] = [
+const STEPS: Step[] = [
   {
-    label: "Analiza branży",
-    description: "strategie, które przyciągają klientów",
-    icon: (size) => <BrainIcon size={size} />,
-    accentBg: "rgba(99, 102, 241, 0.2)",
-    accentColor: "#A5B4FC",
+    number: "01",
+    title: "Rozmowa 15 minut",
+    desc: "Poznajemy Twoją firmę, branżę i klientów. Bez ankiet, bez formularzy, bez czekania na wycenę.",
+    duration: "Dzień 1",
+    deliverables: ["Krótka rozmowa", "Wycena od ręki", "Plan działania"],
   },
   {
-    label: "Treści SEO",
-    description: "artykuły po polsku pod Google",
-    icon: (size) => <PenNibIcon size={size} />,
-    accentBg: "rgba(16, 185, 129, 0.2)",
-    accentColor: "#6EE7B7",
+    number: "02",
+    title: "Projekt i treści",
+    desc: "Przygotowujemy strukturę strony, sekcje, teksty i grafiki. Wszystko dopasowane do Twojej marki.",
+    duration: "Dni 2-3",
+    deliverables: ["Makieta strony", "Treści po polsku", "Schemat SEO"],
   },
   {
-    label: "SEO techniczne",
-    description: "schema, meta, szybkość",
-    icon: (size) => <ZapIcon size={size} />,
-    accentBg: "rgba(245, 158, 11, 0.2)",
-    accentColor: "#FCD34D",
+    number: "03",
+    title: "Budowa i wdrożenie",
+    desc: "Programiści kodują, SEO jest w standardzie, domena podłączona. Wszystko w tle — Ty nie musisz nic robić.",
+    duration: "Dni 4-5",
+    deliverables: ["Strona opublikowana", "CMS skonfigurowany", "SEO wdrożone"],
   },
   {
-    label: "Analityka",
-    description: "wiesz, co działa",
-    icon: (size) => <ChartIcon size={size} />,
-    accentBg: "rgba(236, 72, 153, 0.2)",
-    accentColor: "#F9A8D4",
+    number: "04",
+    title: "Wsparcie i rozwój",
+    desc: "Strona działa, klienci ją znajdują w Google. My pilnujemy hostingu, aktualizacji, certyfikatów i bezpieczeństwa. Ty dodajesz treści, kiedy chcesz.",
+    duration: "Od dnia 5",
+    deliverables: ["Hosting + SSL", "Wsparcie po polsku", "Comiesięczny raport"],
   },
 ]
 
+const StepCard = ({ step, index }: { step: Step; index: number }) => (
+  <Box
+    bg="bg.canvas"
+    rounded="2xl"
+    p={{ base: "6", md: "7" }}
+    border="1px solid"
+    borderColor="border.default"
+    position="relative"
+    h="full"
+    display="flex"
+    flexDirection="column"
+    _hover={{
+      borderColor: "accent.500",
+      transform: "translateY(-3px)",
+      boxShadow: "0 16px 32px -12px rgba(13, 148, 136, 0.18)",
+    }}
+    transition="all 0.25s cubic-bezier(0.22, 1, 0.36, 1)"
+    className={`wix-fade-up-${(index % 4) + 1}`}
+  >
+    {/* Header: número + duración */}
+    <HStack justify="space-between" align="center" mb="5">
+      <Text
+        fontSize={{ base: "44px", md: "56px" }}
+        fontWeight="800"
+        color="accent.500"
+        lineHeight="0.9"
+        letterSpacing="-0.05em"
+      >
+        {step.number}
+      </Text>
+      <Box
+        bg="bg.subtle"
+        border="1px solid"
+        borderColor="border.subtle"
+        rounded="full"
+        px="3"
+        py="1"
+      >
+        <Text fontSize="11px" fontWeight="700" color="fg.default" letterSpacing="0.04em" lineHeight="1.2">
+          {step.duration}
+        </Text>
+      </Box>
+    </HStack>
+
+    {/* Título + desc */}
+    <Heading
+      as="h3"
+      fontSize={{ base: "20px", md: "22px" }}
+      fontWeight="800"
+      color="fg.default"
+      letterSpacing="-0.02em"
+      lineHeight="1.25"
+      mb="3"
+    >
+      {step.title}
+    </Heading>
+    <Text fontSize="14px" color="fg.muted" lineHeight="1.6" mb="5" flex="1">
+      {step.desc}
+    </Text>
+
+    {/* Deliverables */}
+    <VStack gap="1.5" align="stretch" pt="4" borderTop="1px solid" borderColor="border.subtle">
+      {step.deliverables.map((d) => (
+        <HStack key={d} gap="2" align="center">
+          <Box color="accent.600" flexShrink={0} display="flex">
+            <CheckIcon size={11} />
+          </Box>
+          <Text fontSize="12px" color="fg.default" fontWeight="500" lineHeight="1.3">
+            {d}
+          </Text>
+        </HStack>
+      ))}
+    </VStack>
+  </Box>
+)
+
 export const SolutionSection = () => {
   return (
-    <Box as="section" id="jak-to-dziala" py={{ base: "20", md: "28" }} bg="white">
+    <Box as="section" id="jak-to-dziala" py={{ base: "20", md: "28" }} bg="bg.canvas">
       <Container maxW="7xl">
-        <VStack gap={{ base: "10", md: "14" }} align="stretch">
-          {/* Top row — H2 izquierda + descripción derecha */}
-          <Flex
-            justify="space-between"
-            align={{ base: "flex-start", md: "flex-end" }}
-            gap={{ base: "5", md: "10" }}
-            direction={{ base: "column", md: "row" }}
+        <VStack gap={{ base: "10", md: "14" }}>
+          {/* Top row: H2 izq + visual der (editor-mockup) */}
+          <Box
+            display={{ base: "block", lg: "grid" }}
+            gridTemplateColumns={{ lg: "1.1fr 1fr" }}
+            gap={{ base: "8", lg: "12" }}
+            w="full"
+            alignItems="center"
           >
-            <VStack gap="6" align="flex-start" maxW="2xl">
-              <Text
-                fontSize="12px"
-                fontWeight="700"
-                color="#4F46E5"
-                letterSpacing="0.12em"
-                textTransform="uppercase"
+            <VStack
+              align={{ base: "center", lg: "flex-start" }}
+              gap="5"
+              textAlign={{ base: "center", lg: "left" }}
+              className="wix-fade-up"
+            >
+              <HStack
+                gap="2"
+                px="3"
+                py="1.5"
+                bg="bg.accentSubtle"
+                borderWidth="1px"
+                borderColor="accent.200"
+                rounded="full"
+                alignSelf={{ base: "center", lg: "flex-start" }}
               >
-                Jak to działa
-              </Text>
+                <Box w="1.5" h="1.5" rounded="full" bg="accent.500" />
+                <Text fontSize="xs" fontWeight="700" color="accent.700" letterSpacing="0.08em" textTransform="uppercase">
+                  Jak to działa
+                </Text>
+              </HStack>
               <Heading
                 as="h2"
-                {...SECTION_TITLE_PROPS}
-                color={SECTION_TITLE_COLOR_DARK}
-              >
-                Wystartuj w 5 dni. Z pełnym wsparciem po polsku.
-              </Heading>
-            </VStack>
-            <Text
-              color="#475569"
-              fontSize="18px"
-              lineHeight="1.6"
-              maxW="md"
-            >
-              Od pierwszej rozmowy do gotowej strony w 5 dni. Ty decydujesz o
-              treściach, my dajemy Ci system, który działa.{" "}
-              <Box as={Link} to="/blog" color="#4F46E5" fontWeight="600" textDecoration="underline" textUnderlineOffset="3px">
-                Zobacz jak to działa
-              </Box>
-              {" "}albo{" "}
-              <Box as={Link} to="/comparacion-con-wordpress" color="#4F46E5" fontWeight="600" textDecoration="underline" textUnderlineOffset="3px">
-                porównaj z WordPressem
-              </Box>.
-            </Text>
-          </Flex>
-
-          {/* Grid asimétrico: 1 card grande oscura izq + 2 cards claras apiladas der */}
-          <Grid
-            templateColumns={{ base: "1fr", lg: "1.35fr 1fr" }}
-            gap={{ base: "5", md: "6" }}
-          >
-            {/* Featured dark card */}
-            <Box
-              position="relative"
-              bg="#191C32"
-              rounded="2xl"
-              p={{ base: "7", md: "9" }}
-              minH={{ base: "420px", lg: "500px" }}
-              overflow="hidden"
-              display="flex"
-              flexDirection="column"
-            >
-              {/* Glow decorations */}
-              <Box
-                position="absolute"
-                top="-100px"
-                right="-100px"
-                w="380px"
-                h="380px"
-                rounded="full"
-                bg="#4F46E5"
-                opacity={0.35}
-                filter="blur(100px)"
-                pointerEvents="none"
-              />
-              <Box
-                position="absolute"
-                bottom="-150px"
-                left="-50px"
-                w="300px"
-                h="300px"
-                rounded="full"
-                bg="#2563EB"
-                opacity={0.25}
-                filter="blur(90px)"
-                pointerEvents="none"
-              />
-
-              {/* Floating tags REEMPLAZADOS por módulos grid limpio */}
-
-              {/* Content top */}
-              <VStack align="flex-start" gap="4" position="relative" zIndex={1} maxW="md">
-                <Text
-                  fontSize="11px"
-                  fontWeight="700"
-                  color="#A5B4FC"
-                  letterSpacing="0.14em"
-                  textTransform="uppercase"
-                >
-                  Start
-                </Text>
-                <Heading
-                  as="h3"
-                  fontSize={{ base: "26px", md: "34px" }}
-                  fontWeight="800"
-                  color="white"
-                  letterSpacing="-0.03em"
-                  lineHeight="1.1"
-                >
-                  15-minutowa rozmowa. Zero zobowiązań.
-                </Heading>
-                <Text color="rgba(255,255,255,0.78)" fontSize="15px" lineHeight="1.6">
-                  Poznajemy Twoją firmę, branżę i cele. Bez ankiet, bez formularzy,
-                  bez czekania na wycenę. Od razu wiesz, ile to kosztuje i kiedy startujesz.
-                </Text>
-              </VStack>
-
-              {/* Intelligent tools — identificación + solución */}
-              <Box position="relative" zIndex={1} mt="auto" pb="16">
-                <Flex justify="space-between" align="center" mb="3" gap="3">
-                  <Text
-                    fontSize="10px"
-                    fontWeight="700"
-                    color="rgba(255,255,255,0.55)"
-                    textTransform="uppercase"
-                    letterSpacing="0.16em"
-                  >
-                    Identyfikujemy + rozwiązujemy
-                  </Text>
-                  <Text fontSize="10px" fontWeight="600" color="rgba(255,255,255,0.5)">
-                    Wszystko w cenie
-                  </Text>
-                </Flex>
-
-                <Grid templateColumns="1fr 1fr" gap="2.5">
-                  {intelligentTools.map((tool) => (
-                    <Flex
-                      key={tool.label}
-                      align="center"
-                      gap="2.5"
-                      bg="rgba(255, 255, 255, 0.05)"
-                      border="1px solid rgba(255, 255, 255, 0.08)"
-                      backdropFilter="blur(8px)"
-                      rounded="lg"
-                      px="3"
-                      py="2.5"
-                      transition="all 0.2s"
-                      _hover={{
-                        bg: "rgba(255, 255, 255, 0.1)",
-                        borderColor: "rgba(255, 255, 255, 0.18)",
-                        transform: "translateY(-1px)",
-                      }}
-                      cursor="default"
-                    >
-                      <Flex
-                        w="28px"
-                        h="28px"
-                        rounded="md"
-                        bg={tool.accentBg}
-                        color={tool.accentColor}
-                        align="center"
-                        justify="center"
-                        flexShrink={0}
-                        position="relative"
-                      >
-                        {tool.icon(14)}
-                        <Box
-                          position="absolute"
-                          top="-3px"
-                          right="-3px"
-                          w="12px"
-                          h="12px"
-                          rounded="full"
-                          bg="white"
-                          color="#0F172A"
-                          display="flex"
-                          alignItems="center"
-                          justifyContent="center"
-                          fontSize="9px"
-                          fontWeight="800"
-                          boxShadow="0 2px 4px rgba(0,0,0,0.2)"
-                        >
-                          <PlusIcon size={7} />
-                        </Box>
-                      </Flex>
-                      <Box flex="1" minW="0">
-                        <Text fontSize="13px" fontWeight="700" color="white" lineHeight="1.2">
-                          {tool.label}
-                        </Text>
-                        <Text fontSize="10px" color="rgba(255,255,255,0.55)" lineHeight="1.3" mt="0.5">
-                          {tool.description}
-                        </Text>
-                      </Box>
-                    </Flex>
-                  ))}
-                </Grid>
-              </Box>
-
-              {/* Arrow button */}
-              <Box
-                as={Link}
-                to="/#kontakt"
-                position="absolute"
-                bottom={{ base: "6", md: "8" }}
-                right={{ base: "6", md: "8" }}
-                w="48px"
-                h="48px"
-                rounded="full"
-                bg="white"
-                color="#191C32"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                zIndex={3}
-                _hover={{ bg: "#4F46E5", color: "white", transform: "scale(1.05)" }}
-                transition="all 0.2s ease"
-                aria-label="Umów rozmowę"
-              >
-                <ArrowRightIcon />
-              </Box>
-            </Box>
-
-            {/* Columna derecha — 2 cards apiladas */}
-            <VStack gap={{ base: "5", md: "6" }} align="stretch">
-              {/* Card 1 — Wdrożenie */}
-              <Box
-                position="relative"
-                bg="#F8FAFC"
-                rounded="2xl"
-                p={{ base: "7", md: "8" }}
-                border="1px solid #E2E8F0"
-                flex="1"
-                display="flex"
-                flexDirection="column"
-                transition="all 0.2s"
-                _hover={{ borderColor: "#4F46E5", bg: "white" }}
-              >
-                <VStack align="flex-start" gap="3" flex="1">
-                  <Text
-                    fontSize="11px"
-                    fontWeight="700"
-                    color="#4F46E5"
-                    letterSpacing="0.14em"
-                    textTransform="uppercase"
-                  >
-                    Wdrożenie
-                  </Text>
-                  <Heading
-                    as="h3"
-                    fontSize={{ base: "20px", md: "22px" }}
-                    fontWeight="800"
-                    color="#0F172A"
-                    letterSpacing="-0.025em"
-                    lineHeight="1.2"
-                  >
-                    Pełne wdrożenie w 5 dni roboczych
-                  </Heading>
-                  <Text color="#475569" fontSize="14px" lineHeight="1.6">
-                    System generuje stronę pod Twoją firmę, konfiguruje SEO,
-                    Google Analytics i Search Console. Ty dodajesz treści
-                    i akceptujesz gotowy efekt.
-                  </Text>
-                </VStack>
-                <Box
-                  as={Link}
-                  to="/#moduly"
-                  position="absolute"
-                  bottom={{ base: "5", md: "6" }}
-                  right={{ base: "5", md: "6" }}
-                  w="40px"
-                  h="40px"
-                  rounded="full"
-                  bg="white"
-                  color="#0F172A"
-                  border="1px solid #E2E8F0"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  _hover={{ bg: "#0F172A", color: "white", borderColor: "#0F172A" }}
-                  transition="all 0.2s"
-                  aria-label="Zobacz moduły"
-                >
-                  <ArrowRightIcon size={16} />
-                </Box>
-              </Box>
-
-              {/* Card 2 — Wsparcie */}
-              <Box
-                position="relative"
-                bg="#F8FAFC"
-                rounded="2xl"
-                p={{ base: "7", md: "8" }}
-                border="1px solid #E2E8F0"
-                flex="1"
-                display="flex"
-                flexDirection="column"
-                transition="all 0.2s"
-                _hover={{ borderColor: "#4F46E5", bg: "white" }}
-              >
-                <VStack align="flex-start" gap="3" flex="1">
-                  <Text
-                    fontSize="11px"
-                    fontWeight="700"
-                    color="#4F46E5"
-                    letterSpacing="0.14em"
-                    textTransform="uppercase"
-                  >
-                    Wsparcie
-                  </Text>
-                  <Heading
-                    as="h3"
-                    fontSize={{ base: "20px", md: "22px" }}
-                    fontWeight="800"
-                    color="#0F172A"
-                    letterSpacing="-0.025em"
-                    lineHeight="1.2"
-                  >
-                    Wsparcie, które faktycznie wspiera
-                  </Heading>
-                  <Text color="#475569" fontSize="14px" lineHeight="1.6">
-                    Po polsku, w dni robocze. Telefon, mail, czat — czas reakcji: max 4h.
-                    Nie zbywamy Cię żargonem. Mówimy po ludzku i rozwiązujemy sprawę od razu.
-                  </Text>
-                </VStack>
-                <Box
-                  as={Link}
-                  to="/#kontakt"
-                  position="absolute"
-                  bottom={{ base: "5", md: "6" }}
-                  right={{ base: "5", md: "6" }}
-                  w="40px"
-                  h="40px"
-                  rounded="full"
-                  bg="white"
-                  color="#0F172A"
-                  border="1px solid #E2E8F0"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  _hover={{ bg: "#0F172A", color: "white", borderColor: "#0F172A" }}
-                  transition="all 0.2s"
-                  aria-label="Skontaktuj się"
-                >
-                  <ArrowRightIcon size={16} />
-                </Box>
-              </Box>
-            </VStack>
-          </Grid>
-
-          {/* Bottom wide card — Google positioning */}
-          <Flex
-            direction={{ base: "column", lg: "row" }}
-            bg="#F8FAFC"
-            rounded="2xl"
-            border="1px solid #E2E8F0"
-            overflow="hidden"
-            position="relative"
-          >
-            {/* Lado izquierdo — texto */}
-            <VStack
-              align="flex-start"
-              gap="5"
-              p={{ base: "7", md: "9" }}
-              flex="1.1"
-              justify="center"
-            >
-              <Text
-                fontSize="11px"
-                fontWeight="700"
-                color="#4F46E5"
-                letterSpacing="0.14em"
-                textTransform="uppercase"
-              >
-                Pozycjonowanie
-              </Text>
-              <Heading
-                as="h3"
-                fontSize={{ base: "24px", md: "32px" }}
+                fontSize={{ base: "36px", md: "48px", lg: "64px" }}
                 fontWeight="800"
-                color="#0F172A"
-                letterSpacing="-0.03em"
-                lineHeight="1.15"
+                letterSpacing="-0.04em"
+                lineHeight={{ base: "1.1", md: "1.05", lg: "1.0" }}
+                color="fg.default"
               >
-                Twoja firma w Google. Bez płacenia za kliknięcia.
+                Zacznij w 5 dni.{" "}
+                <Box as="span" color="accent.600">Bez stresu i agencji.</Box>
               </Heading>
-              <Text color="#475569" fontSize="15px" lineHeight="1.6" maxW="lg">
-                Twoja strona pojawia się w wynikach Google, gdy klienci szukają Twojej usługi.
-                Bez reklam, na lata — organicznie. Pierwsze pozycje w 30 dni, nie po pół roku.
+              <Text fontSize="lg" color="fg.muted" lineHeight="1.6" maxW="lg">
+                Od pierwszej rozmowy do gotowej strony w 5 dni. Ty dajesz treści, my dajemy Ci system, który działa. Bez ankiet, bez czekania.
               </Text>
-              <Box
-                as={Link}
-                to="/#seo"
-                display="inline-flex"
-                alignItems="center"
-                gap="2"
-                color="#4F46E5"
-                fontSize="14px"
-                fontWeight="700"
-                textDecoration="none"
-                _hover={{ color: "#4338CA", gap: "3" }}
-                transition="all 0.2s"
-                mt="1"
+              <HStack
+                gap="3"
+                pt="2"
+                wrap="wrap"
+                justify={{ base: "center", lg: "flex-start" }}
               >
-                Zobacz jak pozycjonujemy
-                <Box display="flex" alignItems="center"><ArrowRightIcon size={14} /></Box>
-              </Box>
+                <Box
+                  as={Link}
+                  to="/zamowienie?plan=express"
+                  display="inline-flex"
+                  alignItems="center"
+                  gap="2"
+                  bg="bg.dark"
+                  color="fg.inverse"
+                  px="6"
+                  h="14"
+                  rounded="full"
+                  fontWeight="700"
+                  fontSize="md"
+                  textDecoration="none"
+                  boxShadow="md"
+                  _hover={{ bg: "bg.darkSubtle", transform: "translateY(-2px)", boxShadow: "xl" }}
+                  transition="all 0.22s cubic-bezier(0.22, 1, 0.36, 1)"
+                >
+                  Zacznij teraz
+                  <ArrowRightIcon />
+                </Box>
+                <Box
+                  as="a"
+                  href="tel:+48517105423"
+                  display="inline-flex"
+                  alignItems="center"
+                  gap="2"
+                  bg="transparent"
+                  color="fg.default"
+                  px="5"
+                  h="14"
+                  rounded="full"
+                  fontWeight="600"
+                  fontSize="md"
+                  textDecoration="none"
+                  borderWidth="1px"
+                  borderColor="border.strong"
+                  _hover={{ bg: "bg.subtle", borderColor: "fg.default" }}
+                  transition="all 0.2s"
+                >
+                  Zadzwoń: 517 105 423
+                </Box>
+              </HStack>
             </VStack>
 
-            {/* Lado derecho — mockup Google search */}
+            {/* Visual derecho: editor-mockup.webp */}
             <Box
-              flex="1"
-              bg="white"
-              borderLeft={{ base: "none", lg: "1px solid" }}
-              borderTop={{ base: "1px solid", lg: "none" }}
-              borderColor="#E2E8F0"
-              p={{ base: "7", md: "9" }}
               position="relative"
+              className="wix-slide-right"
+              maxW="560px"
+              ml={{ base: "0", lg: "auto" }}
+              w="full"
             >
-              <VStack align="stretch" gap="3.5">
-                {/* Google search bar */}
-                <Flex
-                  align="center"
-                  gap="2.5"
-                  bg="white"
-                  border="1px solid #E2E8F0"
-                  rounded="full"
-                  px="3.5"
-                  py="2.5"
-                  boxShadow="0 1px 3px rgba(15, 23, 42, 0.04)"
-                >
-                  {/* G logo mini */}
-                  <Flex
-                    w="20px"
-                    h="20px"
-                    rounded="full"
-                    bg="white"
-                    border="1px solid #E2E8F0"
-                    align="center"
-                    justify="center"
+              <Box
+                position="relative"
+                w="full"
+                h={{ base: "280px", md: "360px", lg: "420px" }}
+                borderRadius="3xl"
+                overflow="hidden"
+                boxShadow="2xl"
+                borderWidth="1px"
+                borderColor="border.subtle"
+              >
+                <Image
+                  src="/zespol/editor-mockup.webp"
+                  alt="Edytor wizualny SEO Grow — zarządzasz stroną z telefonu"
+                  w="100%"
+                  h="100%"
+                  objectFit="cover"
+                  loading="lazy"
+                />
+                {/* Overlay teal sutil */}
+                <Box
+                  position="absolute"
+                  top="0"
+                  left="0"
+                  right="0"
+                  bottom="0"
+                  bgGradient="linear(135deg, rgba(13, 148, 136, 0.12) 0%, transparent 50%)"
+                  pointerEvents="none"
+                />
+              </Box>
+
+              {/* Card flotante — tiempo total */}
+              <Box
+                position="absolute"
+                bottom={{ base: "-4%", md: "-6%" }}
+                left={{ base: "-3%", md: "-5%" }}
+                className="wix-fade-up-2"
+                bg="bg.canvas"
+                rounded="xl"
+                px="4"
+                py="3"
+                boxShadow="xl"
+                borderWidth="1px"
+                borderColor="border.subtle"
+                zIndex="2"
+              >
+                <HStack gap="3" align="center">
+                  <Box
+                    w="10"
+                    h="10"
+                    rounded="lg"
+                    bg="accent.100"
+                    color="accent.700"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
                     flexShrink={0}
                   >
-                    <Text fontSize="12px" fontWeight="800" color="#4285F4" lineHeight="1">
-                      G
+                    <CheckIcon size={18} />
+                  </Box>
+                  <Box>
+                    <Text fontSize="xs" color="fg.muted" lineHeight="1.2">
+                      Czas od rozmowy do
                     </Text>
-                  </Flex>
-                  <Text fontSize="13px" color="#1E293B" fontWeight="500">
-                    hydraulik Warszawa
-                  </Text>
-                  <Box ml="auto" color="#94A3B8" display="flex"><SearchIcon /></Box>
-                </Flex>
-
-                {/* Result #1 — featured (cliente) */}
-                <Box
-                  bg="#FAFBFF"
-                  border="1px solid #C7D2FE"
-                  rounded="md"
-                  p="3"
-                  position="relative"
-                >
-                  <Flex
-                    align="center"
-                    gap="1.5"
-                    position="absolute"
-                    top="-8px"
-                    left="10px"
-                    bg="#4F46E5"
-                    color="white"
-                    px="2"
-                    py="0.5"
-                    rounded="full"
-                    fontSize="9px"
-                    fontWeight="700"
-                    letterSpacing="0.06em"
-                    textTransform="uppercase"
-                  >
-                    <Box display="flex"><TrendUpIcon size={9} /></Box>
-                    Twoja firma · #1
-                  </Flex>
-                  <Text fontSize="13px" color="#1E40AF" fontWeight="700" mt="2" mb="0.5" lineHeight="1.3">
-                    Hydraulik Warszawa 24h — HydraulikExpress.pl
-                  </Text>
-                  <Text fontSize="11px" color="#10B981" mb="1.5">
-                    hydraulik-warszawa-24.pl › usługi
-                  </Text>
-                  <Text fontSize="11px" color="#475569" lineHeight="1.45">
-                    Profesjonalny hydraulik w Warszawie. Naprawy 24/7, gwarancja, faktura VAT.
-                    Dojazd w 30 minut. Sprawdź opinie.
-                  </Text>
-                </Box>
-
-                {/* Result #2 — competidor */}
-                <Box pl="1">
-                  <Text fontSize="12px" color="#1E293B" fontWeight="500" mb="0.5" lineHeight="1.3">
-                    Najlepszy hydraulik w Warszawie — Ranking 2024
-                  </Text>
-                  <Text fontSize="10px" color="#10B981">
-                    ranking-hydraulikow.pl
-                  </Text>
-                </Box>
-
-                {/* Result #3 — competidor */}
-                <Box pl="1">
-                  <Text fontSize="12px" color="#1E293B" fontWeight="500" mb="0.5" lineHeight="1.3">
-                    Hydraulik Warszawa — cennik, opinie, kontakt
-                  </Text>
-                  <Text fontSize="10px" color="#10B981">
-                    znajdź-firmę.pl/warszawa/hydraulik
-                  </Text>
-                </Box>
-
-                {/* Footer — KPI */}
-                <Box pt="3" mt="1" borderTop="1px dashed" borderColor="#E2E8F0">
-                  <Flex justify="space-between" align="center" gap="3" wrap="wrap">
-                    <Flex align="center" gap="2">
-                      <Box color="#10B981" display="flex"><TrendUpIcon /></Box>
-                      <Text fontSize="11px" color="#475569" fontWeight="500">
-                        <Box as="span" color="#0F172A" fontWeight="700">+247%</Box> ruchu w 90 dni
-                      </Text>
-                    </Flex>
-                    <Flex align="flex-end" gap="0.5" h="22px">
-                      <Box w="6px" h="14px" bg="#E2E8F0" rounded="sm" />
-                      <Box w="6px" h="16px" bg="#C7D2FE" rounded="sm" />
-                      <Box w="6px" h="12px" bg="#A5B4FC" rounded="sm" />
-                      <Box w="6px" h="18px" bg="#818CF8" rounded="sm" />
-                      <Box w="6px" h="11px" bg="#6366F1" rounded="sm" />
-                      <Box w="6px" h="22px" bg="#4F46E5" rounded="sm" />
-                    </Flex>
-                  </Flex>
-                </Box>
-              </VStack>
+                    <Text fontSize="sm" fontWeight="800" color="fg.default" lineHeight="1.1" mt="0.5">
+                      opublikowanej strony
+                    </Text>
+                  </Box>
+                </HStack>
+              </Box>
             </Box>
-          </Flex>
+          </Box>
+
+          {/* Timeline 4 steps */}
+          <Box w="full" position="relative" pt={{ base: "6", md: "10" }}>
+            {/* Línea conectora horizontal (md+) */}
+            <Box
+              display={{ base: "none", md: "block" }}
+              position="absolute"
+              top="55px"
+              left="calc(12.5% + 30px)"
+              right="calc(12.5% + 30px)"
+              h="2px"
+              bgGradient="linear(to-r, accent.200 0%, accent.500 100%)"
+              zIndex="0"
+            />
+
+            <Grid templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }} gap={{ base: "4", md: "5" }} position="relative" zIndex="1">
+              {STEPS.map((step, i) => (
+                <StepCard key={step.number} step={step} index={i} />
+              ))}
+            </Grid>
+          </Box>
         </VStack>
       </Container>
     </Box>

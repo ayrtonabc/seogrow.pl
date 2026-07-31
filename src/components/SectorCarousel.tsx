@@ -150,7 +150,7 @@ export const SectorCarousel = ({ autoplay = true }: { autoplay?: boolean }) => {
       position="relative"
       borderRadius="2xl"
       overflow="hidden"
-      bg="#0F172A"
+      bg="fg.default"
       boxShadow="0 24px 60px -20px rgba(15, 23, 42, 0.35)"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -204,7 +204,7 @@ export const SectorCarousel = ({ autoplay = true }: { autoplay?: boolean }) => {
           <Text
             fontSize="10px"
             fontWeight="700"
-            color="#A5B4FC"
+            color="accent.300"
             textTransform="uppercase"
             letterSpacing="0.14em"
             mb="3"
@@ -225,7 +225,7 @@ export const SectorCarousel = ({ autoplay = true }: { autoplay?: boolean }) => {
           <Text fontSize="sm" color="rgba(255,255,255,0.78)" lineHeight="1.6" mb="5">
             {sector.description}
           </Text>
-          <Text fontSize="xs" color="#A5B4FC" fontWeight="700" textTransform="uppercase" letterSpacing="0.08em">
+          <Text fontSize="xs" color="accent.300" fontWeight="700" textTransform="uppercase" letterSpacing="0.08em">
             {sector.name}
           </Text>
         </Flex>
@@ -254,7 +254,7 @@ export const SectorCarousel = ({ autoplay = true }: { autoplay?: boolean }) => {
             cursor="pointer"
             transition="all 0.25s"
             _hover={{ bg: i === active ? "white" : "rgba(255,255,255,0.7)" }}
-            _focusVisible={{ outline: "2px solid #A5B4FC", outlineOffset: "2px" }}
+            _focusVisible={{ outline: "2px solid accent.300", outlineOffset: "2px" }}
           />
         ))}
       </HStack>

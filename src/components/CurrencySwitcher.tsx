@@ -133,14 +133,14 @@ export const CurrencySwitcher = () => {
         alignItems="center"
         gap="1"
         cursor="pointer"
-        color="#475569"
+        color="fg.muted"
         fontSize="sm"
         fontWeight="500"
         fontFamily="'Plus Jakarta Sans', -apple-system, sans-serif"
         letterSpacing="0"
         transition="color 0.18s"
-        _hover={{ color: "#4F46E5" }}
-        _focusVisible={{ outline: "2px solid", outlineColor: "#4F46E5", outlineOffset: "4px", borderRadius: "4px" }}
+        _hover={{ color: "accent.600" }}
+        _focusVisible={{ outline: "2px solid", outlineColor: "accent.600", outlineOffset: "4px", borderRadius: "4px" }}
       >
         <Text as="span" lineHeight="1">
           {CURRENCY_DATA[currency].code}
@@ -165,7 +165,7 @@ export const CurrencySwitcher = () => {
           top="calc(100% + 8px)"
           right="0"
           bg="white"
-          border="1px solid #E2E8F0"
+          border="1px solid border.default"
           rounded="lg"
           boxShadow="0 12px 28px -8px rgba(15, 23, 42, 0.18), 0 2px 6px rgba(15, 23, 42, 0.04)"
           zIndex={50}
@@ -196,23 +196,23 @@ export const CurrencySwitcher = () => {
                 px="3"
                 py="2"
                 cursor="pointer"
-                bg={isActive ? "#EEF2FF" : "transparent"}
+                bg={isActive ? "accent.50" : "transparent"}
                 transition="background 0.12s"
-                _hover={{ bg: isActive ? "#EEF2FF" : "#F8FAFC" }}
+                _hover={{ bg: isActive ? "accent.50" : "bg.subtle" }}
                 textAlign="left"
               >
                 <Text
                   as="span"
                   fontSize="sm"
                   fontWeight={isActive ? "600" : "500"}
-                  color={isActive ? "#4F46E5" : "#475569"}
+                  color={isActive ? "accent.600" : "fg.muted"}
                   letterSpacing="0"
                   lineHeight="1.2"
                 >
                   {data.code}
                 </Text>
                 {isActive && (
-                  <Box w="6px" h="6px" rounded="full" bg="#4F46E5" />
+                  <Box w="6px" h="6px" rounded="full" bg="accent.600" />
                 )}
               </Box>
             )

@@ -38,7 +38,7 @@ const KANCELARIA_KEYFRAMES = `
 `
 
 const LockIcon = ({ size = 12 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="fg.subtle" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <rect x="4" y="11" width="16" height="10" rx="2" />
     <path d="M8 11V7a4 4 0 0 1 8 0v4" />
   </svg>
@@ -86,7 +86,7 @@ export const KancelariaWebsiteAnimation = () => {
       bg="white"
       rounded="2xl"
       border="1px solid"
-      borderColor="#E2E8F0"
+      borderColor="border.default"
       boxShadow="0 12px 40px rgba(15,23,42,0.12)"
       overflow="hidden"
       maxW="3xl"
@@ -97,7 +97,7 @@ export const KancelariaWebsiteAnimation = () => {
       <style>{KANCELARIA_KEYFRAMES}</style>
 
       {/* Browser chrome — siempre visible, idéntico al de GoogleSearchAnimation */}
-      <Box bg="#F1F5F9" px="3" py="2.5" borderBottom="1px solid #E2E8F0">
+      <Box bg="border.subtle" px="3" py="2.5" borderBottom="1px solid border.default">
         <HStack gap="2">
           <Box w="3" h="3" rounded="full" bg="#FF5F57" />
           <Box w="3" h="3" rounded="full" bg="#FEBC2E" />
@@ -108,14 +108,14 @@ export const KancelariaWebsiteAnimation = () => {
             px="3"
             py="1.5"
             flex="1"
-            border="1px solid #E2E8F0"
+            border="1px solid border.default"
             ml="2"
             display="flex"
             alignItems="center"
             gap="2"
           >
             <LockIcon size={10} />
-            <Text fontSize="xs" color="#64748B" fontWeight="500">
+            <Text fontSize="xs" color="fg.subtle" fontWeight="500">
               kancelaria-adwokacka-warszawa.pl
             </Text>
           </Box>
@@ -147,7 +147,7 @@ export const KancelariaWebsiteAnimation = () => {
       </Box>
 
       {/* Inline hint, mismo patrón que GoogleSearchAnimation */}
-      <Text fontSize="2xs" color="#94A3B8" textAlign="center" py="3" fontStyle="italic">
+      <Text fontSize="2xs" color="fg.faint" textAlign="center" py="3" fontStyle="italic">
         Tak wygląda strona Twojej kancelarii — z formularzem, listą usług, zespołem i mapą.
       </Text>
     </Box>

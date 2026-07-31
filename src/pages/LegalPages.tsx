@@ -119,7 +119,7 @@ const LegalLayout = ({
   intro: string
   sections: LegalSection[]
 }) => (
-  <Box bg="#F8FAFC" minH="100vh">
+  <Box bg="bg.subtle" minH="100vh">
     <SEO title={title} description={description} path={path} noindex={false} />
     <Header />
     <Box as="main" pt={{ base: "32", md: "40" }} pb={{ base: "16", md: "24" }}>
@@ -129,8 +129,8 @@ const LegalLayout = ({
             px="3"
             py="1.5"
             rounded="full"
-            bg="#EEF2FF"
-            color="#3730A3"
+            bg="accent.50"
+            color="accent.800"
             fontSize="xs"
             fontWeight="700"
             letterSpacing="0.04em"
@@ -141,27 +141,27 @@ const LegalLayout = ({
           <Heading as="h1" fontSize={{ base: "3xl", md: "5xl" }} lineHeight="1.05" letterSpacing="-0.04em">
             {title}
           </Heading>
-          <Text fontSize={{ base: "md", md: "lg" }} color="#475569" lineHeight="1.8" maxW="3xl">
+          <Text fontSize={{ base: "md", md: "lg" }} color="fg.muted" lineHeight="1.8" maxW="3xl">
             {intro}
           </Text>
         </VStack>
 
         <VStack align="stretch" gap="6">
           {sections.map((section) => (
-            <Box key={section.title} bg="white" rounded="3xl" border="1px solid" borderColor="#E2E8F0" p={{ base: "6", md: "8" }}>
+            <Box key={section.title} bg="white" rounded="3xl" border="1px solid" borderColor="border.default" p={{ base: "6", md: "8" }}>
               <VStack align="start" gap="4">
                 <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} letterSpacing="-0.03em">
                   {section.title}
                 </Heading>
                 {section.paragraphs?.map((paragraph) => (
-                  <Text key={paragraph} color="#475569" lineHeight="1.8">
+                  <Text key={paragraph} color="fg.muted" lineHeight="1.8">
                     {paragraph}
                   </Text>
                 ))}
                 {section.bullets && (
                   <List.Root gap="3" ps="5">
                     {section.bullets.map((bullet) => (
-                      <List.Item key={bullet} color="#475569" lineHeight="1.8">
+                      <List.Item key={bullet} color="fg.muted" lineHeight="1.8">
                         {bullet}
                       </List.Item>
                     ))}

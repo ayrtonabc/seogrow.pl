@@ -1,280 +1,312 @@
 // src/sections/ProblemSection.tsx
-// "Brzmi znajomo?" — los 4 problemas típicos que crean las agencias
-// tradicionales, enmarcados como "esto es lo que hacen otros" y con un
-// cierre explícito de que con SEO Grow ninguno de estos problemas existe.
-// Mismo patrón visual 3×2 que WhatYouGetSection (cards de texto + 2 SVG
-// decorativos), con paleta roja/coral para reforzar el tono de "problema".
-// El cierre contrasta con la solución SEO Grow.
+// "Inni obiecują. U nas to po prostu działa." — wix-style split 2-col con X rojos vs ✓ teal.
+// Fondo claro (no dark), eyebrow + headline + grid 2-col.
 
-import { Box, Container, Heading, Text, VStack, SimpleGrid } from "@chakra-ui/react"
-import { DotLottieReact } from "@lottiefiles/dotlottie-react"
-import { SECTION_TITLE_PROPS, SECTION_TITLE_COLOR_DARK } from "../lib/typography"
+import { Box, Container, Heading, Text, VStack, HStack, Image } from "@chakra-ui/react"
 
-type Problem = {
-  title: string
-  desc: string
-}
+const XIcon = ({ size = 14 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+    <path d="M18 6 6 18M6 6l12 12" />
+  </svg>
+)
 
-const PROBLEMS: Problem[] = [
+const CheckIcon = ({ size = 14 }: { size?: number }) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+    <path d="M20 6 9 17l-5-5" />
+  </svg>
+)
+
+type Item = { title: string; desc: string }
+
+const PROBLEMS: Item[] = [
   {
-    title: "Każda zmiana to koszt i czekanie",
-    desc: "Chcesz zmienić cenę albo dodać zdjęcie — agencja liczy godziny, a Ty czekasz tygodniami na efekt.",
+    title: "Każda zmiana to wydatek",
+    desc: "Chcesz zmienić cenę lub zdjęcie — agencja liczy godziny i wysyła wycenę. Ty czekasz.",
   },
   {
-    title: "Nie ma Cię tam, gdzie szukają klienci",
-    desc: "Ktoś wpisuje Twoją usługę w Google. Znajduje konkurencję. Ciebie — nie.",
+    title: "Google nie pokazuje firmy",
+    desc: "Klient wpisuje Twoją usługę. Twoja firma nie pojawia się — pojawia się konkurencja.",
   },
   {
-    title: "Strona kosztuje — i nic nie zarabia",
-    desc: "Płacisz za hosting, aktualizacje, certyfikaty, poprawki — a mimo to nowi klienci nie przychodzą.",
+    title: "Faktury co miesiąc, efektów brak",
+    desc: "Hosting, certyfikat, poprawki, aktualizacje. Pieniądze odchodzą, nowi klienci nie przychodzą.",
   },
   {
-    title: "Jesteś zależny od jednej osoby",
-    desc: "Twój programista trzyma hasła, pliki i dostęp do strony. Bez niego nie ruszysz.",
+    title: "Jeden człowiek trzyma wszystko",
+    desc: "Programista ma hasła i pliki. Bez niego nie ruszysz. A jeśli odejdzie — zaczynasz od zera.",
   },
 ]
 
-// ─── SVGs reemplazados por animaciones Lottie (mismo gradiente) ─────────
+const SOLUTIONS: Item[] = [
+  {
+    title: "Edytujesz sam, w 2 kliknięciach",
+    desc: "Zmiana ceny, dodanie zdjęcia, nowa usługa — robisz to z telefonu, bez kodowania.",
+  },
+  {
+    title: "Strona zoptymalizowana pod Google",
+    desc: "Schema, meta tagi, szybkość — wszystko w standardzie, zanim jeszcze zaczniesz działać.",
+  },
+  {
+    title: "Jedna kwota miesięcznie, bez niespodzianek",
+    desc: "Hosting, domena, CMS, wsparcie — wszystko w jednej racie. Zero ukrytych faktur.",
+  },
+  {
+    title: "Strona jest Twoja, na zawsze",
+    desc: "Kody, treści, domena zostają u Ciebie. Możesz odejść w każdej chwili — wystarczy jeden e-mail lub telefon, przekazujemy wszystko bez pytań.",
+  },
+]
 
-const ImageCosts = () => (
-  <Box
-    w="full"
-    h="full"
-    position="relative"
-    overflow="hidden"
-    rounded="3xl"
-    style={{
-      background: "linear-gradient(135deg, #FCA5A5 0%, #DC2626 100%)",
-    }}
-  >
-    {/* Capa 1: gradiente explícito */}
+const ProblemItem = ({ title, desc, isSolution }: Item & { isSolution: boolean }) => (
+  <HStack align="start" gap="3.5" className="wix-fade-up-1">
     <Box
-      position="absolute"
-      top="0"
-      left="0"
-      right="0"
-      bottom="0"
-      style={{
-        background: "linear-gradient(135deg, #FCA5A5 0%, #DC2626 100%)",
-        zIndex: 0,
-      }}
-    />
-    {/* Capa 2: animación Lottie transparente */}
-    <DotLottieReact
-      src="/no access.lottie"
-      autoplay
-      loop
-      speed={0.5}
-      backgroundColor="transparent"
-      style={{
-        position: "absolute",
-        top: "10%",
-        left: "10%",
-        width: "80%",
-        height: "80%",
-        zIndex: 1,
-        display: "block",
-      }}
-    />
-  </Box>
-)
-
-const ImageDependence = () => (
-  <Box
-    w="full"
-    h="full"
-    position="relative"
-    overflow="hidden"
-    rounded="3xl"
-    style={{
-      background: "linear-gradient(135deg, #9CA3AF 0%, #374151 100%)",
-    }}
-  >
-    {/* Capa 1: gradiente explícito */}
-    <Box
-      position="absolute"
-      top="0"
-      left="0"
-      right="0"
-      bottom="0"
-      style={{
-        background: "linear-gradient(135deg, #9CA3AF 0%, #374151 100%)",
-        zIndex: 0,
-      }}
-    />
-    {/* Capa 2: animación Lottie transparente */}
-    <DotLottieReact
-      src="/Sign for error _ Flat style.lottie"
-      autoplay
-      loop
-      speed={0.5}
-      backgroundColor="transparent"
-      style={{
-        position: "absolute",
-        top: "10%",
-        left: "10%",
-        width: "80%",
-        height: "80%",
-        zIndex: 1,
-        display: "block",
-      }}
-    />
-  </Box>
-)
-
-// ─── Card de problema (con indicador visual sutil) ────────────────────────
-
-const ProblemCard = ({ title, desc }: Problem) => (
-  <Box
-    bg="white"
-    rounded="3xl"
-    p={{ base: "7", md: "9" }}
-    h="full"
-    display="flex"
-    flexDirection="column"
-    justifyContent="center"
-    position="relative"
-    borderTop="3px solid #EF4444"
-  >
-    <Text
-      fontSize="xs"
-      fontWeight="800"
-      color="#EF4444"
-      letterSpacing="0.18em"
-      textTransform="uppercase"
-      mb="3"
+      flexShrink={0}
+      w="8"
+      h="8"
+      rounded="full"
+      bg={isSolution ? "rgba(13, 148, 136, 0.12)" : "rgba(220, 38, 38, 0.12)"}
+      color={isSolution ? "accent.600" : "#DC2626"}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      mt="0.5"
     >
-      ✕ U innych
-    </Text>
-    <Heading
-      as="h3"
-      fontSize={{ base: "22px", md: "28px" }}
-      fontWeight="800"
-      color="#0F172A"
-      letterSpacing="-0.02em"
-      lineHeight="1.2"
-      mb="3"
-    >
-      {title}
-    </Heading>
-    <Text fontSize="md" color="#475569" lineHeight="1.65">
-      {desc}
-    </Text>
-  </Box>
-)
-
-// ─── Card de imagen ───────────────────────────────────────────────────────
-
-const ImageCard = ({ children }: { children: React.ReactNode }) => (
-  <Box
-    h={{ base: "260px", md: "100%" }}
-    minH={{ base: "260px", md: "320px" }}
-    transition="transform 0.3s ease"
-    _hover={{ transform: "scale(1.02)" }}
-  >
-    {children}
-  </Box>
+      {isSolution ? <CheckIcon size={14} /> : <XIcon size={14} />}
+    </Box>
+    <Box flex="1">
+      <Text
+        fontWeight="700"
+        fontSize="16px"
+        color="fg.default"
+        mb="1.5"
+        letterSpacing="-0.01em"
+        lineHeight="1.3"
+      >
+        {title}
+      </Text>
+      <Text fontSize="14px" color="fg.muted" lineHeight="1.6">
+        {desc}
+      </Text>
+    </Box>
+  </HStack>
 )
 
 export const ProblemSection = () => {
   return (
-    <Box bg="#F5F3FF" py={{ base: "16", md: "24" }} position="relative" overflow="hidden">
-      <Container maxW="6xl" position="relative" zIndex="1">
+    <Box
+      as="section"
+      id="jak-to-dziala"
+      bg="bg.cream"
+      py={{ base: "20", md: "24" }}
+      position="relative"
+      aria-label="Inni obiecują. U nas to po prostu działa."
+    >
+      <Container maxW="7xl">
         <VStack gap={{ base: "10", md: "14" }}>
-          {/* ─── HEADER ─── */}
-          <VStack gap="4" textAlign="center" maxW="3xl" mx="auto">
-            <Text
-              fontSize="13px"
-              fontWeight="700"
-              color="#DC2626"
-              letterSpacing="0.18em"
-              textTransform="uppercase"
+          {/* Header */}
+          <VStack gap="4" textAlign="center" maxW="3xl" mx="auto" className="wix-fade-up">
+            <HStack
+              gap="2"
+              px="3"
+              py="1.5"
+              bg="bg.canvas"
+              borderWidth="1px"
+              borderColor="border.subtle"
+              rounded="full"
             >
-              To robią inne agencje
-            </Text>
+              <Box w="1.5" h="1.5" rounded="full" bg="accent.500" />
+              <Text fontSize="xs" fontWeight="600" color="fg.default" letterSpacing="0.08em" textTransform="uppercase">
+                Kontrast
+              </Text>
+            </HStack>
             <Heading
               as="h2"
-              {...SECTION_TITLE_PROPS}
-              color={SECTION_TITLE_COLOR_DARK}
+              fontSize={{ base: "32px", md: "44px", lg: "56px" }}
+              fontWeight="700"
+              letterSpacing="-0.02em"
+              lineHeight="1.1"
+              color="fg.default"
             >
-              Strona, która miała pomagać,{" "}
-              <Box as="span" color="#DC2626">tylko przeszkadza.</Box>
-              <Box as="span" display="block" mt="1">Da się to zmienić.</Box>
+              Inni obiecują.{" "}
+              <Box as="span" color="accent.600">U nas to po prostu działa.</Box>
             </Heading>
-            <Text
-              fontSize={{ base: "md", md: "lg" }}
-              color="#475569"
-              lineHeight="1.65"
-              maxW="2xl"
-            >
-              Brzmi znajomo? Większość firm w Polsce płaci za stronę, która nie przyprowadza klientów, kosztuje coraz więcej i wymaga ciągłej uwagi.{" "}
-              <Box as="span" fontWeight="700" color="#0F172A">
-                To nie musi być Twoja historia — bo z nami tych problemów po prostu nie ma.
-              </Box>
+            <Text fontSize="lg" color="fg.muted" lineHeight="1.6" maxW="2xl">
+              Wiemy, jak wygląda praca z agencjami i freelancerami. Wiemy też, jak ją zastąpić. Zobacz różnicę w konkretach.
             </Text>
           </VStack>
 
-          {/* ─── GRID 3×2 con cards de problema + imágenes SVG ─── */}
-          <SimpleGrid
-            columns={{ base: 1, md: 3 }}
-            gap={{ base: "6", md: "8" }}
-            w="full"
-            alignItems="stretch"
-          >
-            {/* Fila 1 */}
-            <ProblemCard {...PROBLEMS[0]} />
-            <ImageCard>
-              <ImageCosts />
-            </ImageCard>
-            <ProblemCard {...PROBLEMS[1]} />
-
-            {/* Fila 2 */}
-            <ImageCard>
-              <ImageDependence />
-            </ImageCard>
-            <ProblemCard {...PROBLEMS[2]} />
-            <ProblemCard {...PROBLEMS[3]} />
-          </SimpleGrid>
-
-          {/* ─── CIERRE: contraste "otros" vs "SEO Grow" ─── */}
+          {/* Grid 2 columnas */}
           <Box
-            mt="4"
-            bg="white"
-            rounded="3xl"
-            p={{ base: "8", md: "12" }}
+            display={{ base: "block", lg: "grid" }}
+            gridTemplateColumns={{ lg: "1fr 1.1fr" }}
+            gap={{ base: "6", lg: "8" }}
             w="full"
-            textAlign="center"
-            border="1px solid #E2E8F0"
-            boxShadow="0 12px 30px -10px rgba(79, 70, 229, 0.15)"
           >
-            <VStack gap="5">
-              <Text
-                fontSize={{ base: "22px", md: "32px" }}
-                fontWeight="800"
-                color="#0F172A"
+            {/* Columna izquierda — problemas (rojos) */}
+            <Box
+              bg="bg.canvas"
+              borderWidth="1px"
+              borderColor="border.subtle"
+              rounded="2xl"
+              p={{ base: "6", md: "8" }}
+              mb={{ base: "6", lg: "0" }}
+              className="wix-slide-left"
+              overflow="hidden"
+            >
+              {/* Visual: programador sobrecargado — crítica a las agencias baratas */}
+              <Box
+                position="relative"
+                w="100%"
+                borderRadius="xl"
+                overflow="hidden"
+                mb="6"
+                bg="#F1F5F9"
+              >
+                <Image
+                  src="/tanieprogramista.webp"
+                  alt="Tanie programista — programador sobrecargado trabajando a bajo costo"
+                  w="100%"
+                  h="auto"
+                  display="block"
+                  loading="lazy"
+                />
+                <Box
+                  position="absolute"
+                  top="3"
+                  left="3"
+                  bg="bg.canvas"
+                  rounded="full"
+                  px="3"
+                  py="1.5"
+                  boxShadow="sm"
+                  borderWidth="1px"
+                  borderColor="border.subtle"
+                >
+                  <HStack gap="1.5">
+                    <Box w="1.5" h="1.5" rounded="full" bg="#DC2626" className="wix-pulse" />
+                    <Text fontSize="2xs" fontWeight="800" color="fg.default" letterSpacing="0.08em" textTransform="uppercase">
+                      Tanie programista
+                    </Text>
+                  </HStack>
+                </Box>
+              </Box>
+
+              <HStack
+                gap="2"
+                px="3"
+                py="1.5"
+                bg="rgba(220, 38, 38, 0.10)"
+                borderWidth="1px"
+                borderColor="rgba(220, 38, 38, 0.25)"
+                rounded="full"
+                alignSelf="flex-start"
+                mb="5"
+              >
+                <Box w="1.5" h="1.5" rounded="full" bg="#DC2626" />
+                <Text fontSize="xs" fontWeight="600" color="#DC2626" letterSpacing="0.08em" textTransform="uppercase">
+                  U innych
+                </Text>
+              </HStack>
+              <Heading
+                as="h3"
+                fontSize={{ base: "22px", md: "26px" }}
+                fontWeight="700"
+                color="fg.default"
+                letterSpacing="-0.015em"
                 lineHeight="1.25"
-                letterSpacing="-0.025em"
-                maxW="2xl"
+                mb="6"
               >
-                Z nami{" "}
-                <Box as="span" color="#DC2626">żaden z tych problemów</Box>{" "}
-                nie istnieje.
-                <Box as="span" display="block" mt="1" color="#4F46E5">
-                  Bo tak właśnie pracujemy.
-                </Box>
-              </Text>
-              <Text
-                fontSize={{ base: "md", md: "lg" }}
-                color="#475569"
-                lineHeight="1.6"
-                maxW="2xl"
+                Typowe problemy{" "}
+                <Box as="span" color="#DC2626">z agencją.</Box>
+              </Heading>
+              <VStack gap="5" align="stretch">
+                {PROBLEMS.map((p) => (
+                  <ProblemItem key={p.title} {...p} isSolution={false} />
+                ))}
+              </VStack>
+            </Box>
+
+            {/* Columna derecha — soluciones (verdes) + visual */}
+            <VStack gap="6" align="stretch" className="wix-slide-right">
+              {/* Visual: office-team.webp */}
+              <Box
+                position="relative"
+                w="full"
+                h={{ base: "220px", md: "260px", lg: "300px" }}
+                borderRadius="2xl"
+                overflow="hidden"
+                boxShadow="md"
               >
-                Płacisz raz za projekt, potem jedną stałą kwotę miesięcznie — i tyle.
-                Hosting, aktualizacje, bezpieczeństwo, wsparcie, rozwój: wszystko jest w tej kwocie.{" "}
-                <Box as="span" fontWeight="700" color="#0F172A">
-                  My pilnujemy. Ty robisz swoje.
+                <Image
+                  src="/zespol/office-team.webp"
+                  alt="Zespół SEO Grow pracujący nad stronami klientów"
+                  w="100%"
+                  h="100%"
+                  objectFit="cover"
+                  loading="lazy"
+                />
+                <Box
+                  position="absolute"
+                  top="5"
+                  right="5"
+                  bg="bg.canvas"
+                  rounded="full"
+                  px="3"
+                  py="1.5"
+                  boxShadow="sm"
+                  borderWidth="1px"
+                  borderColor="border.subtle"
+                >
+                  <HStack gap="1.5">
+                    <Box w="1.5" h="1.5" rounded="full" bg="success.500" className="wix-pulse" />
+                    <Text fontSize="xs" fontWeight="700" color="fg.default" letterSpacing="0.06em" textTransform="uppercase">
+                      Na żywo
+                    </Text>
+                  </HStack>
                 </Box>
-              </Text>
+              </Box>
+
+              {/* Card soluciones (teal) */}
+              <Box
+                bg="rgba(13, 148, 136, 0.06)"
+                borderWidth="1px"
+                borderColor="rgba(13, 148, 136, 0.25)"
+                rounded="2xl"
+                p={{ base: "6", md: "8" }}
+              >
+                <HStack
+                  gap="2"
+                  px="3"
+                  py="1.5"
+                  bg="rgba(13, 148, 136, 0.12)"
+                  borderWidth="1px"
+                  borderColor="rgba(13, 148, 136, 0.30)"
+                  rounded="full"
+                  alignSelf="flex-start"
+                  mb="5"
+                >
+                  <Box w="1.5" h="1.5" rounded="full" bg="accent.600" />
+                  <Text fontSize="xs" fontWeight="600" color="accent.700" letterSpacing="0.08em" textTransform="uppercase">
+                    Z nami
+                  </Text>
+                </HStack>
+                <Heading
+                  as="h3"
+                  fontSize={{ base: "22px", md: "26px" }}
+                  fontWeight="700"
+                  color="fg.default"
+                  letterSpacing="-0.015em"
+                  lineHeight="1.25"
+                  mb="6"
+                >
+                  Tak to wygląda{" "}
+                  <Box as="span" color="accent.600">u nas.</Box>
+                </Heading>
+                <VStack gap="5" align="stretch">
+                  {SOLUTIONS.map((s) => (
+                    <ProblemItem key={s.title} {...s} isSolution={true} />
+                  ))}
+                </VStack>
+              </Box>
             </VStack>
           </Box>
         </VStack>

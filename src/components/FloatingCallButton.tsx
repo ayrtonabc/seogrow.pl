@@ -17,7 +17,7 @@ const PulseRing = () => (
     position="absolute"
     inset="0"
     rounded="full"
-    bg="#4F46E5"
+    bg="accent.600"
     opacity="0.4"
     sx={{
       animation: "fabPulse 2.4s ease-out infinite",
@@ -62,7 +62,7 @@ export const FloatingCallButton = () => {
     >
       <HStack
         gap="2"
-        bg="#4F46E5"
+        bg="accent.600"
         color="white"
         pl="3"
         pr="5"
@@ -70,7 +70,7 @@ export const FloatingCallButton = () => {
         rounded="full"
         boxShadow="0 10px 25px rgba(79, 70, 229, 0.45), 0 4px 10px rgba(0, 0, 0, 0.12)"
         position="relative"
-        _hover={{ bg: "#4338CA", transform: "translateY(-2px)" }}
+        _hover={{ bg: "accent.700", transform: "translateY(-2px)" }}
         _active={{ transform: "translateY(0)" }}
         transition="all 0.18s"
       >

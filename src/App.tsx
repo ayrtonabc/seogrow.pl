@@ -9,13 +9,13 @@ import { SEO, SITE_URL } from "./components/SEO"
 import { FloatingCallButton } from "./components/FloatingCallButton"
 import { TranslationBanner } from "./components/LanguageSwitcher"
 import { HeroSection } from "./sections/HeroSection"
-import { WhatYouGetSection } from "./sections/WhatYouGetSection"
 import { TrustLogosSection } from "./sections/TrustLogosSection"
+import { AISiteBuilderSection } from "./sections/AISiteBuilderSection"
+import { TemplatesShowcaseSection } from "./sections/TemplatesShowcaseSection"
 import { StatsSection } from "./sections/StatsSection"
-import { CoverageSection } from "./sections/CoverageSection"
-import { PressSection } from "./sections/PressSection"
 import { ClientResultsSection } from "./sections/ClientResultsSection"
 import { GoogleReviewsSection } from "./sections/GoogleReviewsSection"
+import { WhyChooseSection } from "./sections/WhyChooseSection"
 import { ProblemSection } from "./sections/ProblemSection"
 import { CustomDesignSection } from "./sections/CustomDesignSection"
 import { TargetAudienceSection } from "./sections/TargetAudienceSection"
@@ -240,9 +240,6 @@ const SolutionSection = lazy(() =>
 const SEOSection = lazy(() =>
   import("./sections/SEOSection").then((module) => ({ default: module.SEOSection })),
 )
-const ComparisonInlineSection = lazy(() =>
-  import("./sections/ComparisonInlineSection").then((module) => ({ default: module.ComparisonInlineSection })),
-)
 const FAQSection = lazy(() =>
   import("./sections/FAQSection").then((module) => ({ default: module.FAQSection })),
 )
@@ -270,7 +267,7 @@ function LandingPage() {
         left="-9999px"
         top="4"
         zIndex="9999"
-        bg="#4F46E5"
+        bg="accent.600"
         color="white"
         px="6"
         py="3"
@@ -285,11 +282,11 @@ function LandingPage() {
       <Header />
       <Box as="main" id="main-content" tabIndex={-1} outline="none">
         <HeroSection />
-        <WhatYouGetSection />
         <TrustLogosSection />
+        <TemplatesShowcaseSection />
+        <AISiteBuilderSection />
         <StatsSection />
-        <CoverageSection />
-        <PressSection />
+        <WhyChooseSection />
         <ClientResultsSection />
         <GoogleReviewsSection />
         <ProblemSection />
@@ -302,14 +299,13 @@ function LandingPage() {
             <PricingSection />
             <GrowWithYouSection />
             <SEOSection />
-            <ComparisonInlineSection />
             <FAQSection />
             <FinalCTASection />
           </Suspense>
         </DeferredRender>
       </Box>
-      <DeferredRender fallback={<Box as="footer" minH="320px" bg="#0F172A" />}>
-        <Suspense fallback={<Box as="footer" minH="320px" bg="#0F172A" />}>
+      <DeferredRender fallback={<Box as="footer" minH="320px" bg="fg.default" />}>
+        <Suspense fallback={<Box as="footer" minH="320px" bg="fg.default" />}>
           <Footer />
         </Suspense>
       </DeferredRender>
@@ -333,7 +329,7 @@ function App() {
       <DeferredRender>
         <PrefetchLinks />
       </DeferredRender>
-      <Suspense fallback={<Box minH="100vh" bg="#F8FAFC" />}>
+      <Suspense fallback={<Box minH="100vh" bg="bg.subtle" />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/wsparcie" element={<SupportPage />} />
