@@ -247,13 +247,77 @@ export const PricingSection = () => {
             <VStack gap="2" maxW="2xl" className="wix-fade-up-2">
               <Text fontSize="lg" color="fg.muted" lineHeight="1.6">
                 <Box as="span" fontWeight="700" color="fg.default">Jasny cennik. Bez haczyków.</Box>{" "}
-                Płacisz raz za wykonanie strony, a potem tylko comiesięczną opłatę za CMS, hosting i wsparcie.
+                Płacisz raz za stronę, a potem tylko comiesięczną opłatę za całą platformę: panel, hosting, domenę, SSL i wsparcie.
               </Text>
               <Text fontSize="md" color="fg.muted" lineHeight="1.5">
                 Wiesz, za co płacisz — od pierwszego dnia, bez ukrytych faktur.
               </Text>
             </VStack>
           </VStack>
+
+          {/* Banner "co jest w cenie" — refuerza plataforma única */}
+          <Box
+            w="full"
+            maxW="3xl"
+            mx="auto"
+            p={{ base: "5", md: "6" }}
+            borderRadius="2xl"
+            bg="rgba(13, 148, 136, 0.06)"
+            borderWidth="1px"
+            borderColor="rgba(13, 148, 136, 0.18)"
+            className="wix-fade-up-2"
+          >
+            <HStack gap="3" align="start" wrap="wrap" justify="center">
+              <HStack gap="2" align="center">
+                <Box w="6" h="6" rounded="full" bg="accent.600" display="flex" alignItems="center" justifyContent="center" flexShrink={0}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </Box>
+                <Text fontSize="sm" fontWeight="600" color="fg.default">Hosting</Text>
+              </HStack>
+              <HStack gap="2" align="center">
+                <Box w="6" h="6" rounded="full" bg="accent.600" display="flex" alignItems="center" justifyContent="center" flexShrink={0}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </Box>
+                <Text fontSize="sm" fontWeight="600" color="fg.default">Domena</Text>
+              </HStack>
+              <HStack gap="2" align="center">
+                <Box w="6" h="6" rounded="full" bg="accent.600" display="flex" alignItems="center" justifyContent="center" flexShrink={0}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </Box>
+                <Text fontSize="sm" fontWeight="600" color="fg.default">SSL</Text>
+              </HStack>
+              <HStack gap="2" align="center">
+                <Box w="6" h="6" rounded="full" bg="accent.600" display="flex" alignItems="center" justifyContent="center" flexShrink={0}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </Box>
+                <Text fontSize="sm" fontWeight="600" color="fg.default">CMS</Text>
+              </HStack>
+              <HStack gap="2" align="center">
+                <Box w="6" h="6" rounded="full" bg="accent.600" display="flex" alignItems="center" justifyContent="center" flexShrink={0}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </Box>
+                <Text fontSize="sm" fontWeight="600" color="fg.default">SEO</Text>
+              </HStack>
+              <HStack gap="2" align="center">
+                <Box w="6" h="6" rounded="full" bg="accent.600" display="flex" alignItems="center" justifyContent="center" flexShrink={0}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </Box>
+                <Text fontSize="sm" fontWeight="600" color="fg.default">Wsparcie</Text>
+              </HStack>
+            </HStack>
+          </Box>
 
           {/* 3 cards — todas claras, mismo fondo */}
           <Grid

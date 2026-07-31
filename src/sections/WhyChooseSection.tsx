@@ -1,18 +1,21 @@
 // src/sections/WhyChooseSection.tsx
-// "Cztery powody. Jeden wybór." — wix-style 2x2 grid con icon SVG (no emoji)
+// "Jedna platforma zamiast chaosu." — historia del fundador: anti-WordPress, anti-plugins, anti-caos.
+// 4 tarjetas: cada una ataca un dolor real del PyME polaco con la solución de SEO Grow.
 
-import { Box, Container, Heading, Text, HStack, VStack, SimpleGrid, Flex } from "@chakra-ui/react"
+import { Box, Container, Heading, Text, HStack, VStack, SimpleGrid } from "@chakra-ui/react"
+
+const StackIcon = () => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="7" height="7" rx="1" />
+    <rect x="14" y="3" width="7" height="7" rx="1" />
+    <rect x="3" y="14" width="7" height="7" rx="1" />
+    <rect x="14" y="14" width="7" height="7" rx="1" />
+  </svg>
+)
 
 const BoltIcon = () => (
   <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
     <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
-  </svg>
-)
-
-const ShieldIcon = () => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    <path d="M9 12l2 2 4-4" />
   </svg>
 )
 
@@ -22,7 +25,6 @@ const HandshakeIcon = () => (
     <path d="M14 14l2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
     <path d="M21 3l-3.5 3.5" />
     <path d="M3 21l8.5-8.5" />
-    <path d="M3 4l8 8" />
   </svg>
 )
 
@@ -36,27 +38,27 @@ const LockIcon = () => (
 
 const REASONS = [
   {
-    icon: BoltIcon,
-    title: "Błyskawicznie",
-    desc: "Projekt przygotowujemy w 2–3 dni, wdrażamy w 5 dni roboczych. Pracujemy równolegle — projekt, treści i SEO startują razem, nie po kolei. Bez opóźnień, bez wymówek.",
+    icon: StackIcon,
+    title: "Jedna platforma, zero chaosu",
+    desc: "Koniec z WordPressem, 14 wtyczkami, Booksy do rezerwacji, BLIK-iem do płatności i hostingiem u trzeciego dostawcy. Strona, panel, domena, SEO i wsparcie — w jednym miejscu, w jednej racie.",
     color: "#0D9488",
   },
   {
-    icon: ShieldIcon,
-    title: "Bez ryzyka",
-    desc: "Bez umowy długoterminowej. Płacisz za efekt, nie za obietnice. Rezygnujesz kiedy chcesz, jednym mailem.",
+    icon: BoltIcon,
+    title: "Szybko, bo nie zlecamy na zewnątrz",
+    desc: "Mam własny VPS i własny panel — SEO Grow Panel. Bez agencji, bez freelancerów, bez czekania. Strona gotowa w 5 dni roboczych od dostarczenia materiałów.",
     color: "#10B981",
   },
   {
     icon: HandshakeIcon,
-    title: "Bez pośredników",
-    desc: "Rozmawiasz z programistą, nie z account managerem. Bez przedłużania, bez sprzedaży, bez ściemy.",
+    title: "Rozmawiasz ze mną, nie z botem",
+    desc: "Żadnych ticketów, żadnego call center, żadnego chatbota. Telefon, mail, WhatsApp — kontakt bezpośredni z programistą, który zrobił Twoją stronę.",
     color: "#F59E0B",
   },
   {
     icon: LockIcon,
-    title: "Twoja na zawsze",
-    desc: "Kody, domena, treści — wszystko Twoje. Odchodzisz w 5 minut. Przechodzisz do kogokolwiek, zero blokad.",
+    title: "Twoja strona, Twoje dane, na zawsze",
+    desc: "Kody, domena, treści — wszystko zostaje u Ciebie. Decydujesz kiedy odchodzisz. Bez umowy długoterminowej, bez kar umownych, bez blokad.",
     color: "#3B82F6",
   },
 ]
@@ -71,10 +73,10 @@ export const WhyChooseSection = () => {
   return (
     <Box
       as="section"
-      bg="bg.canvas"
+      bg="bg.cream"
       py={{ base: "20", md: "28" }}
       position="relative"
-      aria-label="Dlaczego my"
+      aria-label="Dlaczego SEO Grow"
     >
       <Container maxW="7xl">
         <VStack gap={{ base: "10", md: "14" }}>
@@ -84,29 +86,31 @@ export const WhyChooseSection = () => {
               gap="2"
               px="3"
               py="1.5"
-              bg="bg.cream"
+              bg="bg.canvas"
               borderWidth="1px"
               borderColor="border.subtle"
               rounded="full"
             >
               <Box w="1.5" h="1.5" rounded="full" bg="accent.500" />
               <Text fontSize="xs" fontWeight="700" color="fg.default" letterSpacing="0.08em" textTransform="uppercase">
-                Dlaczego my
+                Dlaczego SEO Grow
               </Text>
             </HStack>
             <Heading
               as="h2"
-              fontSize={{ base: "36px", md: "48px", lg: "64px" }}
-              fontWeight="800"
+              fontSize={{ base: "32px", md: "40px", lg: "48px" }}
+              fontWeight="600"
               color="fg.default"
-              letterSpacing="-0.04em"
-              lineHeight={{ base: "1.1", md: "1.05", lg: "1.0" }}
+              letterSpacing="-0.015em"
+              lineHeight="1.1"
             >
-              Cztery powody.{" "}
-              <Box as="span" color="accent.600">Jeden wybór.</Box>
+              Jedna platforma zamiast{" "}
+              <Box as="span" color="accent.700" fontWeight="700">
+                chaosu w narzędziach.
+              </Box>
             </Heading>
-            <Text fontSize={{ base: "lg", md: "xl" }} color="fg.muted" lineHeight="1.6">
-              Konkrety, nie obietnice. Sprawdź sam, dlaczego 47 firm w tym roku wybrało właśnie nas.
+            <Text fontSize={{ base: "md", md: "lg" }} color="fg.muted" lineHeight="1.6" maxW="2xl">
+              SEO Grow powstał, bo widziałem zbyt wiele firm tonących w WordPressie, wtyczkach i pięciu osobnych dashboardach. Zbudowałem coś prostszego.
             </Text>
           </VStack>
 
@@ -189,8 +193,8 @@ export const WhyChooseSection = () => {
             </HStack>
             <Text>·</Text>
             <HStack gap="1.5">
-              <Text fontWeight="700" color="fg.default">5 lat</Text>
-              <Text>doświadczenia</Text>
+              <Text fontWeight="700" color="fg.default">Własny VPS</Text>
+              <Text>w Polsce</Text>
             </HStack>
           </HStack>
         </VStack>

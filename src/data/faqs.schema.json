@@ -6,6 +6,22 @@
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "Skąd te 5 dni i co, jeśli nie zdążycie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pięć dni roboczych liczymy od momentu, w którym dostarczysz materiały: teksty, zdjęcia, logo i dane firmy. Jeśli czegoś brakuje, informujemy Cię w 24h. Jeśli opóźnienie będzie z naszej winy — oddajemy 10% rabatu na abonamencie za każdy dzień zwłoki. Taka jest nasza umowa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dlaczego nie WordPress?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WordPress to świetne narzędzie dla programistów, ale dla właściciela firmy to pułapka: 14 wtyczek, które spowalniają stronę, aktualizacje co tydzień, luki bezpieczeństwa, SEO zależne od jednej wtyczki. SEO Grow działa inaczej — strona, panel, hosting i SEO to jedna platforma. Zero wtyczek, zero konfliktów, zero spadków wydajności."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Ile naprawdę kosztuje strona u was?",
         "acceptedAnswer": {
           "@type": "Answer",

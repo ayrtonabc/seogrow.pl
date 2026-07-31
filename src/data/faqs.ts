@@ -1,5 +1,17 @@
 export const faqs = [
   {
+    question: "Skąd te 5 dni i co, jeśli nie zdążycie?",
+    answer:
+      "Pięć dni roboczych liczymy od momentu, w którym dostarczysz materiały: teksty, zdjęcia, logo i dane firmy. Jeśli czegoś brakuje, informujemy Cię w 24h. Jeśli opóźnienie będzie z naszej winy — oddajemy 10% rabatu na abonamencie za każdy dzień zwłoki. Taka jest nasza umowa.",
+    category: "Termin",
+  },
+  {
+    question: "Dlaczego nie WordPress?",
+    answer:
+      "WordPress to świetne narzędzie dla programistów, ale dla właściciela firmy to pułapka: 14 wtyczek, które spowalniają stronę, aktualizacje co tydzień, luki bezpieczeństwa, SEO zależne od jednej wtyczki. SEO Grow działa inaczej — strona, panel, hosting i SEO to jedna platforma. Zero wtyczek, zero konfliktów, zero spadków wydajności.",
+    category: "Technologia",
+  },
+  {
     question: "Ile naprawdę kosztuje strona u was?",
     answer:
       "Od 1 500 zł jednorazowo + 49 zł miesięcznie za pakiet Start. Dokładna cena zależy od wybranego pakietu (Standard lub Premium). W każdej opcji masz już stronę, CMS, hosting, SSL i wsparcie. Żadnych ukrytych opłat ani niespodzianek na fakturze.",

@@ -30,7 +30,8 @@ const ArrowRightIcon = ({ size = 14 }: { size?: number }) => (
   </svg>
 )
 
-// Mostramos solo 7 FAQs para mantener esta sección compacta
+// Mostramos solo 7 FAQs para mantener esta sección compacta.
+// Las 2 primeras (5 días, WordPress) son las que más importan al cliente nuevo.
 const VISIBLE_FAQS = faqs.slice(0, 7)
 
 export const FAQSection = () => {
