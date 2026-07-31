@@ -252,8 +252,8 @@ function LandingPage() {
   return (
     <Box bg="white" minH="100vh">
       <SEO
-        title="Strona internetowa dla firmy — od 1 500 zł, gotowa w 5 dni | SEO Grow"
-        description="Profesjonalna strona dla Twojej firmy. Od 1 500 zł, gotowa w 5 dni, z CMS-em, którym zarządzasz sam z telefonu. Wsparcie po polsku, bez umowy, bez prowizji."
+        title="Strona z SEO dla firmy — od 1 500 zł, w 5 dni | SEO Grow"
+        description="Strona internetowa z SEO dla Twojej firmy. Od 1 500 zł, gotowa w 5 dni, z panelem do zarządzania. Bez umowy, bez agencji, bez WordPressa."
         path="/"
         image="/panel.webp"
         keywords="strona internetowa dla firmy, strona www, strona dla firmy, strona widoczna w google, strona dla rzemieślnika, strona dla freelancera, strona dla gabinetu, cms dla firmy"
