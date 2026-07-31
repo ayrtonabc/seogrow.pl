@@ -101,7 +101,7 @@ export const HeroSection = () => {
             >
               <Box w="1.5" h="1.5" rounded="full" bg="accent.500" className="wix-pulse" />
               <Text fontSize="xs" fontWeight="600" letterSpacing="0.08em" textTransform="uppercase" color="fg.default">
-                Jedna platforma · Bez WordPressa · Bez chaosu w narzędziach
+                Więcej klientów z Google — bez agencji, bez umowy
               </Text>
             </HStack>
 
@@ -114,11 +114,11 @@ export const HeroSection = () => {
               letterSpacing="-0.015em"
               lineHeight="1.1"
               fontSize={{ base: "34px", md: "44px", lg: "50px" }}
-              maxW="680px"
+              maxW="640px"
             >
-              Jedna platforma, która zastępuje{" "}
+              Strona internetowa, dzięki której{" "}
               <Box as="span" color="#215AFF" fontWeight="700">
-                cały chaos.
+                znajdą Cię w Google.
               </Box>
             </Heading>
 
@@ -128,10 +128,10 @@ export const HeroSection = () => {
               fontSize={{ base: "md", md: "lg" }}
               color="fg.muted"
               lineHeight="1.55"
-              maxW="560px"
+              maxW="540px"
               fontWeight="400"
             >
-              Strona, panel do zarządzania, SEO, hosting, domena i wsparcie — <Box as="span" fontWeight="600" color="fg.default">w jednym miejscu, w jednej racie</Box>. Gotowe w 5 dni od dostarczenia materiałów. Od <Box as="span" fontWeight="600" color="#215AFF">1 500 zł</Box>. Bez WordPressa, bez 14 wtyczek, bez Booksy.
+              Profesjonalna strona z <Box as="span" fontWeight="600" color="fg.default">CMS-em i SEO</Box>, gotowa w 5 dni roboczych. Od <Box as="span" fontWeight="600" color="#215AFF">1 500 zł</Box>. Edytujesz ją sam z telefonu, bez znajomości technologii.
             </Text>
 
             {/* CTAs */}

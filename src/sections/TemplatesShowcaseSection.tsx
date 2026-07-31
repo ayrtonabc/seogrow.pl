@@ -157,7 +157,7 @@ export const TemplatesShowcaseSection = () => {
               maxW="520px"
               mx="auto"
             >
-              Wszystko poniżej działa od razu po włączeniu. Bez umowy, bez dopłat za każdy moduł osobno. Płać tylko za to, z czego korzystasz.
+              Wszystko poniżej działa od razu po włączeniu. Bez umowy, bez dopłat za każdy moduł osobno.
             </Text>
           </Box>
 

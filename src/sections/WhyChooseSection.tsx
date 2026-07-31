@@ -1,6 +1,6 @@
 // src/sections/WhyChooseSection.tsx
-// "Jedna platforma zamiast chaosu." — historia del fundador: anti-WordPress, anti-plugins, anti-caos.
-// 4 tarjetas: cada una ataca un dolor real del PyME polaco con la solución de SEO Grow.
+// "Twoja strona. Gotowa. Widoczna. Twoja." — copy PyME-friendly.
+// 4 cards con beneficios para el cliente final. Sin naming de competencia.
 
 import { Box, Container, Heading, Text, HStack, VStack, SimpleGrid } from "@chakra-ui/react"
 
@@ -19,46 +19,42 @@ const BoltIcon = () => (
   </svg>
 )
 
-const HandshakeIcon = () => (
+const PhoneIcon = () => (
   <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M11 17l2 2a1 1 0 1 0 3-3" />
-    <path d="M14 14l2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
-    <path d="M21 3l-3.5 3.5" />
-    <path d="M3 21l8.5-8.5" />
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
   </svg>
 )
 
-const LockIcon = () => (
+const ShieldIcon = () => (
   <svg aria-hidden="true" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="4" y="11" width="16" height="10" rx="2" />
-    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-    <circle cx="12" cy="16" r="1" fill="currentColor" />
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <path d="M9 12l2 2 4-4" />
   </svg>
 )
 
 const REASONS = [
   {
-    icon: StackIcon,
-    title: "Jedna platforma, zero chaosu",
-    desc: "Koniec z WordPressem, 14 wtyczkami, Booksy do rezerwacji, BLIK-iem do płatności i hostingiem u trzeciego dostawcy. Strona, panel, domena, SEO i wsparcie — w jednym miejscu, w jednej racie.",
+    icon: BoltIcon,
+    title: "Gotowa w 5 dni",
+    desc: "Od pierwszej rozmowy do opublikowanej strony. Bez ankiet, bez czekania na wycenę, bez poślizgów. 5 dni roboczych od momentu, gdy dostarczysz materiały.",
     color: "#0D9488",
   },
   {
-    icon: BoltIcon,
-    title: "Szybko, bo nie zlecamy na zewnątrz",
-    desc: "Mam własny VPS i własny panel — SEO Grow Panel. Bez agencji, bez freelancerów, bez czekania. Strona gotowa w 5 dni roboczych od dostarczenia materiałów.",
+    icon: PhoneIcon,
+    title: "Wsparcie po polsku",
+    desc: "Telefon, mail, WhatsApp. Odpowiadam ja — programista, który zrobił Twoją stronę. Bez ticketów, bez call center, bez czekania na odpowiedź.",
     color: "#10B981",
   },
   {
-    icon: HandshakeIcon,
-    title: "Rozmawiasz ze mną, nie z botem",
-    desc: "Żadnych ticketów, żadnego call center, żadnego chatbota. Telefon, mail, WhatsApp — kontakt bezpośredni z programistą, który zrobił Twoją stronę.",
+    icon: StackIcon,
+    title: "Bez zobowiązań",
+    desc: "Płacisz co miesiąc. Jeśli chcesz odejść — wystarczy jeden mail. Strona zostaje Twoja, kody Twoje, treści Twoje. Zero blokad, zero kar umownych.",
     color: "#F59E0B",
   },
   {
-    icon: LockIcon,
-    title: "Twoja strona, Twoje dane, na zawsze",
-    desc: "Kody, domena, treści — wszystko zostaje u Ciebie. Decydujesz kiedy odchodzisz. Bez umowy długoterminowej, bez kar umownych, bez blokad.",
+    icon: ShieldIcon,
+    title: "Twoja na zawsze",
+    desc: "Kody, domena, treści — wszystko u Ciebie. Zabierasz i idziesz kiedy chcesz. Hosting, domena i panel działają tak długo, jak długo płacisz — bez niespodzianek.",
     color: "#3B82F6",
   },
 ]
@@ -104,13 +100,13 @@ export const WhyChooseSection = () => {
               letterSpacing="-0.015em"
               lineHeight="1.1"
             >
-              Jedna platforma zamiast{" "}
+              Twoja strona.{" "}
               <Box as="span" color="accent.700" fontWeight="700">
-                chaosu w narzędziach.
+                Gotowa. Widoczna. Twoja.
               </Box>
             </Heading>
             <Text fontSize={{ base: "md", md: "lg" }} color="fg.muted" lineHeight="1.6" maxW="2xl">
-              SEO Grow powstał, bo widziałem zbyt wiele firm tonących w WordPressie, wtyczkach i pięciu osobnych dashboardach. Zbudowałem coś prostszego.
+              Każda firma zasługuje na stronę, która działa — bez agencji, bez umowy, bez stresu. Zrobimy ją razem.
             </Text>
           </VStack>
 
@@ -169,7 +165,7 @@ export const WhyChooseSection = () => {
             })}
           </SimpleGrid>
 
-          {/* Trust line */}
+          {/* Trust line — hechos verificables, no claims técnicos */}
           <HStack
             gap="6"
             wrap="wrap"
@@ -188,13 +184,13 @@ export const WhyChooseSection = () => {
             </HStack>
             <Text>·</Text>
             <HStack gap="1.5">
-              <Text fontWeight="700" color="fg.default">47+</Text>
-              <Text>opinii</Text>
+              <Text fontWeight="700" color="fg.default">5 dni</Text>
+              <Text>do opublikowanej strony</Text>
             </HStack>
             <Text>·</Text>
             <HStack gap="1.5">
-              <Text fontWeight="700" color="fg.default">Własny VPS</Text>
-              <Text>w Polsce</Text>
+              <Text fontWeight="700" color="fg.default">47+</Text>
+              <Text>opinii klientów</Text>
             </HStack>
           </HStack>
         </VStack>
