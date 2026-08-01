@@ -1,9 +1,13 @@
 // Service Worker para SEO Grow — cache-first para assets, network-first para HTML
-const CACHE_NAME = "seogrow-v1"
+const CACHE_NAME = "seogrow-v2"
 const PRECACHE_URLS = [
   "/",
   "/manifest.webmanifest",
-  "/favicon.png",
+  "/favicon.ico",
+  "/favicon.svg",
+  "/apple-touch-icon.png",
+  "/favicon-192x192.png",
+  "/favicon-512x512.png",
   "/logo-320.webp",
   "/hero-960.webp",
   "/hero-640.webp",
