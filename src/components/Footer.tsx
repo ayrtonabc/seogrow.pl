@@ -284,7 +284,7 @@ export const Footer = () => {
           pt="2"
         >
           <Text fontSize="13px" color="fg.inverseFaint" textAlign={{ base: "center", md: "left" }}>
-            © 2026 Grow Solutions (NIP 7412176947). Wszystkie prawa zastrzeżone.
+            © 2026 Grow Solutions JDG · NIP 7412176947 · REGON 545084609. Wszystkie prawa zastrzeżone.
           </Text>
           <Flex gap={{ base: "5", md: "6" }} wrap="wrap" justify="center" fontSize="13px" color="fg.inverseMuted">
             {legalLinks.map((link) => (

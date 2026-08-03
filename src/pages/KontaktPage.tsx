@@ -134,12 +134,12 @@ export const KontaktPage = () => {
                     Adres
                   </Text>
                   <Text fontSize="md" fontWeight="700" color="fg.default" lineHeight="1.4">
-                    Grow Solutions — JDG<br />
+                    MARTYNA CIEŚNIEWSKA GROW SOLUTIONS — JDG<br />
                     ul. Czarnieckiego 13/12<br />
                     14-100 Ostróda, Polska
                   </Text>
                   <Text fontSize="sm" color="fg.subtle">
-                    NIP 7412176947 · warmińsko-mazurskie
+                    NIP 7412176947 · REGON 545084609 · warmińsko-mazurskie
                   </Text>
                 </VStack>
               </HStack>

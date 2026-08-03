@@ -1,5 +1,7 @@
 // src/pages/RegulaminPage.tsx
-// Regulamin sklepu / Terms of service for SEO Grow (Grow Solutions).
+// Regulamin sklepu / Terms of service for SEO Grow.
+// Uslugodawca: MARTYNA CIEŚNIEWSKA GROW SOLUTIONS (JDG, NIP 7412176947, REGON 545084609).
+// Marka serwisu: SEO Grow.
 // Requerido por Tpay (procesador de pagos) y por la ley polaca de venta online.
 
 import { Box, Container, Heading, Text, VStack, HStack, Link as ChakraLink } from "@chakra-ui/react"
@@ -20,8 +22,8 @@ const SECTIONS: Section[] = [
     id: "postanowienia-ogolne",
     title: "1. Postanowienia ogólne",
     paragraphs: [
-      "Niniejszy regulamin określa zasady świadczenia usług drogą elektroniczną przez Grow Solutions — jednoosobową działalność gospodarczą (JDG) z siedzibą w Ostródzie (14-100), ul. Czarnieckiego 13/12, NIP: 7412176947, REGON: 545084609, adres e-mail: kontakt@seogrow.pl, numer telefonu: +48 517 105 423.",
-      "Usługi świadczone przez Grow Solutions obejmują w szczególności: projektowanie i tworzenie stron internetowych, ich hosting, obsługę techniczną oraz usługi powiązane (dalej łącznie: \"Usługi\").",
+      "Niniejszy regulamin określa zasady świadczenia usług drogą elektroniczną przez MARTYNA CIEŚNIEWSKA GROW SOLUTIONS — jednoosobową działalność gospodarczą (JDG) z siedzibą w Ostródzie (14-100), ul. Czarnieckiego 13/12, NIP: 7412176947, REGON: 545084609, adres e-mail: kontakt@seogrow.pl, numer telefonu: +48 517 105 423. Marką handlową serwisu jest SEO Grow.",
+      "Usługi świadczone przez MARTYNA CIEŚNIEWSKA GROW SOLUTIONS obejmują w szczególności: projektowanie i tworzenie stron internetowych, ich hosting, obsługę techniczną oraz usługi powiązane (dalej łącznie: \"Usługi\"). Usługi oferowane są pod marką SEO Grow.",
       "Akceptacja regulaminu jest dobrowolna, ale niezbędna do złożenia zamówienia. Złożenie zamówienia oznacza akceptację niniejszego regulaminu w całości.",
     ],
   },
@@ -29,9 +31,9 @@ const SECTIONS: Section[] = [
     id: "definicje",
     title: "2. Definicje",
     bullets: [
-      "Sprzedawca / Usługodawca — Grow Solutions, NIP 7412176947.",
+      "Sprzedawca / Usługodawca — MARTYNA CIEŚNIEWSKA GROW SOLUTIONS, jednoosobowa działalność gospodarcza, NIP: 7412176947, REGON: 545084609. Marka handlowa: SEO Grow.",
       "Klient / Kupujący — osoba fizyczna posiadająca pełną zdolność do czynności prawnych, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, zawierająca umowę ze Sprzedawcą.",
-      "Usługa — strona internetowa lub inna usługa cyfrowa świadczona przez Grow Solutions, opisana w ofercie na stronie seogrow.pl.",
+      "Usługa — strona internetowa lub inna usługa cyfrowa świadczona przez Usługodawcę pod marką SEO Grow, opisana w ofercie na stronie seogrow.pl.",
       "Panel CMS — narzędzie do samodzielnej edycji treści strony udostępniane Klientowi po realizacji.",
       "Cennik — zestawienie cen Usług dostępne na stronie /cennik oraz w sekcji \„Trzy plany\„ na stronie głównej.",
     ],
@@ -107,7 +109,7 @@ const SECTIONS: Section[] = [
     id: "dane-osobowe",
     title: "10. Ochrona danych osobowych",
     paragraphs: [
-      "Administratorem danych osobowych Klienta jest Grow Solutions. Szczegółowe zasady przetwarzania danych znajdują się w Polityce Prywatności (/polityka-prywatnosci).",
+      "Administratorem danych osobowych Klienta jest MARTYNA CIEŚNIEWSKA GROW SOLUTIONS (NIP 7412176947, REGON 545084609). Marka handlowa serwisu to SEO Grow. Szczegółowe zasady przetwarzania danych znajdują się w Polityce Prywatności (/polityka-prywatnosci).",
       "Podanie danych osobowych jest dobrowolne, ale niezbędne do realizacji umowy. Klient ma prawo dostępu do swoich danych, ich sprostowania, usunięcia oraz wniesienia sprzeciwu wobec przetwarzania.",
       "Dane płatności (numer karty) są przetwarzane wyłącznie przez operatora płatności Tpay — Sprzedawca nie przechowuje ani nie ma dostępu do pełnych danych kart płatniczych.",
     ],
@@ -133,10 +135,10 @@ export const RegulaminPage = () => {
   return (
     <Box bg="#FAFBFC" minH="100vh">
       <SEO
-        title="Regulamin sklepu i usług | SEO Grow — Grow Solutions"
-        description="Regulamin świadczenia usług przez Grow Solutions (NIP 7412176947). Prawa i obowiązki Klienta oraz Sprzedawcy, polityka zwrotów, reklamacji, ochrona danych."
+        title="Regulamin sklepu i usług | SEO Grow"
+        description="Regulamin świadczenia usług przez MARTYNA CIEŚNIEWSKA GROW SOLUTIONS (NIP 7412176947, REGON 545084609), marka SEO Grow. Prawa i obowiązki Klienta oraz Sprzedawcy, polityka zwrotów, reklamacji, ochrona danych."
         path="/regulamin"
-        keywords="regulamin, regulamin sklepu, warunki świadczenia usług, polityka zwrotów, Grow Solutions, SEO Grow"
+        keywords="regulamin, regulamin sklepu, warunki świadczenia usług, polityka zwrotów, MARTYNA CIEŚNIEWSKA GROW SOLUTIONS, SEO Grow"
       />
       <Header />
 
@@ -158,7 +160,7 @@ export const RegulaminPage = () => {
                 Regulamin sklepu i usług
               </Heading>
               <Text color="fg.muted" fontSize="md" lineHeight="1.6">
-                Zasady świadczenia usług przez Grow Solutions (NIP 7412176947) obowiązujące od 2026 roku. Płatności obsługiwane przez Tpay (KNF).
+                Zasady świadczenia usług przez MARTYNA CIEŚNIEWSKA GROW SOLUTIONS (NIP 7412176947, REGON 545084609) obowiązujące od 2026 roku. Marka handlowa: SEO Grow. Płatności obsługiwane przez Tpay (KNF).
               </Text>
               <Text fontSize="sm" color="fg.faint" mt="2">
                 Ostatnia aktualizacja: 24 lipca 2026

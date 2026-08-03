@@ -13,8 +13,8 @@ const privacySections: LegalSection[] = [
   {
     title: "Administrator danych",
     paragraphs: [
-      "Administratorem danych osobowych jest Grow Solutions — jednoosobowa dzialalnosc gospodarcza (JDG) z siedziba w Ostrodie (14-100), ul. Czarnieckiego 13/12, NIP: 7412176947, REGON: 545084609, kontakt: kontakt@seogrow.pl.",
-      "Dokument okresla zasady przetwarzania danych osobowych uzytkownikow serwisu, osob kontaktujacych sie z nami oraz klientow korzystajacych z formularzy i uslug SEO Grow.",
+      "Administratorem danych osobowych jest MARTYNA CIEŚNIEWSKA GROW SOLUTIONS — jednoosobowa dzialalnosc gospodarcza (JDG) z siedziba w Ostrodie (14-100), ul. Czarnieckiego 13/12, NIP: 7412176947, REGON: 545084609, kontakt: kontakt@seogrow.pl. Marka handlowa serwisu to SEO Grow.",
+      "Dokument okresla zasady przetwarzania danych osobowych uzytkownikow serwisu, osob kontaktujacych sie z nami oraz klientow korzystajacych z formularzy i uslug administratora oferowanych pod marka SEO Grow.",
     ],
   },
   {

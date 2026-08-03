@@ -123,10 +123,10 @@ export const WhatYouGetSection = () => {
             >
               <HStack gap="3" align="center">
                 <Box w="10" h="10" rounded="full" overflow="hidden" flexShrink={0}>
-                  <Image src="/zespol/founder-1.webp" alt="Ayrton" w="100%" h="100%" objectFit="cover" />
+                  <Image src="/zespol/founder-1.webp" alt="Martyna Cieśniewska" w="100%" h="100%" objectFit="cover" />
                 </Box>
                 <Box>
-                  <Text fontSize="sm" fontWeight="700" color="fg.default">Ayrton</Text>
+                  <Text fontSize="sm" fontWeight="700" color="fg.default">Martyna Cieśniewska</Text>
                   <Text fontSize="xs" color="fg.muted">Founder & CEO</Text>
                 </Box>
               </HStack>
