@@ -53,7 +53,7 @@ const SECTIONS: Section[] = [
     paragraphs: [
       "Umowa zostaje zawarta z chwilą potwierdzenia zamówienia przez Sprzedawcę, po czym następuje 15-minutowa rozmowa wstępna ustalająca szczegóły.",
       "Klient otrzymuje dostęp do Panelu CMS, dane dostępowe do domeny (jeśli dotyczy) oraz potwierdzenie opublikowania strony w ciągu 5 dni roboczych od zaakceptowania briefu.",
-      "Ceny wyrażone są w złotych polskich (PLN) i zawierają podatek VAT (stawka 23%). Na każdą płatność wystawiana jest faktura VAT, przesyłana na adres e-mail wskazany przez Klienta w zamówieniu.",
+      "Ceny wyrażone są w złotych polskich (PLN) i podane są jako kwoty netto (bez podatku VAT). Do cen netto doliczany jest podatek VAT według stawki obowiązującej w dniu wystawienia faktury (stawka podstawowa 23%). Całkowita kwota do zapłaty — w tym wysokość netto, kwota VAT oraz kwota brutto — jest widoczna w podsumowaniu zamówienia przed jego złożeniem. Na każdą płatność wystawiana jest faktura VAT, przesyłana na adres e-mail wskazany przez Klienta w zamówieniu.",
       "Obsługiwane metody płatności: BLIK, karta płatnicza (Visa, Mastercard), przelew tradycyjny. Operatorem płatności elektronicznych jest Tpay (Krajowa Instytucja Płatnicza, nadzorowana przez Komisję Nadzoru Finansowego).",
     ],
   },

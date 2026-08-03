@@ -77,6 +77,15 @@ const DataProcessingPage = lazy(() =>
 const RegulaminPage = lazy(() =>
   import("./pages/RegulaminPage").then((module) => ({ default: module.RegulaminPage })),
 )
+const AboutPage = lazy(() =>
+  import("./pages/AboutPage").then((module) => ({ default: module.AboutPage })),
+)
+const RealizacjePage = lazy(() =>
+  import("./pages/RealizacjePage").then((module) => ({ default: module.RealizacjePage })),
+)
+const KarieraPage = lazy(() =>
+  import("./pages/KarieraPage").then((module) => ({ default: module.KarieraPage })),
+)
 const CMSSESPage = lazy(() =>
   import("./pages/CMSSESPage").then((module) => ({ default: module.CMSSESPage })),
 )
@@ -391,6 +400,9 @@ function App() {
           <Route path="/cennik" element={<CennikPage />} />
           <Route path="/press" element={<PressKitPage />} />
           <Route path="/kontakt" element={<KontaktPage />} />
+          <Route path="/o-nas" element={<AboutPage />} />
+          <Route path="/realizacje" element={<RealizacjePage />} />
+          <Route path="/kariera" element={<KarieraPage />} />
           <Route path="/strona-dla-fotografa" element={<StronaDlaFotografaPage />} />
           <Route path="/strona-dla-hotelu" element={<StronaDlaHoteluPage />} />
           <Route path="/strona-dla-architekta" element={<StronaDlaArchitektaPage />} />

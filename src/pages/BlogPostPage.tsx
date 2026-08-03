@@ -86,7 +86,7 @@ export const BlogPostPage = () => {
         name: post.author,
         worksFor: { "@id": "https://seogrow.pl/#organization" },
         url: "https://seogrow.pl",
-        knowsLanguage: ["pl-PL", "en-US", "pt-BR", "es-ES"],
+        knowsLanguage: ["pl-PL", "en-US", "es-ES"],
       },
       publisher: {
         "@type": "Organization",

@@ -41,8 +41,8 @@ const facts = [
   { label: "NIP", value: "7412176947" },
   { label: "REGON", value: "545084609" },
   { label: "Siedziba", value: "Ostróda, Polska" },
-  { label: "Założona", value: "2024" },
-  { label: "Founder", value: "Martyna Cieśniewska (poliglota: PL · EN · ES · PT)" },
+  { label: "Założona", value: "2026" },
+  { label: "Founder", value: "Martyna Cieśniewska (poliglota: PL · EN · ES)" },
   { label: "Rozmiar firmy", value: "Jednoosobowa działalność gospodarcza" },
 ]
 
@@ -137,13 +137,13 @@ export const PressKitPage = () => {
                 Bio foundera — krótka wersja
               </Text>
               <Text fontSize="md" color="slate.700" lineHeight="1.7" mb="3" p="5" bg="bg.subtle" rounded="xl" border="1px solid" borderColor="border.default">
-                Martyna Cieśniewska jest założycielką Grow Solutions — jednoosobowej firmy technologicznej zarejestrowanej w Ostródzie (Polska). Od 2019 roku zajmuje się SEO, tworzeniem stron i automatyzacją marketingu dla małych firm. Wcześniej pracowała przy projektach digitalowych w Hiszpanii, Portugalii i Polsce. Mówi w czterech językach (polski, hiszpański, portugalski, angielski) i prowadzi SEO Grow w modelu 100% zdalnym, obsługując firmy w 97 miastach Polski.
+                Martyna Cieśniewska jest założycielką Grow Solutions — jednoosobowej firmy technologicznej zarejestrowanej w Ostródzie (Polska). Od 2019 roku zajmuje się SEO, tworzeniem stron i automatyzacją marketingu dla małych firm. Wcześniej pracowała przy projektach digitalowych w Hiszpanii i Polsce. Mówi w trzech językach (polski, hiszpański, angielski) i prowadzi SEO Grow w modelu 100% zdalnym, obsługując firmy w 97 miastach Polski.
               </Text>
               <Text fontSize="11px" fontWeight="700" color="accent.600" textTransform="uppercase" letterSpacing="0.14em" mb="3" mt="6">
                 Bio foundera — pełna wersja
               </Text>
               <Text fontSize="sm" color="slate.700" lineHeight="1.7" p="5" bg="bg.subtle" rounded="xl" border="1px solid" borderColor="border.default">
-                Martyna Cieśniewska to founder i CEO SEO Grow — marki komercyjnej firmy Grow Solutions (polska jednoosobowa działalność gospodarcza, NIP 7412176947, zarejestrowana w 2024 roku w Ostródzie, województwo warmińsko-mazurskie). Zajmuje się profesjonalnym tworzeniem stron internetowych i pozycjonowaniem w Google dla małych polskich firm. Jej specjalizacja to własny CMS łączący zarządzanie treścią z automatycznym SEO technicznym (schema.org JSON-LD, Core Web Vitals, LocalBusiness markup). Wcześniej pracowała przy projektach digital marketingu w Hiszpanii, Portugalii i Polsce. Mówi po polsku, hiszpańsku, portugalsku i angielsku. Prowadzi firmę w 100% zdalnie, bez biura i bez pracowników. Misja SEO Grow: udowodnić, że profesjonalna strona dla MŚP nie musi kosztować fortuny.
+                Martyna Cieśniewska to founder i CEO SEO Grow — marki komercyjnej firmy Grow Solutions (polska jednoosobowa działalność gospodarcza, NIP 7412176947, zarejestrowana w 2026 roku w Ostródzie, województwo warmińsko-mazurskie). Zajmuje się profesjonalnym tworzeniem stron internetowych i pozycjonowaniem w Google dla małych polskich firm. Jej specjalizacja to własny CMS łączący zarządzanie treścią z automatycznym SEO technicznym (schema.org JSON-LD, Core Web Vitals, LocalBusiness markup). Mówi po polsku, hiszpańsku i angielsku. Prowadzi firmę w 100% zdalnie, bez biura i bez pracowników. Misja SEO Grow: udowodnić, że profesjonalna strona dla MŚP nie musi kosztować fortuny.
               </Text>
             </Box>
 
