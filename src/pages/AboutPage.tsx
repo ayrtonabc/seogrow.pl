@@ -9,8 +9,8 @@ import { SEO } from "../components/SEO"
 
 const PILLARS = [
   {
-    title: "Dla personas, no para tecnicos",
-    body: "SEO Grow esta pensado para duenas de pequenas empresas, freelancers y comerciantes que no quieren aprender HTML, plugins ni dashboards complicados. Si sabes enviar un SMS, sabes manejar tu web.",
+    title: "Dla osób, nie dla techników",
+    body: "SEO Grow jest stworzony dla właścicieli małych firm, freelancerów i rzemieślników, którzy nie chcą uczyć się HTML-a, wtyczek ani skomplikowanych paneli. Jeśli potrafisz wysłać SMS-a, potrafisz obsługiwać swoją stronę.",
     accent: "accent.500",
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -20,8 +20,8 @@ const PILLARS = [
     ),
   },
   {
-    title: "SEO automatico con IA",
-    body: "El sistema genera schema.org, meta tags, sitemap y optimizacion on-page de forma automatica. Tu pagina aparece en Google sin que tengas que entender que es un meta description.",
+    title: "SEO automatyczne z AI",
+    body: "System sam generuje schema.org, meta tagi, sitemapę i optymalizację on-page. Twoja strona pojawia się w Google, bez konieczności wiedzenia, czym jest meta description.",
     accent: "accent.600",
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -33,8 +33,8 @@ const PILLARS = [
     ),
   },
   {
-    title: "Editor visual sin codigo",
-    body: "Cambia textos, imagenes, precios o servicios desde el telefono con un editor visual. Sin codigo, sin riesgo de romper el diseno, sin necesidad de llamar a un tecnico.",
+    title: "Edytor wizualny bez kodu",
+    body: "Zmieniaj teksty, zdjęcia, cenniki i usługi z telefonu w edytorze wizualnym. Bez kodu, bez ryzyka popsucia wyglądu, bez dzwonienia do technika przy każdej zmianie.",
     accent: "accent.700",
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -45,8 +45,8 @@ const PILLARS = [
     ),
   },
   {
-    title: "Modulos preinstalados",
-    body: "Tienda online, reservas, menu digital, blog, formulario de contacto — todo viene incluido y configurado. No hay que instalar plugins externos ni nada que pueda romper la web.",
+    title: "Moduły preinstalowane",
+    body: "Sklep online, rezerwacje, menu cyfrowe, blog, formularz kontaktowy — wszystko w zestawie i skonfigurowane. Nie trzeba instalować zewnętrznych wtyczek ani martwić się o aktualizacje.",
     accent: "accent.800",
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -58,8 +58,8 @@ const PILLARS = [
     ),
   },
   {
-    title: "Sin depender de plugins",
-    body: "El sistema esta construido como un todo: diseno, SEO, modulos, hosting. No hay plugins que actualizar ni elementos de terceros que puedan fallar o quedar obsoletos.",
+    title: "Bez zależności od wtyczek",
+    body: "System jest zbudowany jako całość: design, SEO, moduły, hosting. Nie ma wtyczek do aktualizowania ani elementów firm trzecich, które mogą paść albo stać się przestarzałe.",
     accent: "accent.500",
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -68,8 +68,8 @@ const PILLARS = [
     ),
   },
   {
-    title: "Soporte en tu idioma",
-    body: "Atencion personal en polaco, espanol o ingles. Sin call centers, sin bots. Hablas con la persona que construyo tu pagina.",
+    title: "Wsparcie w Twoim języku",
+    body: "Osobista obsługa po polsku, hiszpańsku lub angielsku. Bez call center, bez botów. Rozmawiasz z osobą, która zbudowała Twoją stronę.",
     accent: "accent.600",
     icon: (
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -128,10 +128,10 @@ export const AboutPage = () => {
   return (
     <Box bg="bg.canvas" minH="100vh">
       <SEO
-        title="O nas — SEO Grow dla osob nietechnicznych"
-        description="SEO Grow to system do tworzenia stron internetowych dla osob nietechnicznych. SEO automatyczne z AI, edytor wizualny, moduly preinstalowane. Zarzadzanie strona tak proste jak wyslanie SMS-a."
+        title="O nas — SEO Grow dla osób nietechnicznych"
+        description="SEO Grow to system do tworzenia stron internetowych dla osób nietechnicznych. SEO automatyczne z AI, edytor wizualny, moduły preinstalowane. Zarządzanie stroną tak proste jak wysłanie SMS-a."
         path="/o-nas"
-        keywords="SEO Grow, o nas, system CMS dla firm, SEO automatyczne, edytor wizualny, moduly, strona dla nietechnicznych"
+        keywords="SEO Grow, o nas, system CMS dla firm, SEO automatyczne, edytor wizualny, moduły, strona dla nietechnicznych"
       />
       <Header />
 
@@ -172,9 +172,9 @@ export const AboutPage = () => {
                 SEO Grow to system stworzony z mysla o osobach, ktore nie chca byc webmasterami, programistami ani SEO-wcami. Cala zlozonosc techniczna — SEO, schema, meta tagi, optymalizacja wydajnosci — dzieje sie w tle. Klient dostaje strone, ktora po prostu dziala.
               </Text>
               <Text fontSize={{ base: "md", md: "lg" }} color="fg.default" lineHeight="1.65" maxW="3xl" fontWeight="500">
-                Naszym wyzwaniem bylo sprawic, by administracja strony byla{" "}
-                <Box as="span" color="accent.700" fontWeight="700">rownie prosta jak wyslanie SMS-a</Box>{" "}
-                — bez zadnych technicznych pojec, bez funkcji, ktore moga cos zepsuc, bez zaleznosci od pluginow.
+                Naszym wyzwaniem było sprawić, by obsługa strony była{" "}
+                <Box as="span" color="accent.700" fontWeight="700">równie prosta jak wysłanie SMS-a</Box>{" "}
+                — bez żadnych technicznych pojęć, bez funkcji, które mogą coś zepsuć, bez zależności od wtyczek.
               </Text>
             </VStack>
           </Container>

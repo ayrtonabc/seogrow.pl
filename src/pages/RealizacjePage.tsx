@@ -23,9 +23,9 @@ const PROJECTS: Project[] = [
     name: "Inteligentne Folie",
     domain: "inteligentnefolie.pl",
     url: "https://inteligentnefolie.pl",
-    industry: "Montaz folii PPF i przyciemnianie szyb",
-    city: "Poznan",
-    description: "Strona firmowa z wizytowka, SEO lokalne na Poznan i okolice, top 3 Google na 8 fraz kluczowych.",
+    industry: "Montaż folii PPF i przyciemnianie szyb",
+    city: "Poznań",
+    description: "Strona firmowa z wizytówką, SEO lokalne na Poznań i okolice, top 3 Google na 8 fraz kluczowych.",
     logo: "/clientes/inteligentnefolie.webp",
     year: 2026,
   },
@@ -33,9 +33,9 @@ const PROJECTS: Project[] = [
     name: "Tio Bigotes",
     domain: "tiobigotes.pl",
     url: "https://tiobigotes.pl",
-    industry: "Restauracja argentyjska",
+    industry: "Restauracja argentyńska",
     city: "Warszawa",
-    description: "Strona z menu, rezerwacjami i integracja Google Maps. Wzrost zamowien online 3x po wdrozeniu.",
+    description: "Strona z menu, rezerwacjami i integracją Google Maps. Wzrost zamówień online 3x po wdrożeniu.",
     logo: "/clientes/tiobigotes.webp",
     year: 2026,
   },
@@ -45,7 +45,7 @@ const PROJECTS: Project[] = [
     url: "https://med-vitox.pl",
     industry: "Medycyna estetyczna i kosmetologia",
     city: "Warszawa",
-    description: "Strona z wizytowka, SEO na frazy medyczne, formularz rezerwacji konsultacji.",
+    description: "Strona z wizytówką, SEO na frazy medyczne, formularz rezerwacji konsultacji.",
     logo: "/clientes/med-vitox.webp",
     year: 2026,
   },
@@ -53,9 +53,9 @@ const PROJECTS: Project[] = [
     name: "Atrakcje Party",
     domain: "atrakcje-party.pl",
     url: "https://atrakcje-party.pl",
-    industry: "Organizacja imprez i eventow",
+    industry: "Organizacja imprez i eventów",
     city: "Polska",
-    description: "Strona z wizytowka + formularz wyceny, SEO na 'atrakcje na impreze' i podobne.",
+    description: "Strona z wizytówką i formularzem wyceny, SEO na „atrakcje na imprezę” i podobne.",
     logo: null,
     year: 2026,
   },
@@ -63,9 +63,9 @@ const PROJECTS: Project[] = [
     name: "Dafor",
     domain: "dafor.pl",
     url: "https://dafor.pl",
-    industry: "Uslugi dla firm",
+    industry: "Usługi dla firm",
     city: "Polska",
-    description: "Strona korporacyjna z prezentacja uslug, blog i SEO technicznym.",
+    description: "Strona korporacyjna z prezentacją usług, blogiem i SEO technicznym.",
     logo: null,
     year: 2026,
   },
@@ -73,9 +73,9 @@ const PROJECTS: Project[] = [
     name: "Asmed",
     domain: "asmed-ostroda.pl",
     url: "https://asmed-ostroda.pl/",
-    industry: "Sklep z aparatami sluchowymi",
-    city: "Ostroda",
-    description: "Strona z wizytowka + sklep, SEO lokalne na Ostrode i okolice 100 km.",
+    industry: "Sklep z aparatami słuchowymi",
+    city: "Ostróda",
+    description: "Strona z wizytówką i sklepem, SEO lokalne na Ostródę i okolice 100 km.",
     logo: "/clientes/asmed.webp",
     year: 2026,
   },
@@ -84,8 +84,8 @@ const PROJECTS: Project[] = [
     domain: "wiktorskiubezpieczenia.pl",
     url: "https://wiktorskiubezpieczenia.pl/",
     industry: "Ubezpieczenia",
-    city: "Ostroda",
-    description: "Strona agencyjna z kalkulatorem, formularzem wyceny i SEO na 'ubezpieczenia Ostroda'.",
+    city: "Ostróda",
+    description: "Strona agencyjna z kalkulatorem, formularzem wyceny i SEO na „ubezpieczenia Ostróda”.",
     logo: null,
     year: 2026,
   },
@@ -93,9 +93,9 @@ const PROJECTS: Project[] = [
     name: "Anko Olsztyn",
     domain: "ankoolsztyn.pl",
     url: "https://ankoolsztyn.pl",
-    industry: "Uslugi lokalne",
+    industry: "Usługi lokalne",
     city: "Olsztyn",
-    description: "Strona z wizytowka dla lokalnej firmy z Warmii i Mazur, SEO na 'uslugi Olsztyn'.",
+    description: "Strona z wizytówką dla lokalnej firmy z Warmii i Mazur, SEO na „usługi Olsztyn”.",
     logo: "/clientes/anko.eu.webp",
     year: 2026,
   },
@@ -228,9 +228,9 @@ export const RealizacjePage = () => {
     <Box bg="bg.canvas" minH="100vh">
       <SEO
         title="Realizacje — strony zrobione przez SEO Grow"
-        description="Osiem prawdziwych stron zbudowanych przez SEO Grow dla firm z Polski: wizytowki, sklepy, restauracje, ubezpieczenia. Sprawdz projekty."
+        description="Osiem prawdziwych stron zbudowanych przez SEO Grow dla firm z Polski: wizytówki, sklepy, restauracje, ubezpieczenia. Sprawdź projekty."
         path="/realizacje"
-        keywords="realizacje SEO Grow, portfolio stron, strony dla firm, przyklady stron, klient SEO Grow"
+        keywords="realizacje SEO Grow, portfolio stron, strony dla firm, przykłady stron, klient SEO Grow"
       />
       <Header />
 
@@ -268,7 +268,7 @@ export const RealizacjePage = () => {
                 </Box>
               </Heading>
               <Text fontSize={{ base: "md", md: "lg" }} color="fg.muted" lineHeight="1.65" maxW="3xl">
-                Klienci SEO Grow z roznych branż: od sklepu z aparatami sluchowymi w Ostrodie, przez restauracje argentyńska w Warszawie, po firme PPF w Poznaniu. Kazda strona gotowa w 5 dni, z SEO technicznym wlacznie.
+                Klienci SEO Grow z różnych branż: od sklepu z aparatami słuchowymi w Ostródzie, przez restaurację argentyńską w Warszawie, po firmę PPF w Poznaniu. Każda strona gotowa w 5 dni, z SEO technicznym włącznie.
               </Text>
             </VStack>
           </Container>
@@ -300,7 +300,7 @@ export const RealizacjePage = () => {
                 Twoja strona moze byc nastepna
               </Heading>
               <Text color="fg.muted" fontSize="md" lineHeight="1.65" maxW="2xl">
-                Gotowa w 5 dni, z SEO wlacznie, od 1 500 zl netto. Zadzwon, zeby zaczac.
+                Gotowa w 5 dni, z SEO włącznie, od 1 500 zł netto. Zadzwoń, żeby zacząć.
               </Text>
               <HStack gap="3" flexWrap="wrap" justify="center" pt="2">
                 <Box

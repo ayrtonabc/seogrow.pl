@@ -225,7 +225,7 @@ export const SEOLandingPage = ({
       <Header />
 
       <Box as="main">
-        {breadcrumb && breadcrumb.length > 0 && (
+        {false && breadcrumb && breadcrumb.length > 0 && (
           <Box bg="white" borderBottom="1px solid" borderColor="border.default" py="3">
             <Container maxW="7xl">
               <HStack gap="2" fontSize="sm" color="fg.subtle" flexWrap="wrap">
@@ -246,7 +246,7 @@ export const SEOLandingPage = ({
           <Box position="absolute" bottom="-20%" right="-5%" w="400px" h="400px" bg="accent.300" filter="blur(100px)" rounded="full" opacity="0.3" zIndex="0" />
           <Container maxW="5xl" position="relative" zIndex="1">
             <VStack align="center" gap={{ base: "5", md: "6" }} textAlign="center" maxW="3xl" mx="auto">
-              {breadcrumb && breadcrumb[0] && (
+              {false && breadcrumb && breadcrumb[0] && (
                 <Badge bg="accent.50" color="accent.700" px="3" py="1.5" rounded="full" fontSize="xs" fontWeight="700" textTransform="uppercase" letterSpacing="0.05em">
                   {breadcrumb[0].name}
                 </Badge>
