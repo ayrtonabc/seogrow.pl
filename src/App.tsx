@@ -40,6 +40,8 @@ import {
 } from "./pages/VoivodeshipHubs"
 import { GrowWithYouSection } from "./sections/GrowWithYouSection"
 import { FinalCTASection } from "./sections/FinalCTASection"
+import { AIBlogSection } from "./sections/AIBlogSection"
+import { AISeoSection } from "./sections/AISeoSection"
 
 const SupportPage = lazy(() =>
   import("./pages/SupportPage").then((module) => ({ default: module.SupportPage })),
@@ -305,6 +307,8 @@ function LandingPage() {
           <Suspense fallback={<Box minH={{ base: "320px", md: "480px" }} bg="white" />}>
             <SolutionSection />
             <ModulosSection />
+            <AIBlogSection />
+            <AISeoSection />
             <PricingSection />
             <GrowWithYouSection />
             <SEOSection />
