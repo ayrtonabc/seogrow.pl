@@ -43,6 +43,9 @@ __v*.png
 __v*.jpg
 __v*.webp
 __rename_*.cjs
+__footer*.cjs
+__footer*.png
+__footer*.jpg
 __serve_spa.py
 __serve.log
 __serve.err

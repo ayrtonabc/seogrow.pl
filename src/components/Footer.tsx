@@ -286,7 +286,7 @@ export const Footer = () => {
           <Text fontSize="13px" color="fg.inverseFaint" textAlign={{ base: "center", md: "left" }}>
             © 2026 Grow Solutions JDG · NIP 7412176947 · REGON 545084609. Wszystkie prawa zastrzeżone.
           </Text>
-          <Flex gap={{ base: "5", md: "6" }} wrap="wrap" justify="center" fontSize="13px" color="fg.inverseMuted">
+          <Flex gap={{ base: "5", md: "6" }} wrap="wrap" justify="center" align="center" fontSize="13px" color="fg.inverseMuted">
             {legalLinks.map((link) => (
               <RouterLink key={link.label} to={link.href} style={{ textDecoration: "none" }}>
                 <Text
@@ -317,6 +317,29 @@ export const Footer = () => {
               style={{ fontFamily: "inherit" }}
             >
               Ustawienia cookies
+            </Box>
+            {/* Badge Tpay — oficial de tpay.com/dla-developera/banery */}
+            <Box
+              as="a"
+              href="https://tpay.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Bezpieczne płatności obsługiwane przez Tpay"
+              aria-label="Bezpieczne płatności Tpay"
+              display="inline-flex"
+              alignItems="center"
+              opacity="0.85"
+              transition="opacity 0.15s"
+              _hover={{ opacity: "1" }}
+            >
+              <img
+                src="/tpay-trusted-payments-white.svg"
+                alt="Tpay — bezpieczne płatności online"
+                width="140"
+                height="31"
+                loading="lazy"
+                style={{ display: "block", height: "auto", width: "140px" }}
+              />
             </Box>
           </Flex>
         </Flex>
