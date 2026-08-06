@@ -152,26 +152,27 @@ export const Header = () => {
               <ArrowRightIcon />
             </ChakraLink>
 
-            <Box display={{ base: "flex", lg: "none" }}>
+            <Box display={{ base: "flex", lg: "none" }} ml={{ base: "1", sm: "2" }}>
               <Box
                 as="button"
                 type="button"
                 aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
                 aria-expanded={isMenuOpen}
                 onClick={() => setIsMenuOpen((prev) => !prev)}
-                bg={isScrolled ? "bg.canvas" : "rgba(255, 255, 255, 0.85)"}
+                bg={isMenuOpen ? "fg.default" : isScrolled ? "bg.canvas" : "rgba(255, 255, 255, 0.85)"}
                 border="1px solid"
-                borderColor={isScrolled ? "border.default" : "rgba(10, 10, 10, 0.12)"}
-                color="fg.default"
-                w="9"
-                h="9"
+                borderColor={isMenuOpen ? "fg.default" : isScrolled ? "border.default" : "rgba(10, 10, 10, 0.12)"}
+                color={isMenuOpen ? "fg.inverse" : "fg.default"}
+                w="10"
+                h="10"
                 rounded="md"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
                 cursor="pointer"
-                _hover={{ bg: "bg.subtle" }}
+                _hover={{ bg: isMenuOpen ? "fg.default" : "bg.subtle" }}
                 transition="all 0.2s ease"
+                style={{ touchAction: "manipulation" }}
               >
                 {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
               </Box>
@@ -179,17 +180,23 @@ export const Header = () => {
           </Flex>
         </Flex>
 
-        {/* Mobile menu */}
+        {/* Mobile menu drawer */}
         <Box
           as="nav"
           aria-label="Nawigacja mobilna"
           display={{ base: isMenuOpen ? "block" : "none", lg: "none" }}
+          bg="bg.canvas"
           borderTop="1px solid"
           borderColor="border.subtle"
-          bg="bg.canvas"
-          pb="4"
+          maxH={{ base: "calc(100dvh - 4rem)", sm: "calc(100dvh - 5rem)" }}
+          overflowY="auto"
+          overscrollBehavior="contain"
+          px={{ base: "5", sm: "6" }}
+          pt="2"
+          pb="6"
+          style={{ WebkitOverflowScrolling: "touch" }}
         >
-          <Flex direction="column" gap="1" pt="2">
+          <Flex direction="column" gap="0">
             {navItems.map((item) =>
               item.isRoute ? (
                 <ChakraLink
@@ -198,12 +205,19 @@ export const Header = () => {
                   to={item.href}
                   onClick={() => setIsMenuOpen(false)}
                   color="fg.default"
-                  fontSize="15px"
+                  fontSize="16px"
                   fontWeight="500"
                   textDecoration="none"
-                  py="2.5"
+                  py="3.5"
                   borderBottom="1px solid"
                   borderColor="border.subtle"
+                  minH="48px"
+                  display="flex"
+                  alignItems="center"
+                  _hover={{ color: "accent.600" }}
+                  _active={{ bg: "bg.subtle" }}
+                  transition="color 0.15s, background-color 0.15s"
+                  style={{ touchAction: "manipulation" }}
                 >
                   {item.label}
                 </ChakraLink>
@@ -214,12 +228,19 @@ export const Header = () => {
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                   color="fg.default"
-                  fontSize="15px"
+                  fontSize="16px"
                   fontWeight="500"
                   textDecoration="none"
-                  py="2.5"
+                  py="3.5"
                   borderBottom="1px solid"
                   borderColor="border.subtle"
+                  minH="48px"
+                  display="flex"
+                  alignItems="center"
+                  _hover={{ color: "accent.600" }}
+                  _active={{ bg: "bg.subtle" }}
+                  transition="color 0.15s, background-color 0.15s"
+                  style={{ touchAction: "manipulation" }}
                 >
                   {item.label}
                 </ChakraLink>
@@ -231,19 +252,53 @@ export const Header = () => {
               to="/wsparcie"
               onClick={() => setIsMenuOpen(false)}
               color="fg.muted"
-              fontSize="14px"
+              fontSize="15px"
               fontWeight="500"
               textDecoration="none"
-              py="2.5"
-              mt="1"
+              py="3.5"
+              minH="48px"
+              display="flex"
+              alignItems="center"
+              _hover={{ color: "fg.default" }}
+              _active={{ bg: "bg.subtle" }}
+              transition="color 0.15s, background-color 0.15s"
+              style={{ touchAction: "manipulation" }}
             >
               Wsparcie
             </ChakraLink>
 
-            <Flex gap="2" pt="3" align="center">
+            <Flex gap="3" pt="4" align="center" wrap="wrap">
               <LanguageSwitcher />
               <CurrencySwitcher />
             </Flex>
+
+            <ChakraLink
+              as={Link}
+              to="/zamowienie?plan=express"
+              onClick={() => setIsMenuOpen(false)}
+              textDecoration="none"
+              display="inline-flex"
+              alignItems="center"
+              justifyContent="center"
+              gap="2"
+              bg="fg.default"
+              color="fg.inverse"
+              px="5"
+              h="12"
+              rounded="full"
+              fontSize="15px"
+              fontWeight="600"
+              mt="4"
+              minH="48px"
+              w="full"
+              _hover={{ bg: "bg.darkSubtle" }}
+              _active={{ transform: "scale(0.98)" }}
+              transition="all 0.18s cubic-bezier(0.22, 1, 0.36, 1)"
+              style={{ touchAction: "manipulation" }}
+            >
+              Zamów stronę
+              <ArrowRightIcon />
+            </ChakraLink>
           </Flex>
         </Box>
       </Container>
