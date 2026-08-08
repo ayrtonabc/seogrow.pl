@@ -16,7 +16,7 @@ const navItems: NavItem[] = [
   { label: "SEO", href: "/#seo" },
   { label: "Cennik", href: "/#ceny" },
   { label: "Blog", href: "/blog", isRoute: true },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Kontakt", href: "/kontakt", isRoute: true },
 ]
 
 const MenuIcon = () => (
