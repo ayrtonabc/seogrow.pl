@@ -49,21 +49,6 @@ __footer*.jpg
 __serve_spa.py
 __serve.log
 __serve.err
-# Local dev helpers (never commit)
-__hero*.cjs
-__hero*.png
-__header*.cjs
-__header*.png
-__gsc_*.py
-__gsc_*.csv
-__gsc_*.json
-__gads_*.py
-__test_gsc.py
-__gen_sitemap.cjs
-# Local blog asset dupes (8b/9b/12b are duplicates of 8/9/12 used by sibling posts)
-public/blog/8b.webp
-public/blog/9b.webp
-public/blog/12b.webp
 
 # Impeccable design lint local config
 .impeccable/

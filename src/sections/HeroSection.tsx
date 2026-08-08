@@ -91,26 +91,16 @@ export const HeroSection = () => {
             {/* Eyebrow con dot pulsante — dolor del cliente PyME */}
             <HStack
               className="wix-fade-up"
-              gap={{ base: "1.5", md: "2" }}
-              px={{ base: "3", md: "3.5" }}
-              py={{ base: "1", md: "1.5" }}
+              gap="2"
+              px="3"
+              py="1.5"
               bg="bg.canvas"
               borderWidth="1px"
               borderColor="border.default"
               rounded="full"
-              maxW="fit-content"
-              mx={{ base: "auto", lg: "0" }}
             >
-              <Box w="1.5" h="1.5" rounded="full" bg="accent.500" className="wix-pulse" flexShrink={0} />
-              <Text
-                fontSize={{ base: "10px", md: "xs" }}
-                fontWeight="600"
-                letterSpacing={{ base: "0.04em", md: "0.08em" }}
-                textTransform="uppercase"
-                color="fg.default"
-                whiteSpace="nowrap"
-                lineHeight="1.3"
-              >
+              <Box w="1.5" h="1.5" rounded="full" bg="accent.500" className="wix-pulse" />
+              <Text fontSize="xs" fontWeight="600" letterSpacing="0.08em" textTransform="uppercase" color="fg.default">
                 Więcej klientów z Google — bez agencji, bez umowy
               </Text>
             </HStack>

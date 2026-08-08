@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react"
 import { Box, Button, Container, Grid, Heading, HStack, Image, Text, VStack, Avatar, Flex, Icon } from "@chakra-ui/react"
 import { FaArrowLeft, FaEye, FaFacebookF, FaLink, FaLinkedinIn, FaShareAlt, FaTwitter } from "react-icons/fa"
 import { FiClock, FiCalendar } from "react-icons/fi"
-import { Link, useParams } from "react-router-dom"
+import { Link, Navigate, useParams } from "react-router-dom"
 import { SEO, SITE_URL, toAbsoluteUrl } from "../components/SEO"
 import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
@@ -60,35 +60,7 @@ export const BlogPostPage = () => {
   }, [post])
 
   if (!post) {
-    return (
-      <Box bg="bg.canvas" minH="100vh" display="flex" flexDirection="column">
-        <Header />
-        <Box as="main" id="main-content" tabIndex={-1} flex="1" display="flex" alignItems="center" justifyContent="center" py={{ base: "16", md: "24" }}>
-          <Container maxW="2xl" textAlign="center">
-            <VStack gap={{ base: "4", md: "6" }}>
-              <Text fontSize="sm" fontWeight="700" color="accent.600" letterSpacing="0.18em" textTransform="uppercase">
-                404
-              </Text>
-              <Heading as="h1" fontSize={{ base: "32px", md: "44px" }} fontWeight="600" color="fg.default" letterSpacing="-0.015em" lineHeight="1.1">
-                Ten artykuł nie istnieje.
-              </Heading>
-              <Text fontSize="md" color="fg.muted" maxW="md">
-                Link mógł się zmienić lub artykuł został usunięty. Sprawdź nasz blog, znajdziesz tam aktualne porady SEO i marketingowe.
-              </Text>
-              <HStack gap="3" wrap="wrap" justify="center">
-                <Button as={Link} to="/blog" bg="fg.default" color="fg.inverse" rounded="full" px="6" h="11" fontWeight="600" _hover={{ bg: "bg.darkSubtle" }}>
-                  Wróć do bloga
-                </Button>
-                <Button as={Link} to="/kontakt" variant="outline" rounded="full" px="6" h="11" fontWeight="500" borderColor="border.strong">
-                  Napisz do nas
-                </Button>
-              </HStack>
-            </VStack>
-          </Container>
-        </Box>
-        <Footer />
-      </Box>
-    )
+    return <Navigate to="/blog" replace />
   }
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : ""

@@ -112,39 +112,6 @@ const WixVsPage = lazy(() =>
 const DlaczegoNiePojawiaPage = lazy(() =>
   import("./pages/DlaczegoNiePojawiaPage").then((module) => ({ default: module.DlaczegoNiePojawiaPage })),
 )
-const PozycjonowanieOstrodaPage = lazy(() =>
-  import("./pages/PozycjonowanieOstrodaPage").then((module) => ({ default: module.PozycjonowanieOstrodaPage })),
-)
-const PozycjonowanieBezAbonamentuPage = lazy(() =>
-  import("./pages/PozycjonowanieBezAbonamentuPage").then((module) => ({ default: module.PozycjonowanieBezAbonamentuPage })),
-)
-const SeoDlaMalychFirmPage = lazy(() =>
-  import("./pages/SeoDlaMalychFirmPage").then((module) => ({ default: module.SeoDlaMalychFirmPage })),
-)
-const StronyInternetowePage = lazy(() =>
-  import("./pages/StronyInternetowePage").then((module) => ({ default: module.StronyInternetowePage })),
-)
-const ZamowStronePage = lazy(() =>
-  import("./pages/ZamowStronePage").then((module) => ({ default: module.ZamowStronePage })),
-)
-const StronaInternetowaDlaMalejFirmyPage = lazy(() =>
-  import("./pages/StronaInternetowaDlaMalejFirmyPage").then((module) => ({ default: module.StronaInternetowaDlaMalejFirmyPage })),
-)
-const PozycjonowanieStronPage = lazy(() =>
-  import("./pages/PozycjonowanieStronPage").then((module) => ({ default: module.PozycjonowanieStronPage })),
-)
-const PozycjonowanieLokalnePage = lazy(() =>
-  import("./pages/PozycjonowanieLokalnePage").then((module) => ({ default: module.PozycjonowanieLokalnePage })),
-)
-const SeoAiPage = lazy(() =>
-  import("./pages/SeoAiPage").then((module) => ({ default: module.SeoAiPage })),
-)
-const BlogAiPage = lazy(() =>
-  import("./pages/BlogAiPage").then((module) => ({ default: module.BlogAiPage })),
-)
-const AutomatyzacjaSeoPage = lazy(() =>
-  import("./pages/AutomatyzacjaSeoPage").then((module) => ({ default: module.AutomatyzacjaSeoPage })),
-)
 const JakSzybkoWyjscPage = lazy(() =>
   import("./pages/JakSzybkoWyjscPage").then((module) => ({ default: module.JakSzybkoWyjscPage })),
 )
@@ -296,11 +263,11 @@ function LandingPage() {
   return (
     <Box bg="white" minH="100vh">
       <SEO
-        title="Strona internetowa dla firmy — gotowa w 5 dni | SEO Grow Ostróda"
-        description="Strona internetowa dla firmy z widocznością w Google. Pozycjonowanie Ostróda i cała Polska. CMS z edycją z telefonu, bez WordPressa. Od 1 500 zł, gotowa w 5 dni →"
+        title="Strona z SEO dla firmy — od 1 500 zł, w 5 dni | SEO Grow"
+        description="Strona internetowa z SEO dla Twojej firmy. Od 1 500 zł, gotowa w 5 dni, z panelem do zarządzania. Bez umowy, bez agencji, bez WordPressa."
         path="/"
         image="/panel.webp"
-        keywords="strona internetowa dla firmy, strona www, pozycjonowanie ostróda, pozycjonowanie stron, strona widoczna w google, cms dla firmy, strona dla rzemieślnika, strona dla freelancera"
+        keywords="strona internetowa dla firmy, strona www, strona dla firmy, strona widoczna w google, strona dla rzemieślnika, strona dla freelancera, strona dla gabinetu, cms dla firmy"
         schema={homeSchema}
       />
       {/* Skip to Content Link for Accessibility */}
@@ -398,7 +365,6 @@ function App() {
           <Route path="/wordpress-vs-seogrow" element={<WordPressVsPage />} />
           <Route path="/wix-vs-seogrow" element={<WixVsPage />} />
           <Route path="/dlaczego-moja-strona-nie-pojawia-sie-w-google" element={<DlaczegoNiePojawiaPage />} />
-          <Route path="/pozycjonowanie-ostroda" element={<PozycjonowanieOstrodaPage />} />
           <Route path="/jak-szybko-wyjsc-w-google" element={<JakSzybkoWyjscPage />} />
           <Route path="/najczestsze-bledy-seo" element={<NajczestszeBledyPage />} />
           <Route path="/strona-dla-prawnika" element={<StronaDlaPrawnikaPage />} />
@@ -432,19 +398,9 @@ function App() {
           <Route path="/lubelskie" element={<LubelskieHubPage />} />
           <Route path="/malopolskie" element={<MalopolskieHubPage />} />
           <Route path="/pozycjonowanie-stron-dla-firm" element={<PozycjonowanieStronDlaFirmPage />} />
-          <Route path="/pozycjonowanie-stron-bez-abonamentu" element={<PozycjonowanieBezAbonamentuPage />} />
           <Route path="/tania-strona-internetowa-dla-firmy" element={<TaniaStronaInternetowaDlaFirmyPage />} />
           <Route path="/obsluga-strony-internetowej" element={<ObslugaStronyInternetowejPage />} />
           <Route path="/seo-lokalne-dla-firm" element={<SeoLokalneDlaFirmPage />} />
-          <Route path="/seo-dla-malych-firm" element={<SeoDlaMalychFirmPage />} />
-          <Route path="/strony-internetowe" element={<StronyInternetowePage />} />
-          <Route path="/zamow-strone-internetowa" element={<ZamowStronePage />} />
-          <Route path="/strona-internetowa-dla-malej-firmy" element={<StronaInternetowaDlaMalejFirmyPage />} />
-          <Route path="/pozycjonowanie-stron" element={<PozycjonowanieStronPage />} />
-          <Route path="/pozycjonowanie-lokalne" element={<PozycjonowanieLokalnePage />} />
-          <Route path="/seo-ai" element={<SeoAiPage />} />
-          <Route path="/blog-ai-firmy" element={<BlogAiPage />} />
-          <Route path="/automatyzacja-seo" element={<AutomatyzacjaSeoPage />} />
           <Route path="/cennik" element={<CennikPage />} />
           <Route path="/press" element={<PressKitPage />} />
           <Route path="/kontakt" element={<KontaktPage />} />
